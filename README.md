@@ -1,6 +1,6 @@
-# PHMForge 真实计算研究适配版：Git 候选目录
+# PHMForge 真实计算研究适配版（研究预览）
 
-这是 PHMForge 风格工具的研究适配代码，不是 PHMForge 官方仓库的完整 fork，也不是 75 道原题的完整可复现版本。该目录仅供整理和审阅；公开发布前还须解决下文所列的许可证、数据和复现问题。
+这是 PHMForge 风格工具的研究适配代码，不是 PHMForge 官方仓库的完整 fork，也不是 75 道原题的完整可复现版本。本仓库作为研究预览公开，许可证、数据准备和复现仍存在下文所列限制。
 
 ## 包含的内容
 
@@ -45,7 +45,7 @@ printf '%s\n' '{"tool":"load_dataset","args":{"dataset_name":"MFPT","split":"tra
 
 本机历史启动说明、接口限制和真实训练证据见研究项目的 `docs/phmforge_repairs246.md` 与 `docs/verified_benchmark_environments240.md`。运行日志或结果可能包含数据路径及实验内容，应单独审查后再分享。
 
-## 发布前尚需处理
+## 尚需处理的问题
 
 1. **许可证：** 上游固定提交 [LICENSE 文件](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/LICENSE) 写 MIT，其 [README](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/README.md) 写 Apache 2.0；需核清上游口径、保留适用声明，并为本项目新增代码确定许可证。本目录尚未选择 LICENSE。
 2. **数据：** 各数据源的许可、来源、下载方式和预处理需逐项核查；部分研究数据可能不允许直接再分发。本候选目录不含数据和模型权重。
