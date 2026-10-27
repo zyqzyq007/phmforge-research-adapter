@@ -1,0 +1,119 @@
+{
+  "CMAPSS_FD001": {
+    "task": "rul",
+    "path": "datasets/CMAPSS_FD001",
+    "data_origin": "NASA physical simulator; not field measurements",
+    "architectures": [
+      "mlp",
+      "lstm",
+      "transformer"
+    ],
+    "split": "official test; training engines split 80/20"
+  },
+  "CMAPSS_FD002": {
+    "task": "rul",
+    "path": "datasets/CMAPSS_FD002",
+    "data_origin": "NASA physical simulator; not field measurements",
+    "architectures": [
+      "mlp",
+      "lstm",
+      "transformer"
+    ],
+    "split": "official test; training engines split 80/20"
+  },
+  "CMAPSS_FD003": {
+    "task": "rul",
+    "path": "datasets/CMAPSS_FD003",
+    "data_origin": "NASA physical simulator; not field measurements",
+    "architectures": [
+      "mlp",
+      "lstm",
+      "transformer"
+    ],
+    "split": "official test; training engines split 80/20"
+  },
+  "CMAPSS_FD004": {
+    "task": "rul",
+    "path": "datasets/CMAPSS_FD004",
+    "data_origin": "NASA physical simulator; not field measurements",
+    "architectures": [
+      "mlp",
+      "lstm",
+      "transformer"
+    ],
+    "split": "official test; training engines split 80/20"
+  },
+  "CWRU": {
+    "task": "classification",
+    "path": "datasets/CWRU",
+    "data_origin": "Published benchmark-derived vibration data",
+    "architectures": [
+      "mlp"
+    ],
+    "group_definition": "Inferred contiguous segment blocks; original recording/bearing IDs absent",
+    "rows_by_split": {
+      "train": 14713,
+      "val": 3899,
+      "test": 3174
+    }
+  },
+  "MFPT": {
+    "task": "classification",
+    "path": "datasets/MFPT",
+    "data_origin": "Published benchmark-derived vibration data",
+    "architectures": [
+      "mlp",
+      "lstm",
+      "transformer"
+    ],
+    "group_definition": "Published source filename, not certified independent physical bearings",
+    "rows_by_split": {
+      "train": 1026,
+      "val": 570,
+      "test": 570
+    },
+    "source_label_meanings": {
+      "0": "NORMAL",
+      "2": "OR",
+      "1": "IR"
+    }
+  },
+  "ELECTRICMOTORVIBRATIONS": {
+    "task": "classification",
+    "path": "datasets/ELECTRICMOTORVIBRATIONS",
+    "data_origin": "Published source-bound vibration records; no field-measurement certification",
+    "architectures": [
+      "mlp"
+    ],
+    "group_definition": "Entire published raw-signal row; records may share physical hardware; no cross-device claim",
+    "rows_by_split": {
+      "train": 1045,
+      "val": 340,
+      "test": 323
+    }
+  },
+  "ROTORBROKENBAR": {
+    "task": "classification",
+    "path": "datasets/ROTORBROKENBAR",
+    "data_origin": "Published source-bound vibration records; no field-measurement certification",
+    "architectures": [
+      "mlp"
+    ],
+    "group_definition": "Entire published raw-signal row; records may share physical hardware; no cross-device claim",
+    "rows_by_split": {
+      "train": 2221,
+      "val": 370,
+      "test": 371
+    }
+  },
+  "ENGINEMTQA": {
+    "task": "sequence_qa",
+    "path": "engine",
+    "architectures": [],
+    "source_tasks": 28,
+    "unique_sequences": 114,
+    "labels_available": false,
+    "physical_health_contract_qualified": false,
+    "data_origin": "Actual public N-CMAPSS-derived source arrays; unverified physical channel map"
+  }
+}
