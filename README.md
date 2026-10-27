@@ -9,6 +9,7 @@
 - `src/verified_benchmark_worker.py`：MCP / JSONL 工具服务入口。
 - `src/verified_benchmark_scoring.py`：数值指标和身份对齐工具。
 - `metadata/`：A246 运行包使用的工具目录和数据注册表快照，供检查数据契约；运行时会从所指定的数据目录读取这两个文件。
+- `third_party/`：固定上游提交的许可证原文和声明差异说明。
 - `requirements-observed.txt`：本机已验环境中的主要包版本，不是经过干净环境安装验证的依赖锁文件。
 
 此处的 `src/` 复制自研究项目 `scripts/` 中较晚的源码快照；它比 A246/v4 共享运行包内的适配器包含更多数据格式和实验权限控制。它们不能视为完全同一个版本。
