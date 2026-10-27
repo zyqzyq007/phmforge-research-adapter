@@ -1,0 +1,13 @@
+{
+  "returncode": 0,
+  "checks": {
+    "training_visible": true,
+    "development_visible": true,
+    "final_inputs_absent": true,
+    "store_absent": true,
+    "credentials_absent": true
+  },
+  "stderr": "",
+  "uses_actual_agent_namespace_mounts": true,
+  "new_model_requests": 0
+}

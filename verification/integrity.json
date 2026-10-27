@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "mode": "full_sha256",
+  "files": 455884,
+  "objects": 176806,
+  "bytes": 148711139082,
+  "archives": 247,
+  "seconds": 208.64705675421283,
+  "manifest_sha256": "ff1022d428e977e8a089f505697e84549fa8f8ba7c60144c81bb2f57e75a7c53"
+}

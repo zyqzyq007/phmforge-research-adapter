@@ -52,8 +52,46 @@ def main():
     serve.add_argument("--data-root", type=Path, required=True)
     serve.add_argument("--out", type=Path, required=True)
     serve.add_argument("--transport", choices=["mcp", "jsonl"], default="mcp")
+    environment = sub.add_parser("environment", help="Restore and execute the full archived research environment")
+    envsub = environment.add_subparsers(dest="environment_command", required=True)
+    for name, help_text in [("verify", "Verify the complete object store"), ("list", "List actual archived task cases"),
+                            ("restore", "Restore an original source/data/program tree"), ("replay", "Cold-run an actual recorded training or inference command"),
+                            ("replay-case", "Replay every recorded final query of a task case"),
+                            ("workspace", "Restore a recorded task's training-only workspace"),
+                            ("agent", "Run a new coding-agent review of an archived submission")]:
+        item = envsub.add_parser(name, help=help_text)
+        item.add_argument("--store", required=True, type=Path)
+        if name == "verify":
+            item.add_argument("--full", action="store_true")
+            item.add_argument("--workers", type=int, default=4)
+        elif name == "list":
+            item.add_argument("--dataset")
+            item.add_argument("--records", action="store_true")
+        elif name == "restore":
+            item.add_argument("--path", required=True)
+            item.add_argument("--out", required=True, type=Path)
+        elif name == "replay":
+            item.add_argument("--record", required=True)
+            item.add_argument("--out", required=True, type=Path)
+            item.add_argument("--timeout", type=int, default=300)
+            item.add_argument("--no-compare", action="store_true", help="Execute without claiming historical prediction reproduction")
+        else:
+            item.add_argument("--case", required=True)
+            item.add_argument("--out", required=True, type=Path)
+            if name == "agent":
+                item.add_argument("--cli", required=True, type=Path)
+                item.add_argument("--model-base-url", required=True)
+                item.add_argument("--timeout", type=int, default=1200)
+                item.add_argument("--max-requests", type=int, default=40)
+                item.add_argument("--max-input-tokens", type=int, default=4000000)
+                item.add_argument("--max-output-tokens", type=int, default=65536)
+                item.add_argument("--max-output-per-request", type=int, default=8192)
+                item.add_argument("--smoke", action="store_true")
     args = parser.parse_args()
-    if args.command == "list":
+    if args.command == "environment":
+        from .environment import main as environment_main
+        result = environment_main(args)
+    elif args.command == "list":
         inv = resource_json("scenario_inventory.json")
         runnable = [x for x in inv["tasks"] if x["release_status"] == "integrated_research_adaptation"]
         result = {"original_scenarios": len(inv["tasks"]), "standalone_research_adaptations": len(runnable),

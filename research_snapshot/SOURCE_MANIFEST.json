@@ -1,0 +1,2773 @@
+{
+  "source": "Current project scripts captured with actual A238-A467 environment; historical per-run versions remain in the object store",
+  "files": [
+    {
+      "path": "scripts/acquire_forge_pdmb_sources244.py",
+      "sha256": "4f85273278526d165e93f22db455b39c3aaeca01304eb0b58c2b62cb09931181",
+      "snapshot_key": "project/scripts/acquire_forge_pdmb_sources244.py",
+      "bytes": 13954
+    },
+    {
+      "path": "scripts/acquire_native_paderborn.py",
+      "sha256": "467413c0997e634cf64c0dfdbc0096a7c7eafebe022f86f5d7a4316232ad421f",
+      "snapshot_key": "project/scripts/acquire_native_paderborn.py",
+      "bytes": 3446
+    },
+    {
+      "path": "scripts/acquire_range_source.py",
+      "sha256": "7bb1965e2939f7f6de4f13762c15dff26530f33ac6bcb876df9dc41543c7a5e5",
+      "snapshot_key": "project/scripts/acquire_range_source.py",
+      "bytes": 17191
+    },
+    {
+      "path": "scripts/acquire_zip_members.py",
+      "sha256": "11ea8e903bdc87842324cfffbf86be6db48755456e2537b0998455eb9dded0a3",
+      "snapshot_key": "project/scripts/acquire_zip_members.py",
+      "bytes": 17883
+    },
+    {
+      "path": "scripts/analyze_phm_operating_metrics.py",
+      "sha256": "8406542676d0d4c6af5338249dc708d8d35ecdfce8496433db8e0186912c13bf",
+      "snapshot_key": "project/scripts/analyze_phm_operating_metrics.py",
+      "bytes": 3042
+    },
+    {
+      "path": "scripts/analyze_review_branches241.py",
+      "sha256": "955f3910ae075973c2558962f4b00ee27a47cae0f759acabf60740a59b596d64",
+      "snapshot_key": "project/scripts/analyze_review_branches241.py",
+      "bytes": 23207
+    },
+    {
+      "path": "scripts/analyze_trace_qualification.py",
+      "sha256": "286aa7ec57f0fc47e4750ce7605ca08442465d713764d184c566d2d72f1cdb07",
+      "snapshot_key": "project/scripts/analyze_trace_qualification.py",
+      "bytes": 4822
+    },
+    {
+      "path": "scripts/archive_run.py",
+      "sha256": "c106dc16dd20c12293a1fb15b04bb32c5eea0ca18697b7fd92acc069aee1cad3",
+      "snapshot_key": "project/scripts/archive_run.py",
+      "bytes": 16112
+    },
+    {
+      "path": "scripts/archive_run_locked.py",
+      "sha256": "4c72793909ba253164c3af925d95a6c86a0ba61abea61a350c5213018cd0e867",
+      "snapshot_key": "project/scripts/archive_run_locked.py",
+      "bytes": 1261
+    },
+    {
+      "path": "scripts/assemble_forge_repairs.py",
+      "sha256": "5ee511b3aa840fd0282b3473f16c6801cc3c5de00ff955fe406a438f239b9a9a",
+      "snapshot_key": "project/scripts/assemble_forge_repairs.py",
+      "bytes": 7089
+    },
+    {
+      "path": "scripts/assemble_phmforge_source_matrix244.py",
+      "sha256": "66722e7e3075fba80574118ae98c18370c97c9d59d926ce5fa78a0f5f06cf6b2",
+      "snapshot_key": "project/scripts/assemble_phmforge_source_matrix244.py",
+      "bytes": 25509
+    },
+    {
+      "path": "scripts/audit_anchored_score_updates.py",
+      "sha256": "1b1e82d8f9739184ce1512db6d1f83b649c090569ff3ec0f42c5ec73ca847957",
+      "snapshot_key": "project/scripts/audit_anchored_score_updates.py",
+      "bytes": 9008
+    },
+    {
+      "path": "scripts/audit_annular_record_scope.py",
+      "sha256": "d3d35c5b97ee45eba9a37d4947cc497c33d9f943b819518162ea79adab8e8297",
+      "snapshot_key": "project/scripts/audit_annular_record_scope.py",
+      "bytes": 4666
+    },
+    {
+      "path": "scripts/audit_applicability.py",
+      "sha256": "00013ada0b6289d821d0af8368a13b5d20d3e6157d245aee978c1161d8150d78",
+      "snapshot_key": "project/scripts/audit_applicability.py",
+      "bytes": 5238
+    },
+    {
+      "path": "scripts/audit_architecture_evidence.py",
+      "sha256": "bdface88592896ca23b49b208c49159d5e24219472ba1ba41b6f2156e266cf9f",
+      "snapshot_key": "project/scripts/audit_architecture_evidence.py",
+      "bytes": 6536
+    },
+    {
+      "path": "scripts/audit_asof_claims220.py",
+      "sha256": "d8e3d3531aea3dc93bfa42f88be746ccfb1552cc1e418d9d9c83a1ae364c7d17",
+      "snapshot_key": "project/scripts/audit_asof_claims220.py",
+      "bytes": 17990
+    },
+    {
+      "path": "scripts/audit_cached_confidence415.py",
+      "sha256": "3a7b33058b31f388203dddfcdedb40d66cf6fbe2232b2cd3d418b61cd9b3f99d",
+      "snapshot_key": "project/scripts/audit_cached_confidence415.py",
+      "bytes": 8917
+    },
+    {
+      "path": "scripts/audit_cli_replay.py",
+      "sha256": "6addce34adcc4bd88f73d1be036e7a4b5e850a21b4bbc40349cca524a45af531",
+      "snapshot_key": "project/scripts/audit_cli_replay.py",
+      "bytes": 8644
+    },
+    {
+      "path": "scripts/audit_cmapss_coding_pilot.py",
+      "sha256": "4271102f4acee29076b00899e64d37232f49781b75fb3874f1715f04531d09c7",
+      "snapshot_key": "project/scripts/audit_cmapss_coding_pilot.py",
+      "bytes": 7351
+    },
+    {
+      "path": "scripts/audit_code_evidence.py",
+      "sha256": "82aceee810770919ea116e63806f50a102ceaea3902e70dc6bb70c097c4d7d31",
+      "snapshot_key": "project/scripts/audit_code_evidence.py",
+      "bytes": 16508
+    },
+    {
+      "path": "scripts/audit_competing_architectures.py",
+      "sha256": "64f93bf1bea37e3295d8f0402a5392cde13c2b29d4998e4bea0a0190dda694a4",
+      "snapshot_key": "project/scripts/audit_competing_architectures.py",
+      "bytes": 7017
+    },
+    {
+      "path": "scripts/audit_complete_prefix.py",
+      "sha256": "fb5af958ce0efc904df031f01aceb7a15643abec47d6f960e71ce569e7b71802",
+      "snapshot_key": "project/scripts/audit_complete_prefix.py",
+      "bytes": 8588
+    },
+    {
+      "path": "scripts/audit_complete_recipe_cv.py",
+      "sha256": "7de28868da69f32dee433a1cd8110265de4d1f60445ac47ea8df16647cde4603",
+      "snapshot_key": "project/scripts/audit_complete_recipe_cv.py",
+      "bytes": 6888
+    },
+    {
+      "path": "scripts/audit_controlled_feedback.py",
+      "sha256": "3d942a47c2188b660c36d44d4bf0846940f305a62c3705cf5ffe3644bcd48a68",
+      "snapshot_key": "project/scripts/audit_controlled_feedback.py",
+      "bytes": 9224
+    },
+    {
+      "path": "scripts/audit_cotfd6_results.py",
+      "sha256": "9a1c44ef86358bf8abef5ced23144d7f73f2c2d30c6a632b378a1e0b09593cf4",
+      "snapshot_key": "project/scripts/audit_cotfd6_results.py",
+      "bytes": 6400
+    },
+    {
+      "path": "scripts/audit_cwru_feature_binding.py",
+      "sha256": "36100cf88ab265c1d9a493019232c6bbe8018630a45bdcdc9b97522006adb269",
+      "snapshot_key": "project/scripts/audit_cwru_feature_binding.py",
+      "bytes": 11489
+    },
+    {
+      "path": "scripts/audit_diagnostic_scope.py",
+      "sha256": "3bd06f262296670aebe54876139c5041cacf8849c838b384d4c28464f4f6fc4e",
+      "snapshot_key": "project/scripts/audit_diagnostic_scope.py",
+      "bytes": 5138
+    },
+    {
+      "path": "scripts/audit_duplicate_program_votes.py",
+      "sha256": "094d579712b64daaf33050ab4f26850642d0728dcc4ce8b1887a45f3f46c7f9e",
+      "snapshot_key": "project/scripts/audit_duplicate_program_votes.py",
+      "bytes": 14900
+    },
+    {
+      "path": "scripts/audit_engine_negative_attribution.py",
+      "sha256": "722d272f347b3cb69ec878e5d71bb2976d69aae9098ea954d2e1aa9fa13e737e",
+      "snapshot_key": "project/scripts/audit_engine_negative_attribution.py",
+      "bytes": 9196
+    },
+    {
+      "path": "scripts/audit_ensemble_outcomes.py",
+      "sha256": "2b76e4df2e817a0178e04afc073f638df5a8c718b1da659b2f986c732a5ba13a",
+      "snapshot_key": "project/scripts/audit_ensemble_outcomes.py",
+      "bytes": 9841
+    },
+    {
+      "path": "scripts/audit_forge_expansion_development.py",
+      "sha256": "e47a5c1729ff5b80a144eed2848c5ee4e187790a4a4a6d8ddcb2c09f2b65e798",
+      "snapshot_key": "project/scripts/audit_forge_expansion_development.py",
+      "bytes": 9467
+    },
+    {
+      "path": "scripts/audit_frozen_program_capacity.py",
+      "sha256": "8f382a05fe6e150aef58a6cffce15e97d8e4ac8904a7bc708efa15253b4cd9a7",
+      "snapshot_key": "project/scripts/audit_frozen_program_capacity.py",
+      "bytes": 10448
+    },
+    {
+      "path": "scripts/audit_frozen_review_outputs.py",
+      "sha256": "82a9dcdf12db3b3f9be12ccbcfd4922e217248a1d51849e6140268f7ac553a98",
+      "snapshot_key": "project/scripts/audit_frozen_review_outputs.py",
+      "bytes": 9685
+    },
+    {
+      "path": "scripts/audit_full_agent.py",
+      "sha256": "d7f2291955bf95b1c886b4090d558e3ff4e142dcf901001daab7954b74f3eab7",
+      "snapshot_key": "project/scripts/audit_full_agent.py",
+      "bytes": 8583
+    },
+    {
+      "path": "scripts/audit_geometric_evidence.py",
+      "sha256": "7acfdb8db6263479b46159c723d93bfd18d84e4a1523b130b919df57411c343d",
+      "snapshot_key": "project/scripts/audit_geometric_evidence.py",
+      "bytes": 9055
+    },
+    {
+      "path": "scripts/audit_guided_path_branches.py",
+      "sha256": "cb5d6d98c2fbd6e386ee058236f0a66eab8be48a67d6ccf6206d2de136d43a7e",
+      "snapshot_key": "project/scripts/audit_guided_path_branches.py",
+      "bytes": 30123
+    },
+    {
+      "path": "scripts/audit_harmonic_contract.py",
+      "sha256": "f4079caf10a9472b134fed6110b985410dfada606ae56dcbf7024c69012a56c6",
+      "snapshot_key": "project/scripts/audit_harmonic_contract.py",
+      "bytes": 8856
+    },
+    {
+      "path": "scripts/audit_hust_capacity_metrics.py",
+      "sha256": "1f6822a1364367813b2e45ed3e8aa68cd4f12576adfa05b285dd2b871b48057c",
+      "snapshot_key": "project/scripts/audit_hust_capacity_metrics.py",
+      "bytes": 5909
+    },
+    {
+      "path": "scripts/audit_hust_components.py",
+      "sha256": "ab56013bd9529343557e5db0ec090aea9f399319a7c0b14b8971fad05ddd998e",
+      "snapshot_key": "project/scripts/audit_hust_components.py",
+      "bytes": 5505
+    },
+    {
+      "path": "scripts/audit_hust_lineage.py",
+      "sha256": "cf4668831256bd019e425666490c6bba6942fd0ed4c063d423ada0cdb8f3dd33",
+      "snapshot_key": "project/scripts/audit_hust_lineage.py",
+      "bytes": 11030
+    },
+    {
+      "path": "scripts/audit_learned_combinations.py",
+      "sha256": "397e564c29c7cba919422e62718ba2fe6d28d07b6796644d164239b118cae6af",
+      "snapshot_key": "project/scripts/audit_learned_combinations.py",
+      "bytes": 8100
+    },
+    {
+      "path": "scripts/audit_local_program_risk.py",
+      "sha256": "50f061f5b0053320d554ce2ec69889b60a780d366c543fed72e85a6818b0da55",
+      "snapshot_key": "project/scripts/audit_local_program_risk.py",
+      "bytes": 11210
+    },
+    {
+      "path": "scripts/audit_measured_timebase.py",
+      "sha256": "0ccbf43408f526d0c0e1ad67455a590e29babd69841c5ca8a1a0beb701726c45",
+      "snapshot_key": "project/scripts/audit_measured_timebase.py",
+      "bytes": 6867
+    },
+    {
+      "path": "scripts/audit_native_context_budget.py",
+      "sha256": "66c672fc7e9197cd9b833def7b5353fe649005ce38a15f0a2247a6fe08ec8294",
+      "snapshot_key": "project/scripts/audit_native_context_budget.py",
+      "bytes": 6792
+    },
+    {
+      "path": "scripts/audit_native_program_comparison.py",
+      "sha256": "dfcab4eb250e28f99a1e762785276d3ca7e32edba79bc7c168e1843914d911dd",
+      "snapshot_key": "project/scripts/audit_native_program_comparison.py",
+      "bytes": 8951
+    },
+    {
+      "path": "scripts/audit_negative_evidence.py",
+      "sha256": "361ddbc3e385c37583a4ea7e472919496de2fe8d2d46b7fa6abc11d1a53ca866",
+      "snapshot_key": "project/scripts/audit_negative_evidence.py",
+      "bytes": 6273
+    },
+    {
+      "path": "scripts/audit_nested_component_readouts.py",
+      "sha256": "333ae472c0c0a9124a6ca134f43939567959913a225e4e32a65844beb7c13bb0",
+      "snapshot_key": "project/scripts/audit_nested_component_readouts.py",
+      "bytes": 7826
+    },
+    {
+      "path": "scripts/audit_observation_summary.py",
+      "sha256": "b20ec6b7a54fae83caf8587edc28373ed4503372612988adc2701ae11955b71b",
+      "snapshot_key": "project/scripts/audit_observation_summary.py",
+      "bytes": 3702
+    },
+    {
+      "path": "scripts/audit_onnes_logs.py",
+      "sha256": "54d2d4a1bb9a5cfd0c0ce2669dcb88c7428b9a31b167c8408d8d48cab0f17110",
+      "snapshot_key": "project/scripts/audit_onnes_logs.py",
+      "bytes": 5314
+    },
+    {
+      "path": "scripts/audit_ordered_support.py",
+      "sha256": "4aa8490a0871b3f1409386396249d4e6c3b637f353fcfe994e45c3bbf95d5bdc",
+      "snapshot_key": "project/scripts/audit_ordered_support.py",
+      "bytes": 9514
+    },
+    {
+      "path": "scripts/audit_original_phm_traces.py",
+      "sha256": "6f20e04925a5c64da026bd91ba4c4fc2e86406b80d9f35d16435587b1040c7e2",
+      "snapshot_key": "project/scripts/audit_original_phm_traces.py",
+      "bytes": 6388
+    },
+    {
+      "path": "scripts/audit_paired_validation_control.py",
+      "sha256": "1d067095069359d69ab25021517afa2db90ff897066a6313a7d0acda2cdb2e2c",
+      "snapshot_key": "project/scripts/audit_paired_validation_control.py",
+      "bytes": 6626
+    },
+    {
+      "path": "scripts/audit_past_survival_evidence361.py",
+      "sha256": "281b03b08d79a361f9b44a4fc67d7594dbab4c0efe0e33bc1fc1deed9fd0b923",
+      "snapshot_key": "project/scripts/audit_past_survival_evidence361.py",
+      "bytes": 4563
+    },
+    {
+      "path": "scripts/audit_phmforge_access251.py",
+      "sha256": "a714bdc001a85448d8136bda74c85c4a40b00e0497a58880d998408ece128a20",
+      "snapshot_key": "project/scripts/audit_phmforge_access251.py",
+      "bytes": 22431
+    },
+    {
+      "path": "scripts/audit_phmforge_tools.py",
+      "sha256": "1a730fffe215a20f319a79c5728f77ad85aca5ed5ee3a62f9714986986e439c0",
+      "snapshot_key": "project/scripts/audit_phmforge_tools.py",
+      "bytes": 12709
+    },
+    {
+      "path": "scripts/audit_pipeline_validation.py",
+      "sha256": "14569981383f4037951f7da7d64bb6fb46d9ebc22d4fddb98f3ec9a9d0374da9",
+      "snapshot_key": "project/scripts/audit_pipeline_validation.py",
+      "bytes": 5500
+    },
+    {
+      "path": "scripts/audit_prefix_features.py",
+      "sha256": "9a651d5d0959fc4012e22bcb2b883d4a74d1d83a72fc245bd3c2fda4b42ad291",
+      "snapshot_key": "project/scripts/audit_prefix_features.py",
+      "bytes": 2905
+    },
+    {
+      "path": "scripts/audit_program_evidence.py",
+      "sha256": "a051b2c4e7d3461631421edb6251f03c460d859e74f362591c50d61cb892852e",
+      "snapshot_key": "project/scripts/audit_program_evidence.py",
+      "bytes": 64508
+    },
+    {
+      "path": "scripts/audit_program_trial.py",
+      "sha256": "b886d7f1a36aa3da44c131a32a9e4b3f3bcc38bde34b151d56db4a1aa1fb2bc3",
+      "snapshot_key": "project/scripts/audit_program_trial.py",
+      "bytes": 8839
+    },
+    {
+      "path": "scripts/audit_program_update_capacity.py",
+      "sha256": "d95992a45278ef0ad4234c75024e4374adf46dec5ec74e93da0d03401af1fe0a",
+      "snapshot_key": "project/scripts/audit_program_update_capacity.py",
+      "bytes": 8455
+    },
+    {
+      "path": "scripts/audit_program_validation_scope.py",
+      "sha256": "0abf7ad425f6916d66033f5383f16fbc41c0d05b2b9bd03ac16aa7364cb5dcaf",
+      "snapshot_key": "project/scripts/audit_program_validation_scope.py",
+      "bytes": 12639
+    },
+    {
+      "path": "scripts/audit_review_evidence.py",
+      "sha256": "8380c9ad40002ddaa6a7521bedb3ddebed03640a017f0f203e1519fd8e3d264c",
+      "snapshot_key": "project/scripts/audit_review_evidence.py",
+      "bytes": 8251
+    },
+    {
+      "path": "scripts/audit_robot_triage.py",
+      "sha256": "cc2926d822821532d095cb1421d96f7251c29030d46cca0c5d128d2b1b876a8e",
+      "snapshot_key": "project/scripts/audit_robot_triage.py",
+      "bytes": 7822
+    },
+    {
+      "path": "scripts/audit_rotor_calibration.py",
+      "sha256": "d26455b6b46a3b7667ce5d277dd45160e8e8fcb255bcf4b81464bc4a64416247",
+      "snapshot_key": "project/scripts/audit_rotor_calibration.py",
+      "bytes": 8910
+    },
+    {
+      "path": "scripts/audit_rotor_patch_factorial.py",
+      "sha256": "dd77b4937105d1201d19540ff607b6d98849a84fced44e45ba862535c1128c65",
+      "snapshot_key": "project/scripts/audit_rotor_patch_factorial.py",
+      "bytes": 8523
+    },
+    {
+      "path": "scripts/audit_rul_query_validation.py",
+      "sha256": "b5e01928967781b13f514469706ff404d03a3d3c270ac263374eb035c1f7e5e0",
+      "snapshot_key": "project/scripts/audit_rul_query_validation.py",
+      "bytes": 11360
+    },
+    {
+      "path": "scripts/audit_scope_patch_review.py",
+      "sha256": "5091d509cc43c41f46e1d684816e417282c2c5af62e69a5b8849a72ec2b50671",
+      "snapshot_key": "project/scripts/audit_scope_patch_review.py",
+      "bytes": 8744
+    },
+    {
+      "path": "scripts/audit_score_blinding.py",
+      "sha256": "a5f8acdf7953539304650fffff12f396870d8688066faa53b15540c7d44170ad",
+      "snapshot_key": "project/scripts/audit_score_blinding.py",
+      "bytes": 6060
+    },
+    {
+      "path": "scripts/audit_selection_evidence.py",
+      "sha256": "ded77b4293685939b846c974442b0c4a149d1aa33cbeb5f0d34b1ee9cea2ab3c",
+      "snapshot_key": "project/scripts/audit_selection_evidence.py",
+      "bytes": 30395
+    },
+    {
+      "path": "scripts/audit_selection_mechanism.py",
+      "sha256": "db7860d3440c9da428fdda86dcb5d480d95c2e180d16dee5d24ae4deddf07316",
+      "snapshot_key": "project/scripts/audit_selection_mechanism.py",
+      "bytes": 17847
+    },
+    {
+      "path": "scripts/audit_selection_opportunities.py",
+      "sha256": "375be8572ee253db52d3c58071b8e284c42fb98e9271fa96385f1512333285f3",
+      "snapshot_key": "project/scripts/audit_selection_opportunities.py",
+      "bytes": 11958
+    },
+    {
+      "path": "scripts/audit_smarttalk_evidence.py",
+      "sha256": "e31b6d9c438450a3532341bf9e5bb670d1ba755141b6c23f677939388389031a",
+      "snapshot_key": "project/scripts/audit_smarttalk_evidence.py",
+      "bytes": 9597
+    },
+    {
+      "path": "scripts/audit_snu_order_control.py",
+      "sha256": "5cb1d6ff2c6f95ad25da3f5649f8125eaae6781f6ad0286bd251353e8bd61392",
+      "snapshot_key": "project/scripts/audit_snu_order_control.py",
+      "bytes": 10666
+    },
+    {
+      "path": "scripts/audit_strategy_rebuild.py",
+      "sha256": "e06b4c9b7aba97a85611ccaee01a9bca978ecb3636c6c5efe40d8a84d1238fc5",
+      "snapshot_key": "project/scripts/audit_strategy_rebuild.py",
+      "bytes": 14821
+    },
+    {
+      "path": "scripts/audit_tep_first_alarm.py",
+      "sha256": "eae43c096385c416873cdd011f5ebdc5aed89c6f353d5ff623e1bde6d7851550",
+      "snapshot_key": "project/scripts/audit_tep_first_alarm.py",
+      "bytes": 7278
+    },
+    {
+      "path": "scripts/audit_timed_diagnosis_source.py",
+      "sha256": "e044a30be957e645866ee229df65f3e34fbdb6c7d47a410c68f0d05bf104cef9",
+      "snapshot_key": "project/scripts/audit_timed_diagnosis_source.py",
+      "bytes": 11987
+    },
+    {
+      "path": "scripts/audit_training_contexts.py",
+      "sha256": "cebc1d5e9ffd513128cf90f7011872e86a4bd33a8749d74fae3b6ca7ad63f883",
+      "snapshot_key": "project/scripts/audit_training_contexts.py",
+      "bytes": 6699
+    },
+    {
+      "path": "scripts/audit_trajectory_validation.py",
+      "sha256": "5e37947f531e70b787f95ec07c089ada09a27a98c2086ba1cc0310b600fa85d8",
+      "snapshot_key": "project/scripts/audit_trajectory_validation.py",
+      "bytes": 9396
+    },
+    {
+      "path": "scripts/audit_update_evidence_roles.py",
+      "sha256": "e49089ff234c2938cc213c3dc0067bdbf420aed68f1882e1b9742be48a59d3ab",
+      "snapshot_key": "project/scripts/audit_update_evidence_roles.py",
+      "bytes": 2806
+    },
+    {
+      "path": "scripts/audit_validation_disagreements.py",
+      "sha256": "13f159f3f6f3108e9fd08723dde807758343f5d3bbf2b9c7dc17ca58016614d6",
+      "snapshot_key": "project/scripts/audit_validation_disagreements.py",
+      "bytes": 7988
+    },
+    {
+      "path": "scripts/audit_validation_reachability.py",
+      "sha256": "f0ca660d6b58e8102c4167816fb92c96f9c0493b1ab2092a79803ed462dd32c4",
+      "snapshot_key": "project/scripts/audit_validation_reachability.py",
+      "bytes": 13237
+    },
+    {
+      "path": "scripts/audit_validation_role_orders.py",
+      "sha256": "f9a6dd184da65632a9314f2b55fe41758bc2aae075afdb7c67a7ccbe9369c441",
+      "snapshot_key": "project/scripts/audit_validation_role_orders.py",
+      "bytes": 3431
+    },
+    {
+      "path": "scripts/audit_xjtu_feedback.py",
+      "sha256": "cdef6e17dd3c8b78328214152a6a17b7849d4eb0149c66e73dd17554d1f4f7ac",
+      "snapshot_key": "project/scripts/audit_xjtu_feedback.py",
+      "bytes": 11102
+    },
+    {
+      "path": "scripts/augment_fault_observations.py",
+      "sha256": "894de7f87c0fb8fc87fe691c2b3233bce53cbe30db05c9557d3a522ffbc70f2b",
+      "snapshot_key": "project/scripts/augment_fault_observations.py",
+      "bytes": 11058
+    },
+    {
+      "path": "scripts/background_research.py",
+      "sha256": "db2ae67ddec24d2da81f185ad3c23329c5de9180427492d67c0fc95fc604db60",
+      "snapshot_key": "project/scripts/background_research.py",
+      "bytes": 14815
+    },
+    {
+      "path": "scripts/benchmark_tool_bridge.py",
+      "sha256": "d14fa8fa7b296add5ff0d1a1907d715b430c24b70cd2dbda13c0d2be2f34b05b",
+      "snapshot_key": "project/scripts/benchmark_tool_bridge.py",
+      "bytes": 13956
+    },
+    {
+      "path": "scripts/build_phm_briefing231.py",
+      "sha256": "05b073ad4bef982d108a662b261edacd09f351fa48458bc3f9921600a648a40e",
+      "snapshot_key": "project/scripts/build_phm_briefing231.py",
+      "bytes": 9994
+    },
+    {
+      "path": "scripts/check_complete_recipe_cv.py",
+      "sha256": "4cf0ff6ac281bb4e64ecd6583cca54a475edc9f401f27aa883ac81a37967ce30",
+      "snapshot_key": "project/scripts/check_complete_recipe_cv.py",
+      "bytes": 12260
+    },
+    {
+      "path": "scripts/check_feature_layout_intervention.py",
+      "sha256": "5e730d69f62ea626a6872e56332f4d553af1f0867aa8f6132fc3e2a22023463b",
+      "snapshot_key": "project/scripts/check_feature_layout_intervention.py",
+      "bytes": 9893
+    },
+    {
+      "path": "scripts/check_femto_rejected_candidate.py",
+      "sha256": "f6555c1b956741d4dc65ae543df72d60e6edd10a5ae04484debc18aaa0123fd7",
+      "snapshot_key": "project/scripts/check_femto_rejected_candidate.py",
+      "bytes": 2463
+    },
+    {
+      "path": "scripts/check_forge_repairs.py",
+      "sha256": "87a39de7c6731582f47f1f4690593a34d7c18d02faedfba19d6d023000dd4fb6",
+      "snapshot_key": "project/scripts/check_forge_repairs.py",
+      "bytes": 7071
+    },
+    {
+      "path": "scripts/check_harmonic_contract.py",
+      "sha256": "1e7d4a980e141e3065fe2cb5bba28773696d666cae6483920c4992b1f6a2206e",
+      "snapshot_key": "project/scripts/check_harmonic_contract.py",
+      "bytes": 11845
+    },
+    {
+      "path": "scripts/check_history_information.py",
+      "sha256": "c7f6b10004c4287793979a54a7bf6f27cd01a5e1223151a7b778a179af692c4d",
+      "snapshot_key": "project/scripts/check_history_information.py",
+      "bytes": 6319
+    },
+    {
+      "path": "scripts/check_hust_reference.py",
+      "sha256": "22934f7712570b6d5a861491d35ffd40c40b80af034e715051ea67696575a9cd",
+      "snapshot_key": "project/scripts/check_hust_reference.py",
+      "bytes": 2143
+    },
+    {
+      "path": "scripts/check_hust_rule_subsets.py",
+      "sha256": "9309714285cda87cd70b4c131263192b7ef81ad51d3cecdcf906e11eae7f3179",
+      "snapshot_key": "project/scripts/check_hust_rule_subsets.py",
+      "bytes": 15517
+    },
+    {
+      "path": "scripts/check_hust_saved_components.py",
+      "sha256": "04efb74d10affc80292162991991a19c7e5a1bede52ddbeba4bfafc7667c748f",
+      "snapshot_key": "project/scripts/check_hust_saved_components.py",
+      "bytes": 5538
+    },
+    {
+      "path": "scripts/check_nested_program_validation.py",
+      "sha256": "c5aa97c9ac18cc919194699ea3ae009b5c7280a141efaeefd7a25b4b424044c1",
+      "snapshot_key": "project/scripts/check_nested_program_validation.py",
+      "bytes": 16264
+    },
+    {
+      "path": "scripts/check_phmforge_interface243.py",
+      "sha256": "26f366002e556b29159f8268dc8edb380746d2b28a30c8f3c063ca878610a032",
+      "snapshot_key": "project/scripts/check_phmforge_interface243.py",
+      "bytes": 5068
+    },
+    {
+      "path": "scripts/check_pulse_phase.py",
+      "sha256": "f50e3b48b99ebecf1144240478ca6a8c2c550c3f3b48bc5fafe0a8b952bb831b",
+      "snapshot_key": "project/scripts/check_pulse_phase.py",
+      "bytes": 12273
+    },
+    {
+      "path": "scripts/check_reverse_validation.py",
+      "sha256": "400f92cd8b9e417c197b7cb26a270977c4ba2463022c29db6a861502d177e516",
+      "snapshot_key": "project/scripts/check_reverse_validation.py",
+      "bytes": 23619
+    },
+    {
+      "path": "scripts/check_rul_target_semantics.py",
+      "sha256": "9564b9fc54979834a464f0b0a5485310b25197c4dd3cdb6ae85c0d02d4f4efdb",
+      "snapshot_key": "project/scripts/check_rul_target_semantics.py",
+      "bytes": 4326
+    },
+    {
+      "path": "scripts/check_verified_contracts.py",
+      "sha256": "08826efbac4cdab50e99e23a8cf8c12799be25cd5e67417e082b1447bbee4ee4",
+      "snapshot_key": "project/scripts/check_verified_contracts.py",
+      "bytes": 7446
+    },
+    {
+      "path": "scripts/close_coverage82.py",
+      "sha256": "f40bb9937e662f241e0ec96f443631292f3454d0db3c5a2ec55c6f086c339ced",
+      "snapshot_key": "project/scripts/close_coverage82.py",
+      "bytes": 6504
+    },
+    {
+      "path": "scripts/cmapss_program_runtime.py",
+      "sha256": "66c37fddc6c24269f2051de88714374397677ba8a516b464ab8386e5f15272aa",
+      "snapshot_key": "project/scripts/cmapss_program_runtime.py",
+      "bytes": 5929
+    },
+    {
+      "path": "scripts/cmapss_program_tools.py",
+      "sha256": "7e8df5d911fe322c299bf8030b01ff370b62e0786c5683e00edfeb257f2a72df",
+      "snapshot_key": "project/scripts/cmapss_program_tools.py",
+      "bytes": 4375
+    },
+    {
+      "path": "scripts/cmapss_query_shift_control.py",
+      "sha256": "88aafb958589591e2fda620a9cfa6aba9ae314b546eb1e68c01ec43e41086cec",
+      "snapshot_key": "project/scripts/cmapss_query_shift_control.py",
+      "bytes": 7854
+    },
+    {
+      "path": "scripts/collect_native_candidate_corpus.py",
+      "sha256": "7e1cf71173006decf7d78f97aa0780448bdfc54ed5693665ed23161736258e6c",
+      "snapshot_key": "project/scripts/collect_native_candidate_corpus.py",
+      "bytes": 24683
+    },
+    {
+      "path": "scripts/collect_public_h5.py",
+      "sha256": "10f2234baa9eff0450930c4862452dc432b80d00b754d7b4b6d4a99b2b3d5323",
+      "snapshot_key": "project/scripts/collect_public_h5.py",
+      "bytes": 8806
+    },
+    {
+      "path": "scripts/collect_topconf_papers.py",
+      "sha256": "9cfaae2dbeb56fa1394f3d012bf8cfa7d61218acbd77fad2cd7827bc1dbc0163",
+      "snapshot_key": "project/scripts/collect_topconf_papers.py",
+      "bytes": 5670
+    },
+    {
+      "path": "scripts/comfaulda_source.py",
+      "sha256": "bad462582fa7840430e2745983d6b28ab1a0b228671dccf7ea06fe2ca1370d8b",
+      "snapshot_key": "project/scripts/comfaulda_source.py",
+      "bytes": 4775
+    },
+    {
+      "path": "scripts/compare_guided_check_models.py",
+      "sha256": "79f81e9e868c0feccd9454d9abb1d5050a96f1711647800c0a877775a0af2fd8",
+      "snapshot_key": "project/scripts/compare_guided_check_models.py",
+      "bytes": 10879
+    },
+    {
+      "path": "scripts/complete_prefix_validation.py",
+      "sha256": "59f7c8a4d87b33c3803b067efc59260172c3ba10aa4d49678380cc290b033664",
+      "snapshot_key": "project/scripts/complete_prefix_validation.py",
+      "bytes": 10049
+    },
+    {
+      "path": "scripts/condition_program_controls.py",
+      "sha256": "427f2ddc2dc4f23c9725b0f9b19c125aef02be871e8103e5117101688d6b037c",
+      "snapshot_key": "project/scripts/condition_program_controls.py",
+      "bytes": 7110
+    },
+    {
+      "path": "scripts/continue_program_updates.py",
+      "sha256": "77056f46d51f10156a29846c1e2262c2c554b010a4954da1ba37c863f7362e4f",
+      "snapshot_key": "project/scripts/continue_program_updates.py",
+      "bytes": 23787
+    },
+    {
+      "path": "scripts/contrast_residual_parent_identity.py",
+      "sha256": "15cbbcb995b882f8cec52f665c77d6c9cc5d8cc6daa7282a718e5a928fccdeac",
+      "snapshot_key": "project/scripts/contrast_residual_parent_identity.py",
+      "bytes": 8277
+    },
+    {
+      "path": "scripts/controlled_ensemble_feedback.py",
+      "sha256": "f6faf2270675c738026852c1570a03d36e2b951281ae6ac9264b609e2b7a5513",
+      "snapshot_key": "project/scripts/controlled_ensemble_feedback.py",
+      "bytes": 12221
+    },
+    {
+      "path": "scripts/controlled_feedback.py",
+      "sha256": "3d21127692fabafd5a2bdafed224e014708dff16abdb58f9dec6be86c372e244",
+      "snapshot_key": "project/scripts/controlled_feedback.py",
+      "bytes": 18978
+    },
+    {
+      "path": "scripts/controlled_program_checks.py",
+      "sha256": "d7907c448fcb539d37a05dc0bdc1c4887281642dc04eabf24f7829c0e5e60025",
+      "snapshot_key": "project/scripts/controlled_program_checks.py",
+      "bytes": 21040
+    },
+    {
+      "path": "scripts/controlled_program_revision.py",
+      "sha256": "47259988e842900e4d5c519e24b9e5d4ad595f3d794991a79770e5b3cadae9e0",
+      "snapshot_key": "project/scripts/controlled_program_revision.py",
+      "bytes": 37996
+    },
+    {
+      "path": "scripts/counterexample_program_comparison.py",
+      "sha256": "08c396b8242c81b38a9b50fbf194dcb0c6e1c11edb6d7e513c5637b486990ecd",
+      "snapshot_key": "project/scripts/counterexample_program_comparison.py",
+      "bytes": 21884
+    },
+    {
+      "path": "scripts/decompose_hust_saved_program.py",
+      "sha256": "2b6876a8188d8b89ce384bdc8ba9d4c6916d5c3163ff5bfe053ec44d44de4a37",
+      "snapshot_key": "project/scripts/decompose_hust_saved_program.py",
+      "bytes": 10662
+    },
+    {
+      "path": "scripts/diagnose_local_program_risk.py",
+      "sha256": "abd864566b56ccfd0990ce7ac8e23dbbe8ba0159f8726174aae48a9f82ccc20e",
+      "snapshot_key": "project/scripts/diagnose_local_program_risk.py",
+      "bytes": 11780
+    },
+    {
+      "path": "scripts/evaluate_additional_validation_agents.py",
+      "sha256": "c7123b959b2927e142634337192a8f8426a39d946a54b06e107c043e1ab10a5e",
+      "snapshot_key": "project/scripts/evaluate_additional_validation_agents.py",
+      "bytes": 10019
+    },
+    {
+      "path": "scripts/evaluate_architecture_comparison.py",
+      "sha256": "8c358f73f43674328a54e68a6f2e296fa73b90ec9d73f0e9a049151c44307944",
+      "snapshot_key": "project/scripts/evaluate_architecture_comparison.py",
+      "bytes": 12655
+    },
+    {
+      "path": "scripts/evaluate_competing_hypotheses.py",
+      "sha256": "26dc9e9a3c461ea8c8089b22f2a20b8f254092b54560e072eda38cef0853e2f9",
+      "snapshot_key": "project/scripts/evaluate_competing_hypotheses.py",
+      "bytes": 11245
+    },
+    {
+      "path": "scripts/evaluate_controlled_feedback.py",
+      "sha256": "dd328184b7df2a493727b32a7a913c8166aceb03f0d8f67f2ca7af3d9c99f029",
+      "snapshot_key": "project/scripts/evaluate_controlled_feedback.py",
+      "bytes": 15380
+    },
+    {
+      "path": "scripts/evaluate_ensemble_feedback.py",
+      "sha256": "6b4045b1f8495680349afd221eb38cbd2260a946925c683ccb8f9c7cf5d18d80",
+      "snapshot_key": "project/scripts/evaluate_ensemble_feedback.py",
+      "bytes": 17958
+    },
+    {
+      "path": "scripts/evaluate_fleet_negative_evidence.py",
+      "sha256": "7b5cccb1b3189782f65d818da9c7021c53623b887e467b3264e168ca0758eb82",
+      "snapshot_key": "project/scripts/evaluate_fleet_negative_evidence.py",
+      "bytes": 10207
+    },
+    {
+      "path": "scripts/evaluate_forge_coding.py",
+      "sha256": "3b5a2990269dfce8fb28640dec23e62665b2e05bd36bbaab8fbfb87bf090f02b",
+      "snapshot_key": "project/scripts/evaluate_forge_coding.py",
+      "bytes": 24719
+    },
+    {
+      "path": "scripts/evaluate_forge_gap_recovery.py",
+      "sha256": "7c5d2fa75ce852fba1d9049b4cfcf138fd93069976f634a7e354bdb7984a1436",
+      "snapshot_key": "project/scripts/evaluate_forge_gap_recovery.py",
+      "bytes": 9266
+    },
+    {
+      "path": "scripts/evaluate_free_program_comparison.py",
+      "sha256": "099856abfa310f0096b9b3362ad84828a3aae43ffd022c1d13f07d4a569ae82d",
+      "snapshot_key": "project/scripts/evaluate_free_program_comparison.py",
+      "bytes": 9452
+    },
+    {
+      "path": "scripts/evaluate_frozen_candidate_review.py",
+      "sha256": "e64a322412c0c1122cc4e2648ed210f7d3f956ec5e7c4d6502fbe75d343972fe",
+      "snapshot_key": "project/scripts/evaluate_frozen_candidate_review.py",
+      "bytes": 10075
+    },
+    {
+      "path": "scripts/evaluate_guided_path_checks.py",
+      "sha256": "57b3c0505cab85e57a56d88d78c59059f87c2bb1abccc50ed28d9f5511dc02f6",
+      "snapshot_key": "project/scripts/evaluate_guided_path_checks.py",
+      "bytes": 16294
+    },
+    {
+      "path": "scripts/evaluate_hust_lineage.py",
+      "sha256": "3578a3b740dd1f9891b8955fdf452ed0bad6dd5c493458102954da5367a5023b",
+      "snapshot_key": "project/scripts/evaluate_hust_lineage.py",
+      "bytes": 8911
+    },
+    {
+      "path": "scripts/evaluate_hust_program_pilot.py",
+      "sha256": "18a16b338fb53ad2909dabf625334170abc3a97ab0116f06ba35c72f6bd435e9",
+      "snapshot_key": "project/scripts/evaluate_hust_program_pilot.py",
+      "bytes": 4117
+    },
+    {
+      "path": "scripts/evaluate_impact_policy.py",
+      "sha256": "66eb67acff8e3220f540bab49e096879ea923455e9920b735c20067a59a8a19b",
+      "snapshot_key": "project/scripts/evaluate_impact_policy.py",
+      "bytes": 5623
+    },
+    {
+      "path": "scripts/evaluate_impmarl_policy.py",
+      "sha256": "6745d3f689a71e38ea79a7d9187b5fdcc27a0ba90ac49dcc0ed88b267e3934f9",
+      "snapshot_key": "project/scripts/evaluate_impmarl_policy.py",
+      "bytes": 6442
+    },
+    {
+      "path": "scripts/evaluate_imprl_batch.py",
+      "sha256": "8de8d99c39bd6b2b55feb89c418481f977858e01aea6079ad86ff6e5b4698f95",
+      "snapshot_key": "project/scripts/evaluate_imprl_batch.py",
+      "bytes": 3997
+    },
+    {
+      "path": "scripts/evaluate_imprl_policy.py",
+      "sha256": "3e5461e98e50cddb8303b533b17ab2374041fb307e08387cc8cbfea23ffeb2ed",
+      "snapshot_key": "project/scripts/evaluate_imprl_policy.py",
+      "bytes": 9027
+    },
+    {
+      "path": "scripts/evaluate_m10_extension.py",
+      "sha256": "5474c1e731f5ac648fe788d4174180695867d3182ac89e72bc8ef5e1e6eb40d5",
+      "snapshot_key": "project/scripts/evaluate_m10_extension.py",
+      "bytes": 8595
+    },
+    {
+      "path": "scripts/evaluate_native_validation.py",
+      "sha256": "7273d77a04bf7dc24f157dad08d97cf185236a5828297a11a17d5b4eb2c66bc1",
+      "snapshot_key": "project/scripts/evaluate_native_validation.py",
+      "bytes": 7596
+    },
+    {
+      "path": "scripts/evaluate_nested_readout_choices.py",
+      "sha256": "63d4da219725593276e9c484dac18c7aa6551e3ece33fdc704596c5e5fca1e08",
+      "snapshot_key": "project/scripts/evaluate_nested_readout_choices.py",
+      "bytes": 4694
+    },
+    {
+      "path": "scripts/evaluate_output_stability.py",
+      "sha256": "76da717888090142d5f7fc4b78bb09fcf0853fa15ceee5c14c32c4f65b3ce557",
+      "snapshot_key": "project/scripts/evaluate_output_stability.py",
+      "bytes": 8672
+    },
+    {
+      "path": "scripts/evaluate_partial_update_baseline.py",
+      "sha256": "dd5423caeb200727f6bbe50680c52a8bb0f7480fc0c1a0f93de5a4f348dcd3a9",
+      "snapshot_key": "project/scripts/evaluate_partial_update_baseline.py",
+      "bytes": 5681
+    },
+    {
+      "path": "scripts/evaluate_ppdm_policy.py",
+      "sha256": "128cf3378924cebd1165156fe806ffbe5f7539a38379ffefe54598f574d82816",
+      "snapshot_key": "project/scripts/evaluate_ppdm_policy.py",
+      "bytes": 6980
+    },
+    {
+      "path": "scripts/evaluate_program_update_screen.py",
+      "sha256": "46cc3d9d15a8f8d1eeed5fff63a51c380b46748c1bea9459e110574bdd098287",
+      "snapshot_key": "project/scripts/evaluate_program_update_screen.py",
+      "bytes": 12038
+    },
+    {
+      "path": "scripts/evaluate_real_training_reviews.py",
+      "sha256": "2ed19f06b11d286f0dc23ae16a26525ad4bd586de07c966621b7c771cc451e60",
+      "snapshot_key": "project/scripts/evaluate_real_training_reviews.py",
+      "bytes": 9994
+    },
+    {
+      "path": "scripts/evaluate_scope_patch_review.py",
+      "sha256": "67042cb1d830bce73e612913c37d26ef10e0e224f2cfc87369fb70c01e05a028",
+      "snapshot_key": "project/scripts/evaluate_scope_patch_review.py",
+      "bytes": 13461
+    },
+    {
+      "path": "scripts/evaluate_scope_review_stages.py",
+      "sha256": "aaf7c9773bf440ebb05ac705cb65f0f99b456af77adfe748bd8bd4cfdc8ba66b",
+      "snapshot_key": "project/scripts/evaluate_scope_review_stages.py",
+      "bytes": 7342
+    },
+    {
+      "path": "scripts/evaluate_validation_scope_imprl.py",
+      "sha256": "d0b14dfb34a19b7e833ca06fa5b5460aba4cd3904a31b614fcfe8ebdeb9e2d0f",
+      "snapshot_key": "project/scripts/evaluate_validation_scope_imprl.py",
+      "bytes": 8677
+    },
+    {
+      "path": "scripts/evaluate_xjtu_feedback.py",
+      "sha256": "7e9b46f9cefd5efa3262e95e81ad8c9e880477510fd410ac0deb1f991c78f26c",
+      "snapshot_key": "project/scripts/evaluate_xjtu_feedback.py",
+      "bytes": 15531
+    },
+    {
+      "path": "scripts/export_experiment_data.py",
+      "sha256": "6bdcad72dcf4f2eda7c3fa7016ea2176d0a86479f6e69c50035a2fed5a616f84",
+      "snapshot_key": "project/scripts/export_experiment_data.py",
+      "bytes": 56190
+    },
+    {
+      "path": "scripts/fault_model_cli_247.py",
+      "sha256": "43694777a8f783e6c00e0680e58f07fbde15bbe51b807672187492bc9f88c02d",
+      "snapshot_key": "project/scripts/fault_model_cli_247.py",
+      "bytes": 1102
+    },
+    {
+      "path": "scripts/fetch_battery_cohorts.py",
+      "sha256": "bdfd5c29530ed5e7629098f704e56d22afb8e8b8d21524cf93a500cb455785a0",
+      "snapshot_key": "project/scripts/fetch_battery_cohorts.py",
+      "bytes": 5710
+    },
+    {
+      "path": "scripts/fetch_pinned_mlestar.py",
+      "sha256": "1e6f86b684280667a60c9d0019e10d24f7d4de8b843a3bee228f9ab6a23662b1",
+      "snapshot_key": "project/scripts/fetch_pinned_mlestar.py",
+      "bytes": 3119
+    },
+    {
+      "path": "scripts/fetch_zip_members.py",
+      "sha256": "8c49e0fced8addb13035a8f49b7e9dc77b56ab786aa0405b9740a42fcaa4201f",
+      "snapshot_key": "project/scripts/fetch_zip_members.py",
+      "bytes": 9182
+    },
+    {
+      "path": "scripts/finalize_forge_gap_recovery.py",
+      "sha256": "fbe1ca7e3778d386f53a08acd67418672ab6556c5bc33c72f2ddf6f30a896431",
+      "snapshot_key": "project/scripts/finalize_forge_gap_recovery.py",
+      "bytes": 5340
+    },
+    {
+      "path": "scripts/finalize_rotor_replicates.py",
+      "sha256": "023557c52a4db0e2f8d9966e9d2f3a7ad5ac8fb95e258cb959e6005ce58e26c3",
+      "snapshot_key": "project/scripts/finalize_rotor_replicates.py",
+      "bytes": 15321
+    },
+    {
+      "path": "scripts/finalize_verified_qualification.py",
+      "sha256": "ff3801bc4c86de66c1a2dfe56d2f8860c7c6a9db15cea4bfb90cc784f03e16d5",
+      "snapshot_key": "project/scripts/finalize_verified_qualification.py",
+      "bytes": 9634
+    },
+    {
+      "path": "scripts/finish_benchmark_archives214.py",
+      "sha256": "4ec1b6e7dd6abf749e2cb2f3937d1ce33ce45da6c856612df0f37ff8f7464428",
+      "snapshot_key": "project/scripts/finish_benchmark_archives214.py",
+      "bytes": 6669
+    },
+    {
+      "path": "scripts/fit_component_readouts.py",
+      "sha256": "d7695329962b7dfeed11df5caf7b71b987dfbbafbce6721042881b98849f0739",
+      "snapshot_key": "project/scripts/fit_component_readouts.py",
+      "bytes": 12072
+    },
+    {
+      "path": "scripts/fit_contextual_readouts.py",
+      "sha256": "c20d767421463bef0ae286f5c90825baefe5cb1dd5d7dccdde7d36e08ffbff86",
+      "snapshot_key": "project/scripts/fit_contextual_readouts.py",
+      "bytes": 11763
+    },
+    {
+      "path": "scripts/free_program_comparison.py",
+      "sha256": "67270ab674f7414c6869f6e3c1d9573e1279048acf569e6ffc1ef9d79fd44e4b",
+      "snapshot_key": "project/scripts/free_program_comparison.py",
+      "bytes": 26106
+    },
+    {
+      "path": "scripts/frozen_classifier.py",
+      "sha256": "d6f0d9224d54fab4e23926afcbfe07074dba6b5d824c518ab673861ccb18e835",
+      "snapshot_key": "project/scripts/frozen_classifier.py",
+      "bytes": 2359
+    },
+    {
+      "path": "scripts/frozen_program_context_audit.py",
+      "sha256": "0a4979eb7721b1b7ce917673999c418bfe15e9bafbb5b7634461cca4df8293c7",
+      "snapshot_key": "project/scripts/frozen_program_context_audit.py",
+      "bytes": 10264
+    },
+    {
+      "path": "scripts/hust_battery_curves.py",
+      "sha256": "07ab16316f7b487355f3ffaf4cc16c52c7469ca894652ad4f5c9b957394f44af",
+      "snapshot_key": "project/scripts/hust_battery_curves.py",
+      "bytes": 3645
+    },
+    {
+      "path": "scripts/hust_battery_reference.py",
+      "sha256": "3b41a9dc3eb42c4f045f0bc5fdce874bba60fb9acd6547151dc5b44000b4519b",
+      "snapshot_key": "project/scripts/hust_battery_reference.py",
+      "bytes": 9740
+    },
+    {
+      "path": "scripts/hust_capacity_checks.py",
+      "sha256": "eb684dd8da900503f6ed872a4263c83effcea6fa8642f97a69254de20439e55c",
+      "snapshot_key": "project/scripts/hust_capacity_checks.py",
+      "bytes": 13500
+    },
+    {
+      "path": "scripts/hust_lineage_tools.py",
+      "sha256": "793e507e74bddd81799017a5edd2350c12c047368f8397041a5a967256e59959",
+      "snapshot_key": "project/scripts/hust_lineage_tools.py",
+      "bytes": 5331
+    },
+    {
+      "path": "scripts/hust_program_runtime.py",
+      "sha256": "eec369fde04565b9241a5a3948fd6752155916ebe353f476fbc02695c4e36b05",
+      "snapshot_key": "project/scripts/hust_program_runtime.py",
+      "bytes": 5517
+    },
+    {
+      "path": "scripts/hust_program_tools.py",
+      "sha256": "ad839f06d5e5a25c219c45d684b7448fa67f7e8fe02fd694d9bb51ba6dcc1261",
+      "snapshot_key": "project/scripts/hust_program_tools.py",
+      "bytes": 3665
+    },
+    {
+      "path": "scripts/hust_reference_program.py",
+      "sha256": "b72b1de3c347b8a88b51f8aa4780662df356803b66306c7d0d25b99ef6b9b10a",
+      "snapshot_key": "project/scripts/hust_reference_program.py",
+      "bytes": 3926
+    },
+    {
+      "path": "scripts/hust_window_features.py",
+      "sha256": "3c8bcecfcb7427d09c2c74568d6253d461dce0f0dc5531ebb94154c9469e3173",
+      "snapshot_key": "project/scripts/hust_window_features.py",
+      "bytes": 1910
+    },
+    {
+      "path": "scripts/impact_policy_worker.py",
+      "sha256": "8caf7bf77c80227049ee7f094cf431d4b0c3847a95f67b9c11b9e4bd4be53e45",
+      "snapshot_key": "project/scripts/impact_policy_worker.py",
+      "bytes": 1565
+    },
+    {
+      "path": "scripts/impmarl_policy_worker.py",
+      "sha256": "74f8d5b6c350a8bf18aa6243f214d07c6d56ebe3dfc6acc14082366d787ce785",
+      "snapshot_key": "project/scripts/impmarl_policy_worker.py",
+      "bytes": 1538
+    },
+    {
+      "path": "scripts/imprl_planning_tools.py",
+      "sha256": "502ac9f304dfe0430b0b10fd0da40870a395fad5ba492302662b2859cb56a95d",
+      "snapshot_key": "project/scripts/imprl_planning_tools.py",
+      "bytes": 4091
+    },
+    {
+      "path": "scripts/imprl_policy_worker.py",
+      "sha256": "d852bf30ce4f2f6badc9fd9379dd78032f5cdf994af2f245ec2b8de513fbd8d7",
+      "snapshot_key": "project/scripts/imprl_policy_worker.py",
+      "bytes": 1562
+    },
+    {
+      "path": "scripts/imprl_reference.py",
+      "sha256": "5316f1bc88b36e758e906d524e81cebe2d574e5af523bddc71f6f6c2c2199139",
+      "snapshot_key": "project/scripts/imprl_reference.py",
+      "bytes": 6605
+    },
+    {
+      "path": "scripts/install_verified_runtime.py",
+      "sha256": "07db3dd5a99dd37c5f26e449709735d3afb3842be544b56a613d5ba16d4c9e8b",
+      "snapshot_key": "project/scripts/install_verified_runtime.py",
+      "bytes": 4740
+    },
+    {
+      "path": "scripts/inventory_full_benchmarks.py",
+      "sha256": "4f3fac6856cf611587f581ff0dd4e8178d3f00481ba415a1acf5303100c3de74",
+      "snapshot_key": "project/scripts/inventory_full_benchmarks.py",
+      "bytes": 5938
+    },
+    {
+      "path": "scripts/inventory_phm_tasks.py",
+      "sha256": "15ab536c22f4131b3ef0c544083bb94790f35d4d7875964b2ebc670e5895e356",
+      "snapshot_key": "project/scripts/inventory_phm_tasks.py",
+      "bytes": 5479
+    },
+    {
+      "path": "scripts/isolated_model_gateway.py",
+      "sha256": "45dd04795af79d9465b73f8c32f7c27bcfa67caa0ad915246c5304871425ac9d",
+      "snapshot_key": "project/scripts/isolated_model_gateway.py",
+      "bytes": 17593
+    },
+    {
+      "path": "scripts/launch_verified_environment.py",
+      "sha256": "bb7ab88fe6d8953aaa6d33c3fa456fff9fff795d1f8c0a0ee35d8dd44f5de181",
+      "snapshot_key": "project/scripts/launch_verified_environment.py",
+      "bytes": 3897
+    },
+    {
+      "path": "scripts/local_program_revision.py",
+      "sha256": "3adeb084087e18a4e5f6066565e64433a3da4b666d1ed2628e52cc708db660cc",
+      "snapshot_key": "project/scripts/local_program_revision.py",
+      "bytes": 27133
+    },
+    {
+      "path": "scripts/manage_verified_database.py",
+      "sha256": "e59ebadef483a26979ba651b6b4332fec7ff6d32a650e5d3bdb62f7a080c56e5",
+      "snapshot_key": "project/scripts/manage_verified_database.py",
+      "bytes": 3359
+    },
+    {
+      "path": "scripts/mlestar_phm_adapter.py",
+      "sha256": "0e721876f40c869b9850bd6e079ccca2f15f9c642b82df48a59d669bbef3350b",
+      "snapshot_key": "project/scripts/mlestar_phm_adapter.py",
+      "bytes": 14912
+    },
+    {
+      "path": "scripts/monitor_competing_architectures.py",
+      "sha256": "d1181d70045e823f4d70fa2320dbba0fbf4a5029d6bf5a8bc3e8e92a85b8b28c",
+      "snapshot_key": "project/scripts/monitor_competing_architectures.py",
+      "bytes": 2316
+    },
+    {
+      "path": "scripts/monitor_phm_campaign.py",
+      "sha256": "7842efe0e007d95eacdff82068b4a1830a87ebc50c792db6a2db06e2dcbec873",
+      "snapshot_key": "project/scripts/monitor_phm_campaign.py",
+      "bytes": 2655
+    },
+    {
+      "path": "scripts/native_archive_members.py",
+      "sha256": "1c17e1589dcf7fa32766609f612540161ca8c34ea72d57f45b572215ac448429",
+      "snapshot_key": "project/scripts/native_archive_members.py",
+      "bytes": 2698
+    },
+    {
+      "path": "scripts/native_validation_comparison.py",
+      "sha256": "5b80faf724cf76dbaf7e3f948df47f79ea3191f309c68d18ecc7a3683b1cac64",
+      "snapshot_key": "project/scripts/native_validation_comparison.py",
+      "bytes": 15822
+    },
+    {
+      "path": "scripts/normalize_original_phm.py",
+      "sha256": "dcfa0e80bff1a49770ab16c9b0af1ca0d24b70e52c96565095f157340adad7c3",
+      "snapshot_key": "project/scripts/normalize_original_phm.py",
+      "bytes": 6724
+    },
+    {
+      "path": "scripts/opportunity_update_policy.py",
+      "sha256": "83948b38a5c0404918d8028ae7b654ab35670818190f2c19faf8e13b4d97bce0",
+      "snapshot_key": "project/scripts/opportunity_update_policy.py",
+      "bytes": 1193
+    },
+    {
+      "path": "scripts/patch_verified_assetops.py",
+      "sha256": "26d27cda9b40812505fc95479671e6f19b4645ed87078175f82796d2c6ec2cff",
+      "snapshot_key": "project/scripts/patch_verified_assetops.py",
+      "bytes": 3679
+    },
+    {
+      "path": "scripts/phm_execution_trace.py",
+      "sha256": "ee8a0f87e244b539a11807b0016d1975f8b75c12f88ed2431e1a40e2159b871a",
+      "snapshot_key": "project/scripts/phm_execution_trace.py",
+      "bytes": 1680
+    },
+    {
+      "path": "scripts/phm_modular_program.py",
+      "sha256": "84804d038631a73adf00f252307ada448027d5d248beb9aafad57d6fba4731f5",
+      "snapshot_key": "project/scripts/phm_modular_program.py",
+      "bytes": 2360
+    },
+    {
+      "path": "scripts/phm_program_features.py",
+      "sha256": "abd05295622417a678b772492955075463a32ff9b8ceb918ce78451186f393a3",
+      "snapshot_key": "project/scripts/phm_program_features.py",
+      "bytes": 940
+    },
+    {
+      "path": "scripts/phm_starting_program.py",
+      "sha256": "406e51bb314b0206983b038ed4b2bc6cb2931da0d03b1433ad8b4989fdbc2d13",
+      "snapshot_key": "project/scripts/phm_starting_program.py",
+      "bytes": 1426
+    },
+    {
+      "path": "scripts/phmforge_coding252.py",
+      "sha256": "67f0141402c5bb04af65db5b532071623f90b7cc18cd6b3c89324e4f17788a79",
+      "snapshot_key": "project/scripts/phmforge_coding252.py",
+      "bytes": 29053
+    },
+    {
+      "path": "scripts/plot_architecture_comparison.py",
+      "sha256": "c301325d6734c1b3ef9e8deb3a31de217054c7b000f7451ac5d94e816167bcfa",
+      "snapshot_key": "project/scripts/plot_architecture_comparison.py",
+      "bytes": 2930
+    },
+    {
+      "path": "scripts/plot_battery_scope.py",
+      "sha256": "bb9d20265a77414d76af486a8a8e781e486a4d9d2493b3b38642f657d8f5b76b",
+      "snapshot_key": "project/scripts/plot_battery_scope.py",
+      "bytes": 4328
+    },
+    {
+      "path": "scripts/plot_competing_hypotheses.py",
+      "sha256": "33225966e3b500d90d9d958924d3b32bc3360391bd09dba943517798ecf144b8",
+      "snapshot_key": "project/scripts/plot_competing_hypotheses.py",
+      "bytes": 2971
+    },
+    {
+      "path": "scripts/plot_program_context_audit.py",
+      "sha256": "5d4e1132b2380c1f86d21ba1f502945b58b1afa9698610ec9664c996f79c490a",
+      "snapshot_key": "project/scripts/plot_program_context_audit.py",
+      "bytes": 2541
+    },
+    {
+      "path": "scripts/plot_program_update_screen.py",
+      "sha256": "8319916b78ce62e4be24019898504a057a5f0411a6cba9e3a96fd990eed2cc9c",
+      "snapshot_key": "project/scripts/plot_program_update_screen.py",
+      "bytes": 3093
+    },
+    {
+      "path": "scripts/plot_validation_transfer.py",
+      "sha256": "1cc6481bbd4daf3c6b8eee1876b763aaba3f7b93b872ee576480318bed4272d2",
+      "snapshot_key": "project/scripts/plot_validation_transfer.py",
+      "bytes": 3651
+    },
+    {
+      "path": "scripts/plot_xjtu_feedback.py",
+      "sha256": "edb532aa14e489619bcf3f168091e2c900c52d0f3bfd2d9f363a1c72ff8ee5cf",
+      "snapshot_key": "project/scripts/plot_xjtu_feedback.py",
+      "bytes": 6859
+    },
+    {
+      "path": "scripts/prepare_acoustic_tasks.py",
+      "sha256": "8ad7eccc2dcfd6140f222a7fda3cd3bfa68aad6789c4027723c090f2c1563dc4",
+      "snapshot_key": "project/scripts/prepare_acoustic_tasks.py",
+      "bytes": 13076
+    },
+    {
+      "path": "scripts/prepare_admit162.py",
+      "sha256": "e0960b9b14cdfeeedfccae0b2bd958a0a2c5f29f642e39650133682ea6a96212",
+      "snapshot_key": "project/scripts/prepare_admit162.py",
+      "bytes": 16524
+    },
+    {
+      "path": "scripts/prepare_applicability_audit.py",
+      "sha256": "47c6455d09be55ebe8ce175cac8a34bbbd25da60b7cf0568ff512fe467ad403b",
+      "snapshot_key": "project/scripts/prepare_applicability_audit.py",
+      "bytes": 15294
+    },
+    {
+      "path": "scripts/prepare_asset_current_runtime.py",
+      "sha256": "61a660002fa03ef89bec12079ea35acdcc8cf4870b9d24d71369ef72bcb2a2ea",
+      "snapshot_key": "project/scripts/prepare_asset_current_runtime.py",
+      "bytes": 6892
+    },
+    {
+      "path": "scripts/prepare_battery_tables.py",
+      "sha256": "504100414db47401c795c1fedf59c922be71629b412ebbea3a0b1d7b59746bb6",
+      "snapshot_key": "project/scripts/prepare_battery_tables.py",
+      "bytes": 4209
+    },
+    {
+      "path": "scripts/prepare_benchmark_recovery.py",
+      "sha256": "10251186009e65291b4533bab365851cff3a1ecbaa827277fadaa969ff91d764",
+      "snapshot_key": "project/scripts/prepare_benchmark_recovery.py",
+      "bytes": 10156
+    },
+    {
+      "path": "scripts/prepare_classifier_bank.py",
+      "sha256": "e20a582a47103aceb3d6ff245d2f3320789407974f4534904bb41dffc8e432e9",
+      "snapshot_key": "project/scripts/prepare_classifier_bank.py",
+      "bytes": 7800
+    },
+    {
+      "path": "scripts/prepare_cmapss_batch.py",
+      "sha256": "dbc0957d2ff2335263447943866c870afb4d236ee5c063330c3f4cda8e7a31b2",
+      "snapshot_key": "project/scripts/prepare_cmapss_batch.py",
+      "bytes": 7688
+    },
+    {
+      "path": "scripts/prepare_comfaulda_study.py",
+      "sha256": "e175f4561a6f489b7a7f28bee9a54d2cf2f2096a6e0263246fd008a5a1373da4",
+      "snapshot_key": "project/scripts/prepare_comfaulda_study.py",
+      "bytes": 7893
+    },
+    {
+      "path": "scripts/prepare_competing_architectures.py",
+      "sha256": "5db329b5670002ecfd0dad980aaa79b7833b255b0fb47322c6a630020e5f1859",
+      "snapshot_key": "project/scripts/prepare_competing_architectures.py",
+      "bytes": 8993
+    },
+    {
+      "path": "scripts/prepare_confirmation_sources.py",
+      "sha256": "0d880d1f0d32117e647f48722383275227eff74402231f98b1ed851a1ab45661",
+      "snapshot_key": "project/scripts/prepare_confirmation_sources.py",
+      "bytes": 12275
+    },
+    {
+      "path": "scripts/prepare_engine_entry.py",
+      "sha256": "208b9f0cf11a7273945c6e8a413e9bd082cc91bd8ffbe75f6ebc7ac17825e74d",
+      "snapshot_key": "project/scripts/prepare_engine_entry.py",
+      "bytes": 11274
+    },
+    {
+      "path": "scripts/prepare_engine_forge_coding.py",
+      "sha256": "6f718547e90e58f7c7ee2baa2e5f68c46fb05e52417fbda5146ae4639939e60f",
+      "snapshot_key": "project/scripts/prepare_engine_forge_coding.py",
+      "bytes": 25478
+    },
+    {
+      "path": "scripts/prepare_evidence_role_review.py",
+      "sha256": "d594c3cdf7faabd3f142b814579e33c80cb54bba96971aaca5de6477ea67e726",
+      "snapshot_key": "project/scripts/prepare_evidence_role_review.py",
+      "bytes": 20198
+    },
+    {
+      "path": "scripts/prepare_fault_extensions.py",
+      "sha256": "4a1b7bb350cce48d660cce911169e0073a72681d4b61cbcdb1eb3aa840b0e7c0",
+      "snapshot_key": "project/scripts/prepare_fault_extensions.py",
+      "bytes": 9202
+    },
+    {
+      "path": "scripts/prepare_feedback_campaign.py",
+      "sha256": "76164fbfbab83ec43ec8c695da49e17800348ccd98fe2290342512f173b2ce79",
+      "snapshot_key": "project/scripts/prepare_feedback_campaign.py",
+      "bytes": 31513
+    },
+    {
+      "path": "scripts/prepare_femto_coding.py",
+      "sha256": "38ad7c7278b5b054725a61bbadaa039f989957a56dff6cf6b8e099376ec4e068",
+      "snapshot_key": "project/scripts/prepare_femto_coding.py",
+      "bytes": 13140
+    },
+    {
+      "path": "scripts/prepare_forge_coding_baseline.py",
+      "sha256": "2f42141f1d3b2dbe55adca56627ff7ec21ae1f230c6efefdb3053cb0c72097dd",
+      "snapshot_key": "project/scripts/prepare_forge_coding_baseline.py",
+      "bytes": 22557
+    },
+    {
+      "path": "scripts/prepare_forge_detailed_tasks.py",
+      "sha256": "9bb399bb281826c5e2a2ec05bcb8c56997143b5250eee7fb4294f4df7d9f41ac",
+      "snapshot_key": "project/scripts/prepare_forge_detailed_tasks.py",
+      "bytes": 21726
+    },
+    {
+      "path": "scripts/prepare_forge_expansion.py",
+      "sha256": "c87609b692f94b77013b60f480d75de08f54c10edbb7ab0a1916444a4cbed1f4",
+      "snapshot_key": "project/scripts/prepare_forge_expansion.py",
+      "bytes": 26803
+    },
+    {
+      "path": "scripts/prepare_forge_gap_recovery.py",
+      "sha256": "f8fdd0877335c5cccca6ebf9f57a94c659644c77b6ecd1e32d131e19ff77efd5",
+      "snapshot_key": "project/scripts/prepare_forge_gap_recovery.py",
+      "bytes": 20782
+    },
+    {
+      "path": "scripts/prepare_forge_ordinary_review.py",
+      "sha256": "fee77aad799fec1287ba79ff17081a1a6e1c90ff29bb01da7f338170e6e9b08e",
+      "snapshot_key": "project/scripts/prepare_forge_ordinary_review.py",
+      "bytes": 10842
+    },
+    {
+      "path": "scripts/prepare_forge_rul_followups.py",
+      "sha256": "d1600e8af899d9e3621f9256520fb1c6ff653e38067e73748d058141c022b03a",
+      "snapshot_key": "project/scripts/prepare_forge_rul_followups.py",
+      "bytes": 14584
+    },
+    {
+      "path": "scripts/prepare_forge_safety.py",
+      "sha256": "05368f961c3be8dc167d0f6589a73c447391756a3926b4d94227cbaaee2e9f42",
+      "snapshot_key": "project/scripts/prepare_forge_safety.py",
+      "bytes": 14633
+    },
+    {
+      "path": "scripts/prepare_full_benchmark_campaign.py",
+      "sha256": "d3e8433e9397360041c194366d0699451b423a842db50d0d629692780ac0f3ec",
+      "snapshot_key": "project/scripts/prepare_full_benchmark_campaign.py",
+      "bytes": 12483
+    },
+    {
+      "path": "scripts/prepare_hust_battery_curves.py",
+      "sha256": "7265440374006c8eae35b64f3be23d0b91a4e69279bb293e1af025cd28689781",
+      "snapshot_key": "project/scripts/prepare_hust_battery_curves.py",
+      "bytes": 5863
+    },
+    {
+      "path": "scripts/prepare_hust_source.py",
+      "sha256": "eaa2219fb35670a78476686c8a41b5f5feca3dd5826dd2d8f2df28de1a365dae",
+      "snapshot_key": "project/scripts/prepare_hust_source.py",
+      "bytes": 12363
+    },
+    {
+      "path": "scripts/prepare_hust_validation_contrast.py",
+      "sha256": "e17eb7de989b6d46cb7147610541421d658c69386af5abcc0e76c2baa1d25647",
+      "snapshot_key": "project/scripts/prepare_hust_validation_contrast.py",
+      "bytes": 8941
+    },
+    {
+      "path": "scripts/prepare_measured_program_cohort.py",
+      "sha256": "ad485a3e657765915340615f87771636c6a1fda7bccbd265936cda3e68c9a8cb",
+      "snapshot_key": "project/scripts/prepare_measured_program_cohort.py",
+      "bytes": 18826
+    },
+    {
+      "path": "scripts/prepare_mendeley_source.py",
+      "sha256": "059f2574d7ce5b0f877f58ad9baa3af5a56ad1193e860ce1433422fefb9a3824",
+      "snapshot_key": "project/scripts/prepare_mendeley_source.py",
+      "bytes": 7623
+    },
+    {
+      "path": "scripts/prepare_milling_tables.py",
+      "sha256": "975930f1f19eb2efd60a5c9e6e3c44629cff241b3898b779e7544cc96645eab2",
+      "snapshot_key": "project/scripts/prepare_milling_tables.py",
+      "bytes": 5013
+    },
+    {
+      "path": "scripts/prepare_native_femto.py",
+      "sha256": "03f0b089f4816dd3105efb0d60ecd107601c66a817d7643d928b69ab77b6d41f",
+      "snapshot_key": "project/scripts/prepare_native_femto.py",
+      "bytes": 9885
+    },
+    {
+      "path": "scripts/prepare_negative_evidence.py",
+      "sha256": "2ca0422a5cebe5f92067a8b23aee9741853c16954eb87051d0084ad063a2cb7a",
+      "snapshot_key": "project/scripts/prepare_negative_evidence.py",
+      "bytes": 19375
+    },
+    {
+      "path": "scripts/prepare_paderborn_source.py",
+      "sha256": "4d9e4aadcad1ed76d1b328706a442e4e85f3f17f7a249da072a91c9595613dac",
+      "snapshot_key": "project/scripts/prepare_paderborn_source.py",
+      "bytes": 11545
+    },
+    {
+      "path": "scripts/prepare_planetary_probe.py",
+      "sha256": "f97167c302a857961325d667599e2a3dedd8dacc8f5c5bdf86da16e8a908d161",
+      "snapshot_key": "project/scripts/prepare_planetary_probe.py",
+      "bytes": 48551
+    },
+    {
+      "path": "scripts/prepare_planetary_source_extension.py",
+      "sha256": "5a2c0a9cb38b0e394df7874f5dffd15060dec3aced51f1428212ebea72f450fe",
+      "snapshot_key": "project/scripts/prepare_planetary_source_extension.py",
+      "bytes": 10954
+    },
+    {
+      "path": "scripts/prepare_probability_bank.py",
+      "sha256": "e129b3f0808acd3f34bcee28e316907a3e81d6180a12c8d83a9f8740588ea95c",
+      "snapshot_key": "project/scripts/prepare_probability_bank.py",
+      "bytes": 10718
+    },
+    {
+      "path": "scripts/prepare_real_bench_data.py",
+      "sha256": "99ffaa0d97b10757f06a4ae2cd314219699e2d5aae0aadc8b023920cbfa0f979",
+      "snapshot_key": "project/scripts/prepare_real_bench_data.py",
+      "bytes": 14576
+    },
+    {
+      "path": "scripts/prepare_real_training_campaign.py",
+      "sha256": "1ccaa54f5e89d31e660181ccb5f13301bba1440884a38ac532dac84c50c034b5",
+      "snapshot_key": "project/scripts/prepare_real_training_campaign.py",
+      "bytes": 27360
+    },
+    {
+      "path": "scripts/prepare_realflow_batch.py",
+      "sha256": "148225c24577e7493a1fe18b1ca9922a77b390d059f865da4af036985f87e0f8",
+      "snapshot_key": "project/scripts/prepare_realflow_batch.py",
+      "bytes": 10138
+    },
+    {
+      "path": "scripts/prepare_robot_triage.py",
+      "sha256": "5b595fb944f6205ad6465a15ef7495dd8b9744f7559c050e20961e7e5fb01223",
+      "snapshot_key": "project/scripts/prepare_robot_triage.py",
+      "bytes": 20506
+    },
+    {
+      "path": "scripts/prepare_rotor_acquisition_contrast.py",
+      "sha256": "a2fc0e09e45a964d6eb6de86ba29d8ea2b9ce51e4715176afd9aaa4d75993409",
+      "snapshot_key": "project/scripts/prepare_rotor_acquisition_contrast.py",
+      "bytes": 7194
+    },
+    {
+      "path": "scripts/prepare_rotor_replicates.py",
+      "sha256": "7ac9c26c4945edf029aac70af84969cf9eb84e74c2ddca8de55c117ccb6faa14",
+      "snapshot_key": "project/scripts/prepare_rotor_replicates.py",
+      "bytes": 12840
+    },
+    {
+      "path": "scripts/prepare_scope_control.py",
+      "sha256": "369044599e0c8811ecc78545eb7bd8529a921596ef6be106912cd3cd1ae5502e",
+      "snapshot_key": "project/scripts/prepare_scope_control.py",
+      "bytes": 12544
+    },
+    {
+      "path": "scripts/prepare_selection_expansion.py",
+      "sha256": "845a5d74932df9892731a5286624e5f64b0c50d9ae4d9861b721ae99ed0823f1",
+      "snapshot_key": "project/scripts/prepare_selection_expansion.py",
+      "bytes": 16811
+    },
+    {
+      "path": "scripts/prepare_trace_qualification.py",
+      "sha256": "708945eebb54d17decadb1475a860361ab339e8405a3396c168d3b8b83794792",
+      "snapshot_key": "project/scripts/prepare_trace_qualification.py",
+      "bytes": 8353
+    },
+    {
+      "path": "scripts/prepare_validation_scope_campaign.py",
+      "sha256": "51ad3caa395aeabdb0f71ea0a125f490fe6cb6d191ecf804840b42532a4fa1cb",
+      "snapshot_key": "project/scripts/prepare_validation_scope_campaign.py",
+      "bytes": 13913
+    },
+    {
+      "path": "scripts/prepare_validation_scope_review.py",
+      "sha256": "804c5bd53e0551d6802f1b2bbbc2c1cfeb7841a4df9f03d9bb88d6a616364edf",
+      "snapshot_key": "project/scripts/prepare_validation_scope_review.py",
+      "bytes": 7791
+    },
+    {
+      "path": "scripts/prepare_verified_benchmarks.py",
+      "sha256": "f7e04909e3ee42dbbb4b308761d97703a0b5c9a89255a6f28b1f2c83188a9cf2",
+      "snapshot_key": "project/scripts/prepare_verified_benchmarks.py",
+      "bytes": 3768
+    },
+    {
+      "path": "scripts/prepare_xjtu_feedback.py",
+      "sha256": "90823e5c0e1fdbb2d5d3aeb0aeaa1f2de319de5d4afa1bd24a5e9e80300b834e",
+      "snapshot_key": "project/scripts/prepare_xjtu_feedback.py",
+      "bytes": 12631
+    },
+    {
+      "path": "scripts/probe_additional_conditions.py",
+      "sha256": "feb42f8ee5f4f166814e5efab2f17279fb0423a5d8dc7ab302d346c7b4fefe87",
+      "snapshot_key": "project/scripts/probe_additional_conditions.py",
+      "bytes": 12104
+    },
+    {
+      "path": "scripts/probe_cmapss_query_time.py",
+      "sha256": "1abad6889cfeeb10767d7b340ffee4dcc9c1c46d84ff738dd50a3ae4669f60bb",
+      "snapshot_key": "project/scripts/probe_cmapss_query_time.py",
+      "bytes": 6989
+    },
+    {
+      "path": "scripts/probe_ordered_support.py",
+      "sha256": "63b7ecea15dee4fb979a751d1ccdfb9cf55f9f3636ca73a44f5823d9a412c70c",
+      "snapshot_key": "project/scripts/probe_ordered_support.py",
+      "bytes": 13228
+    },
+    {
+      "path": "scripts/probe_prefix_context.py",
+      "sha256": "603337e09825deca4e0fb3fb66c88ef79b285810dfd9d63c3cb8a26291b08fc3",
+      "snapshot_key": "project/scripts/probe_prefix_context.py",
+      "bytes": 12416
+    },
+    {
+      "path": "scripts/probe_remote_hdf5.py",
+      "sha256": "873b65dbfd84a4c003de56798dc56814fcfd54613b08e312420de47d8f0ff5e5",
+      "snapshot_key": "project/scripts/probe_remote_hdf5.py",
+      "bytes": 8969
+    },
+    {
+      "path": "scripts/probe_rotor_calibration.py",
+      "sha256": "54b4a5de086160b04051145264387a1bd46c958552f64a59e23b23e7f048e876",
+      "snapshot_key": "project/scripts/probe_rotor_calibration.py",
+      "bytes": 13310
+    },
+    {
+      "path": "scripts/probe_update_branches.py",
+      "sha256": "0b4f787b5d770ca189c250dfa2dbb2c831a9ab0167de53a22ed1cf0396f7c0f7",
+      "snapshot_key": "project/scripts/probe_update_branches.py",
+      "bytes": 10084
+    },
+    {
+      "path": "scripts/program_condition_queries.py",
+      "sha256": "642d58793cc7b3b3da523673f806cfb234013285f7524ee86c86cf425c731592",
+      "snapshot_key": "project/scripts/program_condition_queries.py",
+      "bytes": 6090
+    },
+    {
+      "path": "scripts/program_evidence_corpus.py",
+      "sha256": "535931568b242374ea79e8a982281e5f7655f15c74ee5534d7f86381a98e0b95",
+      "snapshot_key": "project/scripts/program_evidence_corpus.py",
+      "bytes": 4062
+    },
+    {
+      "path": "scripts/program_portfolio_comparison.py",
+      "sha256": "c4c070f5ce65f59533d41b9af55bace84e90531cd3ab3e58e73c3a7df1ad5d12",
+      "snapshot_key": "project/scripts/program_portfolio_comparison.py",
+      "bytes": 31431
+    },
+    {
+      "path": "scripts/program_revision_runtime.py",
+      "sha256": "609167b0921044b2dfe5c8bd32b5dd874fb7cfdc6598ecb1ad30ad86fb71584e",
+      "snapshot_key": "project/scripts/program_revision_runtime.py",
+      "bytes": 16191
+    },
+    {
+      "path": "scripts/program_revision_tools.py",
+      "sha256": "554eadf9df104e6a3c8844431594d52cc2f612de39eac7b96c7efbd268cd30c4",
+      "snapshot_key": "project/scripts/program_revision_tools.py",
+      "bytes": 27089
+    },
+    {
+      "path": "scripts/program_selection_policies.py",
+      "sha256": "0305bee3065678e8851237fef527ec6be168069e53fccffc77608728a21e914c",
+      "snapshot_key": "project/scripts/program_selection_policies.py",
+      "bytes": 5608
+    },
+    {
+      "path": "scripts/program_training_entry.py",
+      "sha256": "73607cebea0cafb09899df821ff1ee66ce304f60b001087c91a445eb09e13305",
+      "snapshot_key": "project/scripts/program_training_entry.py",
+      "bytes": 4203
+    },
+    {
+      "path": "scripts/program_update_tools.py",
+      "sha256": "af2233ccb6dd4b2e4c8d40ae523ea293c0ec79d933c46abf04feaab0f1662614",
+      "snapshot_key": "project/scripts/program_update_tools.py",
+      "bytes": 5467
+    },
+    {
+      "path": "scripts/qualify_asset_current.py",
+      "sha256": "ff45154e48e7330a89d7b0271253cc4eb5052f99387748445d64cc16d5748e38",
+      "snapshot_key": "project/scripts/qualify_asset_current.py",
+      "bytes": 6106
+    },
+    {
+      "path": "scripts/qualify_asset_runtime.py",
+      "sha256": "0ae464ce49f511d3d923402060aeb6e411ff8b8e66775548dea8772a3d4e9333",
+      "snapshot_key": "project/scripts/qualify_asset_runtime.py",
+      "bytes": 2926
+    },
+    {
+      "path": "scripts/qualify_battery_evidence.py",
+      "sha256": "8b64267d55a4b21dbf43918e8fcd59804e493638cfe73262e8746ac33db94085",
+      "snapshot_key": "project/scripts/qualify_battery_evidence.py",
+      "bytes": 11113
+    },
+    {
+      "path": "scripts/qualify_bearing_rul_mcp.py",
+      "sha256": "ebe4f2b7424119cd95062cbaffa39fbf711ec6cb7705d5681fb14c8d8b2416db",
+      "snapshot_key": "project/scripts/qualify_bearing_rul_mcp.py",
+      "bytes": 5079
+    },
+    {
+      "path": "scripts/qualify_cached_confidence415.py",
+      "sha256": "8c7cc93db4eb5ecce9dbb6cf46ebd7d7e31b431f5944e3a6143a986f1f376b6f",
+      "snapshot_key": "project/scripts/qualify_cached_confidence415.py",
+      "bytes": 14757
+    },
+    {
+      "path": "scripts/qualify_coding_agent_isolation.py",
+      "sha256": "a72077ac81213ef268ee04d65fa5a66ee73c17ec0eb4cb27fe7a121e6e0ffcb7",
+      "snapshot_key": "project/scripts/qualify_coding_agent_isolation.py",
+      "bytes": 13378
+    },
+    {
+      "path": "scripts/qualify_comfaulda.py",
+      "sha256": "d0519a305b8228010fad82ad2d03732d95d9707458830a4ef927705627d8ed6c",
+      "snapshot_key": "project/scripts/qualify_comfaulda.py",
+      "bytes": 4383
+    },
+    {
+      "path": "scripts/qualify_contract_projection.py",
+      "sha256": "d8ae9b08c3e13528296d8ba6fa2430e7994a58f52db42c703639291a679a7de5",
+      "snapshot_key": "project/scripts/qualify_contract_projection.py",
+      "bytes": 29916
+    },
+    {
+      "path": "scripts/qualify_cwru_feature_transform.py",
+      "sha256": "913888b35f4c0143c532b424b8b7d145a1b759c4593d34b502b8e0c0e76030cb",
+      "snapshot_key": "project/scripts/qualify_cwru_feature_transform.py",
+      "bytes": 10480
+    },
+    {
+      "path": "scripts/qualify_engine_supervision.py",
+      "sha256": "2a218ea1572470e060111c8b305bf501fc1c69112a2b0fbf3b234bd83a08ddb0",
+      "snapshot_key": "project/scripts/qualify_engine_supervision.py",
+      "bytes": 12869
+    },
+    {
+      "path": "scripts/qualify_engine_trend.py",
+      "sha256": "a14f80112bfed96294a5bcdfcd485a064ceb884f4cf50c0529df929b34f36626",
+      "snapshot_key": "project/scripts/qualify_engine_trend.py",
+      "bytes": 11621
+    },
+    {
+      "path": "scripts/qualify_ensemble_feedback.py",
+      "sha256": "a127b1c6b1c315e7adf485b539237ced9a65e3994afcaaddd13b55a4d0a51d0d",
+      "snapshot_key": "project/scripts/qualify_ensemble_feedback.py",
+      "bytes": 32928
+    },
+    {
+      "path": "scripts/qualify_exclusion_sources.py",
+      "sha256": "e079d3d6324164fefd2ee76018e78c0d1566b4c52a2e9f6d210fb6c4d7576a25",
+      "snapshot_key": "project/scripts/qualify_exclusion_sources.py",
+      "bytes": 8877
+    },
+    {
+      "path": "scripts/qualify_fault_extensions.py",
+      "sha256": "de8ad4c9286ed774876b6608fa2901c053686046463173780bd2a0bfa2bf6285",
+      "snapshot_key": "project/scripts/qualify_fault_extensions.py",
+      "bytes": 9262
+    },
+    {
+      "path": "scripts/qualify_feedback_native.py",
+      "sha256": "23e3f363be05dfdb9e825509413719a58a15f5ee467482744640124e46e1b4e5",
+      "snapshot_key": "project/scripts/qualify_feedback_native.py",
+      "bytes": 11475
+    },
+    {
+      "path": "scripts/qualify_femto_source.py",
+      "sha256": "36319843d095bc58425237eebcb8ce5266510ee2d7db91380a13bbde6767ea64",
+      "snapshot_key": "project/scripts/qualify_femto_source.py",
+      "bytes": 4202
+    },
+    {
+      "path": "scripts/qualify_fleet_negative_evidence.py",
+      "sha256": "fc58594c056eaa44213bb119fcdd1957ff94cfec5d4b39e7e403e3c8c1973bfc",
+      "snapshot_key": "project/scripts/qualify_fleet_negative_evidence.py",
+      "bytes": 10990
+    },
+    {
+      "path": "scripts/qualify_forge_runtime.py",
+      "sha256": "d6c068ca7c191c6ad03fa909bd88387359eb3996bd02f8f10586c9bba216ee67",
+      "snapshot_key": "project/scripts/qualify_forge_runtime.py",
+      "bytes": 1991
+    },
+    {
+      "path": "scripts/qualify_frozen_candidate_review.py",
+      "sha256": "b2c5430db53ae8fc347cfa5d261f3b9bee3fc9d3850a33927199cfee55e1485a",
+      "snapshot_key": "project/scripts/qualify_frozen_candidate_review.py",
+      "bytes": 11963
+    },
+    {
+      "path": "scripts/qualify_geometric_evidence.py",
+      "sha256": "6617af7a8622645f1b418db2560135cb10b4ac862478e23d66c62c4ba75b9aea",
+      "snapshot_key": "project/scripts/qualify_geometric_evidence.py",
+      "bytes": 13792
+    },
+    {
+      "path": "scripts/qualify_guided_waveform.py",
+      "sha256": "470d5741adeaa6095e1d7fb9da0cf905220433d868e0aa37074ee82b656e3050",
+      "snapshot_key": "project/scripts/qualify_guided_waveform.py",
+      "bytes": 16096
+    },
+    {
+      "path": "scripts/qualify_hust_battery_schema.py",
+      "sha256": "892a2ad7168a1113de3cb3503980874f2a50673d06a073e3de62a1352c199f51",
+      "snapshot_key": "project/scripts/qualify_hust_battery_schema.py",
+      "bytes": 4163
+    },
+    {
+      "path": "scripts/qualify_hust_battery_source359.py",
+      "sha256": "db5f9adc57f2d9c7efc9fc39d62852727c4fd98877eccb10f6635180ccc8ea54",
+      "snapshot_key": "project/scripts/qualify_hust_battery_source359.py",
+      "bytes": 5859
+    },
+    {
+      "path": "scripts/qualify_hust_native_capacity.py",
+      "sha256": "052c307659e914d149abbf6f5ef7c1da634acab40a75e21e1497d71990eda006",
+      "snapshot_key": "project/scripts/qualify_hust_native_capacity.py",
+      "bytes": 3190
+    },
+    {
+      "path": "scripts/qualify_hust_range360.py",
+      "sha256": "32ae007e58bbe50ef1d2f6a9d57e95fecf37ad6cdc258c3e11dc9d08dfb5da43",
+      "snapshot_key": "project/scripts/qualify_hust_range360.py",
+      "bytes": 6053
+    },
+    {
+      "path": "scripts/qualify_hust_reference_reuse.py",
+      "sha256": "495da3b61ec650aeefd6def0a39825991881ad753e6e307fa42a015e998699f6",
+      "snapshot_key": "project/scripts/qualify_hust_reference_reuse.py",
+      "bytes": 7308
+    },
+    {
+      "path": "scripts/qualify_ims_source.py",
+      "sha256": "75b49b9649a959824cd55feb2bac86e4bc22a9edd541d780f5fb5e2d25ba4a07",
+      "snapshot_key": "project/scripts/qualify_ims_source.py",
+      "bytes": 12409
+    },
+    {
+      "path": "scripts/qualify_mlestar_adapter.py",
+      "sha256": "71793ee827f79b43a3d6fb5f3dfb60ceeb4043156412fe1630b179ccfebcf107",
+      "snapshot_key": "project/scripts/qualify_mlestar_adapter.py",
+      "bytes": 12308
+    },
+    {
+      "path": "scripts/qualify_model_output_budget.py",
+      "sha256": "45b7b725a5cb6fcfc8637f4256eba6b1caf8d21186c452086fc6a0f26399c7f0",
+      "snapshot_key": "project/scripts/qualify_model_output_budget.py",
+      "bytes": 7723
+    },
+    {
+      "path": "scripts/qualify_native_cli_mcp.py",
+      "sha256": "47ca6dab3eebba3c4eda59b1108a6c17f42f18cc8caa6d9643c796d590a19140",
+      "snapshot_key": "project/scripts/qualify_native_cli_mcp.py",
+      "bytes": 7837
+    },
+    {
+      "path": "scripts/qualify_original_phm.py",
+      "sha256": "99eaba451c89b29d78d269ef1a138a384558e7efb1ce53d3f8de5f1867f76c24",
+      "snapshot_key": "project/scripts/qualify_original_phm.py",
+      "bytes": 5286
+    },
+    {
+      "path": "scripts/qualify_past_capacity_history.py",
+      "sha256": "cb0a1d2db4e08bdb38ae18eb763071684ec61704b7adfd0c28b2233eea267d25",
+      "snapshot_key": "project/scripts/qualify_past_capacity_history.py",
+      "bytes": 5333
+    },
+    {
+      "path": "scripts/qualify_pdm_fault001_248.py",
+      "sha256": "db5278604619194af3ff46e9368beaa310faaa0526386da89ee32d20841a59d3",
+      "snapshot_key": "project/scripts/qualify_pdm_fault001_248.py",
+      "bytes": 30791
+    },
+    {
+      "path": "scripts/qualify_pdm_fault004_247.py",
+      "sha256": "8ba0ca7e3541376ded78560ec726ba01b136351bde268182803601cdf6685a5c",
+      "snapshot_key": "project/scripts/qualify_pdm_fault004_247.py",
+      "bytes": 18086
+    },
+    {
+      "path": "scripts/qualify_pdm_fault013_250.py",
+      "sha256": "11a34a1a5d925d1d4279340e7df98353806436933d4bd6a09ee9ef315e37fa03",
+      "snapshot_key": "project/scripts/qualify_pdm_fault013_250.py",
+      "bytes": 37128
+    },
+    {
+      "path": "scripts/qualify_pdm_fault015_249.py",
+      "sha256": "ab0dd05fb60046a9999c2ec3277a3260b227379ab73e47ffc77659595c309120",
+      "snapshot_key": "project/scripts/qualify_pdm_fault015_249.py",
+      "bytes": 33598
+    },
+    {
+      "path": "scripts/qualify_pdm_rul001_245.py",
+      "sha256": "d59c14dd486ac6bcd70cf4c2a2f4accbfedceac714f58ffdb46e1f5627743593",
+      "snapshot_key": "project/scripts/qualify_pdm_rul001_245.py",
+      "bytes": 13329
+    },
+    {
+      "path": "scripts/qualify_planetary_source.py",
+      "sha256": "7ee8f1887ea038a48302511d14d29828731381cbd94df3f1f5e7c7191e20c24b",
+      "snapshot_key": "project/scripts/qualify_planetary_source.py",
+      "bytes": 9415
+    },
+    {
+      "path": "scripts/qualify_probability_bank.py",
+      "sha256": "2d4fb71489da0e396f8533d6e45c62fbc437713fc661120dd8782b28a4577d57",
+      "snapshot_key": "project/scripts/qualify_probability_bank.py",
+      "bytes": 5845
+    },
+    {
+      "path": "scripts/qualify_program_decision.py",
+      "sha256": "38e6fc4ecfcef22df639fc48b0054c16649800f0dc58a2ee10ab40cd59903b54",
+      "snapshot_key": "project/scripts/qualify_program_decision.py",
+      "bytes": 17385
+    },
+    {
+      "path": "scripts/qualify_program_output_profiles.py",
+      "sha256": "4c4ce8bc6771c85ba80298fb41a7d8ef6b769fe15f64361098cdae483a0133d6",
+      "snapshot_key": "project/scripts/qualify_program_output_profiles.py",
+      "bytes": 6657
+    },
+    {
+      "path": "scripts/qualify_program_source.py",
+      "sha256": "ab8eaebd3448c36ff6fb87ce2621e146d74604576788289e7424853402b89dbd",
+      "snapshot_key": "project/scripts/qualify_program_source.py",
+      "bytes": 5366
+    },
+    {
+      "path": "scripts/qualify_program_trace.py",
+      "sha256": "f990a8af9e7da15ec57cdedfee3b90d2db1fefa4b5bac7ece143aaf0e72aa295",
+      "snapshot_key": "project/scripts/qualify_program_trace.py",
+      "bytes": 4086
+    },
+    {
+      "path": "scripts/qualify_revision_corpus.py",
+      "sha256": "82ca3159a7272c93b2cbde6d3eb9901ec2f3eff464b6e8fdd80a272dd216df29",
+      "snapshot_key": "project/scripts/qualify_revision_corpus.py",
+      "bytes": 13046
+    },
+    {
+      "path": "scripts/qualify_rotor_full_source.py",
+      "sha256": "fb1cbb9ad435ca31109cfed7907f4637f490fe27c639605d6f7510c5aa9d3d8c",
+      "snapshot_key": "project/scripts/qualify_rotor_full_source.py",
+      "bytes": 15774
+    },
+    {
+      "path": "scripts/qualify_rotor_unused_acquisition.py",
+      "sha256": "a8ef96ce37b4ffe4448484b30cb29087e62fcb57f2be50ed5af55f10a1b5ef7b",
+      "snapshot_key": "project/scripts/qualify_rotor_unused_acquisition.py",
+      "bytes": 5757
+    },
+    {
+      "path": "scripts/qualify_snu_source322.py",
+      "sha256": "c6663f89e7cf65d893e0088dee0295bb40208881e4444f078d3bf984d9365694",
+      "snapshot_key": "project/scripts/qualify_snu_source322.py",
+      "bytes": 10810
+    },
+    {
+      "path": "scripts/qualify_unlabeled_selection.py",
+      "sha256": "f62a25c7c77950466acbf7f956786ae8d3ef42218940f51091e69bfbb05770fe",
+      "snapshot_key": "project/scripts/qualify_unlabeled_selection.py",
+      "bytes": 10402
+    },
+    {
+      "path": "scripts/qualify_uoc_source.py",
+      "sha256": "e750a3ad082894cba4374e73433a17d867ddd5596d72acf53a5ff5bdfb8f11d4",
+      "snapshot_key": "project/scripts/qualify_uoc_source.py",
+      "bytes": 4938
+    },
+    {
+      "path": "scripts/qualify_xjtu_feedback.py",
+      "sha256": "8c6f0cdc42673d6ce937d623fb60e7adf697b7806bedf8e1866ebcd48d32bd4a",
+      "snapshot_key": "project/scripts/qualify_xjtu_feedback.py",
+      "bytes": 6155
+    },
+    {
+      "path": "scripts/qualify_xjtu_source.py",
+      "sha256": "2a1df7808e432d462f1cf112c4489c5f8b3232b2cc6662a0cff64745c9dd1412",
+      "snapshot_key": "project/scripts/qualify_xjtu_source.py",
+      "bytes": 10666
+    },
+    {
+      "path": "scripts/query_program_update.py",
+      "sha256": "852316988bef0550dc9e8ec2ecf0e24361a190387fabf7d097f5b5f02e000dc1",
+      "snapshot_key": "project/scripts/query_program_update.py",
+      "bytes": 21690
+    },
+    {
+      "path": "scripts/real_bearing_rul_model.py",
+      "sha256": "2b3a6c8bed5ba73d94a2beae70e11d1aa2e56418595c99d5330604a0fe7d5efa",
+      "snapshot_key": "project/scripts/real_bearing_rul_model.py",
+      "bytes": 7810
+    },
+    {
+      "path": "scripts/real_engine_health_model.py",
+      "sha256": "e23958cbc8d90e4073cc32696a40c6dde162bd18bf89ac46b8d2453fcec77b56",
+      "snapshot_key": "project/scripts/real_engine_health_model.py",
+      "bytes": 3362
+    },
+    {
+      "path": "scripts/real_fault_model.py",
+      "sha256": "9df8d81e4f92f1b2763015201d8264cca81487bd2e48e635954a9a57c79a93ab",
+      "snapshot_key": "project/scripts/real_fault_model.py",
+      "bytes": 7913
+    },
+    {
+      "path": "scripts/real_gap_rul_model.py",
+      "sha256": "e2da5bec27428fac51e1f68a7df0325d7b345c2372afb95be5e9e61425f80752",
+      "snapshot_key": "project/scripts/real_gap_rul_model.py",
+      "bytes": 5830
+    },
+    {
+      "path": "scripts/real_rul_model.py",
+      "sha256": "dc87ecf66f49e446a2c86e9f8916624151ede1828796c877cd658a3461ad57a7",
+      "snapshot_key": "project/scripts/real_rul_model.py",
+      "bytes": 14116
+    },
+    {
+      "path": "scripts/real_xjtu_rul_model.py",
+      "sha256": "90caabe7c375cd9b256e80b5d42c45468dc0e0bb6a877f9669b453c3d1ed0a38",
+      "snapshot_key": "project/scripts/real_xjtu_rul_model.py",
+      "bytes": 6578
+    },
+    {
+      "path": "scripts/reconstruct_cotfd6_inputs.py",
+      "sha256": "3fd94b22730dc180e6ed8bd2bcb8a52f6f4827968f2543b31721fa7e91cb5aa3",
+      "snapshot_key": "project/scripts/reconstruct_cotfd6_inputs.py",
+      "bytes": 11518
+    },
+    {
+      "path": "scripts/recount_evidence_role_review.py",
+      "sha256": "c516493593c29b657ac28f2715cb5cf1350c601f9fb727edf700531e40f5cf94",
+      "snapshot_key": "project/scripts/recount_evidence_role_review.py",
+      "bytes": 6420
+    },
+    {
+      "path": "scripts/recount_subject_capacity.py",
+      "sha256": "7b83f2e7d1b50fb2cd08a8b36a002aab94733b4009e60f61904a50dbdd5222ee",
+      "snapshot_key": "project/scripts/recount_subject_capacity.py",
+      "bytes": 8325
+    },
+    {
+      "path": "scripts/recover_confirmation_sources.py",
+      "sha256": "fe2869e21978218489299b46b9135d0352ea03c5d46a54368187f6d60495172d",
+      "snapshot_key": "project/scripts/recover_confirmation_sources.py",
+      "bytes": 6700
+    },
+    {
+      "path": "scripts/recover_forge_transport.py",
+      "sha256": "a80a1265f210c4f1c44684e983dd0d8c50b8e2ea6fa50d02c53dbc632f423c76",
+      "snapshot_key": "project/scripts/recover_forge_transport.py",
+      "bytes": 7055
+    },
+    {
+      "path": "scripts/recover_phmforge_inputs.py",
+      "sha256": "f3fcfcce497509afb5331f0b74c85262dcfe9f89afec53b41ebd1f079386e71f",
+      "snapshot_key": "project/scripts/recover_phmforge_inputs.py",
+      "bytes": 18335
+    },
+    {
+      "path": "scripts/refresh_verified_runtime.py",
+      "sha256": "43309816d8dee8855f76f33916968a1134f88d93ee46238697a2d47a336e606f",
+      "snapshot_key": "project/scripts/refresh_verified_runtime.py",
+      "bytes": 6284
+    },
+    {
+      "path": "scripts/render_experiment_data_report.py",
+      "sha256": "0371e6560c4786945494bb593cf54e37ea3172d533bf83bd9ce549ce19562770",
+      "snapshot_key": "project/scripts/render_experiment_data_report.py",
+      "bytes": 35612
+    },
+    {
+      "path": "scripts/replay_diagnostic_cli.py",
+      "sha256": "1ecfa65b4253ca1657fdd96a75d4877fe8b37ed773f8dd1eaad3a825b393afd2",
+      "snapshot_key": "project/scripts/replay_diagnostic_cli.py",
+      "bytes": 21356
+    },
+    {
+      "path": "scripts/replay_forge_detailed_controls.py",
+      "sha256": "3986801d045637819ebeceb102681aa01019236127a3733f49aed49d3d26524c",
+      "snapshot_key": "project/scripts/replay_forge_detailed_controls.py",
+      "bytes": 6462
+    },
+    {
+      "path": "scripts/replay_hust_fit_context.py",
+      "sha256": "98e2a0f53f1410470b38eccb00115d44a339d52ad150be49a3b1c22d21a2706f",
+      "snapshot_key": "project/scripts/replay_hust_fit_context.py",
+      "bytes": 14535
+    },
+    {
+      "path": "scripts/replay_maintie.py",
+      "sha256": "35099fff36c380410dfd192f8f60bf568712851103f80a4bdbd38bed3697184d",
+      "snapshot_key": "project/scripts/replay_maintie.py",
+      "bytes": 4758
+    },
+    {
+      "path": "scripts/replay_native_analysis.py",
+      "sha256": "87a8e79ca20892aa776ec3ff6019c778ab051aa2756b76e8b6ba79a8dc5488ac",
+      "snapshot_key": "project/scripts/replay_native_analysis.py",
+      "bytes": 8095
+    },
+    {
+      "path": "scripts/replay_original_smartgrid.py",
+      "sha256": "7eacce8c11ecc17dd676c74981f71bbb94f03990fb604c242dc4ff94400b1fef",
+      "snapshot_key": "project/scripts/replay_original_smartgrid.py",
+      "bytes": 5646
+    },
+    {
+      "path": "scripts/replay_program_checks.py",
+      "sha256": "dd1affc7a2b66498c1a30ad85cdc3f084ab6a0d189ec5727aa247e12961d3d78",
+      "snapshot_key": "project/scripts/replay_program_checks.py",
+      "bytes": 14246
+    },
+    {
+      "path": "scripts/replay_saved_rul_code.py",
+      "sha256": "07be4d76534fc6ae94ee0089ddd8afe6932d7f8c2a6cf6504ebdd6baf0892b4c",
+      "snapshot_key": "project/scripts/replay_saved_rul_code.py",
+      "bytes": 10114
+    },
+    {
+      "path": "scripts/replay_xjtu_blend.py",
+      "sha256": "25aa16e12da1a29848b173b7f7713e4dd525a60d35f2c571d19f4b3ad525f484",
+      "snapshot_key": "project/scripts/replay_xjtu_blend.py",
+      "bytes": 1714
+    },
+    {
+      "path": "scripts/replay_xjtu_components.py",
+      "sha256": "f3955dd798058ab2174e81be41148dea12584e8de14d3323d5654b3a362f8a58",
+      "snapshot_key": "project/scripts/replay_xjtu_components.py",
+      "bytes": 1575
+    },
+    {
+      "path": "scripts/report_controlled_feedback.py",
+      "sha256": "e81b641038bba2f8e363932c1a1d6d7bf6cd02740d6bd9086ebc8f548d2dac2d",
+      "snapshot_key": "project/scripts/report_controlled_feedback.py",
+      "bytes": 21802
+    },
+    {
+      "path": "scripts/report_frozen_candidate_review.py",
+      "sha256": "013c713f029f12d723a68c3b16faf040412f021a7b11e40f91420c63fab40783",
+      "snapshot_key": "project/scripts/report_frozen_candidate_review.py",
+      "bytes": 10553
+    },
+    {
+      "path": "scripts/restore_confidence_controls415.py",
+      "sha256": "6eb69fd86bb564c050e7814491071543ddbe056f019cba16b541c7b91ea2e2d8",
+      "snapshot_key": "project/scripts/restore_confidence_controls415.py",
+      "bytes": 3214
+    },
+    {
+      "path": "scripts/resume_engine_supervision.py",
+      "sha256": "115de78dd4f8df3b62c48f39c61d54436073b94b9efb8b28ac1e879d9e6933e4",
+      "snapshot_key": "project/scripts/resume_engine_supervision.py",
+      "bytes": 8693
+    },
+    {
+      "path": "scripts/resume_forge_sources.py",
+      "sha256": "b29fae4360184f8608ab25521c61076e9da0d67c8a9813c3a3409202ed46d4a3",
+      "snapshot_key": "project/scripts/resume_forge_sources.py",
+      "bytes": 6217
+    },
+    {
+      "path": "scripts/review_longhaul.py",
+      "sha256": "f8c988b90c03bafc3a2cb51a2b6c33f52060990f68de969cc2c8efd26986caea",
+      "snapshot_key": "project/scripts/review_longhaul.py",
+      "bytes": 5938
+    },
+    {
+      "path": "scripts/rotor_patch_factorial.py",
+      "sha256": "997367b2a48d56c13f564203eaca27ad076c1ca907ec3853747a7145ecbf9311",
+      "snapshot_key": "project/scripts/rotor_patch_factorial.py",
+      "bytes": 13064
+    },
+    {
+      "path": "scripts/rotor_registered_components.py",
+      "sha256": "1e812b5e790e179d9f0c04737c809d0adf89e7b941ea43ec3305d90933a38068",
+      "snapshot_key": "project/scripts/rotor_registered_components.py",
+      "bytes": 4065
+    },
+    {
+      "path": "scripts/rotor_representation_control.py",
+      "sha256": "e2ec3ab3cee98b786438b803f0d4fa62e30b03f4aaf90929822557202fef4221",
+      "snapshot_key": "project/scripts/rotor_representation_control.py",
+      "bytes": 9478
+    },
+    {
+      "path": "scripts/rul_partial_regret.py",
+      "sha256": "27cc476d164b1d9c07534cc2923abd6133217f6b0ad8d664a5fe0706d8ef2888",
+      "snapshot_key": "project/scripts/rul_partial_regret.py",
+      "bytes": 1511
+    },
+    {
+      "path": "scripts/rul_prediction_transport.py",
+      "sha256": "a1ef167412992b1002d30fb3731397d504c43e9f47ac377f54bc7120d3b8adc4",
+      "snapshot_key": "project/scripts/rul_prediction_transport.py",
+      "bytes": 2284
+    },
+    {
+      "path": "scripts/run_additional_validation_agents.py",
+      "sha256": "a5edcc024b21b819dc06af1a1f6c5381d7bbada4c51230b63fc5ea958a069e97",
+      "snapshot_key": "project/scripts/run_additional_validation_agents.py",
+      "bytes": 12222
+    },
+    {
+      "path": "scripts/run_benchmark_recovery.py",
+      "sha256": "705da4f5eb0650536a403739f1c66eafb5b75a148c4eb599b3dd45ed2218b023",
+      "snapshot_key": "project/scripts/run_benchmark_recovery.py",
+      "bytes": 6947
+    },
+    {
+      "path": "scripts/run_cmapss_coding_pilot.py",
+      "sha256": "42606c8dfaa835905d3de2f8ce874360a2ffac8bed3a1ae481fb9065097c3979",
+      "snapshot_key": "project/scripts/run_cmapss_coding_pilot.py",
+      "bytes": 22154
+    },
+    {
+      "path": "scripts/run_codex_probe.py",
+      "sha256": "f9a6707e35c6e92ed8707def112237a0ef8404220031bc611eb72487c4ea6a24",
+      "snapshot_key": "project/scripts/run_codex_probe.py",
+      "bytes": 2675
+    },
+    {
+      "path": "scripts/run_competing_hypotheses.py",
+      "sha256": "37cf138d3619618836a13a7bdd8e3a3710aea000048cd955550c1408c2d3054c",
+      "snapshot_key": "project/scripts/run_competing_hypotheses.py",
+      "bytes": 32913
+    },
+    {
+      "path": "scripts/run_controlled_feedback.py",
+      "sha256": "7add891fdad1e21bc6ab15e9b861dfe423ef9dcfc11f6027c7ca38abd095813d",
+      "snapshot_key": "project/scripts/run_controlled_feedback.py",
+      "bytes": 35278
+    },
+    {
+      "path": "scripts/run_frozen_bearing_reference.py",
+      "sha256": "8b101502c2e06f53d80f4eddff5d97e20266b80cfaa9a5201cfe0be132d6b40e",
+      "snapshot_key": "project/scripts/run_frozen_bearing_reference.py",
+      "bytes": 3310
+    },
+    {
+      "path": "scripts/run_frozen_candidate_review.py",
+      "sha256": "83306c83aab9149d8ae4817098bdd8a0631591f67e6f4cc7fe37b7f90a92571b",
+      "snapshot_key": "project/scripts/run_frozen_candidate_review.py",
+      "bytes": 23564
+    },
+    {
+      "path": "scripts/run_full_benchmark_campaign.py",
+      "sha256": "701f74c7b63e55278f414b8cbcec3ce1289b272693665dc28cb5d31d078247fd",
+      "snapshot_key": "project/scripts/run_full_benchmark_campaign.py",
+      "bytes": 12526
+    },
+    {
+      "path": "scripts/run_g2_qualification.py",
+      "sha256": "238cd35d9259a90ab12356f646742cbd467588d5817959ca0268b189ad84fa56",
+      "snapshot_key": "project/scripts/run_g2_qualification.py",
+      "bytes": 10515
+    },
+    {
+      "path": "scripts/run_hust_lineage_comparison.py",
+      "sha256": "615d9ae9690fdae4d5c49e60552a4000567340c427270525eb694b1bf6a90ced",
+      "snapshot_key": "project/scripts/run_hust_lineage_comparison.py",
+      "bytes": 16046
+    },
+    {
+      "path": "scripts/run_hust_lineage_followup.py",
+      "sha256": "d326781de9b4a81180611eebec70b1dd914a7b1a85e67b3093b22b62b019c7db",
+      "snapshot_key": "project/scripts/run_hust_lineage_followup.py",
+      "bytes": 12234
+    },
+    {
+      "path": "scripts/run_hust_program_pilot.py",
+      "sha256": "b2d6d03ea79dbd262696e81f28b38c545754fed442ccae28209b7bec499a6666",
+      "snapshot_key": "project/scripts/run_hust_program_pilot.py",
+      "bytes": 17977
+    },
+    {
+      "path": "scripts/run_hust_reference.py",
+      "sha256": "5bc130e117bb40a53e8a0b7689b0287a5677b0dba4124b8f8d1e581c3f91f8c2",
+      "snapshot_key": "project/scripts/run_hust_reference.py",
+      "bytes": 7017
+    },
+    {
+      "path": "scripts/run_hust_validation_contrast.py",
+      "sha256": "2facfd41902f6351036e02aa64c584e86b295fdd4410d50ca0fd2b03dd45668e",
+      "snapshot_key": "project/scripts/run_hust_validation_contrast.py",
+      "bytes": 6096
+    },
+    {
+      "path": "scripts/run_instruction_contrast.py",
+      "sha256": "ff0512fc1872172142642eaf9b3e70d2b54a89fe821860676f2337f4a2737116",
+      "snapshot_key": "project/scripts/run_instruction_contrast.py",
+      "bytes": 5823
+    },
+    {
+      "path": "scripts/run_mlestar_phm.py",
+      "sha256": "feaa019923249d5b7d9d5748157d70d2a5f463086b726a76d0793663e0c8e5d1",
+      "snapshot_key": "project/scripts/run_mlestar_phm.py",
+      "bytes": 8675
+    },
+    {
+      "path": "scripts/run_mvt_reference.py",
+      "sha256": "bd70b6591dd834e6af47ce948d69265eeb5ee261578dba36c1378142390385fb",
+      "snapshot_key": "project/scripts/run_mvt_reference.py",
+      "bytes": 14735
+    },
+    {
+      "path": "scripts/run_native_budget_qualification.py",
+      "sha256": "1494a1ace0c67d005df503b7ae475677f6689c46ef53a1129e179a609cef1cef",
+      "snapshot_key": "project/scripts/run_native_budget_qualification.py",
+      "bytes": 12950
+    },
+    {
+      "path": "scripts/run_original_phm_batch.py",
+      "sha256": "bd223b8542d74525d5dc2a172b51971dea04be23dfaaf46c589f5e441042ccdf",
+      "snapshot_key": "project/scripts/run_original_phm_batch.py",
+      "bytes": 5122
+    },
+    {
+      "path": "scripts/run_parallel_benchmark_queues.py",
+      "sha256": "863a6bb4d5d34b8008ac4cd19fb76c79847d1f9e67cac46c234cc31b5c4f4f8d",
+      "snapshot_key": "project/scripts/run_parallel_benchmark_queues.py",
+      "bytes": 11409
+    },
+    {
+      "path": "scripts/run_partial_update_baseline.py",
+      "sha256": "7c9bdc09bc7e478507926af297876bd630622d40968e93e91784d7a3abb9bbf8",
+      "snapshot_key": "project/scripts/run_partial_update_baseline.py",
+      "bytes": 17689
+    },
+    {
+      "path": "scripts/run_qualified_reviews.py",
+      "sha256": "b739851f3c1673d67ddea4efe562aa6811ed8026f69afff4d43cba15477eebba",
+      "snapshot_key": "project/scripts/run_qualified_reviews.py",
+      "bytes": 3804
+    },
+    {
+      "path": "scripts/run_rotor_replicates.py",
+      "sha256": "69459aecf5162ff9af0bd19398060de831df4abf57475f41308086cc89fb795b",
+      "snapshot_key": "project/scripts/run_rotor_replicates.py",
+      "bytes": 4146
+    },
+    {
+      "path": "scripts/run_scope_patch_review.py",
+      "sha256": "6fc69b2d754449445094fe4ad45170d01317783c8735b043f9b469d12c90e4b1",
+      "snapshot_key": "project/scripts/run_scope_patch_review.py",
+      "bytes": 30162
+    },
+    {
+      "path": "scripts/run_strategy_rebuild.py",
+      "sha256": "858ae7167d7033622546153ba217535e06db4d4dcc25a91db09565ccfeded9c6",
+      "snapshot_key": "project/scripts/run_strategy_rebuild.py",
+      "bytes": 17868
+    },
+    {
+      "path": "scripts/run_submission_review.py",
+      "sha256": "1880aa5416af04646abbf26d2f7cbaee8de8b0ae227d10bd4ed99722ed8e22d9",
+      "snapshot_key": "project/scripts/run_submission_review.py",
+      "bytes": 27052
+    },
+    {
+      "path": "scripts/run_validation_transfer.py",
+      "sha256": "631ccd3326911facc444d09e27685568a2a8bdc5f67dc71372bb8ce0a0374b4c",
+      "snapshot_key": "project/scripts/run_validation_transfer.py",
+      "bytes": 20447
+    },
+    {
+      "path": "scripts/run_verified_benchmarks.py",
+      "sha256": "3865292c23bff349cb7506dbb78c796afbea79fc4651f996651bf3aa6b985cd1",
+      "snapshot_key": "project/scripts/run_verified_benchmarks.py",
+      "bytes": 6478
+    },
+    {
+      "path": "scripts/run_xjtu_feedback.py",
+      "sha256": "55d9c31ed22fc047f442eff5d72de19a5a54c5a49ae1bbd6e1d54d8db3e5bf30",
+      "snapshot_key": "project/scripts/run_xjtu_feedback.py",
+      "bytes": 17069
+    },
+    {
+      "path": "scripts/score_acoustic_tasks.py",
+      "sha256": "a8de817315bfcd79bea64de95b5c0efafb9a031db0e98f1d33a768edc812eaea",
+      "snapshot_key": "project/scripts/score_acoustic_tasks.py",
+      "bytes": 3667
+    },
+    {
+      "path": "scripts/score_admit162.py",
+      "sha256": "5c0747a603531eb10e293d2ed218f9b1e6474313bf41d31827950cf36b0c5961",
+      "snapshot_key": "project/scripts/score_admit162.py",
+      "bytes": 4090
+    },
+    {
+      "path": "scripts/score_assetops_hf.py",
+      "sha256": "e09c65c2f7a8447eca58945f315419b32c21cf96f072e030ffa2e5e55be54334",
+      "snapshot_key": "project/scripts/score_assetops_hf.py",
+      "bytes": 22578
+    },
+    {
+      "path": "scripts/score_cached_diagnosis.py",
+      "sha256": "469dadba159ef77bd7e9d5fc3dc48f8991c154e79a5ea7cada2f759c8949f566",
+      "snapshot_key": "project/scripts/score_cached_diagnosis.py",
+      "bytes": 4739
+    },
+    {
+      "path": "scripts/score_cmapss_coding_pilot.py",
+      "sha256": "4337a4ac632bccbc25278f79d123e9423f307da4ab7f508f8093ce329fcccb50",
+      "snapshot_key": "project/scripts/score_cmapss_coding_pilot.py",
+      "bytes": 12169
+    },
+    {
+      "path": "scripts/score_corpus_paired_control.py",
+      "sha256": "910ce6fd3e10c884a2baa90db28163c2906d638096bb07e768c971b78199313d",
+      "snapshot_key": "project/scripts/score_corpus_paired_control.py",
+      "bytes": 6832
+    },
+    {
+      "path": "scripts/score_engine_forge_coding.py",
+      "sha256": "d1f5b7a5122206291604ca1cfc4aa90d83107fc35639000da8267a3b4447a1d2",
+      "snapshot_key": "project/scripts/score_engine_forge_coding.py",
+      "bytes": 23497
+    },
+    {
+      "path": "scripts/score_evidence_role_review.py",
+      "sha256": "a8f59d9221f849f5a303f8b2f55a12d0eae4099c24a70c551c8f6db922d79033",
+      "snapshot_key": "project/scripts/score_evidence_role_review.py",
+      "bytes": 7292
+    },
+    {
+      "path": "scripts/score_forge_detailed_tasks.py",
+      "sha256": "193ed2ef0b068e0f2a73d484c448b81afa1bc6406124b108d1d47670f5924093",
+      "snapshot_key": "project/scripts/score_forge_detailed_tasks.py",
+      "bytes": 9148
+    },
+    {
+      "path": "scripts/score_forge_expansion.py",
+      "sha256": "cfc4264ad849c2e8628c353954e53251924ae0878faf545b590a38b89643338f",
+      "snapshot_key": "project/scripts/score_forge_expansion.py",
+      "bytes": 25305
+    },
+    {
+      "path": "scripts/score_full_benchmark_campaign.py",
+      "sha256": "9138d00321594fccd79c8cb1f534968d64decc901b973474478282beaa888a96",
+      "snapshot_key": "project/scripts/score_full_benchmark_campaign.py",
+      "bytes": 6725
+    },
+    {
+      "path": "scripts/score_longhaul.py",
+      "sha256": "60e839be699ab4e322707b9d05e072da92df5fe9d78f404b84533c8f925bf6ec",
+      "snapshot_key": "project/scripts/score_longhaul.py",
+      "bytes": 4990
+    },
+    {
+      "path": "scripts/score_maintie.py",
+      "sha256": "424468886c7dec9a85f8a5f713813087a94f3f1858dbefcf812f772b8b6b99a4",
+      "snapshot_key": "project/scripts/score_maintie.py",
+      "bytes": 4356
+    },
+    {
+      "path": "scripts/score_public_submission_splits.py",
+      "sha256": "b7ade48049d6331f8f7c275dddf285cda8cca889bc08105a8e3723af74cf215c",
+      "snapshot_key": "project/scripts/score_public_submission_splits.py",
+      "bytes": 5769
+    },
+    {
+      "path": "scripts/score_realflow_batch.py",
+      "sha256": "24b6817d0f046c61a25c9585f85dd6147186d76db2c0029fbe688e9913e2e3d2",
+      "snapshot_key": "project/scripts/score_realflow_batch.py",
+      "bytes": 5829
+    },
+    {
+      "path": "scripts/score_scoped_decisions.py",
+      "sha256": "ec78f6d8670b2021a94edca007506c091673268de941f9859c642334682e3649",
+      "snapshot_key": "project/scripts/score_scoped_decisions.py",
+      "bytes": 3200
+    },
+    {
+      "path": "scripts/score_tool_audit.py",
+      "sha256": "54d26842dffb2f369047f3d651ad74fceb11250e5e2a6adcd61a30e11c649c20",
+      "snapshot_key": "project/scripts/score_tool_audit.py",
+      "bytes": 3470
+    },
+    {
+      "path": "scripts/score_validation_scope_campaign.py",
+      "sha256": "45e86a5218dc2c49d0b1aecdb92c7d31e3a928691465593ef7195331f2f01dd7",
+      "snapshot_key": "project/scripts/score_validation_scope_campaign.py",
+      "bytes": 19301
+    },
+    {
+      "path": "scripts/score_verified_qualification.py",
+      "sha256": "8793c819b718470ebddf2ecb261ac46a6aed20de912fc0a73b167a755ba14da0",
+      "snapshot_key": "project/scripts/score_verified_qualification.py",
+      "bytes": 8063
+    },
+    {
+      "path": "scripts/screen_anchored_score_updates.py",
+      "sha256": "4c0acea203865cde94452cba75ca9fde3510d82ce9ad0f47131b27e4aa319043",
+      "snapshot_key": "project/scripts/screen_anchored_score_updates.py",
+      "bytes": 12903
+    },
+    {
+      "path": "scripts/screen_bound_program_risk.py",
+      "sha256": "74b828a22ac15044eee1d45d553a70ba46eadf4bba992da04e936c7b6ee92563",
+      "snapshot_key": "project/scripts/screen_bound_program_risk.py",
+      "bytes": 8094
+    },
+    {
+      "path": "scripts/screen_code_evidence.py",
+      "sha256": "5cc4dac11e177ce4d6e2733b7d5832019a57b27705cbb7c25723a34bb54e11ce",
+      "snapshot_key": "project/scripts/screen_code_evidence.py",
+      "bytes": 25395
+    },
+    {
+      "path": "scripts/screen_corpus_paired_control.py",
+      "sha256": "6fd3fc35d97cb1c931ec06057994d7470737d5e685c597eacb6545f1a0bc98dc",
+      "snapshot_key": "project/scripts/screen_corpus_paired_control.py",
+      "bytes": 6686
+    },
+    {
+      "path": "scripts/screen_cross_source_ranking.py",
+      "sha256": "16e02c56680a08bab84cf1c4d28d6dfe1b6190d24cc3d8f8b031f49f45eb0da1",
+      "snapshot_key": "project/scripts/screen_cross_source_ranking.py",
+      "bytes": 19028
+    },
+    {
+      "path": "scripts/screen_ensemble_validation.py",
+      "sha256": "67832d312435c47ff5fefd084b73a47610973283f6376fc5938ab59a01879f05",
+      "snapshot_key": "project/scripts/screen_ensemble_validation.py",
+      "bytes": 16682
+    },
+    {
+      "path": "scripts/screen_hust_selection_controls.py",
+      "sha256": "d8077815c71ba5a1ea4bda89fbc9430c6fd1dc5a30a5db17f9dfa8e3d084e201",
+      "snapshot_key": "project/scripts/screen_hust_selection_controls.py",
+      "bytes": 3309
+    },
+    {
+      "path": "scripts/screen_learned_combinations.py",
+      "sha256": "a71798a6782bdf7d937e5fe6c0ad88cab74a2e447a62db41603f8aea8c90b7c5",
+      "snapshot_key": "project/scripts/screen_learned_combinations.py",
+      "bytes": 20237
+    },
+    {
+      "path": "scripts/screen_local_program_risk.py",
+      "sha256": "5f63ba2ba5d15503f0b491adb935742ce547a1a6e50458dca08b75d13199aec2",
+      "snapshot_key": "project/scripts/screen_local_program_risk.py",
+      "bytes": 15828
+    },
+    {
+      "path": "scripts/screen_observation_selection.py",
+      "sha256": "99a7172dea3fa008789af9f6f6b060b487effa564a58cba3eb52697361a69310",
+      "snapshot_key": "project/scripts/screen_observation_selection.py",
+      "bytes": 16393
+    },
+    {
+      "path": "scripts/screen_partial_program_updates.py",
+      "sha256": "3f335b2b589f6467a7944551e205e47f87a7c79240e39c5659add8a5e7a72b58",
+      "snapshot_key": "project/scripts/screen_partial_program_updates.py",
+      "bytes": 16690
+    },
+    {
+      "path": "scripts/screen_program_risk_representations.py",
+      "sha256": "5cfa992d267c4c4e615d6ced314070995731261cd315f428b6bdaa27cd3fe589",
+      "snapshot_key": "project/scripts/screen_program_risk_representations.py",
+      "bytes": 3670
+    },
+    {
+      "path": "scripts/screen_program_semantics.py",
+      "sha256": "1f38accb03cbf45d5e0db6af5c974c4820c40580b6ebcf00e5480b60baba5e72",
+      "snapshot_key": "project/scripts/screen_program_semantics.py",
+      "bytes": 6489
+    },
+    {
+      "path": "scripts/screen_program_updates.py",
+      "sha256": "ed532984db04cda7a508a2b8e581c50a4f38dfff52ac1b0404f5511672efb1b4",
+      "snapshot_key": "project/scripts/screen_program_updates.py",
+      "bytes": 41064
+    },
+    {
+      "path": "scripts/screen_score_blinding.py",
+      "sha256": "8a23f08fd3489583f3fde5f256a556ec396bd9c46c2ad5a9defdf6eb04c16c50",
+      "snapshot_key": "project/scripts/screen_score_blinding.py",
+      "bytes": 17788
+    },
+    {
+      "path": "scripts/screen_trajectory_validation.py",
+      "sha256": "efe19a478737beb452186774d25812c0d6edcacb6e3e08d08f193103e841f9fa",
+      "snapshot_key": "project/scripts/screen_trajectory_validation.py",
+      "bytes": 12300
+    },
+    {
+      "path": "scripts/snu_order_control.py",
+      "sha256": "f756f7dab9fcbf4e1cfae74cb7ca1058f96dceb75566d0fa7f252af6b8003323",
+      "snapshot_key": "project/scripts/snu_order_control.py",
+      "bytes": 17304
+    },
+    {
+      "path": "scripts/source_snapshot.py",
+      "sha256": "1bb3806eb5f8a8ea4bfc42e07aa5c8689b05d4d506219ec160bfe2ff7268864f",
+      "snapshot_key": "project/scripts/source_snapshot.py",
+      "bytes": 3817
+    },
+    {
+      "path": "scripts/summarize_competing_hypotheses.py",
+      "sha256": "0cdb51466234ee785f9fe52e52092087e3df155602bdf0fc9531c2a4df4ca8f1",
+      "snapshot_key": "project/scripts/summarize_competing_hypotheses.py",
+      "bytes": 6120
+    },
+    {
+      "path": "scripts/summarize_controlled_trials.py",
+      "sha256": "b9b55449220cbbbbcbbf144f021828d018669bdb747b3f966eeebf2852187312",
+      "snapshot_key": "project/scripts/summarize_controlled_trials.py",
+      "bytes": 8901
+    },
+    {
+      "path": "scripts/summarize_frozen_reviews.py",
+      "sha256": "cf921a2f7922c53b9d11b8d19743ce81d6679a4d3449c8044e95718e34c97f83",
+      "snapshot_key": "project/scripts/summarize_frozen_reviews.py",
+      "bytes": 5570
+    },
+    {
+      "path": "scripts/summarize_imprl_continuation.py",
+      "sha256": "72f3b73d89fb27b9e1fba6a30d1ed3fb6122e7619a7503b59625bbefe751bbff",
+      "snapshot_key": "project/scripts/summarize_imprl_continuation.py",
+      "bytes": 2966
+    },
+    {
+      "path": "scripts/summarize_imprl_eval.py",
+      "sha256": "eb5f0af928f5e8cef62351260ea6a6209434dd196326b4604471083c57c26dc9",
+      "snapshot_key": "project/scripts/summarize_imprl_eval.py",
+      "bytes": 3856
+    },
+    {
+      "path": "scripts/summarize_maintenance_campaign.py",
+      "sha256": "e20e9346658d0a9a36e14b1a8e0b61bf1572074a4729ef8864f00f3fc2013a98",
+      "snapshot_key": "project/scripts/summarize_maintenance_campaign.py",
+      "bytes": 4527
+    },
+    {
+      "path": "scripts/summarize_review_branches241.py",
+      "sha256": "c0b9a5421c288d24df080a0cbd43218fb220b8c491f1736920cef96f1f52e512",
+      "snapshot_key": "project/scripts/summarize_review_branches241.py",
+      "bytes": 8368
+    },
+    {
+      "path": "scripts/summarize_selection_evidence.py",
+      "sha256": "b145308a6e39edf86b28f7314cf0763de9d2df13772a5de4023d3756abd50a3a",
+      "snapshot_key": "project/scripts/summarize_selection_evidence.py",
+      "bytes": 10508
+    },
+    {
+      "path": "scripts/summarize_selection_expansion.py",
+      "sha256": "2e55321d23a436aa94d99a259c02dd687faaa835b9b2a1cefb25f02a56b60ccc",
+      "snapshot_key": "project/scripts/summarize_selection_expansion.py",
+      "bytes": 9560
+    },
+    {
+      "path": "scripts/summarize_source_feasibility.py",
+      "sha256": "c5ce8a1a815ff33281177bb9be1dfa5598a50d3f0d6ac4243062f5437dba4868",
+      "snapshot_key": "project/scripts/summarize_source_feasibility.py",
+      "bytes": 2295
+    },
+    {
+      "path": "scripts/summarize_validation_transfer.py",
+      "sha256": "550b6da8cbcafac3fb086faf2c0bf011ae3e10ffb8fcc1f7914fcb158032b31f",
+      "snapshot_key": "project/scripts/summarize_validation_transfer.py",
+      "bytes": 9090
+    },
+    {
+      "path": "scripts/synthesize_historical_evidence217.py",
+      "sha256": "991b2cd7dd32457b09c0368808f99a0fa3e391577b84027814a88090e914d87d",
+      "snapshot_key": "project/scripts/synthesize_historical_evidence217.py",
+      "bytes": 25959
+    },
+    {
+      "path": "scripts/tool_bridge_client.py",
+      "sha256": "5bc6fc8605e1cac7fc5c5f15de2849206abb9216039c1a6e76d6a9d03aca740e",
+      "snapshot_key": "project/scripts/tool_bridge_client.py",
+      "bytes": 3682
+    },
+    {
+      "path": "scripts/trace_saved_regression_components.py",
+      "sha256": "7f9f1df5be191d2591c9239c8835491c965efaf21f8df9187a35078de740471d",
+      "snapshot_key": "project/scripts/trace_saved_regression_components.py",
+      "bytes": 13409
+    },
+    {
+      "path": "scripts/transport_cmapss_programs.py",
+      "sha256": "eba387209477a2567c0483c279cf62fd52feac6e8e94c2f3c682e906dcb1b451",
+      "snapshot_key": "project/scripts/transport_cmapss_programs.py",
+      "bytes": 9702
+    },
+    {
+      "path": "scripts/validate_component_readouts.py",
+      "sha256": "b407f2efdc7b0c0610a98e119e0348f9b20b232c4bad8fe7fd6bd62c97c6b0cc",
+      "snapshot_key": "project/scripts/validate_component_readouts.py",
+      "bytes": 22532
+    },
+    {
+      "path": "scripts/validate_snu_record_groups.py",
+      "sha256": "fe962c9b75548d074f89c2c00607bfce937f1e4b9b619325a372e09d55d28cea",
+      "snapshot_key": "project/scripts/validate_snu_record_groups.py",
+      "bytes": 15388
+    },
+    {
+      "path": "scripts/validation_evidence_calibration.py",
+      "sha256": "3e40723032f1a4042166b6d83c2f4dfa74a7857028860798acb61cafa8aba1ef",
+      "snapshot_key": "project/scripts/validation_evidence_calibration.py",
+      "bytes": 4405
+    },
+    {
+      "path": "scripts/validation_reliability_pilot.py",
+      "sha256": "d631b7643d18b4ef26fe6c2cc80b9b16ea3eed2e3347c00ae1a2402cd49cdd13",
+      "snapshot_key": "project/scripts/validation_reliability_pilot.py",
+      "bytes": 18209
+    },
+    {
+      "path": "scripts/validation_reliability_policy.py",
+      "sha256": "3a2751989525ad4e3ec6ed4cdd2d9cca4d1b87b5aca2574c62dcd1f3c582eab0",
+      "snapshot_key": "project/scripts/validation_reliability_policy.py",
+      "bytes": 2298
+    },
+    {
+      "path": "scripts/validation_reliability_study.py",
+      "sha256": "ab17d6b0a7685c57d6e43f23233616c27a0586402ef9667856e49c5c378aae8e",
+      "snapshot_key": "project/scripts/validation_reliability_study.py",
+      "bytes": 13680
+    },
+    {
+      "path": "scripts/verified_asset_audit.py",
+      "sha256": "9aebf8882a8b1bf7e296ad0278a791dd6ee1bdeae077af06b9f287765caf7d9c",
+      "snapshot_key": "project/scripts/verified_asset_audit.py",
+      "bytes": 2535
+    },
+    {
+      "path": "scripts/verified_asset_forecast.py",
+      "sha256": "fa9a02c213086d87597352ac31204873ffbecf29e57c2be43e49c296cd2e2df6",
+      "snapshot_key": "project/scripts/verified_asset_forecast.py",
+      "bytes": 3100
+    },
+    {
+      "path": "scripts/verified_benchmark_scoring.py",
+      "sha256": "58bd767b6098e8961c08ad63bb8b5076864de04b53df32e25edd89de5d6ca0a5",
+      "snapshot_key": "project/scripts/verified_benchmark_scoring.py",
+      "bytes": 6364
+    },
+    {
+      "path": "scripts/verified_benchmark_worker.py",
+      "sha256": "12a737057032048db85555f6b744862019d74bd1d4bf6abe7939b359ba53ea97",
+      "snapshot_key": "project/scripts/verified_benchmark_worker.py",
+      "bytes": 3570
+    },
+    {
+      "path": "scripts/verified_phmforge.py",
+      "sha256": "131ed468b0fb24c6c86de32d75e695b5ca7df078c76d6403870334cf153199d6",
+      "snapshot_key": "project/scripts/verified_phmforge.py",
+      "bytes": 21433
+    },
+    {
+      "path": "scripts/verified_range_recovery.py",
+      "sha256": "e4387618d8511738bba07e1f83633103e1517c5e50795507a416b18723c21f4a",
+      "snapshot_key": "project/scripts/verified_range_recovery.py",
+      "bytes": 5015
+    },
+    {
+      "path": "scripts/verify_cwru_cost_failure.py",
+      "sha256": "f578cf9e9c16af5e9b58ee1850dee5019cd075d3267febfb5bec51a50081c152",
+      "snapshot_key": "project/scripts/verify_cwru_cost_failure.py",
+      "bytes": 5650
+    },
+    {
+      "path": "scripts/verify_installed_mcp.py",
+      "sha256": "e324c833ac2420b520cd339a0812693087c1e4b06b0f8b1aa6dd8ba0e703b1dd",
+      "snapshot_key": "project/scripts/verify_installed_mcp.py",
+      "bytes": 4730
+    },
+    {
+      "path": "scripts/verify_partial_archive.py",
+      "sha256": "2b82046c2daaa7ee2b7362c4f010ab99fde4da06c257ed61887e3a0658bb6785",
+      "snapshot_key": "project/scripts/verify_partial_archive.py",
+      "bytes": 5055
+    },
+    {
+      "path": "scripts/verify_pdm_fault001_248.py",
+      "sha256": "760c2100d6304d9325b70c2116ecebbc9c4e45fea77a8dc48edd286912eaf877",
+      "snapshot_key": "project/scripts/verify_pdm_fault001_248.py",
+      "bytes": 10337
+    },
+    {
+      "path": "scripts/verify_pdm_fault004_247.py",
+      "sha256": "ba167ec008f290d9b1a535109214dc09650f7f14f747a11a0a65d527a9a6a7a9",
+      "snapshot_key": "project/scripts/verify_pdm_fault004_247.py",
+      "bytes": 9073
+    },
+    {
+      "path": "scripts/verify_pdm_fault013_250.py",
+      "sha256": "7597375d8db7d27b6d9bd3361b34bf4ffa2664caefc10e4128b5b800f8cd97dc",
+      "snapshot_key": "project/scripts/verify_pdm_fault013_250.py",
+      "bytes": 11300
+    },
+    {
+      "path": "scripts/verify_pdm_fault015_249.py",
+      "sha256": "d0e3313f94af3d1eb663cda16e019c5199e52ba11175da6751725a293d48832c",
+      "snapshot_key": "project/scripts/verify_pdm_fault015_249.py",
+      "bytes": 9198
+    },
+    {
+      "path": "scripts/verify_phmforge_access251.py",
+      "sha256": "b2ff186215fffdbcdb1cd2a99a299c67f08b317e2ab78761e81396a9ae3e197f",
+      "snapshot_key": "project/scripts/verify_phmforge_access251.py",
+      "bytes": 6372
+    },
+    {
+      "path": "scripts/verify_phmforge_coding252.py",
+      "sha256": "b3aabffd84035365707c15a429fb5ca8de881044a8a60c1638b59d5caf91db76",
+      "snapshot_key": "project/scripts/verify_phmforge_coding252.py",
+      "bytes": 6734
+    },
+    {
+      "path": "scripts/verify_runtime_refresh243.py",
+      "sha256": "3b13e978e928457b32be63d3b126b25770d230072778c00aa8d72e9eca7907ea",
+      "snapshot_key": "project/scripts/verify_runtime_refresh243.py",
+      "bytes": 3029
+    }
+  ],
+  "all_exact_copies": true,
+  "python_files": 461
+}

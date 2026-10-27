@@ -14,6 +14,7 @@ import zipfile
 
 import numpy as np
 from scipy.io import loadmat
+from .io import file_sha256, write_json
 
 
 NASA_URL = "https://zenodo.org/records/15346912/files/CMAPSSData.zip?download=1"
@@ -27,20 +28,6 @@ NASA_MEMBERS = {
 
 def resource_json(name):
     return json.loads(files("phmforge_bench.resources").joinpath(name).read_text(encoding="utf-8"))
-
-
-def write_json(path, value):
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-
-
-def file_sha256(path):
-    h = hashlib.sha256()
-    with Path(path).open("rb") as f:
-        for block in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(block)
-    return h.hexdigest()
 
 
 def download(url, path, expected_hash, expected_size=None):

@@ -172,7 +172,7 @@ class VerifiedForge:
                 windows, _, records = rul.development_windows(
                     raw, config["validation_engine_ids"], config, validation=True)
                 path = self.output / f"development_observations_{uuid.uuid4().hex[:12]}.npz"
-                np.savez_compressed(path, windows=windows,
+                np.savez_compressed(path, dataset=np.asarray(name), windows=windows,
                     unit_ids=np.asarray([r["unit_id"] for r in records]),
                     endpoint_cycles=np.asarray([r["endpoint_cycle"] for r in records]),
                     sample_ids=np.asarray([f"{r['unit_id']}:{r['endpoint_cycle']}" for r in records]))

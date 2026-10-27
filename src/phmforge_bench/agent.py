@@ -16,13 +16,13 @@ from .runner import _ready, evaluate, train_reference, workspace
 
 def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
               max_requests=40, max_input_tokens=4000000, max_output_tokens=65536,
-              max_output_per_request=8192, smoke=False):
+              max_output_per_request=8192, smoke=False, _context=None):
     """Develop a submission without mounting holdout data; then cold-score it.
 
     The Responses-compatible provider and credentials remain in the outer
     process. The agent can use only the task-scoped relay in its network namespace.
     """
-    root, meta = _ready(data_root)
+    root, meta = (_context['root'], _context['meta']) if _context else _ready(data_root)
     run, cli = Path(run_dir).resolve(), Path(cli).resolve()
     if run.exists():
         raise FileExistsError(run)
@@ -57,17 +57,22 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
         'max_total_output_tokens':max_output_tokens, 'max_output_per_request':max_output_per_request,
         'network':'isolated namespace with task-scoped Responses relay',
         'development_data':'training and development only', 'final_observations_and_labels_in_development':False,
-        'starter':'genuinely fitted reference, independently replaceable', 'starter_epochs':epochs,
+        'starter': 'historical submitted program' if _context else 'genuinely fitted reference, independently replaceable',
+        'starter_epochs':None if _context else epochs,
         'mode':'engineering smoke test' if smoke else 'open research task',
         'actual_returned_model_ids':'see model_gateway status and receipts',
         'scope':'engineering / research adaptation, not an official PHMForge score',
         'created_utc':datetime.now(timezone.utc).isoformat()}
     write_json(run/'PROTOCOL.json', meta_protocol)
-    workspace(root, ws)
-    starter = train_reference(root, ws/'submission', epochs)
+    if _context:
+        starter = _context['prepare'](ws)
+    else:
+        workspace(root, ws)
+        starter = train_reference(root, ws/'submission', epochs)
     for name in ['tmp', 'mpl', 'xdg']:
         (ws/'.runtime'/name).mkdir(parents=True)
-    (ws/'AGENTS.md').write_text('Use only the provided training and development files. Keep all temporary files in /app/.runtime. Final inputs, labels and scores are unavailable. Submit executable code and any model files under /app/submission.\n')
+    submission_path = '/app' if _context else '/app/submission'
+    (ws/'AGENTS.md').write_text('Use only the provided training and development files. Keep all temporary files in /app/.runtime. Final inputs, labels and scores are unavailable. Submit executable code and any model files under '+submission_path+'.\n')
     prompt = ('Read /app/TASK.md. A genuinely trained initial solution is in /app/submission. '
               'Inspect the task, training and development data, and use the PHMForge MCP tools or local code as appropriate. '
               'You may retain, modify or replace the initial submission. Save a complete executable submission in '
@@ -75,6 +80,8 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
               f'The whole session is limited to {timeout} seconds, including preparation and submission; '
               'choose bounded analyses and leave enough time to submit. '
               'Do not use final data or infer physical safety claims. Report what you did and its limitations.')
+    if _context:
+        prompt = _context['prompt'] + f' Your total session budget is {timeout} seconds. '
     if smoke:
         prompt += (' This is only an engineering smoke test, not a scientific comparison. '
                    'Inspect the task and the initial submission, call an MCP read tool, and then retain '
@@ -89,6 +96,8 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
     tools = Path(__file__).resolve().parents[1]
     gateway = Path(__file__).resolve().with_name('gateway.py')
     python = Path(os.path.abspath(sys.executable))
+    inner_python = '/opt/python312/bin/python3.12' if _context else str(python)
+    package_mount = '/release' if _context else '/tools'
     extra = []
     for val in os.environ.get('PYTHONPATH','').split(os.pathsep):
         if val:
@@ -96,9 +105,9 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
             if not p.is_dir() or p == Path('/') or root.is_relative_to(p) or p.is_relative_to(root):
                 raise ValueError('Unsafe PYTHONPATH entry in agent runtime')
             extra.append(p)
-    py_path = ':'.join(['/tools']+[str(p) for p in extra])
+    py_path = '/opt/phm_python/extra:/tools:/release' if _context else ':'.join(['/tools']+[str(p) for p in extra])
     config = f'''default_permissions = "phm-offline"
-model_catalog_json = "/tools/phmforge_bench/resources/deepseek_model_catalog.json"
+model_catalog_json = "{package_mount}/phmforge_bench/resources/deepseek_model_catalog.json"
 model = "deepseek-flash"
 model_provider = "isolated_deepseek"
 model_reasoning_effort = "max"
@@ -126,7 +135,7 @@ exclude = ["DEEPSEEK_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY"]
 [permissions.phm-offline.network]
 enabled = false
 [mcp_servers.phmforge]
-command = {json.dumps(str(python))}
+command = {json.dumps(inner_python)}
 args = ["-B", "/tools/verified_benchmark_worker.py", "--family", "forge", "--data", "/data", "--output", "/app/artifacts", "--transport", "mcp"]
 required = true
 env = {{ PYTHONPATH = {json.dumps(py_path)}, PYTHONDONTWRITEBYTECODE = "1", OMP_NUM_THREADS = "2", OPENBLAS_NUM_THREADS = "1", TMPDIR = "/app/.runtime/tmp", TMP = "/app/.runtime/tmp", TEMP = "/app/.runtime/tmp", MPLCONFIGDIR = "/app/.runtime/mpl", XDG_CACHE_HOME = "/app/.runtime/xdg" }}
@@ -146,19 +155,25 @@ tool_timeout_sec = 180
         args.extend(['--ro-bind',str(path),str(path)])
         mounted.add(str(path))
     for path in [Path(p) for p in ['/usr','/bin','/sbin','/lib','/lib64','/etc'] if Path(p).exists()]: bind(path)
-    for path in [Path(sys.prefix),Path(sys.base_prefix),*extra]: bind(path)
+    if not _context:
+        for path in [Path(sys.prefix),Path(sys.base_prefix),*extra]: bind(path)
     args += ['--dir','/opt', '--dir','/home', '--dir','/home/agent',
-        '--ro-bind',str(cli),'/opt/codex', '--ro-bind',str(tools),'/tools',
+        '--ro-bind',str(cli),'/opt/codex', '--ro-bind',str(tools),package_mount,
         '--ro-bind',str(socket_path),'/model_gateway.sock',
-        '--bind',str(ws),'/app', '--ro-bind',str(ws/'data'),'/app/data',
-        '--ro-bind',str(ws/'data'),'/data', '--bind',str(run/'client-home'),'/home/agent/.codex',
+        '--bind',str(ws),'/app']
+    if _context:
+        for source, target in _context['mounts']:
+            args += ['--ro-bind',str(source),target]
+    else:
+        args += ['--ro-bind',str(ws/'data'),'/app/data', '--ro-bind',str(ws/'data'),'/data']
+    args += ['--bind',str(run/'client-home'),'/home/agent/.codex',
         '--proc','/proc', '--dev','/dev', '--chdir','/app', '--remount-ro','/']
-    env = {'HOME':'/home/agent', 'PATH':str(python.parent)+':/usr/bin:/bin', 'PYTHONPATH':py_path,
+    env = {'HOME':'/home/agent', 'PATH':str(Path(inner_python).parent)+':/usr/bin:/bin', 'PYTHONPATH':py_path,
         'PYTHONDONTWRITEBYTECODE':'1', 'TMPDIR':'/app/.runtime/tmp', 'TMP':'/app/.runtime/tmp',
         'TEMP':'/app/.runtime/tmp', 'MPLCONFIGDIR':'/app/.runtime/mpl', 'XDG_CACHE_HOME':'/app/.runtime/xdg',
         'OMP_NUM_THREADS':'2', 'OPENBLAS_NUM_THREADS':'1', 'MKL_NUM_THREADS':'2'}
     for k,v in env.items(): args += ['--setenv',k,v]
-    args += [str(python),'-B','/tools/phmforge_bench/gateway.py','relay','--socket','/model_gateway.sock','--port','47777','--',
+    args += [inner_python,'-B',package_mount+'/phmforge_bench/gateway.py','relay','--socket','/model_gateway.sock','--port','47777','--',
              '/opt/codex','exec','--disable','apps','--ephemeral','--skip-git-repo-check','--json',
              '-m','deepseek-flash','-C','/app','-o','/app/last_message.txt','-']
     write_json(run/'ISOLATION.json', {'arguments':args, 'agent_environment':env, 'credential_in_agent':False})
@@ -181,7 +196,7 @@ tool_timeout_sec = 180
             state = json.loads((run/'model_gateway/agent/status.json').read_text())
             if not state['requests'] or not state['returned_model_ids']:
                 raise RuntimeError('No completed model response was recorded; agent run is not valid')
-            scored = evaluate(root, ws/'submission', run/'evaluation', timeout=120)
+            scored = _context['evaluate'](ws, run/'evaluation') if _context else evaluate(root, ws/'submission', run/'evaluation', timeout=120)
             report = {'status':'completed','task_id':meta['task_id'], 'smoke_mode':smoke, 'starter_training':starter,
                 'score':scored,'agent_elapsed_seconds':time.monotonic()-started,
                 'returned_models_and_usage':'model_gateway/agent/status.json'}

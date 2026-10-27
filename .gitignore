@@ -25,3 +25,7 @@ checkpoints/
 build/
 dist/
 runs/
+environment_store
+environment_cache/
+LOCAL_ENVIRONMENT.json
+*.partial

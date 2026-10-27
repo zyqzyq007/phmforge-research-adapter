@@ -1,0 +1,3576 @@
+[
+  {
+    "id": "runs/20261020T090327Z_realtrain238/realrul238_01",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T090327Z_realtrain238/PLAN187.json",
+    "job": "realrul238_01",
+    "task_id": "CMAPSS_FD001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/realrul238_01",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T090327Z_realtrain238/realrul238_02",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T090327Z_realtrain238/PLAN187.json",
+    "job": "realrul238_02",
+    "task_id": "CMAPSS_FD001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/realrul238_02",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T090327Z_realtrain238/realrul238_03",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T090327Z_realtrain238/PLAN187.json",
+    "job": "realrul238_03",
+    "task_id": "CMAPSS_FD001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/realrul238_03",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T090327Z_realtrain238/realrul238_04",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T090327Z_realtrain238/PLAN187.json",
+    "job": "realrul238_04",
+    "task_id": "CMAPSS_FD001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/realrul238_04",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T172316Z_forgecoding251/PLAN187.json",
+    "job": "forge251_pdm_fault_001",
+    "task_id": "pdm_fault_001",
+    "dataset": "CWRU",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/forge251_pdm_fault_001",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_013",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T172316Z_forgecoding251/PLAN187.json",
+    "job": "forge251_pdm_fault_013",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/forge251_pdm_fault_013",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_015",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T172316Z_forgecoding251/PLAN187.json",
+    "job": "forge251_pdm_fault_015",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/forge251_pdm_fault_015",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T183545Z_forgecoding252/PLAN187.json",
+    "job": "forge251_pdm_fault_001",
+    "task_id": "pdm_fault_001",
+    "dataset": "CWRU",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261020T183545Z_forgecoding252/evaluation/forge251_pdm_fault_001/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge251_pdm_fault_001",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_013",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T183545Z_forgecoding252/PLAN187.json",
+    "job": "forge251_pdm_fault_013",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261020T183545Z_forgecoding252/evaluation/forge251_pdm_fault_013/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge251_pdm_fault_013",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_015",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T183545Z_forgecoding252/PLAN187.json",
+    "job": "forge251_pdm_fault_015",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261020T183545Z_forgecoding252/evaluation/forge251_pdm_fault_015/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge251_pdm_fault_015",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T203053Z_femtocoding254/forge254_pdm_rul_003_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T203053Z_femtocoding254/PLAN187.json",
+    "job": "forge254_pdm_rul_003_r1",
+    "task_id": "pdm_rul_003",
+    "dataset": "FEMTO",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261020T203053Z_femtocoding254/evaluation/forge254_pdm_rul_003_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge254_pdm_rul_003_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T203053Z_femtocoding254/forge254_pdm_rul_003_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T203053Z_femtocoding254/PLAN187.json",
+    "job": "forge254_pdm_rul_003_r2",
+    "task_id": "pdm_rul_003",
+    "dataset": "FEMTO",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261020T203053Z_femtocoding254/evaluation/forge254_pdm_rul_003_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge254_pdm_rul_003_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T221342Z_hustcoding256/forge256_pdm_fault_012_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T221342Z_hustcoding256/PLAN187.json",
+    "job": "forge256_pdm_fault_012_r1",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261020T221342Z_hustcoding256/evaluation/forge256_pdm_fault_012_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge256_pdm_fault_012_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261020T221342Z_hustcoding256/forge256_pdm_fault_012_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261020T221342Z_hustcoding256/PLAN187.json",
+    "job": "forge256_pdm_fault_012_r2",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "timeout",
+    "replay_records": [
+      "runs/20261020T221342Z_hustcoding256/evaluation/forge256_pdm_fault_012_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge256_pdm_fault_012_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T003008Z_mendeleycoding258/forge258_pdm_fault_014_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T003008Z_mendeleycoding258/PLAN187.json",
+    "job": "forge258_pdm_fault_014_r1",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/forge258_pdm_fault_014_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T003008Z_mendeleycoding258/forge258_pdm_fault_014_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T003008Z_mendeleycoding258/PLAN187.json",
+    "job": "forge258_pdm_fault_014_r2",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/forge258_pdm_fault_014_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T013611Z_coding259/forge259_pdm_fault_011_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T013611Z_coding259/PLAN187.json",
+    "job": "forge259_pdm_fault_011_r1",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "timeout",
+    "replay_records": [
+      "runs/20261021T013611Z_coding259/evaluation/forge259_pdm_fault_011_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge259_pdm_fault_011_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T013611Z_coding259/forge259_pdm_fault_011_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T013611Z_coding259/PLAN187.json",
+    "job": "forge259_pdm_fault_011_r2",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "timeout",
+    "replay_records": [
+      "runs/20261021T013611Z_coding259/evaluation/forge259_pdm_fault_011_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge259_pdm_fault_011_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T013611Z_coding259/forge259_pdm_fault_014_r3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T013611Z_coding259/PLAN187.json",
+    "job": "forge259_pdm_fault_014_r3",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T013611Z_coding259/evaluation/forge259_pdm_fault_014_r3/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge259_pdm_fault_014_r3",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T013611Z_coding259/forge259_pdm_fault_014_r4",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T013611Z_coding259/PLAN187.json",
+    "job": "forge259_pdm_fault_014_r4",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T013611Z_coding259/evaluation/forge259_pdm_fault_014_r4/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge259_pdm_fault_014_r4",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T031137Z_coding260/forge260_pdm_fault_011_r3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T031137Z_coding260/PLAN187.json",
+    "job": "forge260_pdm_fault_011_r3",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T031137Z_coding260/evaluation/forge260_pdm_fault_011_r3/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge260_pdm_fault_011_r3",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T031137Z_coding260/forge260_pdm_fault_011_r4",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T031137Z_coding260/PLAN187.json",
+    "job": "forge260_pdm_fault_011_r4",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T031137Z_coding260/evaluation/forge260_pdm_fault_011_r4/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge260_pdm_fault_011_r4",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T031137Z_coding260/forge260_pdm_fault_014_r5",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T031137Z_coding260/PLAN187.json",
+    "job": "forge260_pdm_fault_014_r5",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T031137Z_coding260/evaluation/forge260_pdm_fault_014_r5/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge260_pdm_fault_014_r5",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T050738Z_coding262/forge262_pdm_fault_013_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T050738Z_coding262/PLAN187.json",
+    "job": "forge262_pdm_fault_013_r2",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T050738Z_coding262/evaluation/forge262_pdm_fault_013_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge262_pdm_fault_013_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T050738Z_coding262/forge262_pdm_fault_015_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T050738Z_coding262/PLAN187.json",
+    "job": "forge262_pdm_fault_015_r2",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T050738Z_coding262/evaluation/forge262_pdm_fault_015_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge262_pdm_fault_015_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T050738Z_coding262/forge262_pdm_fault_012_r3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T050738Z_coding262/PLAN187.json",
+    "job": "forge262_pdm_fault_012_r3",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T050738Z_coding262/evaluation/forge262_pdm_fault_012_r3/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge262_pdm_fault_012_r3",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T050738Z_coding262/forge262_pdm_fault_001_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T050738Z_coding262/PLAN187.json",
+    "job": "forge262_pdm_fault_001_r2",
+    "task_id": "pdm_fault_001",
+    "dataset": "CWRU",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T050738Z_coding262/evaluation/forge262_pdm_fault_001_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge262_pdm_fault_001_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T052543Z_femtocoding263/forge263_pdm_rul_003_r3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T052543Z_femtocoding263/PLAN187.json",
+    "job": "forge263_pdm_rul_003_r3",
+    "task_id": "pdm_rul_003",
+    "dataset": "FEMTO",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T052543Z_femtocoding263/evaluation/forge263_pdm_rul_003_r3/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge263_pdm_rul_003_r3",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T063922Z_review264/forge264_motor_review_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T063922Z_review264/PLAN187.json",
+    "job": "forge264_motor_review_r1",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T063922Z_review264/evaluation/forge264_motor_review_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge264_motor_review_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T063922Z_review264/forge264_motor_review_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T063922Z_review264/PLAN187.json",
+    "job": "forge264_motor_review_r2",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T063922Z_review264/evaluation/forge264_motor_review_r2/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge264_motor_review_r2",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T063922Z_review264/forge264_hust_completion_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T063922Z_review264/PLAN187.json",
+    "job": "forge264_hust_completion_r1",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T063922Z_review264/evaluation/forge264_hust_completion_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/forge264_hust_completion_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/classification/transfer267_motor_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/classification/PLAN187.json",
+    "job": "transfer267_motor_initial",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/classification/evaluation/transfer267_motor_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_motor_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/classification/transfer267_paderborn_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/classification/PLAN187.json",
+    "job": "transfer267_paderborn_initial",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/classification/evaluation/transfer267_paderborn_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_paderborn_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/classification_review/transfer267_motor_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/classification_review/PLAN187.json",
+    "job": "transfer267_motor_review",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/classification_review/evaluation/transfer267_motor_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_motor_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/classification_review/transfer267_paderborn_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/classification_review/PLAN187.json",
+    "job": "transfer267_paderborn_review",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/classification_review/evaluation/transfer267_paderborn_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_paderborn_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/rul/transfer267_initial_pdm_rul_003_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/rul/PLAN187.json",
+    "job": "transfer267_initial_pdm_rul_003_r1",
+    "task_id": "pdm_rul_003",
+    "dataset": "FEMTO",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/rul/evaluation/transfer267_initial_pdm_rul_003_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_initial_pdm_rul_003_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T102916Z_validation267/rul_review/transfer267_review_pdm_rul_003_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T102916Z_validation267/rul_review/PLAN187.json",
+    "job": "transfer267_review_pdm_rul_003_r1",
+    "task_id": "pdm_rul_003",
+    "dataset": "FEMTO",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T102916Z_validation267/rul_review/evaluation/transfer267_review_pdm_rul_003_r1/final_command.json"
+    ],
+    "historical_workspace": "workspaces/transfer267_review_pdm_rul_003_r1",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a/s268_motor_a_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a/PLAN187.json",
+    "job": "s268_motor_a_initial",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/a/evaluation/s268_motor_a_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_motor_a_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a/s268_paderborn_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a/PLAN187.json",
+    "job": "s268_paderborn_initial",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/a/evaluation/s268_paderborn_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_paderborn_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a/s268_mfpt_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a/PLAN187.json",
+    "job": "s268_mfpt_initial",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/a/evaluation/s268_mfpt_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_mfpt_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a/s268_hust_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a/PLAN187.json",
+    "job": "s268_hust_initial",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/a/evaluation/s268_hust_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_hust_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a/s268_mendeley_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a/PLAN187.json",
+    "job": "s268_mendeley_initial",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/a/evaluation/s268_mendeley_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_mendeley_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a_review/s268_motor_a_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a_review/PLAN187.json",
+    "job": "s268_motor_a_review",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s268_motor_a_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a_review/s268_paderborn_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a_review/PLAN187.json",
+    "job": "s268_paderborn_review",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s268_paderborn_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a_review/s268_mfpt_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a_review/PLAN187.json",
+    "job": "s268_mfpt_review",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s268_mfpt_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a_review/s268_hust_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a_review/PLAN187.json",
+    "job": "s268_hust_review",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s268_hust_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/a_review/s268_mendeley_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/a_review/PLAN187.json",
+    "job": "s268_mendeley_review",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s268_mendeley_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/b/s268_motor_b_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/b/PLAN187.json",
+    "job": "s268_motor_b_initial",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/b/evaluation/s268_motor_b_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_motor_b_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/b_review/s268_motor_b_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/b_review/PLAN187.json",
+    "job": "s268_motor_b_review",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/b_review/evaluation/s268_motor_b_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_motor_b_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/recover_hust/s268_hust_recovery",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/recover_hust/PLAN187.json",
+    "job": "s268_hust_recovery",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/recover_hust/evaluation/s268_hust_recovery/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_hust_recovery",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/recover_mendeley/s268_mendeley_recovery",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/recover_mendeley/PLAN187.json",
+    "job": "s268_mendeley_recovery",
+    "task_id": "pdm_fault_014",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/recover_mendeley/evaluation/s268_mendeley_recovery/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_mendeley_recovery",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/recover_mfpt/s268_mfpt_recovery",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/recover_mfpt/PLAN187.json",
+    "job": "s268_mfpt_recovery",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/recover_mfpt/evaluation/s268_mfpt_recovery/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_mfpt_recovery",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/recover_motor_a/s268_motor_a_recovery",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/recover_motor_a/PLAN187.json",
+    "job": "s268_motor_a_recovery",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/recover_motor_a/evaluation/s268_motor_a_recovery/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_motor_a_recovery",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T124453Z_selection268/recover_paderborn/s268_paderborn_recovery",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T124453Z_selection268/recover_paderborn/PLAN187.json",
+    "job": "s268_paderborn_recovery",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261021T124453Z_selection268/recover_paderborn/evaluation/s268_paderborn_recovery/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s268_paderborn_recovery",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/a/s269_paderborn_a_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/a/PLAN187.json",
+    "job": "s269_paderborn_a_initial",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/a/evaluation/s269_paderborn_a_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_paderborn_a_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/a/s269_mfpt_a_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/a/PLAN187.json",
+    "job": "s269_mfpt_a_initial",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/a/evaluation/s269_mfpt_a_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_mfpt_a_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/a_review/s269_paderborn_a_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/a_review/PLAN187.json",
+    "job": "s269_paderborn_a_review",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/a_review/evaluation/s269_paderborn_a_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_paderborn_a_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/a_review/s269_mfpt_a_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/a_review/PLAN187.json",
+    "job": "s269_mfpt_a_review",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/a_review/evaluation/s269_mfpt_a_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_mfpt_a_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/b/s269_paderborn_b_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/b/PLAN187.json",
+    "job": "s269_paderborn_b_initial",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/b/evaluation/s269_paderborn_b_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_paderborn_b_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/b/s269_mfpt_b_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/b/PLAN187.json",
+    "job": "s269_mfpt_b_initial",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/b/evaluation/s269_mfpt_b_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_mfpt_b_initial",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/b_review/s269_paderborn_b_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/b_review/PLAN187.json",
+    "job": "s269_paderborn_b_review",
+    "task_id": "pdm_fault_011",
+    "dataset": "PADERBORN",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/b_review/evaluation/s269_paderborn_b_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_paderborn_b_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T152024Z_overfit269/b_review/s269_mfpt_b_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T152024Z_overfit269/b_review/PLAN187.json",
+    "job": "s269_mfpt_b_review",
+    "task_id": "pdm_fault_013",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T152024Z_overfit269/b_review/evaluation/s269_mfpt_b_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s269_mfpt_b_review",
+    "test_inputs_visible_during_development": "not_declared"
+  },
+  {
+    "id": "runs/20261021T174126Z_choice270/a/s270_motor_a_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T174126Z_choice270/a/PLAN187.json",
+    "job": "s270_motor_a_initial",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T174126Z_choice270/a/evaluation/s270_motor_a_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s270_motor_a_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T174126Z_choice270/a_review/s270_motor_a_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T174126Z_choice270/a_review/PLAN187.json",
+    "job": "s270_motor_a_review",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T174126Z_choice270/a_review/evaluation/s270_motor_a_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s270_motor_a_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T174126Z_choice270/b/s270_motor_b_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T174126Z_choice270/b/PLAN187.json",
+    "job": "s270_motor_b_initial",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T174126Z_choice270/b/evaluation/s270_motor_b_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s270_motor_b_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T174126Z_choice270/b_review/s270_motor_b_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T174126Z_choice270/b_review/PLAN187.json",
+    "job": "s270_motor_b_review",
+    "task_id": "pdm_fault_015",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261021T174126Z_choice270/b_review/evaluation/s270_motor_b_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s270_motor_b_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T194351Z_condition272/a/s272_rotor_high_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T194351Z_condition272/a/PLAN187.json",
+    "job": "s272_rotor_high_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s272_rotor_high_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T194351Z_condition272/a_review/s272_rotor_high_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T194351Z_condition272/a_review/PLAN187.json",
+    "job": "s272_rotor_high_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s272_rotor_high_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T194351Z_condition272/b/s272_rotor_low_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T194351Z_condition272/b/PLAN187.json",
+    "job": "s272_rotor_low_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s272_rotor_low_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261021T194351Z_condition272/b_review/s272_rotor_low_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261021T194351Z_condition272/b_review/PLAN187.json",
+    "job": "s272_rotor_low_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s272_rotor_low_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T013022Z_recovery273/a/s273_rotor_high_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T013022Z_recovery273/a/PLAN187.json",
+    "job": "s273_rotor_high_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T013022Z_recovery273/a/evaluation/s273_rotor_high_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s273_rotor_high_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T013022Z_recovery273/a_review/s273_rotor_high_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T013022Z_recovery273/a_review/PLAN187.json",
+    "job": "s273_rotor_high_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T013022Z_recovery273/a_review/evaluation/s273_rotor_high_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s273_rotor_high_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T013022Z_recovery273/b/s273_rotor_low_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T013022Z_recovery273/b/PLAN187.json",
+    "job": "s273_rotor_low_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261022T013022Z_recovery273/b/evaluation/s273_rotor_low_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s273_rotor_low_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T013022Z_recovery273/b_review/s273_rotor_low_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T013022Z_recovery273/b_review/PLAN187.json",
+    "job": "s273_rotor_low_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "execution_error",
+    "replay_records": [
+      "runs/20261022T013022Z_recovery273/b_review/evaluation/s273_rotor_low_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s273_rotor_low_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/a/s274_hust_record_r1_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/a/PLAN187.json",
+    "job": "s274_hust_record_r1_initial",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/a/evaluation/s274_hust_record_r1_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_record_r1_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/a_review/s274_hust_record_r1_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/a_review/PLAN187.json",
+    "job": "s274_hust_record_r1_review",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/a_review/evaluation/s274_hust_record_r1_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_record_r1_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/b/s274_hust_geometry_r1_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/b/PLAN187.json",
+    "job": "s274_hust_geometry_r1_initial",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/b/evaluation/s274_hust_geometry_r1_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_geometry_r1_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/b_review/s274_hust_geometry_r1_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/b_review/PLAN187.json",
+    "job": "s274_hust_geometry_r1_review",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/b_review/evaluation/s274_hust_geometry_r1_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_geometry_r1_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/c/s274_hust_record_r2_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/c/PLAN187.json",
+    "job": "s274_hust_record_r2_initial",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/c/evaluation/s274_hust_record_r2_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_record_r2_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/c_review/s274_hust_record_r2_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/c_review/PLAN187.json",
+    "job": "s274_hust_record_r2_review",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/c_review/evaluation/s274_hust_record_r2_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_record_r2_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/d/s274_hust_geometry_r2_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/d/PLAN187.json",
+    "job": "s274_hust_geometry_r2_initial",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/d/evaluation/s274_hust_geometry_r2_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_geometry_r2_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T023131Z_validation274/d_review/s274_hust_geometry_r2_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T023131Z_validation274/d_review/PLAN187.json",
+    "job": "s274_hust_geometry_r2_review",
+    "task_id": "pdm_fault_012",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T023131Z_validation274/d_review/evaluation/s274_hust_geometry_r2_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s274_hust_geometry_r2_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T052053Z_pipeline276/a/s276_ordinary_r1_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T052053Z_pipeline276/a/PLAN187.json",
+    "job": "s276_ordinary_r1_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T052053Z_pipeline276/a/evaluation/s276_ordinary_r1_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s276_ordinary_r1_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T052053Z_pipeline276/b/s276_full_program_r1_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T052053Z_pipeline276/b/PLAN187.json",
+    "job": "s276_full_program_r1_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T052053Z_pipeline276/b/evaluation/s276_full_program_r1_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s276_full_program_r1_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T052053Z_pipeline276/c/s276_ordinary_r2_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T052053Z_pipeline276/c/PLAN187.json",
+    "job": "s276_ordinary_r2_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T052053Z_pipeline276/c/evaluation/s276_ordinary_r2_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s276_ordinary_r2_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T052053Z_pipeline276/d/s276_full_program_r2_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T052053Z_pipeline276/d/PLAN187.json",
+    "job": "s276_full_program_r2_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T052053Z_pipeline276/d/evaluation/s276_full_program_r2_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s276_full_program_r2_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T081740Z_feedback278/a/s278_frozen_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T081740Z_feedback278/a/PLAN187.json",
+    "job": "s278_frozen_r1",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_095f34415c10b279/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_131c77079f5f1b8f/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_2ffad00b33543e37/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_3db2d8edbc6b4f73/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_628b8d085ce6f785/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_647c40810a716d9a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_782bd4ba44b74884/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_9a4bab5c82019bd7/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_9fca1b895ba9980c/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_be7a43aa2f5b4582/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_bf08cb229ec89974/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_c4e144bbd543191a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_ca913ee77d270c65/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_cfdad52581c945e6/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_a/final/query_d8c957db19f55d47/command.json"
+    ],
+    "historical_workspace": "workspaces/s278_frozen_r1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T081740Z_feedback278/b/s278_adaptive_r1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T081740Z_feedback278/b/PLAN187.json",
+    "job": "s278_adaptive_r1",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_095f34415c10b279/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_131c77079f5f1b8f/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_2ffad00b33543e37/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_3db2d8edbc6b4f73/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_628b8d085ce6f785/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_647c40810a716d9a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_782bd4ba44b74884/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_9a4bab5c82019bd7/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_9fca1b895ba9980c/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_be7a43aa2f5b4582/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_bf08cb229ec89974/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_c4e144bbd543191a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_ca913ee77d270c65/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_cfdad52581c945e6/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_b/final/query_d8c957db19f55d47/command.json"
+    ],
+    "historical_workspace": "workspaces/s278_adaptive_r1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T081740Z_feedback278/c/s278_frozen_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T081740Z_feedback278/c/PLAN187.json",
+    "job": "s278_frozen_r2",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_095f34415c10b279/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_131c77079f5f1b8f/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_2ffad00b33543e37/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_3db2d8edbc6b4f73/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_628b8d085ce6f785/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_647c40810a716d9a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_782bd4ba44b74884/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_9a4bab5c82019bd7/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_9fca1b895ba9980c/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_be7a43aa2f5b4582/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_bf08cb229ec89974/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_c4e144bbd543191a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_ca913ee77d270c65/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_cfdad52581c945e6/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/wrapper_c/final/query_d8c957db19f55d47/command.json"
+    ],
+    "historical_workspace": "workspaces/s278_frozen_r2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T081740Z_feedback278/d/s278_adaptive_r2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T081740Z_feedback278/d/PLAN187.json",
+    "job": "s278_adaptive_r2",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_095f34415c10b279/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_131c77079f5f1b8f/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_2ffad00b33543e37/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_3db2d8edbc6b4f73/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_628b8d085ce6f785/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_647c40810a716d9a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_782bd4ba44b74884/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_9a4bab5c82019bd7/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_9fca1b895ba9980c/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_be7a43aa2f5b4582/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_bf08cb229ec89974/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_c4e144bbd543191a/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_ca913ee77d270c65/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_cfdad52581c945e6/command.json",
+      "runs/20261022T081740Z_feedback278/evaluation278/agent_d/final/query_d8c957db19f55d47/command.json"
+    ],
+    "historical_workspace": "workspaces/s278_adaptive_r2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/rotor_a/s281_rotor_a",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/rotor_a/PLAN187.json",
+    "job": "s281_rotor_a",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_rotor_a",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/rotor_b/s281_rotor_b",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/rotor_b/PLAN187.json",
+    "job": "s281_rotor_b",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_rotor_b",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/rotor_c/s281_rotor_c",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/rotor_c/PLAN187.json",
+    "job": "s281_rotor_c",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_rotor_c",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/rotor_d/s281_rotor_d",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/rotor_d/PLAN187.json",
+    "job": "s281_rotor_d",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_rotor_d",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/xjtu_b/s281_xjtu_b",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/xjtu_b/PLAN187.json",
+    "job": "s281_xjtu_b",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_xjtu_b",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T130911Z_review281/xjtu_d/s281_xjtu_d",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T130911Z_review281/xjtu_d/PLAN187.json",
+    "job": "s281_xjtu_d",
+    "task_id": "pdm_rul_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s281_xjtu_d",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/delayed_1/s282_delayed_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/delayed_1/PLAN187.json",
+    "job": "s282_delayed_1",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/delayed_2/s282_delayed_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/delayed_2/PLAN187.json",
+    "job": "s282_delayed_2",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/delayed_3/s282_delayed_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/delayed_3/PLAN187.json",
+    "job": "s282_delayed_3",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/immediate_1/s282_immediate_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/immediate_1/PLAN187.json",
+    "job": "s282_immediate_1",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/immediate_2/s282_immediate_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/immediate_2/PLAN187.json",
+    "job": "s282_immediate_2",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T143450Z_feedback282/immediate_3/s282_immediate_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T143450Z_feedback282/immediate_3/PLAN187.json",
+    "job": "s282_immediate_3",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/delayed_1/s282_delayed_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/delayed_1/PLAN187.json",
+    "job": "s282_delayed_1",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/delayed_2/s282_delayed_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/delayed_2/PLAN187.json",
+    "job": "s282_delayed_2",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/delayed_3/s282_delayed_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/delayed_3/PLAN187.json",
+    "job": "s282_delayed_3",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_delayed_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/immediate_1/s282_immediate_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/immediate_1/PLAN187.json",
+    "job": "s282_immediate_1",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/immediate_2/s282_immediate_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/immediate_2/PLAN187.json",
+    "job": "s282_immediate_2",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T145645Z_feedback282_recovery/immediate_3/s282_immediate_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T145645Z_feedback282_recovery/immediate_3/PLAN187.json",
+    "job": "s282_immediate_3",
+    "task_id": "pdm_fault_010",
+    "dataset": "UOC",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s282_immediate_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T161303Z_evidence284/rotor_a/s284_rotor_a",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T161303Z_evidence284/rotor_a/PLAN187.json",
+    "job": "s284_rotor_a",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s284_rotor_a",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T161303Z_evidence284/rotor_b/s284_rotor_b",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T161303Z_evidence284/rotor_b/PLAN187.json",
+    "job": "s284_rotor_b",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s284_rotor_b",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T161303Z_evidence284/rotor_c/s284_rotor_c",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T161303Z_evidence284/rotor_c/PLAN187.json",
+    "job": "s284_rotor_c",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s284_rotor_c",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T161303Z_evidence284/rotor_d/s284_rotor_d",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T161303Z_evidence284/rotor_d/PLAN187.json",
+    "job": "s284_rotor_d",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s284_rotor_d",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/delayed_1/s285_delayed_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/delayed_1/PLAN187.json",
+    "job": "s285_delayed_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_delayed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/delayed_2/s285_delayed_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/delayed_2/PLAN187.json",
+    "job": "s285_delayed_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_delayed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/delayed_3/s285_delayed_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/delayed_3/PLAN187.json",
+    "job": "s285_delayed_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_delayed_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/immediate_1/s285_immediate_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/immediate_1/PLAN187.json",
+    "job": "s285_immediate_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_immediate_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/immediate_2/s285_immediate_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/immediate_2/PLAN187.json",
+    "job": "s285_immediate_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_immediate_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261022T174700Z_feedback285/immediate_3/s285_immediate_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261022T174700Z_feedback285/immediate_3/PLAN187.json",
+    "job": "s285_immediate_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG1",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s285_immediate_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/delayed_1/s298_delayed_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/delayed_1/PLAN187.json",
+    "job": "s298_delayed_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/delayed_2/s298_delayed_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/delayed_2/PLAN187.json",
+    "job": "s298_delayed_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/delayed_3/s298_delayed_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/delayed_3/PLAN187.json",
+    "job": "s298_delayed_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/immediate_1/s298_immediate_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/immediate_1/PLAN187.json",
+    "job": "s298_immediate_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/immediate_2/s298_immediate_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/immediate_2/PLAN187.json",
+    "job": "s298_immediate_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/immediate_3/s298_immediate_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/immediate_3/PLAN187.json",
+    "job": "s298_immediate_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/delayed_1/s298_delayed_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/delayed_1/PLAN187.json",
+    "job": "s298_delayed_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/delayed_2/s298_delayed_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/delayed_2/PLAN187.json",
+    "job": "s298_delayed_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/delayed_3/s298_delayed_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/delayed_3/PLAN187.json",
+    "job": "s298_delayed_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_delayed_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/immediate_1/s298_immediate_1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/immediate_1/PLAN187.json",
+    "job": "s298_immediate_1",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/immediate_2/s298_immediate_2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/immediate_2/PLAN187.json",
+    "job": "s298_immediate_2",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T002126Z_ensemble298/review/immediate_3/s298_immediate_3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T002126Z_ensemble298/review/immediate_3/PLAN187.json",
+    "job": "s298_immediate_3",
+    "task_id": "pdm_fault_005",
+    "dataset": "PlanetaryG2",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/s298_immediate_3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/a/s305_block34_ordinary_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/a/PLAN187.json",
+    "job": "s305_block34_ordinary_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/a/evaluation/s305_block34_ordinary_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block34_ordinary_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/a_review/s305_block34_ordinary_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/a_review/PLAN187.json",
+    "job": "s305_block34_ordinary_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/a_review/evaluation/s305_block34_ordinary_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block34_ordinary_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/b/s305_block34_full_program_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/b/PLAN187.json",
+    "job": "s305_block34_full_program_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/b/evaluation/s305_block34_full_program_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block34_full_program_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/b_review/s305_block34_full_program_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/b_review/PLAN187.json",
+    "job": "s305_block34_full_program_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/b_review/evaluation/s305_block34_full_program_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block34_full_program_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/c/s305_block56_ordinary_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/c/PLAN187.json",
+    "job": "s305_block56_ordinary_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/c/evaluation/s305_block56_ordinary_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block56_ordinary_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/c_review/s305_block56_ordinary_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/c_review/PLAN187.json",
+    "job": "s305_block56_ordinary_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/c_review/evaluation/s305_block56_ordinary_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block56_ordinary_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/d/s305_block56_full_program_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/d/PLAN187.json",
+    "job": "s305_block56_full_program_initial",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/d/evaluation/s305_block56_full_program_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block56_full_program_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T052522Z_rotor305/d_review/s305_block56_full_program_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T052522Z_rotor305/d_review/PLAN187.json",
+    "job": "s305_block56_full_program_review",
+    "task_id": "pdm_fault_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T052522Z_rotor305/d_review/evaluation/s305_block56_full_program_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/s305_block56_full_program_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T105942Z_coverage306/f/detail306_f_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T105942Z_coverage306/f/PLAN187.json",
+    "job": "detail306_f_initial",
+    "task_id": "pdm_fault_008",
+    "dataset": "MFPT",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T105942Z_coverage306/f/evaluation/detail306_f_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/detail306_f_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T105942Z_coverage306/h/detail306_h_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T105942Z_coverage306/h/PLAN187.json",
+    "job": "detail306_h_initial",
+    "task_id": "pdm_fault_007",
+    "dataset": "HUST",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T105942Z_coverage306/h/evaluation/detail306_h_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/detail306_h_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T105942Z_coverage306/m/detail306_m_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T105942Z_coverage306/m/PLAN187.json",
+    "job": "detail306_m_initial",
+    "task_id": "pdm_fault_009",
+    "dataset": "MENDELEY",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T105942Z_coverage306/m/evaluation/detail306_m_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/detail306_m_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T105942Z_coverage306/p/detail306_p_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T105942Z_coverage306/p/PLAN187.json",
+    "job": "detail306_p_initial",
+    "task_id": "pdm_fault_006",
+    "dataset": "PADERBORN",
+    "historical_status": "timeout",
+    "replay_records": [
+      "runs/20261023T105942Z_coverage306/p/evaluation/detail306_p_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/detail306_p_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T131916Z_expansion307/c/expand307_cost002_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T131916Z_expansion307/c/PLAN187.json",
+    "job": "expand307_cost002_initial",
+    "task_id": "pdm_cost_benefit_002",
+    "dataset": "CWRU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T131916Z_expansion307/c/evaluation/expand307_cost002_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/expand307_cost002_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T131916Z_expansion307/n/expand307_pdm_rul_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T131916Z_expansion307/n/PLAN187.json",
+    "job": "expand307_pdm_rul_001",
+    "task_id": "pdm_rul_001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T131916Z_expansion307/n/evaluation/expand307_pdm_rul_001/final_command.json"
+    ],
+    "historical_workspace": "workspaces/expand307_pdm_rul_001",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T131916Z_expansion307/n/expand307_pdm_cost_benefit_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T131916Z_expansion307/n/PLAN187.json",
+    "job": "expand307_pdm_cost_benefit_001",
+    "task_id": "pdm_cost_benefit_001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": "execution_error",
+    "replay_records": [],
+    "historical_workspace": "workspaces/expand307_pdm_cost_benefit_001",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T131916Z_expansion307/n/PLAN187.json",
+    "job": "expand307_pdm_safety_001",
+    "task_id": "pdm_safety_001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T131916Z_expansion307/n/evaluation/expand307_pdm_safety_001/final_command.json"
+    ],
+    "historical_workspace": "workspaces/expand307_pdm_safety_001",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_006",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T131916Z_expansion307/n/PLAN187.json",
+    "job": "expand307_pdm_safety_006",
+    "task_id": "pdm_safety_006",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T131916Z_expansion307/n/evaluation/expand307_pdm_safety_006/final_command.json"
+    ],
+    "historical_workspace": "workspaces/expand307_pdm_safety_006",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T134012Z_recovery308/n/recovery308_pdm_cost_benefit_001",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T134012Z_recovery308/n/PLAN187.json",
+    "job": "recovery308_pdm_cost_benefit_001",
+    "task_id": "pdm_cost_benefit_001",
+    "dataset": "CMAPSS_FD001",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T134012Z_recovery308/n/evaluation/recovery308_pdm_cost_benefit_001/final_command.json"
+    ],
+    "historical_workspace": "workspaces/recovery308_pdm_cost_benefit_001",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T145500Z_review311/c/review311_cost002_ordinary_review",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T145500Z_review311/c/PLAN187.json",
+    "job": "review311_cost002_ordinary_review",
+    "task_id": "pdm_cost_benefit_002",
+    "dataset": "CWRU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T145500Z_review311/c/evaluation/review311_cost002_ordinary_review/final_command.json"
+    ],
+    "historical_workspace": "workspaces/review311_cost002_ordinary_review",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e01/engine312_e01_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e01/PLAN187.json",
+    "job": "engine312_e01_initial",
+    "task_id": "engine_health_combined_001",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e01_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e02/engine312_e02_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e02/PLAN187.json",
+    "job": "engine312_e02_initial",
+    "task_id": "engine_health_combined_002",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e02_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e03/engine312_e03_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e03/PLAN187.json",
+    "job": "engine312_e03_initial",
+    "task_id": "engine_health_combined_003",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T151207Z_enginecoding312/e03/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/engine312_e03_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e04/engine312_e04_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e04/PLAN187.json",
+    "job": "engine312_e04_initial",
+    "task_id": "engine_health_combined_004",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e04_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e05/engine312_e05_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e05/PLAN187.json",
+    "job": "engine312_e05_initial",
+    "task_id": "engine_health_combined_005",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e05_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e06/engine312_e06_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e06/PLAN187.json",
+    "job": "engine312_e06_initial",
+    "task_id": "engine_health_combined_006",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e06_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e07/engine312_e07_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e07/PLAN187.json",
+    "job": "engine312_e07_initial",
+    "task_id": "engine_health_combined_007",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e07_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e08/engine312_e08_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e08/PLAN187.json",
+    "job": "engine312_e08_initial",
+    "task_id": "engine_health_combined_008",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e08_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e09/engine312_e09_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e09/PLAN187.json",
+    "job": "engine312_e09_initial",
+    "task_id": "engine_health_combined_009",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e09_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e10/engine312_e10_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e10/PLAN187.json",
+    "job": "engine312_e10_initial",
+    "task_id": "engine_health_combined_010",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T151207Z_enginecoding312/e10/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/engine312_e10_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e11/engine312_e11_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e11/PLAN187.json",
+    "job": "engine312_e11_initial",
+    "task_id": "engine_health_combined_011",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e11_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e12/engine312_e12_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e12/PLAN187.json",
+    "job": "engine312_e12_initial",
+    "task_id": "engine_health_combined_012",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e12_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e13/engine312_e13_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e13/PLAN187.json",
+    "job": "engine312_e13_initial",
+    "task_id": "engine_health_combined_023",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e13_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e14/engine312_e14_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e14/PLAN187.json",
+    "job": "engine312_e14_initial",
+    "task_id": "engine_health_combined_024",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e14_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e15/engine312_e15_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e15/PLAN187.json",
+    "job": "engine312_e15_initial",
+    "task_id": "engine_health_combined_025",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e15_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e16/engine312_e16_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e16/PLAN187.json",
+    "job": "engine312_e16_initial",
+    "task_id": "engine_health_combined_026",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T151207Z_enginecoding312/e16/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/engine312_e16_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e17/engine312_e17_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e17/PLAN187.json",
+    "job": "engine312_e17_initial",
+    "task_id": "engine_health_combined_027",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/engine312_e17_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T151207Z_enginecoding312/e18/engine312_e18_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T151207Z_enginecoding312/e18/PLAN187.json",
+    "job": "engine312_e18_initial",
+    "task_id": "engine_health_combined_028",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T151207Z_enginecoding312/e18/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/engine312_e18_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T154500Z_safety314/c/safety314_c_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T154500Z_safety314/c/PLAN187.json",
+    "job": "safety314_c_initial",
+    "task_id": "pdm_safety_002",
+    "dataset": "CWRU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T154500Z_safety314/c/evaluation/safety314_c_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/safety314_c_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T154500Z_safety314/m/safety314_m_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T154500Z_safety314/m/PLAN187.json",
+    "job": "safety314_m_initial",
+    "task_id": "pdm_safety_003",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T154500Z_safety314/m/evaluation/safety314_m_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/safety314_m_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T154500Z_safety314/r/safety314_r_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T154500Z_safety314/r/PLAN187.json",
+    "job": "safety314_r_initial",
+    "task_id": "pdm_safety_004",
+    "dataset": "ROTORBROKENBAR",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T154500Z_safety314/r/evaluation/safety314_r_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/safety314_r_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T160000Z_rulfollow315/f1/rulfollow315_f1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T160000Z_rulfollow315/f1/PLAN187.json",
+    "job": "rulfollow315_f1",
+    "task_id": "pdm_cost_benefit_003",
+    "dataset": "FEMTO",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T160000Z_rulfollow315/f1/evaluation315/final/0/command.json"
+    ],
+    "historical_workspace": "workspaces/rulfollow315_f1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T160000Z_rulfollow315/f2/rulfollow315_f2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T160000Z_rulfollow315/f2/PLAN187.json",
+    "job": "rulfollow315_f2",
+    "task_id": "pdm_safety_008",
+    "dataset": "FEMTO",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T160000Z_rulfollow315/f2/evaluation315/final/0/command.json"
+    ],
+    "historical_workspace": "workspaces/rulfollow315_f2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T160000Z_rulfollow315/x1/rulfollow315_x1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T160000Z_rulfollow315/x1/PLAN187.json",
+    "job": "rulfollow315_x1",
+    "task_id": "pdm_cost_benefit_004",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/0/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/1/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/10/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/11/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/12/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/13/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/14/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/2/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/3/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/4/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/5/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/6/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/7/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/8/command.json",
+      "runs/20261023T160000Z_rulfollow315/x1/evaluation315/final/9/command.json"
+    ],
+    "historical_workspace": "workspaces/rulfollow315_x1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T160000Z_rulfollow315/x2/rulfollow315_x2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T160000Z_rulfollow315/x2/PLAN187.json",
+    "job": "rulfollow315_x2",
+    "task_id": "pdm_safety_009",
+    "dataset": "XJTU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/0/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/1/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/10/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/11/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/12/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/13/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/14/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/2/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/3/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/4/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/5/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/6/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/7/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/8/command.json",
+      "runs/20261023T160000Z_rulfollow315/x2/evaluation315/final/9/command.json"
+    ],
+    "historical_workspace": "workspaces/rulfollow315_x2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t01/enginetrend316_t01_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t01/PLAN187.json",
+    "job": "enginetrend316_t01_initial",
+    "task_id": "engine_health_combined_013",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t01/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t01_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t02/enginetrend316_t02_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t02/PLAN187.json",
+    "job": "enginetrend316_t02_initial",
+    "task_id": "engine_health_combined_014",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t02/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t02_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t03/enginetrend316_t03_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t03/PLAN187.json",
+    "job": "enginetrend316_t03_initial",
+    "task_id": "engine_health_combined_015",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t03/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t03_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t04/enginetrend316_t04_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t04/PLAN187.json",
+    "job": "enginetrend316_t04_initial",
+    "task_id": "engine_health_combined_016",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t04/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t04_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t05/enginetrend316_t05_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t05/PLAN187.json",
+    "job": "enginetrend316_t05_initial",
+    "task_id": "engine_health_combined_017",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/enginetrend316_t05_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t06/enginetrend316_t06_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t06/PLAN187.json",
+    "job": "enginetrend316_t06_initial",
+    "task_id": "engine_health_combined_018",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t06/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t06_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t07/enginetrend316_t07_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t07/PLAN187.json",
+    "job": "enginetrend316_t07_initial",
+    "task_id": "engine_health_combined_019",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t07/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t07_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t08/enginetrend316_t08_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t08/PLAN187.json",
+    "job": "enginetrend316_t08_initial",
+    "task_id": "engine_health_combined_020",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/enginetrend316_t08_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t09/enginetrend316_t09_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t09/PLAN187.json",
+    "job": "enginetrend316_t09_initial",
+    "task_id": "engine_health_combined_021",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "timeout",
+    "replay_records": [],
+    "historical_workspace": "workspaces/enginetrend316_t09_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T161000Z_enginetrendcoding316/t10/enginetrend316_t10_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T161000Z_enginetrendcoding316/t10/PLAN187.json",
+    "job": "enginetrend316_t10_initial",
+    "task_id": "engine_health_combined_022",
+    "dataset": "ENGINE_QA_TREND",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T161000Z_enginetrendcoding316/t10/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginetrend316_t10_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e01/enginecompletion317_e01_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e01/PLAN187.json",
+    "job": "enginecompletion317_e01_completion",
+    "task_id": "engine_health_combined_001",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e01/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e01_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e02/enginecompletion317_e02_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e02/PLAN187.json",
+    "job": "enginecompletion317_e02_completion",
+    "task_id": "engine_health_combined_002",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e02/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e02_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e04/enginecompletion317_e04_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e04/PLAN187.json",
+    "job": "enginecompletion317_e04_completion",
+    "task_id": "engine_health_combined_004",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e04/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e04_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e05/enginecompletion317_e05_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e05/PLAN187.json",
+    "job": "enginecompletion317_e05_completion",
+    "task_id": "engine_health_combined_005",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e05/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e05_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e06/enginecompletion317_e06_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e06/PLAN187.json",
+    "job": "enginecompletion317_e06_completion",
+    "task_id": "engine_health_combined_006",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e06/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e06_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e07/enginecompletion317_e07_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e07/PLAN187.json",
+    "job": "enginecompletion317_e07_completion",
+    "task_id": "engine_health_combined_007",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e07/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e07_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e08/enginecompletion317_e08_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e08/PLAN187.json",
+    "job": "enginecompletion317_e08_completion",
+    "task_id": "engine_health_combined_008",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e08/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e08_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e09/enginecompletion317_e09_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e09/PLAN187.json",
+    "job": "enginecompletion317_e09_completion",
+    "task_id": "engine_health_combined_009",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e09/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e09_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e11/enginecompletion317_e11_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e11/PLAN187.json",
+    "job": "enginecompletion317_e11_completion",
+    "task_id": "engine_health_combined_011",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e11/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e11_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e12/enginecompletion317_e12_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e12/PLAN187.json",
+    "job": "enginecompletion317_e12_completion",
+    "task_id": "engine_health_combined_012",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e12/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e12_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e13/enginecompletion317_e13_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e13/PLAN187.json",
+    "job": "enginecompletion317_e13_completion",
+    "task_id": "engine_health_combined_023",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e13/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e13_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e14/enginecompletion317_e14_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e14/PLAN187.json",
+    "job": "enginecompletion317_e14_completion",
+    "task_id": "engine_health_combined_024",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e14/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e14_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e15/enginecompletion317_e15_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e15/PLAN187.json",
+    "job": "enginecompletion317_e15_completion",
+    "task_id": "engine_health_combined_025",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e15/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e15_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T162500Z_enginecompletion317/e17/enginecompletion317_e17_completion",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T162500Z_enginecompletion317/e17/PLAN187.json",
+    "job": "enginecompletion317_e17_completion",
+    "task_id": "engine_health_combined_027",
+    "dataset": "ENGINE_QA_HEALTH",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T162500Z_enginecompletion317/e17/evaluation312/final_command.json"
+    ],
+    "historical_workspace": "workspaces/enginecompletion317_e17_completion",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T165500Z_diagnostic318/m/diagnostic318_m_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T165500Z_diagnostic318/m/PLAN187.json",
+    "job": "diagnostic318_m_initial",
+    "task_id": "pdm_fault_003",
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T165500Z_diagnostic318/m/evaluation/diagnostic318_m_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/diagnostic318_m_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T165500Z_diagnostic318/x/diagnostic318_x_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T165500Z_diagnostic318/x/PLAN187.json",
+    "job": "diagnostic318_x_initial",
+    "task_id": "pdm_fault_002",
+    "dataset": "XJTU_TERMINAL",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T165500Z_diagnostic318/x/evaluation/diagnostic318_x_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/diagnostic318_x_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T180000Z_cwrudiagnostic319/c/cwrudiagnostic319_c_initial",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T180000Z_cwrudiagnostic319/c/PLAN187.json",
+    "job": "cwrudiagnostic319_c_initial",
+    "task_id": "pdm_fault_001",
+    "dataset": "CWRU",
+    "historical_status": "finished",
+    "replay_records": [
+      "runs/20261023T180000Z_cwrudiagnostic319/c/evaluation/cwrudiagnostic319_c_initial/final_command.json"
+    ],
+    "historical_workspace": "workspaces/cwrudiagnostic319_c_initial",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T231827Z_gap321_recovered/i1/gap321_i1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T231827Z_gap321_recovered/i1/PLAN187.json",
+    "job": "gap321_i1",
+    "task_id": "pdm_rul_005",
+    "dataset": "IMS_ENDPOINT",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/gap321_i1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T231827Z_gap321_recovered/i2/gap321_i2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T231827Z_gap321_recovered/i2/PLAN187.json",
+    "job": "gap321_i2",
+    "task_id": "pdm_rul_011",
+    "dataset": "IMS_ENDPOINT",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/gap321_i2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T231827Z_gap321_recovered/i3/gap321_i3",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T231827Z_gap321_recovered/i3/PLAN187.json",
+    "job": "gap321_i3",
+    "task_id": "pdm_safety_010",
+    "dataset": "IMS_ENDPOINT",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/gap321_i3",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T231827Z_gap321_recovered/l1/gap321_l1",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T231827Z_gap321_recovered/l1/PLAN187.json",
+    "job": "gap321_l1",
+    "task_id": "pdm_rul_014",
+    "dataset": "LDM_RTF",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/gap321_l1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261023T231827Z_gap321_recovered/l2/gap321_l2",
+    "kind": "legacy_coding",
+    "plan": "runs/20261023T231827Z_gap321_recovered/l2/PLAN187.json",
+    "job": "gap321_l2",
+    "task_id": "pdm_rul_008",
+    "dataset": "LDM_RTF",
+    "historical_status": "finished",
+    "replay_records": [],
+    "historical_workspace": "workspaces/gap321_l2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T174000Z_freeprogram337/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T174000Z_freeprogram337/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T174000Z_freeprogram337/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T174000Z_freeprogram337/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T174000Z_freeprogram337/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T174000Z_freeprogram337/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T174000Z_freeprogram337/witness_transaction_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T174000Z_freeprogram337/SESSIONS337.json",
+    "job": "witness_transaction_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T174000Z_freeprogram337/subjects/witness_transaction_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T174000Z_freeprogram337/witness_transaction_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T174000Z_freeprogram337/SESSIONS337.json",
+    "job": "witness_transaction_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T174000Z_freeprogram337/subjects/witness_transaction_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T181000Z_freeprogram337r1/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T181000Z_freeprogram337r1/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T181000Z_freeprogram337r1/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T181000Z_freeprogram337r1/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T181000Z_freeprogram337r1/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T181000Z_freeprogram337r1/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T181000Z_freeprogram337r1/witness_transaction_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T181000Z_freeprogram337r1/SESSIONS337.json",
+    "job": "witness_transaction_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T181000Z_freeprogram337r1/subjects/witness_transaction_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T181000Z_freeprogram337r1/witness_transaction_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T181000Z_freeprogram337r1/SESSIONS337.json",
+    "job": "witness_transaction_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T181000Z_freeprogram337r1/subjects/witness_transaction_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T204500Z_r342/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T204500Z_r342/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T204500Z_r342/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T204500Z_r342/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T204500Z_r342/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T204500Z_r342/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T204500Z_r342/controlled_edits_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T204500Z_r342/SESSIONS337.json",
+    "job": "controlled_edits_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T204500Z_r342/subjects/controlled_edits_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T204500Z_r342/controlled_edits_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T204500Z_r342/SESSIONS337.json",
+    "job": "controlled_edits_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T204500Z_r342/subjects/controlled_edits_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T211000Z_r342l2/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T211000Z_r342l2/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T211000Z_r342l2/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T211000Z_r342l2/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T211000Z_r342l2/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T211000Z_r342l2/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T211000Z_r342l2/controlled_edits_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T211000Z_r342l2/SESSIONS337.json",
+    "job": "controlled_edits_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T211000Z_r342l2/subjects/controlled_edits_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261024T211000Z_r342l2/controlled_edits_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261024T211000Z_r342l2/SESSIONS337.json",
+    "job": "controlled_edits_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261024T211000Z_r342l2/subjects/controlled_edits_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T012600Z_local347/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T012600Z_local347/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T012600Z_local347/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T012600Z_local347/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T012600Z_local347/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T012600Z_local347/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T012600Z_local347/local_revision_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T012600Z_local347/SESSIONS337.json",
+    "job": "local_revision_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T012600Z_local347/subjects/local_revision_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T012600Z_local347/local_revision_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T012600Z_local347/SESSIONS337.json",
+    "job": "local_revision_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T012600Z_local347/subjects/local_revision_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T104200Z_hust367/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T104200Z_hust367/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T104200Z_hust367/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T104200Z_hust367/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T104200Z_hust367/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T104200Z_hust367/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T215000Z_submit396/ordinary_coding_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T215000Z_submit396/SESSIONS337.json",
+    "job": "ordinary_coding_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T215000Z_submit396/subjects/ordinary_coding_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T215000Z_submit396/ordinary_coding_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T215000Z_submit396/SESSIONS337.json",
+    "job": "ordinary_coding_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T215000Z_submit396/subjects/ordinary_coding_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T215000Z_submit396/submission_review_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T215000Z_submit396/SESSIONS337.json",
+    "job": "submission_review_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T215000Z_submit396/subjects/submission_review_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T215000Z_submit396/submission_review_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T215000Z_submit396/SESSIONS337.json",
+    "job": "submission_review_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T215000Z_submit396/subjects/submission_review_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/branch_a_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "branch_a_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/branch_a_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/branch_a_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "branch_a_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/branch_a_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/branch_b_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "branch_b_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/branch_b_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/branch_b_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "branch_b_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/branch_b_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/selector_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "selector_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/selector_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261025T235000Z_portfolio399/selector_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261025T235000Z_portfolio399/SESSIONS337.json",
+    "job": "selector_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261025T235000Z_portfolio399/subjects/selector_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T020930Z_counterexample404/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T020930Z_counterexample404/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T020930Z_counterexample404/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T020930Z_counterexample404/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T020930Z_counterexample404/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T020930Z_counterexample404/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T020930Z_counterexample404/error_directed_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T020930Z_counterexample404/SESSIONS337.json",
+    "job": "error_directed_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T020930Z_counterexample404/subjects/error_directed_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T020930Z_counterexample404/error_directed_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T020930Z_counterexample404/SESSIONS337.json",
+    "job": "error_directed_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T020930Z_counterexample404/subjects/error_directed_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T100845Z_recomb419/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T100845Z_recomb419/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T100845Z_recomb419/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T100845Z_recomb419/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T100845Z_recomb419/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T100845Z_recomb419/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T100845Z_recomb419/recombination_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T100845Z_recomb419/SESSIONS337.json",
+    "job": "recombination_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T100845Z_recomb419/subjects/recombination_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T100845Z_recomb419/recombination_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T100845Z_recomb419/SESSIONS337.json",
+    "job": "recombination_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T100845Z_recomb419/subjects/recombination_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T150347Z_contrast427/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T150347Z_contrast427/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T150347Z_contrast427/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T150347Z_contrast427/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T150347Z_contrast427/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T150347Z_contrast427/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T150347Z_contrast427/contrast_transfer_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T150347Z_contrast427/SESSIONS337.json",
+    "job": "contrast_transfer_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T150347Z_contrast427/subjects/contrast_transfer_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T150347Z_contrast427/contrast_transfer_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T150347Z_contrast427/SESSIONS337.json",
+    "job": "contrast_transfer_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T150347Z_contrast427/subjects/contrast_transfer_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T195000Z_coding435/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T195000Z_coding435/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T195000Z_coding435/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T195000Z_coding435/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T195000Z_coding435/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T195000Z_coding435/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T195000Z_coding435/causal_repair_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T195000Z_coding435/SESSIONS337.json",
+    "job": "causal_repair_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T195000Z_coding435/subjects/causal_repair_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T195000Z_coding435/causal_repair_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T195000Z_coding435/SESSIONS337.json",
+    "job": "causal_repair_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T195000Z_coding435/subjects/causal_repair_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T232249Z_lineage442/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T232249Z_lineage442/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T232249Z_lineage442/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T232249Z_lineage442/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T232249Z_lineage442/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T232249Z_lineage442/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T232249Z_lineage442/lineage_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T232249Z_lineage442/SESSIONS337.json",
+    "job": "lineage_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T232249Z_lineage442/subjects/lineage_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261026T232249Z_lineage442/lineage_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261026T232249Z_lineage442/SESSIONS337.json",
+    "job": "lineage_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261026T232249Z_lineage442/subjects/lineage_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T003234Z_qualification444/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T003234Z_qualification444/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T003234Z_qualification444/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T003234Z_qualification444/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T003234Z_qualification444/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T003234Z_qualification444/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T013100Z_lineage445/lineage_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T013100Z_lineage445/SESSIONS337.json",
+    "job": "lineage_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T013100Z_lineage445/subjects/lineage_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T013100Z_lineage445/lineage_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T013100Z_lineage445/SESSIONS337.json",
+    "job": "lineage_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T013100Z_lineage445/subjects/lineage_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T102431Z_whatfits461/ordinary_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T102431Z_whatfits461/SESSIONS337.json",
+    "job": "ordinary_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T102431Z_whatfits461/subjects/ordinary_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T102431Z_whatfits461/ordinary_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T102431Z_whatfits461/SESSIONS337.json",
+    "job": "ordinary_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T102431Z_whatfits461/subjects/ordinary_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T102431Z_whatfits461/rebuild_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T102431Z_whatfits461/SESSIONS337.json",
+    "job": "rebuild_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T102431Z_whatfits461/subjects/rebuild_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T102431Z_whatfits461/rebuild_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T102431Z_whatfits461/SESSIONS337.json",
+    "job": "rebuild_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T102431Z_whatfits461/subjects/rebuild_2",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T104923Z_rebuild462/rebuild_1",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T104923Z_rebuild462/SESSIONS337.json",
+    "job": "rebuild_1",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T104923Z_rebuild462/subjects/rebuild_1",
+    "test_inputs_visible_during_development": false
+  },
+  {
+    "id": "runs/20261027T104923Z_rebuild462/rebuild_2",
+    "kind": "native_program_revision",
+    "plan": "runs/20261027T104923Z_rebuild462/SESSIONS337.json",
+    "job": "rebuild_2",
+    "task_id": null,
+    "dataset": null,
+    "historical_status": null,
+    "replay_records": [],
+    "historical_workspace": "/srv/yyf-zyq/PHM_20261010/20261027T104923Z_rebuild462/subjects/rebuild_2",
+    "test_inputs_visible_during_development": false
+  }
+]

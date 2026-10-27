@@ -1,0 +1,26 @@
+{
+  "artifact_id": "actual-phmforge-environment-20261027-v0.3.0",
+  "schema_version": 1,
+  "manifest_file": "environment.json.gz",
+  "manifest_sha256": "ff1022d428e977e8a089f505697e84549fa8f8ba7c60144c81bb2f57e75a7c53",
+  "logical_files": 455884,
+  "objects": 176806,
+  "object_bytes": 148711139082,
+  "archives": 247,
+  "symlinks": 1123,
+  "source_code_snapshot": "research_snapshot/SOURCE_MANIFEST.json",
+  "source_code_files": 461,
+  "development_vs_evaluation_isolated_by_runner": true,
+  "environment_in_git": false,
+  "public_download_url": null,
+  "local_entry": "environment_store (local link, not tracked); see LOCAL_ENVIRONMENT.json",
+  "required_platform": "Linux x86-64 with bubblewrap and compatible system glibc",
+  "verification_files": {
+    "integrity.json": "e9da7121708cb0a9ccc65f96b3c19b5da0320a6e09ff869f8a40a9ce01ade689",
+    "reproduction_summary.json": "1b2b0d525eec04b0799dfe7a9e80e32f9c50efe70984e45cdd37d3d09d5469e9",
+    "environment_catalog.json": "b196bc15c924cb92848ced3851fe9d86e26d6b299dc83cb0847e6215880e80e5",
+    "isolation.json": "048d5d4fc64da7d97266144f8d96cba2b40c79509f3361dce8c92de088ce7163",
+    "historical_cases.json": "46538a7d042706a61ce54564e5882e9f3a50d5becd84b43352e6ba5937f622d3"
+  },
+  "scope": "Actual archived research environment; historical validity limits retained, not all 75 official scenarios qualified"
+}

@@ -1,0 +1,648 @@
+{
+  "case_count": 270,
+  "case_kinds": {
+    "legacy_coding": 206,
+    "native_program_revision": 64
+  },
+  "legacy_datasets": {
+    "CMAPSS_FD001": 9,
+    "CWRU": 7,
+    "MFPT": 11,
+    "ELECTRICMOTORVIBRATIONS": 18,
+    "FEMTO": 7,
+    "HUST": 16,
+    "MENDELEY": 9,
+    "PADERBORN": 14,
+    "ROTORBROKENBAR": 29,
+    "XJTU": 8,
+    "UOC": 12,
+    "PlanetaryG1": 6,
+    "PlanetaryG2": 12,
+    "ENGINE_QA_HEALTH": 32,
+    "ENGINE_QA_TREND": 10,
+    "XJTU_TERMINAL": 1,
+    "IMS_ENDPOINT": 3,
+    "LDM_RTF": 2
+  },
+  "records": 16794,
+  "parsed_records": 16570,
+  "unresolved_mounted_dependencies": 0,
+  "records_without_captured_sandbox_command": 224,
+  "new_review_admitted_by_static_contract": [
+    "runs/20261021T174126Z_choice270/a/s270_motor_a_initial",
+    "runs/20261021T174126Z_choice270/a_review/s270_motor_a_review",
+    "runs/20261021T174126Z_choice270/b/s270_motor_b_initial",
+    "runs/20261021T174126Z_choice270/b_review/s270_motor_b_review",
+    "runs/20261022T013022Z_recovery273/a/s273_rotor_high_initial",
+    "runs/20261022T013022Z_recovery273/a_review/s273_rotor_high_review",
+    "runs/20261022T013022Z_recovery273/b/s273_rotor_low_initial",
+    "runs/20261022T013022Z_recovery273/b_review/s273_rotor_low_review",
+    "runs/20261022T023131Z_validation274/a/s274_hust_record_r1_initial",
+    "runs/20261022T023131Z_validation274/a_review/s274_hust_record_r1_review",
+    "runs/20261022T023131Z_validation274/b/s274_hust_geometry_r1_initial",
+    "runs/20261022T023131Z_validation274/b_review/s274_hust_geometry_r1_review",
+    "runs/20261022T023131Z_validation274/c/s274_hust_record_r2_initial",
+    "runs/20261022T023131Z_validation274/c_review/s274_hust_record_r2_review",
+    "runs/20261022T023131Z_validation274/d/s274_hust_geometry_r2_initial",
+    "runs/20261022T023131Z_validation274/d_review/s274_hust_geometry_r2_review",
+    "runs/20261022T052053Z_pipeline276/a/s276_ordinary_r1_initial",
+    "runs/20261022T052053Z_pipeline276/b/s276_full_program_r1_initial",
+    "runs/20261022T052053Z_pipeline276/c/s276_ordinary_r2_initial",
+    "runs/20261022T052053Z_pipeline276/d/s276_full_program_r2_initial",
+    "runs/20261023T052522Z_rotor305/a/s305_block34_ordinary_initial",
+    "runs/20261023T052522Z_rotor305/a_review/s305_block34_ordinary_review",
+    "runs/20261023T052522Z_rotor305/b/s305_block34_full_program_initial",
+    "runs/20261023T052522Z_rotor305/b_review/s305_block34_full_program_review",
+    "runs/20261023T052522Z_rotor305/c/s305_block56_ordinary_initial",
+    "runs/20261023T052522Z_rotor305/c_review/s305_block56_ordinary_review",
+    "runs/20261023T052522Z_rotor305/d/s305_block56_full_program_initial",
+    "runs/20261023T052522Z_rotor305/d_review/s305_block56_full_program_review",
+    "runs/20261023T105942Z_coverage306/f/detail306_f_initial",
+    "runs/20261023T105942Z_coverage306/h/detail306_h_initial",
+    "runs/20261023T105942Z_coverage306/m/detail306_m_initial",
+    "runs/20261023T105942Z_coverage306/p/detail306_p_initial",
+    "runs/20261023T131916Z_expansion307/c/expand307_cost002_initial",
+    "runs/20261023T131916Z_expansion307/n/expand307_pdm_rul_001",
+    "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_001",
+    "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_006",
+    "runs/20261023T134012Z_recovery308/n/recovery308_pdm_cost_benefit_001",
+    "runs/20261023T145500Z_review311/c/review311_cost002_ordinary_review",
+    "runs/20261023T151207Z_enginecoding312/e03/engine312_e03_initial",
+    "runs/20261023T151207Z_enginecoding312/e10/engine312_e10_initial",
+    "runs/20261023T151207Z_enginecoding312/e16/engine312_e16_initial",
+    "runs/20261023T151207Z_enginecoding312/e18/engine312_e18_initial",
+    "runs/20261023T154500Z_safety314/c/safety314_c_initial",
+    "runs/20261023T154500Z_safety314/m/safety314_m_initial",
+    "runs/20261023T154500Z_safety314/r/safety314_r_initial",
+    "runs/20261023T160000Z_rulfollow315/f1/rulfollow315_f1",
+    "runs/20261023T160000Z_rulfollow315/f2/rulfollow315_f2",
+    "runs/20261023T161000Z_enginetrendcoding316/t01/enginetrend316_t01_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t02/enginetrend316_t02_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t03/enginetrend316_t03_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t04/enginetrend316_t04_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t06/enginetrend316_t06_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t07/enginetrend316_t07_initial",
+    "runs/20261023T161000Z_enginetrendcoding316/t10/enginetrend316_t10_initial",
+    "runs/20261023T162500Z_enginecompletion317/e01/enginecompletion317_e01_completion",
+    "runs/20261023T162500Z_enginecompletion317/e02/enginecompletion317_e02_completion",
+    "runs/20261023T162500Z_enginecompletion317/e04/enginecompletion317_e04_completion",
+    "runs/20261023T162500Z_enginecompletion317/e05/enginecompletion317_e05_completion",
+    "runs/20261023T162500Z_enginecompletion317/e06/enginecompletion317_e06_completion",
+    "runs/20261023T162500Z_enginecompletion317/e07/enginecompletion317_e07_completion",
+    "runs/20261023T162500Z_enginecompletion317/e08/enginecompletion317_e08_completion",
+    "runs/20261023T162500Z_enginecompletion317/e09/enginecompletion317_e09_completion",
+    "runs/20261023T162500Z_enginecompletion317/e11/enginecompletion317_e11_completion",
+    "runs/20261023T162500Z_enginecompletion317/e12/enginecompletion317_e12_completion",
+    "runs/20261023T162500Z_enginecompletion317/e13/enginecompletion317_e13_completion",
+    "runs/20261023T162500Z_enginecompletion317/e14/enginecompletion317_e14_completion",
+    "runs/20261023T162500Z_enginecompletion317/e15/enginecompletion317_e15_completion",
+    "runs/20261023T162500Z_enginecompletion317/e17/enginecompletion317_e17_completion",
+    "runs/20261023T165500Z_diagnostic318/m/diagnostic318_m_initial",
+    "runs/20261023T165500Z_diagnostic318/x/diagnostic318_x_initial",
+    "runs/20261023T180000Z_cwrudiagnostic319/c/cwrudiagnostic319_c_initial"
+  ],
+  "new_review_not_admitted": [
+    {
+      "case": "runs/20261020T090327Z_realtrain238/realrul238_01",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T090327Z_realtrain238/realrul238_02",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T090327Z_realtrain238/realrul238_03",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T090327Z_realtrain238/realrul238_04",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_001",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_013",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T172316Z_forgecoding251/forge251_pdm_fault_015",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_001",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_013",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T183545Z_forgecoding252/forge251_pdm_fault_015",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T203053Z_femtocoding254/forge254_pdm_rul_003_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T203053Z_femtocoding254/forge254_pdm_rul_003_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T221342Z_hustcoding256/forge256_pdm_fault_012_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261020T221342Z_hustcoding256/forge256_pdm_fault_012_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T003008Z_mendeleycoding258/forge258_pdm_fault_014_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T003008Z_mendeleycoding258/forge258_pdm_fault_014_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T013611Z_coding259/forge259_pdm_fault_011_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T013611Z_coding259/forge259_pdm_fault_011_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T013611Z_coding259/forge259_pdm_fault_014_r3",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T013611Z_coding259/forge259_pdm_fault_014_r4",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T031137Z_coding260/forge260_pdm_fault_011_r3",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T031137Z_coding260/forge260_pdm_fault_011_r4",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T031137Z_coding260/forge260_pdm_fault_014_r5",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T050738Z_coding262/forge262_pdm_fault_013_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T050738Z_coding262/forge262_pdm_fault_015_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T050738Z_coding262/forge262_pdm_fault_012_r3",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T050738Z_coding262/forge262_pdm_fault_001_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T052543Z_femtocoding263/forge263_pdm_rul_003_r3",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T063922Z_review264/forge264_motor_review_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T063922Z_review264/forge264_motor_review_r2",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T063922Z_review264/forge264_hust_completion_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/classification/transfer267_motor_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/classification/transfer267_paderborn_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/classification_review/transfer267_motor_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/classification_review/transfer267_paderborn_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/rul/transfer267_initial_pdm_rul_003_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T102916Z_validation267/rul_review/transfer267_review_pdm_rul_003_r1",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a/s268_motor_a_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a/s268_paderborn_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a/s268_mfpt_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a/s268_hust_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a/s268_mendeley_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a_review/s268_motor_a_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a_review/s268_paderborn_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a_review/s268_mfpt_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a_review/s268_hust_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/a_review/s268_mendeley_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/b/s268_motor_b_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/b_review/s268_motor_b_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/recover_hust/s268_hust_recovery",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/recover_mendeley/s268_mendeley_recovery",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/recover_mfpt/s268_mfpt_recovery",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/recover_motor_a/s268_motor_a_recovery",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T124453Z_selection268/recover_paderborn/s268_paderborn_recovery",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/a/s269_paderborn_a_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/a/s269_mfpt_a_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/a_review/s269_paderborn_a_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/a_review/s269_mfpt_a_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/b/s269_paderborn_b_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/b/s269_mfpt_b_initial",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/b_review/s269_paderborn_b_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T152024Z_overfit269/b_review/s269_mfpt_b_review",
+      "reason": "This historical case does not declare a training-only development mount"
+    },
+    {
+      "case": "runs/20261021T194351Z_condition272/a/s272_rotor_high_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261021T194351Z_condition272/a_review/s272_rotor_high_review",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261021T194351Z_condition272/b/s272_rotor_low_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261021T194351Z_condition272/b_review/s272_rotor_low_review",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T081740Z_feedback278/a/s278_frozen_r1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T081740Z_feedback278/b/s278_adaptive_r1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T081740Z_feedback278/c/s278_frozen_r2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T081740Z_feedback278/d/s278_adaptive_r2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/rotor_a/s281_rotor_a",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/rotor_b/s281_rotor_b",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/rotor_c/s281_rotor_c",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/rotor_d/s281_rotor_d",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/xjtu_b/s281_xjtu_b",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T130911Z_review281/xjtu_d/s281_xjtu_d",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/delayed_1/s282_delayed_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/delayed_2/s282_delayed_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/delayed_3/s282_delayed_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/immediate_1/s282_immediate_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/immediate_2/s282_immediate_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T143450Z_feedback282/immediate_3/s282_immediate_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/delayed_1/s282_delayed_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/delayed_2/s282_delayed_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/delayed_3/s282_delayed_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/immediate_1/s282_immediate_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/immediate_2/s282_immediate_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T145645Z_feedback282_recovery/immediate_3/s282_immediate_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T161303Z_evidence284/rotor_a/s284_rotor_a",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T161303Z_evidence284/rotor_b/s284_rotor_b",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T161303Z_evidence284/rotor_c/s284_rotor_c",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T161303Z_evidence284/rotor_d/s284_rotor_d",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/delayed_1/s285_delayed_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/delayed_2/s285_delayed_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/delayed_3/s285_delayed_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/immediate_1/s285_immediate_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/immediate_2/s285_immediate_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261022T174700Z_feedback285/immediate_3/s285_immediate_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/delayed_1/s298_delayed_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/delayed_2/s298_delayed_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/delayed_3/s298_delayed_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/immediate_1/s298_immediate_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/immediate_2/s298_immediate_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/immediate_3/s298_immediate_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/delayed_1/s298_delayed_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/delayed_2/s298_delayed_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/delayed_3/s298_delayed_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/immediate_1/s298_immediate_1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/immediate_2/s298_immediate_2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T002126Z_ensemble298/review/immediate_3/s298_immediate_3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T131916Z_expansion307/n/expand307_pdm_cost_benefit_001",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e01/engine312_e01_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e02/engine312_e02_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e04/engine312_e04_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e05/engine312_e05_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e06/engine312_e06_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e07/engine312_e07_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e08/engine312_e08_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e09/engine312_e09_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e11/engine312_e11_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e12/engine312_e12_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e13/engine312_e13_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e14/engine312_e14_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e15/engine312_e15_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T151207Z_enginecoding312/e17/engine312_e17_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T160000Z_rulfollow315/x1/rulfollow315_x1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T160000Z_rulfollow315/x2/rulfollow315_x2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t05/enginetrend316_t05_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t08/enginetrend316_t08_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t09/enginetrend316_t09_initial",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T231827Z_gap321_recovered/i1/gap321_i1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T231827Z_gap321_recovered/i2/gap321_i2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T231827Z_gap321_recovered/i3/gap321_i3",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T231827Z_gap321_recovered/l1/gap321_l1",
+      "reason": "Case must have one unambiguous recorded external execution"
+    },
+    {
+      "case": "runs/20261023T231827Z_gap321_recovered/l2/gap321_l2",
+      "reason": "Case must have one unambiguous recorded external execution"
+    }
+  ],
+  "actual_new_review_smokes": 1,
+  "all_admitted_reviews_executed": false
+}

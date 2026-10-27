@@ -1,0 +1,389 @@
+{
+  "status": "numerical_reproduction_passed",
+  "source": "actual research environment A238-A467",
+  "archived_batches": 247,
+  "original_scenario_denominator": 75,
+  "original_numerical_directions_attempted": 55,
+  "original_normal_deliveries_replayed": 51,
+  "cold_predictions_matched": 93,
+  "initial_replay_preparation_failures": 4,
+  "preparation_failures_resolved": "The original evaluators had deleted temporary app copies. They were reconstructed from sealed workspaces with the original copy rules; original failures preserved.",
+  "real_training_entries": 3,
+  "real_estimator_fits": 7,
+  "new_fitted_weights_cold_inferences": 3,
+  "engineering_agent_sessions": 1,
+  "engineering_model_requests": 4,
+  "returned_model_ids": [
+    "deepseek-flash"
+  ],
+  "agent_scope": "Engineering smoke, retained the historical submission; not a method-performance trial",
+  "software_tests_passed": 12,
+  "fresh_wheel_install_and_real_replay_passed": true,
+  "scientific_goal_resumed": false,
+  "new_scientific_problem_confirmations": 0,
+  "full_original_official_scenarios_claimed": 0,
+  "dataset_and_information_limits_preserved": true,
+  "verification": {
+    "source_data": "real measurements, measured-derived sources, and explicitly allowed NASA simulation; source QA remains annotation-only",
+    "counts": "Directions, stages and queries are separate; neither a task success rate nor independent sources"
+  },
+  "directions": [
+    {
+      "task_id": "engine_health_combined_001",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e01/enginecompletion317_e01_completion"
+    },
+    {
+      "task_id": "engine_health_combined_002",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e02/enginecompletion317_e02_completion"
+    },
+    {
+      "task_id": "engine_health_combined_003",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T151207Z_enginecoding312/e03/engine312_e03_initial"
+    },
+    {
+      "task_id": "engine_health_combined_004",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e04/enginecompletion317_e04_completion"
+    },
+    {
+      "task_id": "engine_health_combined_005",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e05/enginecompletion317_e05_completion"
+    },
+    {
+      "task_id": "engine_health_combined_006",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e06/enginecompletion317_e06_completion"
+    },
+    {
+      "task_id": "engine_health_combined_007",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e07/enginecompletion317_e07_completion"
+    },
+    {
+      "task_id": "engine_health_combined_008",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e08/enginecompletion317_e08_completion"
+    },
+    {
+      "task_id": "engine_health_combined_009",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e09/enginecompletion317_e09_completion"
+    },
+    {
+      "task_id": "engine_health_combined_010",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T151207Z_enginecoding312/e10/engine312_e10_initial"
+    },
+    {
+      "task_id": "engine_health_combined_011",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e11/enginecompletion317_e11_completion"
+    },
+    {
+      "task_id": "engine_health_combined_012",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e12/enginecompletion317_e12_completion"
+    },
+    {
+      "task_id": "engine_health_combined_013",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t01/enginetrend316_t01_initial"
+    },
+    {
+      "task_id": "engine_health_combined_014",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t02/enginetrend316_t02_initial"
+    },
+    {
+      "task_id": "engine_health_combined_015",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t03/enginetrend316_t03_initial"
+    },
+    {
+      "task_id": "engine_health_combined_016",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t04/enginetrend316_t04_initial"
+    },
+    {
+      "task_id": "engine_health_combined_018",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t06/enginetrend316_t06_initial"
+    },
+    {
+      "task_id": "engine_health_combined_019",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t07/enginetrend316_t07_initial"
+    },
+    {
+      "task_id": "engine_health_combined_022",
+      "dataset": "ENGINE_QA_TREND",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T161000Z_enginetrendcoding316/t10/enginetrend316_t10_initial"
+    },
+    {
+      "task_id": "engine_health_combined_023",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e13/enginecompletion317_e13_completion"
+    },
+    {
+      "task_id": "engine_health_combined_024",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e14/enginecompletion317_e14_completion"
+    },
+    {
+      "task_id": "engine_health_combined_025",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e15/enginecompletion317_e15_completion"
+    },
+    {
+      "task_id": "engine_health_combined_026",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T151207Z_enginecoding312/e16/engine312_e16_initial"
+    },
+    {
+      "task_id": "engine_health_combined_027",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T162500Z_enginecompletion317/e17/enginecompletion317_e17_completion"
+    },
+    {
+      "task_id": "engine_health_combined_028",
+      "dataset": "ENGINE_QA_HEALTH",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T151207Z_enginecoding312/e18/engine312_e18_initial"
+    },
+    {
+      "task_id": "pdm_cost_benefit_001",
+      "dataset": "CMAPSS_FD001",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T134012Z_recovery308/n/recovery308_pdm_cost_benefit_001"
+    },
+    {
+      "task_id": "pdm_cost_benefit_002",
+      "dataset": "CWRU",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T145500Z_review311/c/review311_cost002_ordinary_review"
+    },
+    {
+      "task_id": "pdm_cost_benefit_003",
+      "dataset": "FEMTO",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T160000Z_rulfollow315/f1/rulfollow315_f1"
+    },
+    {
+      "task_id": "pdm_cost_benefit_004",
+      "dataset": "XJTU",
+      "queries": 15,
+      "status": "completed",
+      "case": "runs/20261023T160000Z_rulfollow315/x1/rulfollow315_x1"
+    },
+    {
+      "task_id": "pdm_fault_001",
+      "dataset": "CWRU",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T180000Z_cwrudiagnostic319/c/cwrudiagnostic319_c_initial"
+    },
+    {
+      "task_id": "pdm_fault_002",
+      "dataset": "XJTU_TERMINAL",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T165500Z_diagnostic318/x/diagnostic318_x_initial"
+    },
+    {
+      "task_id": "pdm_fault_003",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T165500Z_diagnostic318/m/diagnostic318_m_initial"
+    },
+    {
+      "task_id": "pdm_fault_004",
+      "dataset": "ROTORBROKENBAR",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T052522Z_rotor305/d_review/s305_block56_full_program_review"
+    },
+    {
+      "task_id": "pdm_fault_007",
+      "dataset": "HUST",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T105942Z_coverage306/h/detail306_h_initial"
+    },
+    {
+      "task_id": "pdm_fault_008",
+      "dataset": "MFPT",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T105942Z_coverage306/f/detail306_f_initial"
+    },
+    {
+      "task_id": "pdm_fault_009",
+      "dataset": "MENDELEY",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T105942Z_coverage306/m/detail306_m_initial"
+    },
+    {
+      "task_id": "pdm_fault_011",
+      "dataset": "PADERBORN",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261021T152024Z_overfit269/b_review/s269_paderborn_b_review"
+    },
+    {
+      "task_id": "pdm_fault_012",
+      "dataset": "HUST",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261022T023131Z_validation274/d_review/s274_hust_geometry_r2_review"
+    },
+    {
+      "task_id": "pdm_fault_013",
+      "dataset": "MFPT",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261021T152024Z_overfit269/b_review/s269_mfpt_b_review"
+    },
+    {
+      "task_id": "pdm_fault_014",
+      "dataset": "MENDELEY",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261021T124453Z_selection268/recover_mendeley/s268_mendeley_recovery"
+    },
+    {
+      "task_id": "pdm_fault_015",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261021T174126Z_choice270/b_review/s270_motor_b_review"
+    },
+    {
+      "task_id": "pdm_rul_001",
+      "dataset": "CMAPSS_FD001",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T131916Z_expansion307/n/expand307_pdm_rul_001"
+    },
+    {
+      "task_id": "pdm_rul_003",
+      "dataset": "FEMTO",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261021T102916Z_validation267/rul_review/transfer267_review_pdm_rul_003_r1"
+    },
+    {
+      "task_id": "pdm_rul_004",
+      "dataset": "XJTU",
+      "queries": 15,
+      "status": "completed",
+      "case": "runs/20261022T081740Z_feedback278/d/s278_adaptive_r2"
+    },
+    {
+      "task_id": "pdm_safety_001",
+      "dataset": "CMAPSS_FD001",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_001"
+    },
+    {
+      "task_id": "pdm_safety_002",
+      "dataset": "CWRU",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T154500Z_safety314/c/safety314_c_initial"
+    },
+    {
+      "task_id": "pdm_safety_003",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T154500Z_safety314/m/safety314_m_initial"
+    },
+    {
+      "task_id": "pdm_safety_004",
+      "dataset": "ROTORBROKENBAR",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T154500Z_safety314/r/safety314_r_initial"
+    },
+    {
+      "task_id": "pdm_safety_006",
+      "dataset": "CMAPSS_FD001",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T131916Z_expansion307/n/expand307_pdm_safety_006"
+    },
+    {
+      "task_id": "pdm_safety_008",
+      "dataset": "FEMTO",
+      "queries": 1,
+      "status": "completed",
+      "case": "runs/20261023T160000Z_rulfollow315/f2/rulfollow315_f2"
+    },
+    {
+      "task_id": "pdm_safety_009",
+      "dataset": "XJTU",
+      "queries": 15,
+      "status": "completed",
+      "case": "runs/20261023T160000Z_rulfollow315/x2/rulfollow315_x2"
+    }
+  ]
+}
