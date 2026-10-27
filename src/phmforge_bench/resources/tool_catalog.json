@@ -1,0 +1,561 @@
+{
+  "load_dataset": {
+    "description": "Research-adapted real computation. load_dataset. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset_name": {
+          "type": "string",
+          "description": "Dataset name. For CMAPSS: 'CMAPSS_FD001' or 'CMAPSS FD001' (files are train_FD001.txt, test_FD001.txt). For others: 'CWRU', 'FEMTO', etc."
+        },
+        "split": {
+          "type": "string",
+          "default": "train",
+          "description": "Permitted training or development split. Final test observations are only released to the isolated evaluator."
+        }
+      },
+      "required": [
+        "dataset_name"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "LoadDatasetInput"
+  },
+  "load_ground_truth": {
+    "description": "Development labels only. Explicit file='train' or 'val'; empty or final-test requests are unavailable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset_name": {
+          "type": "string",
+          "description": "Dataset name. For CMAPSS: 'CMAPSS_FD001' (file will be RUL_FD001.txt automatically)."
+        },
+        "file": {
+          "type": "string",
+          "default": "",
+          "description": "Explicitly choose 'train' or 'val'. Final test labels are never provided by this tool."
+        }
+      },
+      "required": [
+        "dataset_name"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "LoadGroundTruthInput"
+  },
+  "calculate_mae": {
+    "description": "Research-adapted real computation. calculate_mae. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ground_truth": {
+          "type": "string",
+          "description": "Ground truth RUL values"
+        },
+        "predictions": {
+          "type": "string",
+          "description": "Predicted RUL values"
+        }
+      },
+      "required": [
+        "ground_truth",
+        "predictions"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "MAEInput"
+  },
+  "calculate_rmse": {
+    "description": "Research-adapted real computation. calculate_rmse. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ground_truth": {
+          "type": "string",
+          "description": "Ground truth RUL values"
+        },
+        "predictions": {
+          "type": "string",
+          "description": "Predicted RUL values"
+        }
+      },
+      "required": [
+        "ground_truth",
+        "predictions"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "RMSEInput"
+  },
+  "verify_ground_truth": {
+    "description": "Checks exact sample/unit IDs and numeric RUL metrics over JSON record lists or allowed JSON artifact paths. Does not certify caller-supplied truth.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ground_truth": {
+          "type": "string",
+          "description": "Ground truth RUL values"
+        },
+        "predictions": {
+          "type": "string",
+          "description": "Predicted RUL values"
+        }
+      },
+      "required": [
+        "ground_truth",
+        "predictions"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "VerifyInput"
+  },
+  "calculate_accuracy": {
+    "description": "Research-adapted real computation. calculate_accuracy. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ground_truth": {
+          "type": "string",
+          "description": "Ground truth labels"
+        },
+        "predictions": {
+          "type": "string",
+          "description": "Predicted labels"
+        }
+      },
+      "required": [
+        "ground_truth",
+        "predictions"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "AccuracyInput"
+  },
+  "verify_classification": {
+    "description": "Checks exact sample IDs and actual classification metrics over JSON records or allowed JSON artifact paths. Does not certify caller-supplied truth.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ground_truth": {
+          "type": "string",
+          "description": "Ground truth labels"
+        },
+        "predictions": {
+          "type": "string",
+          "description": "Predicted labels"
+        }
+      },
+      "required": [
+        "ground_truth",
+        "predictions"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "VerifyClassInput"
+  },
+  "train_rul_model": {
+    "description": "Research-adapted real computation. train_rul_model. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "type": "string",
+          "description": "Dataset name"
+        },
+        "model_type": {
+          "type": "string",
+          "default": "mlp",
+          "description": "Model type: mlp, lstm, transformer"
+        },
+        "epochs": {
+          "type": "integer",
+          "default": 50,
+          "description": "Training epochs"
+        }
+      },
+      "required": [
+        "dataset"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "TrainRULInput"
+  },
+  "predict_rul": {
+    "description": "Research-adapted real computation. predict_rul. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "model_path": {
+          "type": "string",
+          "description": "Path to trained model"
+        },
+        "test_data": {
+          "type": "string",
+          "description": "Test data"
+        },
+        "unit_id": {
+          "type": "integer",
+          "description": "Unit ID"
+        }
+      },
+      "required": [
+        "model_path",
+        "test_data",
+        "unit_id"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "PredictRULInput"
+  },
+  "train_fault_classifier": {
+    "description": "Research-adapted real computation. train_fault_classifier. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "dataset": {
+          "type": "string",
+          "description": "Dataset name"
+        },
+        "model_type": {
+          "type": "string",
+          "default": "mlp",
+          "description": "Model type"
+        },
+        "epochs": {
+          "type": "integer",
+          "default": 50,
+          "description": "Training epochs"
+        }
+      },
+      "required": [
+        "dataset"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "TrainFaultInput"
+  },
+  "classify_faults": {
+    "description": "Research-adapted real computation. classify_faults. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "model_path": {
+          "type": "string",
+          "description": "Path to trained model"
+        },
+        "test_data": {
+          "type": "string",
+          "description": "Test data"
+        },
+        "unit_id": {
+          "type": "integer",
+          "description": "Unit ID"
+        }
+      },
+      "required": [
+        "model_path",
+        "test_data",
+        "unit_id"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "ClassifyFaultInput"
+  },
+  "web_search": {
+    "description": "UNAVAILABLE in verified profile: No configured search service in this network-isolated numerical profile",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query string"
+        },
+        "count": {
+          "type": "integer",
+          "default": 5,
+          "description": "Number of results"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "WebSearchInput"
+  },
+  "analyze_engine_signals": {
+    "description": "Research-adapted real computation. analyze_engine_signals. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "sensor_data": {
+          "type": "string",
+          "description": "JSON string of sensor readings, e.g. '{\"T24\": 518.67, \"T30\": 642.15, \"T50\": 1589.7}'"
+        },
+        "engine_id": {
+          "type": "string",
+          "default": "",
+          "description": "Engine or unit identifier"
+        }
+      },
+      "required": [
+        "sensor_data"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "AnalyzeEngineSignalsInput"
+  },
+  "assess_component_health": {
+    "description": "UNAVAILABLE in verified profile: No calibrated component/operating-condition health reference supplied",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "component": {
+          "type": "string",
+          "description": "Component name: Fan, LPC, HPC, HPT, or LPT"
+        },
+        "efficiency": {
+          "type": "number",
+          "description": "Current efficiency value (0-1 scale)"
+        },
+        "flow_modifier": {
+          "type": "number",
+          "description": "Current flow modifier value (0-1 scale)"
+        }
+      },
+      "required": [
+        "component",
+        "efficiency",
+        "flow_modifier"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "AssessComponentHealthInput"
+  },
+  "diagnose_timing_issues": {
+    "description": "UNAVAILABLE in verified profile: Two deviations alone do not identify a physical fault mechanism",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "efficiency_deviation": {
+          "type": "number",
+          "description": "Efficiency deviation from baseline"
+        },
+        "flow_deviation": {
+          "type": "number",
+          "description": "Flow modifier deviation from baseline"
+        }
+      },
+      "required": [
+        "efficiency_deviation",
+        "flow_deviation"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "DiagnoseTimingIssuesInput"
+  },
+  "detect_degradation_trend": {
+    "description": "Research-adapted real computation. detect_degradation_trend. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "cycle_data": {
+          "type": "string",
+          "description": "JSON array of cycle measurements, e.g. '[{\"cycle\": 1, \"value\": 0.99}, ...]'"
+        }
+      },
+      "required": [
+        "cycle_data"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "DetectDegradationTrendInput"
+  },
+  "calculate_maintenance_cost": {
+    "description": "Research-adapted real computation. calculate_maintenance_cost. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "preventive_cost": {
+          "type": "number",
+          "description": "Cost of a single preventive maintenance action ($)"
+        },
+        "frequency_per_year": {
+          "type": "integer",
+          "description": "Number of preventive maintenance actions per year"
+        },
+        "downtime_hours": {
+          "type": "number",
+          "default": 4.0,
+          "description": "Downtime per preventive maintenance (hours)"
+        },
+        "hourly_rate": {
+          "type": "number",
+          "default": 500.0,
+          "description": "Cost per hour of downtime ($)"
+        }
+      },
+      "required": [
+        "preventive_cost",
+        "frequency_per_year"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "CalculateMaintenanceCostInput"
+  },
+  "calculate_failure_cost": {
+    "description": "Research-adapted real computation. calculate_failure_cost. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "failure_probability": {
+          "type": "number",
+          "description": "Annual probability of unplanned failure (0-1)"
+        },
+        "repair_cost": {
+          "type": "number",
+          "description": "Cost of unplanned repair ($)"
+        },
+        "downtime_hours": {
+          "type": "number",
+          "default": 48.0,
+          "description": "Downtime for unplanned failure (hours)"
+        },
+        "hourly_rate": {
+          "type": "number",
+          "default": 500.0,
+          "description": "Cost per hour of downtime ($)"
+        },
+        "consequential_cost": {
+          "type": "number",
+          "default": 0.0,
+          "description": "Additional consequential damage cost ($)"
+        }
+      },
+      "required": [
+        "failure_probability",
+        "repair_cost"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "CalculateFailureCostInput"
+  },
+  "optimize_maintenance_schedule": {
+    "description": "UNAVAILABLE in verified profile: No action-dependent failure distribution, horizon, constraints or cost model",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "rul_estimate": {
+          "type": "number",
+          "description": "Estimated remaining useful life (cycles)"
+        },
+        "preventive_cost": {
+          "type": "number",
+          "description": "Cost of preventive maintenance ($)"
+        },
+        "failure_cost": {
+          "type": "number",
+          "description": "Cost of unplanned failure ($)"
+        },
+        "safety_margin": {
+          "type": "number",
+          "default": 0.2,
+          "description": "Safety margin as fraction of RUL (0-1)"
+        }
+      },
+      "required": [
+        "rul_estimate",
+        "preventive_cost",
+        "failure_cost"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "OptimizeMaintenanceScheduleInput"
+  },
+  "assess_safety_risk": {
+    "description": "Research-adapted real computation. assess_safety_risk. Data and model must exist; no hidden labels, synthetic returns or physical certification.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "failure_mode": {
+          "type": "string",
+          "description": "Description of the failure mode"
+        },
+        "severity": {
+          "type": "integer",
+          "description": "Severity rating 1-10 (10=catastrophic)"
+        },
+        "probability": {
+          "type": "integer",
+          "description": "Probability rating 1-10 (10=certain)"
+        },
+        "detectability": {
+          "type": "integer",
+          "description": "Detectability rating 1-10 (10=undetectable)"
+        }
+      },
+      "required": [
+        "failure_mode",
+        "severity",
+        "probability",
+        "detectability"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "AssessSafetyRiskInput"
+  },
+  "check_compliance": {
+    "description": "UNAVAILABLE in verified profile: No applicable standard clauses, operating mode or auditable compliance evidence",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "standard": {
+          "type": "string",
+          "description": "Standard to check against (e.g., 'IEC 61508', 'ISO 13849', 'OSHA 1910')"
+        },
+        "safety_integrity_level": {
+          "type": "integer",
+          "default": 2,
+          "description": "Required SIL level (1-4)"
+        },
+        "current_pfd": {
+          "type": "number",
+          "default": 0.01,
+          "description": "Current probability of failure on demand"
+        }
+      },
+      "required": [
+        "standard"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "CheckComplianceInput"
+  },
+  "generate_safety_recommendations": {
+    "description": "UNAVAILABLE in verified profile: No validated maintenance/safety policy or diagnostic evidence",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "risk_level": {
+          "type": "string",
+          "description": "Risk level: low, medium, high, or critical"
+        },
+        "failure_mode": {
+          "type": "string",
+          "description": "Description of the failure mode"
+        },
+        "current_controls": {
+          "type": "string",
+          "default": "none",
+          "description": "Existing safety controls"
+        }
+      },
+      "required": [
+        "risk_level",
+        "failure_mode"
+      ],
+      "additionalProperties": false
+    },
+    "original_schema_name": "GenerateSafetyRecommendationsInput"
+  }
+}

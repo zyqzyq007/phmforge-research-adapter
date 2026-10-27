@@ -163,6 +163,21 @@ class VerifiedForge:
                             provenance=item, evaluation_labels_available=False,
                             physical_conclusion=None,
                             reason="Actual sequences recovered; physical channel mapping and health contracts unresolved")
+            if item["task"] == "rul" and name == "CMAPSS_FD001" and split == "val":
+                # Make development prefixes available without their targets.
+                # The untruncated development trajectories are already public;
+                # this split is for model selection, not a blind evaluation.
+                config = json.loads((directory / "training_config.json").read_text())
+                raw = rul.read_series(directory / "train.txt")
+                windows, _, records = rul.development_windows(
+                    raw, config["validation_engine_ids"], config, validation=True)
+                path = self.output / f"development_observations_{uuid.uuid4().hex[:12]}.npz"
+                np.savez_compressed(path, windows=windows,
+                    unit_ids=np.asarray([r["unit_id"] for r in records]),
+                    endpoint_cycles=np.asarray([r["endpoint_cycle"] for r in records]),
+                    sample_ids=np.asarray([f"{r['unit_id']}:{r['endpoint_cycle']}" for r in records]))
+                return dict(status="success", dataset=name, split=split, data_path=str(path),
+                            provenance=item, evaluation_labels_available=False)
             bearing_format=item.get('format') in ['femto_npz','xjtu_npz','cmapss_npz','measured_endpoint_npz']
             if split not in (["train", "test"] if item["task"] == "rul" and not bearing_format else ["train", "val", "test"]):
                 raise ValueError("Requested split unavailable; no fallback to training data")

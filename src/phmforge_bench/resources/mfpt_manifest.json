@@ -1,0 +1,149 @@
+{
+  "dataset": "MFPT native recordings",
+  "source_repository": "https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data",
+  "source_tree": "d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d",
+  "source_license": "CC BY-NC-SA 4.0 per source README; commercial use requires rights-holder permission",
+  "measured_or_simulated": "measured laboratory recordings",
+  "files": [
+    {
+      "path": "test_data/InnerRaceFault_vload_6.mat",
+      "bytes": 1124470,
+      "sha256": "51ace00de918012668beae944442588004655f40447497944ac63d71b3aa9e64",
+      "git_blob_sha1": "93e30f284d707ee11747127ab90eb9ee434d957c",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/InnerRaceFault_vload_6.mat"
+    },
+    {
+      "path": "test_data/InnerRaceFault_vload_7.mat",
+      "bytes": 1124472,
+      "sha256": "f9b0131045d8b05cd410fb72e8c2db06ee2eab16177cbc09657a63fef3110ef6",
+      "git_blob_sha1": "9547e4db77b1adc86e14697a07bae8bd5982eb27",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/InnerRaceFault_vload_7.mat"
+    },
+    {
+      "path": "test_data/OuterRaceFault_3.mat",
+      "bytes": 4484607,
+      "sha256": "48fdf58ae0717fed02fbfe44773c15bbd96f3ceab9387fcfbf52b8260fdc3d97",
+      "git_blob_sha1": "ecf4a890c9aa9bc24075e558b5f719b2792ec0b6",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/OuterRaceFault_3.mat"
+    },
+    {
+      "path": "test_data/OuterRaceFault_vload_6.mat",
+      "bytes": 1121355,
+      "sha256": "ea167417e39b7481a9ea422fdc5f5b67b96d8521f27cf703e46c4f8cbb8cd995",
+      "git_blob_sha1": "be3573835a11ab1c89d667142ff2d4ed62f08751",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/OuterRaceFault_vload_6.mat"
+    },
+    {
+      "path": "test_data/OuterRaceFault_vload_7.mat",
+      "bytes": 1124569,
+      "sha256": "38ef59f7fea41d4839d89dd9aa7ad3cab783f2e5f10960e34c81c83d3328105e",
+      "git_blob_sha1": "931e5ee4053c8890c4d1208b121a985dac70f5d4",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/OuterRaceFault_vload_7.mat"
+    },
+    {
+      "path": "test_data/baseline_3.mat",
+      "bytes": 4477042,
+      "sha256": "d4b7c69d9f9ef4e9e7b4f5e9964c2dd58bc09a2787b3e3d89877ec27400eb003",
+      "git_blob_sha1": "9c5bcc53b1a180ce8d1da89c27d6f30be30c55ba",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/test_data/baseline_3.mat"
+    },
+    {
+      "path": "train_data/InnerRaceFault_vload_1.mat",
+      "bytes": 1124871,
+      "sha256": "943e1f0ecef2496ee5233063765d40b8a3aab480044b36a9feaa3483e5331db9",
+      "git_blob_sha1": "33a65bdefdcba6d2126b4a064007a19a3c077526",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/InnerRaceFault_vload_1.mat"
+    },
+    {
+      "path": "train_data/InnerRaceFault_vload_2.mat",
+      "bytes": 1124681,
+      "sha256": "4e85dc145f230db5b687d032ba94e849d58adb85fd1c00e605efba0bc14edc92",
+      "git_blob_sha1": "20bf52f0be0e9d7c09c0067ba310ace3f97da9d3",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/InnerRaceFault_vload_2.mat"
+    },
+    {
+      "path": "train_data/InnerRaceFault_vload_3.mat",
+      "bytes": 1124601,
+      "sha256": "f4b100c59db948212f1603112952af332967497db66c6ebe5b4f799ac62dd4bf",
+      "git_blob_sha1": "b399822bfea8ef74a44ad176be5bed0846085c05",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/InnerRaceFault_vload_3.mat"
+    },
+    {
+      "path": "train_data/InnerRaceFault_vload_4.mat",
+      "bytes": 1123967,
+      "sha256": "3826a49dcac630176b82569a0b923ef16fa13db5a667171066ffac62949d498b",
+      "git_blob_sha1": "f041b51c34e0ee449a895328ba8f9a84f140c4e3",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/InnerRaceFault_vload_4.mat"
+    },
+    {
+      "path": "train_data/InnerRaceFault_vload_5.mat",
+      "bytes": 1124229,
+      "sha256": "5eb0c3b88f4abab2d00f17f12170a25e51946adf05ff95ee79844360ccce2e92",
+      "git_blob_sha1": "e863248287c384dcbef2fa9bf11e12fcce1f4197",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/InnerRaceFault_vload_5.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_1.mat",
+      "bytes": 4471331,
+      "sha256": "1a54a9d9ebb95b6ef1f72c4edd347358eedca979cce47992fcf6147b009bb290",
+      "git_blob_sha1": "6007ea4a538a217f1d5ee260a3f506896795021a",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_1.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_2.mat",
+      "bytes": 4476284,
+      "sha256": "c177a4092ff22d0a568ee591fbef43b0d07ac57c8527f2ab45cd352313fb712c",
+      "git_blob_sha1": "4fc8c94d0a7e6d5ba1c0e92741e1958ae0afea7a",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_2.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_vload_1.mat",
+      "bytes": 1121586,
+      "sha256": "8a1977da6f1c8dd74c7826b66e75cf9d52e1cdcf6000c1348d1b356a06781af0",
+      "git_blob_sha1": "a1b836d47a99be22da67682b256ec401d1391f3c",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_vload_1.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_vload_2.mat",
+      "bytes": 1121822,
+      "sha256": "1883793fc865e10c6ddebe8a8241dd4924bfd4b4fd0ba6284affc697d2b29e6d",
+      "git_blob_sha1": "6584cc001790de41443800a03374e1dd0a763ad2",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_vload_2.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_vload_3.mat",
+      "bytes": 1120163,
+      "sha256": "52410e466c71413e70b9da800d8c1fa4d74ada9bfcf14e45bbe455e1a073296d",
+      "git_blob_sha1": "c99ec0c3ed6f74f2da5e0f67c7fc1efad86c5af4",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_vload_3.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_vload_4.mat",
+      "bytes": 1120321,
+      "sha256": "81b4b1dde9340774c9170633d564fdc08b8a55e38676c3033a8088a0121c6191",
+      "git_blob_sha1": "78486170b3d9137e58c4c7b61628d6d1308498ec",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_vload_4.mat"
+    },
+    {
+      "path": "train_data/OuterRaceFault_vload_5.mat",
+      "bytes": 1121183,
+      "sha256": "8f5b43ae668518165cd65fcb3cf30cd9e32e6f69b3c5192b4ebb93ff42c47689",
+      "git_blob_sha1": "ab38c83ee88650f9fb7170f7a8d3e3c1176b732a",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/OuterRaceFault_vload_5.mat"
+    },
+    {
+      "path": "train_data/baseline_1.mat",
+      "bytes": 4477991,
+      "sha256": "23f63a29f61c398e930fc69221beb729bd931656508fdda41aa63a0809cf4d8f",
+      "git_blob_sha1": "d46daf6c6f4a43b4f22b9067d1c76add642eecb5",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/baseline_1.mat"
+    },
+    {
+      "path": "train_data/baseline_2.mat",
+      "bytes": 4477679,
+      "sha256": "5949a1330d7846c3052853d6f8248f78398713de43c250e1c978dbf9bdef11b8",
+      "git_blob_sha1": "6d60d2ae99630a6d6259563671534520e7f2643b",
+      "url": "https://raw.githubusercontent.com/mathworks/RollingElementBearingFaultDiagnosis-Data/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d/train_data/baseline_2.mat"
+    }
+  ]
+}

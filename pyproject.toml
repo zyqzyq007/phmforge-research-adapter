@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phmforge-research-adapter"
+version = "0.2.0"
+description = "Source-bound research adaptations of PHMForge tasks"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==1.26.4",
+  "scipy==1.17.1",
+  "scikit-learn==1.7.2",
+  "joblib==1.6.0",
+  "mcp==1.30.0",
+  "pydantic==2.14.1",
+  "torch==2.11.0+cpu",
+]
+
+[project.scripts]
+phmforge-bench = "phmforge_bench.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["verified_phmforge", "verified_benchmark_worker", "verified_benchmark_scoring", "real_fault_model", "real_rul_model", "real_bearing_rul_model", "real_xjtu_rul_model", "real_gap_rul_model"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"phmforge_bench.resources" = ["*.json"]

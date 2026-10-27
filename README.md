@@ -1,53 +1,108 @@
-# PHMForge 真实计算研究适配版（研究预览）
+# PHMForge 科研适配版
 
-这是 PHMForge 风格工具的研究适配代码，不是 PHMForge 官方仓库的完整 fork，也不是 75 道原题的完整可复现版本。本仓库作为研究预览公开，许可证、数据准备和复现仍存在下文所列限制。
+本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-## 包含的内容
+当前可独立运行原题方向中的两个**数值子任务**：
 
-- `src/verified_phmforge.py`：经研究修改的工具实现，包含真实训练、预测、开发集验证和部分数据访问限制。
-- `src/real_*_model.py`：故障分类、发动机和轴承寿命等数值后端。部分后端需要分别准备对应的研究适配数据与配置。
-- `src/verified_benchmark_worker.py`：MCP / JSONL 工具服务入口。
-- `src/verified_benchmark_scoring.py`：数值指标和身份对齐工具。
-- `metadata/`：A246 运行包使用的工具目录和数据注册表快照，供检查数据契约；运行时会从所指定的数据目录读取这两个文件。
-- `third_party/`：固定上游提交的许可证原文和声明差异说明。
-- `requirements-observed.txt`：本机已验环境中的主要包版本，不是经过干净环境安装验证的依赖锁文件。
+| 任务 | 数据来源 | 任务与外部评分 | 数据性质 |
+|---|---|---|---|
+| `pdm_fault_008` | MFPT | 根据振动特征识别正常、内圈故障和外圈故障；按样本及采集记录评分 | 台架实测 |
+| `pdm_rul_001` | NASA C-MAPSS FD001 | 在测试发动机的末次观测时预测剩余循环数；计算 MAE、RMSE | 仿真，不是现场实测 |
 
-此处的 `src/` 复制自研究项目 `scripts/` 中较晚的源码快照；它比 A246/v4 共享运行包内的适配器包含更多数据格式和实验权限控制。它们不能视为完全同一个版本。
+这两个流程不涵盖相应原题中的全部自然语言分析和维修决策，也不能代表原有 75 题均已复现。运行 `phmforge-bench list --all` 可查看原题清单和当前适配状态；其中历史实验计数不等于本仓库支持的题数。部分保留的数值后端尚未接入独立数据准备流程。
 
-## 可用范围与限制
+具体安装、真实训练、MCP 和隔离检查见 [验证记录](docs/VALIDATION.md)。
 
-2026-10-27 本机对本目录中的代码进行了实际 MCP 冒烟测试：发现 22 个工具；使用 MFPT 训练集运行 1 轮 MLP，共 17 次优化器更新和 17 次非零梯度更新；570 个开发样本的推理和逐样本准确率重算一致。开发准确率为 0.5，它用于训练期选择检查，不是盲测成绩，也不能代表模型效果或其他数据集的可用性。
+## 安装
 
-另一个独立测试在现有 A246/v4 隔离运行包中完成同样链路。旧实验还验证过 CWRU、MFPT、电机振动和断条转子的真实数值后端。C-MAPSS 是 NASA 仿真数据，不能描述为现场实测；不同历史实验分别使用了其他准备器和数据，不能把它们统称为本目录开箱即用的全部能力。
+需要 **Linux、Python 3.12、bubblewrap (`bwrap`)**、网络访问数据源和软件包源，以及 CPU 运行所需的磁盘空间。安装系统包的方法依发行版而异，例如 Debian/Ubuntu 可以运行 `sudo apt install bubblewrap python3.12-venv`。容器或服务器需要允许普通用户创建 bubblewrap 使用的命名空间；不可用时评分会明确失败。
 
-`assess_component_health`、`diagnose_timing_issues`、`optimize_maintenance_schedule`、`check_compliance`、`generate_safety_recommendations`、`web_search` 在此配置中明确返回 `unavailable`。最终测试标签不从此适配器提供；训练/开发标签的处理属于本研究的权限设计，不等同于官方 benchmark 的统一访问规则。
-
-FEMTO、XJTU、LDM/IMS 等后续格式的代码被保留，但本候选目录没有提供它们完整的数据准备、注册、端到端复现流程；2026-10-27 的候选目录测试没有重新验证这些格式。Engine 输入仅支持有限统计，物理通道语义及健康决策合同仍有缺口。
-
-## 本机运行
-
-准备 Python 3.12、PyTorch、NumPy、MCP 等依赖，并提供符合注册表格式的数据目录；当前只验证了原机器上已有的运行环境，未验证全新环境安装。数据、权重、API 密钥和第三方依赖不包含在本目录内。
-
-数据目录须包含 `dataset_registry.json`、`tool_catalog.json` 和相应数据文件。以下示例使用 JSONL；须将两个路径替换为实际位置，而不能仅复制注册表：
-
-```sh
-PHM_DATA_ROOT=/path/to/verified-data/public
-PHM_RUN_ROOT=/path/to/new-run
-mkdir -p "$PHM_RUN_ROOT/tmp" "$PHM_RUN_ROOT/mpl" "$PHM_RUN_ROOT/xdg"
-printf '%s\n' '{"tool":"load_dataset","args":{"dataset_name":"MFPT","split":"train"}}' |
-  TMPDIR="$PHM_RUN_ROOT/tmp" TMP="$PHM_RUN_ROOT/tmp" TEMP="$PHM_RUN_ROOT/tmp" \
-  MPLCONFIGDIR="$PHM_RUN_ROOT/mpl" XDG_CACHE_HOME="$PHM_RUN_ROOT/xdg" \
-  python src/verified_benchmark_worker.py --family forge --data "$PHM_DATA_ROOT" \
-    --output "$PHM_RUN_ROOT" --transport jsonl
+```bash
+git clone https://github.com/zyqzyq007/phmforge-research-adapter.git
+cd phmforge-research-adapter
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pip install --no-deps -e .
+phmforge-bench list
 ```
 
-将 `--transport jsonl` 改为 `--transport mcp` 可用于 MCP 客户端。此命令直接在本机进程执行，**没有网络或文件系统隔离**；涉及最终测试标签隔离时，应使用研究项目的 `scripts/launch_verified_environment.py` 与已资格化的 v4 运行包，或另行实现并验证隔离。
+`requirements.txt` 固定主要依赖及 CPU 版 PyTorch；传递依赖仍由安装时的软件源解析，并非包含全部哈希的锁文件。Git 仓库**不捆绑**原始数据、大型依赖、模型权重、实验结果或密钥；下面的准备命令会从固定来源下载并校验数据。离线使用时，可以先另行取得对应来源文件，再传 `--source`。
 
-本机历史启动说明、接口限制和真实训练证据见研究项目的 `docs/phmforge_repairs246.md` 与 `docs/verified_benchmark_environments240.md`。运行日志或结果可能包含数据路径及实验内容，应单独审查后再分享。
+## 运行真实训练和独立评分
 
-## 尚需处理的问题
+所有目录都可以改成自己的路径。准备数据、参考模型输出和评分结果应使用不同目录。首次运行会访问数据源。
 
-1. **许可证：** 上游固定提交 [LICENSE 文件](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/LICENSE) 写 MIT，其 [README](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/README.md) 写 Apache 2.0；需核清上游口径、保留适用声明，并为本项目新增代码确定许可证。本目录尚未选择 LICENSE。
-2. **数据：** 各数据源的许可、来源、下载方式和预处理需逐项核查；部分研究数据可能不允许直接再分发。本候选目录不含数据和模型权重。
-3. **可复现性：** 补充数据准备脚本、固定依赖及干净环境安装，验证跨机器训练与评分。现有 22 个可发现工具不代表 22 个都能给出有依据的物理结论。
-4. **安全检查：** 提交前复核所选文件及 Git 历史，禁止提交密钥、私人数据、实验日志、测试标签或本机依赖目录。本次候选目录的简单模式扫描未发现常见密钥形式，但不能替代完整审核。
+```bash
+export PHM_RUN_ROOT="$HOME/phmforge-runs"
+mkdir -p "$PHM_RUN_ROOT/tmp" "$PHM_RUN_ROOT/mpl" "$PHM_RUN_ROOT/xdg"
+export TMPDIR="$PHM_RUN_ROOT/tmp" TMP="$PHM_RUN_ROOT/tmp" TEMP="$PHM_RUN_ROOT/tmp"
+export MPLCONFIGDIR="$PHM_RUN_ROOT/mpl" XDG_CACHE_HOME="$PHM_RUN_ROOT/xdg"
+
+# 实测 MFPT：下载并校验 20 条原始记录，制作训练、开发和测试划分
+phmforge-bench prepare --dataset mfpt --data-root "$PHM_RUN_ROOT/data/mfpt"
+phmforge-bench run-reference --data-root "$PHM_RUN_ROOT/data/mfpt" \
+  --run-dir "$PHM_RUN_ROOT/runs/mfpt-reference" --epochs 10
+
+# NASA 仿真 FD001：下载、校验原始压缩包和三个 FD001 文件
+phmforge-bench prepare --dataset cmapss-fd001 --data-root "$PHM_RUN_ROOT/data/cmapss"
+phmforge-bench run-reference --data-root "$PHM_RUN_ROOT/data/cmapss" \
+  --run-dir "$PHM_RUN_ROOT/runs/cmapss-reference" --epochs 10
+```
+
+输出目录必须尚不存在，防止意外覆盖。`run-reference` 实际拟合神经网络，记录优化器、非零梯度和参数变化，再调用隔离进程生成预测并独立评分；冷评分时不挂载训练或开发数据。结果位于 `evaluation/score.json`，执行状态和提交文件哈希分别位于 `RUN.json`、`evaluation/STATUS.json` 与 `evaluation/submission_manifest.json`。分数随数据划分、训练轮数和配置变化，不应当作为已验证的通用模型表现。
+
+下载外可指定已有数据：MFPT 使用 `--source /path/to/mfpt_native` 指向含固定 20 个原始 `.mat` 文件的目录；FD001 使用 `--source /path/to/CMAPSSData.zip`。准备过程会检查来源哈希，错误或不完整时失败，不会用合成数据替代。
+
+## 运行 Agent
+
+可使用内置流程对一个 coding Agent 做端到端实验。需要原生 Codex CLI、支持 **Responses API** 的模型接口和 `deepseek-flash` 模型。设置密钥时不要把密钥写进仓库、命令记录或实验文件：
+
+```bash
+# 在安全的交互式终端中读取，不显示输入；使用自己的模型接口凭据
+read -rs -p 'DEEPSEEK_API_KEY: ' DEEPSEEK_API_KEY; printf '\n'
+export DEEPSEEK_API_KEY
+
+phmforge-bench agent --data-root "$PHM_RUN_ROOT/data/mfpt" \
+  --run-dir "$PHM_RUN_ROOT/runs/mfpt-agent" \
+  --cli /absolute/path/to/codex \
+  --model-base-url https://api.deepseek.com/
+```
+
+Agent 可访问训练/开发资料、22 个 PHMForge 风格的 MCP 工具及一份实际训练的初始程序，可以保留或替换该程序。它在隔离环境中开发；指定接口的凭据只在外部网关，测试观测和标签在提交前不挂载。Agent 正常结束并确认收到真实模型响应后，系统冻结 `/submission`，在独立无网络进程中对测试样本推理评分。`PROTOCOL.json` 固定 CLI 版本、模型和预算；`model_gateway/agent/` 记录实际返回模型及用量。可通过 `--max-requests`、`--max-input-tokens`、`--max-output-tokens`、`--max-output-per-request` 和 `--timeout` 设置预算；输入 token 阈值是已完成请求的准入门槛，最后一个已在途请求可能跨过阈值。调用模型会产生接口费用。
+
+该接口需要所选服务确实支持 Responses API 和指定模型，不同供应商的兼容性需要自行验证。日志和模型请求可能含训练数据及实验内容，请保存在 Git 仓库外并审查后分享。隔离依赖 Linux 内核和 bubblewrap；它降低常见的文件和网络泄露风险，不是针对恶意内核或公开数据记忆的完整安全保证。
+
+只需检查连接和评分流程时，可在 `agent` 命令末尾加 `--smoke --timeout 360 --max-requests 10`。该模式要求 Agent 保留初始程序并避免大规模搜索，得到的结果只用于软件接通检查，不作为 Agent 能力对比。
+
+也可自行接入其他 Agent：
+
+```bash
+phmforge-bench workspace --data-root "$PHM_RUN_ROOT/data/mfpt" \
+  --out "$PHM_RUN_ROOT/workspaces/mfpt"
+# 按 TASK.md 在安全隔离环境中生成独立目录 /path/to/submission，包含 solution.py 和模型文件
+phmforge-bench evaluate --data-root "$PHM_RUN_ROOT/data/mfpt" \
+  --submission /path/to/submission --out "$PHM_RUN_ROOT/runs/my-evaluation"
+```
+
+`workspace` 只复制训练和开发材料，**自行启动的 Agent 仍需要用户自行隔离**；单靠目录分离无法阻止在宿主机运行的程序读取其他文件。提交程序必须输出与测试身份一一对应的预测，缺失、重复、未知身份、非有限数值等均会被拒绝。
+
+## 工具服务
+
+```bash
+phmforge-bench serve --data-root "$PHM_RUN_ROOT/data/mfpt" \
+  --out "$PHM_RUN_ROOT/runs/mcp-artifacts" --transport mcp
+```
+
+支持 MCP stdio 和 `--transport jsonl`。这是独立进程服务，本身不提供文件系统隔离，使用内置 `agent` 流程时才会被放入 Agent 隔离环境。服务可发现 22 个工具名称；能否执行取决于数据和任务。缺少可靠物理依据的健康评估、时序诊断、维护优化、合规、安全建议和网页搜索明确返回 `unavailable`，不生成伪造结论。`load_ground_truth` 只提供明确选择的训练或开发标签；最终测试标签由外部评分器读取。
+
+## 数据、划分和局限
+
+- [MathWorks MFPT 原始数据](https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data)为 **CC BY-NC-SA 4.0**：仅限非商业用途，商业用途需要另行获得许可。下载清单固定来源版本和各文件 SHA-256。划分按采集记录进行：11 条训练、3 条开发、6 条测试；同一记录的窗口不会跨集合，但不能据此声称设备独立。
+- [NASA C-MAPSS](https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data) 是仿真数据，使用 [NASA progpy 指向的数据镜像](https://github.com/nasa/progpy/blob/master/src/progpy/datasets/nasa_cmapss.py)。FD001 按 80 个训练、20 个开发和 100 个测试发动机划分。参考模型仅用训练发动机拟合和归一化、用开发发动机选择；训练 RUL 封顶 125，测试真值不封顶。公开训练文件包含完整训练及开发轨迹，开发集可用于调参，不是盲测集。
+- 每次准备数据时会为测试窗口／发动机生成随机身份，映射保留在私有目录，防止直接通过公开原始编号查标签。同一份准备好的数据可重复评分；重新准备时身份及文件哈希会变化，特征、划分和真值不变。测试资料虽在本流程中隔离，这些都是公开数据，预训练模型或使用者仍可能已经见过原数据或标签，也可能根据数据特征识别样本；这些限制需要在研究报告中说明。
+- 所有运行材料均为科研评估，不提供已验证的维护、合规或安全决策。
+
+## 上游和许可证
+
+原始 PHMForge 固定提交的 [LICENSE](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/LICENSE) 写为 MIT，同一提交的 [README](https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance/blob/28430199f7b8ccba924d49e06c2d59b761846038/README.md) 写为 Apache 2.0。原始声明保存在 `third_party/`；上游差异尚未厘清，本仓库新增代码尚未指定许可证。各数据集须分别遵守其来源条款。

@@ -19,3 +19,9 @@ checkpoints/
 *.joblib
 *.npz
 *.npy
+*.mat
+*.zip
+*.egg-info/
+build/
+dist/
+runs/
