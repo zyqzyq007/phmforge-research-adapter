@@ -14,7 +14,9 @@ import math
 import os
 from pathlib import Path, PurePosixPath
 import shutil
+import stat
 import subprocess
+import tempfile
 import time
 import threading
 
@@ -39,6 +41,21 @@ def _equal(left, right):
     if isinstance(left, (int, float)) and isinstance(right, (int, float)):
         return math.isfinite(left) and math.isfinite(right) and math.isclose(left, right, rel_tol=1e-6, abs_tol=1e-6)
     return left == right
+
+
+def _copy_with_mode(source, target, mode):
+    """Create an independent destination without changing the stored inode."""
+    fd, name = tempfile.mkstemp(prefix='.phm-copy-', dir=target.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'wb') as output, source.open('rb') as input_file:
+            shutil.copyfileobj(input_file, output, length=1024 * 1024)
+        source_stat = source.stat()
+        os.utime(temporary, ns=(source_stat.st_atime_ns, source_stat.st_mtime_ns))
+        temporary.chmod(mode)
+        os.replace(temporary, target)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 class Environment:
@@ -114,20 +131,31 @@ class Environment:
             target = dest if key == prefix else dest / key[len(prefix) + 1:]
             if key != prefix and not target.resolve().is_relative_to(dest):
                 raise ValueError(f'Escaping restored file: {key}')
+            executable = key in self.executables
+            mode = (0o755 if executable else 0o644) if writable else (0o555 if executable else 0o444)
             if target.exists():
                 if target.is_file() and file_sha256(target) == self.files[key]['sha256']:
+                    target_stat = target.stat()
+                    # A previously restored hard link must not become writable:
+                    # that would also change the immutable source object.
+                    if stat.S_IMODE(target_stat.st_mode) != mode or (writable and target_stat.st_nlink > 1):
+                        _copy_with_mode(self.object(key), target, mode)
                     continue
                 raise FileExistsError(target)
             target.parent.mkdir(parents=True, exist_ok=True)
             source = self.object(key)
             if writable:
-                shutil.copyfile(source, target)
-                target.chmod(0o755 if key in self.executables else 0o644)
+                _copy_with_mode(source, target, mode)
             else:
-                # The frozen object is never writable by a replayed process.
-                source.chmod(0o555 if key in self.executables else 0o444)
-                try: os.link(source, target)
-                except OSError: shutil.copy2(source, target)
+                # Do not chmod a shared or read-only store. An object can be
+                # referenced by both executable and non-executable paths.
+                if stat.S_IMODE(source.stat().st_mode) == mode:
+                    try:
+                        os.link(source, target)
+                        continue
+                    except OSError:
+                        pass
+                _copy_with_mode(source, target, mode)
         for key, link in links.items():
             _relative(key)
             target = dest if key == prefix else dest / key[len(prefix) + 1:]

@@ -2,9 +2,11 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.3 增加了**实际实验环境快照**：历史任务输入、数据划分、拟合权重、Agent 程序、工具版本、训练／推理命令和结果按原文件 SHA-256 保存。通过 `environment` 命令恢复和执行；大型环境制品与 Git 源码分开存储。具体内容、取得方式和运行记录见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
+v0.3 增加了**实际实验环境快照**：历史任务输入、数据划分、拟合权重、Agent 程序、工具版本、训练／推理命令和结果按原文件 SHA-256 保存。v0.3.1 修复了从只读环境制品恢复文件时的权限问题，不改变该制品的内容或哈希。通过 `environment` 命令恢复和执行；大型环境制品与 Git 源码分开存储。具体内容、取得方式和运行记录见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
 本机已配置 `environment_store` 链接；搬迁时按 `environment.lock.json` 复制配套制品，再做完整校验。GitHub 单独克隆只包含源码与清单，尚无公开的大数据下载地址。
+
+**给其他机器的使用者：** 仅克隆 GitHub，可以从公开数据下载并独立运行下文的 MFPT 和 C-MAPSS FD001 两个数值子任务。重放历史 51 个正常交付方向还需要单独取得约 149 GB 的环境制品；该制品目前没有公开下载地址，也不能仅靠下载原始数据自动还原。复制前请核对数据来源的许可，并避免把包含测试标签的制品交给待评测 Agent。
 
 | 使用方式 | 内容 |
 |---|---|
@@ -46,6 +48,16 @@ phmforge-bench list
 
 如果使用搬迁过的独立 Python，创建虚拟环境时出现 `encodings` 或解释器前缀错误，应使用 Python 的实际安装路径重新创建环境。下载依赖出现哈希不匹配时，保留校验并从官方 PyPI 源重新取得失败的依赖，再继续安装；不要关闭校验或更换版本来掩盖下载错误。
 
+例如，如果 `python3.12` 是指向搬迁后解释器的链接，可以用其实际路径在新目录创建环境：
+
+```bash
+PHM_PYTHON_312="$(readlink -f "$(command -v python3.12)")"
+"$PHM_PYTHON_312" -m venv .venv-corrected
+source .venv-corrected/bin/activate
+```
+
+如果下载时出现代理超时或 HTTPS 证书主机名不匹配，请先检查当前网络和代理；在支持直接访问官方源的网络中，可针对安装命令暂时取消代理环境变量。仍须保持 TLS 和文件哈希校验，或者按[数据说明](docs/DATASETS.md#手动下载或离线提供)提供已校验的本地源文件。
+
 ## 运行真实训练和独立评分
 
 所有目录都可以改成自己的路径。准备数据、参考模型输出和评分结果应使用不同目录。首次运行会访问数据源。
@@ -75,6 +87,22 @@ phmforge-bench run-reference --data-root "$PHM_RUN_ROOT/data/cmapss" \
 
 可使用内置流程对一个 coding Agent 做端到端实验。需要原生 Codex CLI、支持 **Responses API** 的模型接口和 `deepseek-flash` 模型。设置密钥时不要把密钥写进仓库、命令记录或实验文件：
 
+在 Linux x86-64 上，可以使用以下固定版本的原生 CLI；本仓库已实测 Codex CLI 0.165.0。若已安装兼容的原生 CLI，也可将其绝对路径传给 `--cli`。
+
+```bash
+export PHM_CODEX_DIR="$PHM_RUN_ROOT/tools/codex-0.165.0"
+mkdir -p "$PHM_CODEX_DIR"
+curl --fail --location --retry 3 \
+  'https://github.com/openai/codex/releases/download/rust-v0.165.0/codex-x86_64-unknown-linux-musl.tar.gz' \
+  --output "$PHM_CODEX_DIR/codex.tar.gz"
+printf '%s  %s\n' 'be635d3486a5bd060d0fff582ae6d30160280c31344dd85719707fa920e187f0' \
+  "$PHM_CODEX_DIR/codex.tar.gz" | sha256sum --check
+tar -xzf "$PHM_CODEX_DIR/codex.tar.gz" -C "$PHM_CODEX_DIR"
+"$PHM_CODEX_DIR/codex-x86_64-unknown-linux-musl" --version
+```
+
+然后使用自己的接口密钥运行：
+
 ```bash
 # 在安全的交互式终端中读取，不显示输入；使用自己的模型接口凭据
 read -rs -p 'DEEPSEEK_API_KEY: ' DEEPSEEK_API_KEY; printf '\n'
@@ -82,7 +110,7 @@ export DEEPSEEK_API_KEY
 
 phmforge-bench agent --data-root "$PHM_RUN_ROOT/data/mfpt" \
   --run-dir "$PHM_RUN_ROOT/runs/mfpt-agent" \
-  --cli /absolute/path/to/codex \
+  --cli "$PHM_CODEX_DIR/codex-x86_64-unknown-linux-musl" \
   --model-base-url https://api.deepseek.com/
 ```
 
@@ -90,7 +118,7 @@ Agent 可访问训练/开发资料、22 个 PHMForge 风格的 MCP 工具及一�
 
 该接口需要所选服务确实支持 Responses API 和指定模型，不同供应商的兼容性需要自行验证。日志和模型请求可能含训练数据及实验内容，请保存在 Git 仓库外并审查后分享。隔离依赖 Linux 内核和 bubblewrap；它降低常见的文件和网络泄露风险，不是针对恶意内核或公开数据记忆的完整安全保证。
 
-只需检查连接和评分流程时，可在 `agent` 命令末尾加 `--smoke --timeout 360 --max-requests 10`。该模式要求 Agent 保留初始程序并避免大规模搜索，得到的结果只用于软件接通检查，不作为 Agent 能力对比。
+只需检查连接和评分流程时，可在 `agent` 命令末尾加 `--smoke --timeout 600 --max-requests 40`。该模式要求 Agent 保留初始程序并避免大规模搜索，得到的结果只用于软件接通检查，不作为 Agent 能力对比。一次 10 请求的接通检查曾因预算耗尽而未提交；实际所需预算会随模型和任务变化。
 
 也可自行接入其他 Agent：
 
