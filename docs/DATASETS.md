@@ -7,6 +7,8 @@
 | `mfpt` | [MathWorks MFPT](https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data)，20 文件约 42.6 MB | 原生台架振动分类；来源为 CC BY-NC-SA 4.0 |
 | `cmapss-fd001`、`cmapss-fd002`、`cmapss-fd003`、`cmapss-fd004` | [NASA C-MAPSS](https://zenodo.org/records/15346912)，共同 ZIP 约 12.4 MB | 四个仿真发动机子集；单位为剩余循环数，非现场测量 |
 | `femto-rul` | [NASA FEMTO](https://phm-datasets.s3.amazonaws.com/NASA/10.+FEMTO+Bearing.zip) 约 1.16 GB，另下载固定版[挑战说明](https://github.com/aref9069/IEEE-PHM-2012-Prognostic-Challenge-/blob/9c476de6405b8c31b53bba8d6b0955ea57172206/IEEEPHM2012-Challenge-Details.pdf)约 2.28 MB | 台架轴承剩余秒数；一条挑战标注有来源歧义，另报去除此条的敏感性指标 |
+| `xjtu-rul` | [XJTU-SY 作者数据](https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets)，六个与作者来源哈希一致的[固定镜像分卷](https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/tree/274226336036cd8deb2c40b4ba323af2d11a7290/Data)，共约 4.45 GB | 15 只台架轴承全寿命；目标为距末次采集的名义分钟，非精确物理失效时刻 |
+| `ldm-rul` | [Paderborn LDM 作者特征](https://github.com/alireza-javanmardi/bearing-RUL/tree/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM)，约 158 MB | 14 次有明确试验终点的轴承运行；预测距作者特征末行的采集次数，不是小时；使用派生特征而非重算原波形 |
 | `cwru` | [PDMBench CWRU](https://huggingface.co/datasets/submission096/CWRU)，约 7.1 MB | 原特征表分类；录波组根据连续段推断，不能称物理轴承独立 |
 | `electric-motor-vibrations` | [PDMBench 电机振动](https://huggingface.co/datasets/submission096/ElectricMotorVibrations)，约 67.8 MB | 三轴振动分类；原题要求的声学输入未包含在此子任务中 |
 | `rotor-broken-bar` | [PDMBench 转子](https://huggingface.co/datasets/submission096/RotorBrokenBar)，约 327.4 MB | 按来源记录的类别分类，窗口按原记录分组 |
@@ -16,9 +18,9 @@
 
 各数据源须分别遵守其使用条款。以上均是**数值研究适配**，不是完整原题或官方成绩。FEMTO 原始 ZIP 的 SHA-256 是本研究固定的全文件哈希，不声称来自发布者；其他来源版本和哈希见 [数据清单](../src/phmforge_bench/resources/pdmb_fault_sources.json) 及相应准备代码。
 
-如果需要全部来源，各不重复的原始文件合计约 **10.8 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。FEMTO 读取嵌套压缩包时尤其需要额外磁盘空间。
+如果需要全部来源，按上述入口下载的文件合计约 **15.4 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。XJTU 的原始压缩包约 4.45 GB，解压过程还需要约 12.3 GB，计算完毕后程序删除自己的解压副本；FEMTO 读取嵌套压缩包时也需要额外磁盘空间。
 
-尚未接入的原题和来源包括 XJTU、UoC、PlanetaryPdM、EngineMTQA，以及需要独立维修收益、合规或物理安全真值的完整题目。下载这些数据不会自动使其成为当前版本可运行且可评分的完整任务；例如 UoC 公开预切片表缺少可核实的原始采集记录身份，部分发动机问答也缺少可认证的物理健康合同。不要把相关的分类或 RUL 子任务计为原题完成。
+尚未接入的原题和来源包括 UoC、PlanetaryPdM、EngineMTQA，以及需要独立维修收益、合规或物理安全真值的完整题目。下载这些数据不会自动使其成为当前版本可运行且可评分的完整任务；例如 UoC 公开预切片表缺少可核实的原始采集记录身份，部分发动机问答也缺少可认证的物理健康合同。不要把相关的分类或 RUL 子任务计为原题完成。
 
 ## 从公开源准备和运行
 
@@ -43,6 +45,12 @@ MFPT 从 [MathWorks 固定版本](https://github.com/mathworks/RollingElementBea
 C-MAPSS 从 [NASA 数据的 Zenodo 镜像](https://zenodo.org/records/15346912)下载 `CMAPSSData.zip`，检查压缩包 SHA-256 为 `74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f`，并校验所选子集的三个原始文件。FD001 使用 80 台训练、20 台开发和 100 台测试发动机；其余子集按发动机固定划分训练／开发，使用各自原始测试发动机和标签。
 
 FEMTO 只从原始嵌套压缩包读取 6 条学习记录及 11 条挑战观测前缀，完整后续、挑战文档和测试标签不会放入公开开发目录。时间使用名义 10 秒采集间隔，因为源日志有时钟异常；各工况只有两条学习记录。挑选轮数后最终参考模型使用两条学习记录重训，不能将重训后的学习集分数称为独立验证。
+
+XJTU 使用 7-Zip 26.05 成功解压六分卷；系统需提供兼容的 `7zz` 或 `7z`，若不在 PATH 则传 `--extractor /path/to/7zz`。逐一校验发布者分卷 SHA-256 后，程序核对 15 只轴承的 9,216 条 32,768×2 原始振动记录并重算特征。每个工况各用 3/1/1 只轴承训练、开发及测试；每只测试轴承随机取 5 个前缀，结果按查询及轴承计分。名义时间按一次采集一分钟计算；终态损伤位置不是逐时故障标签。预处理较耗时，公开来源可能被记忆，匿名化不能杜绝该风险。
+
+LDM 从固定作者仓库取 14 次运行的 FFT、运行工况及温度文件，逐文件校验 SHA-256，按 7/2/5 个完整试验轴承划分。保留实际特征与采集索引，分别预测 5 个测试轴承、每只 5 个前缀，单位为剩余采集次数。B01 无预设终点、B05 主动中断、B16 的终点栏缺失，因此排除；采集间隔不规则，不能换算成未经核实的运行小时。这是作者公开的实测派生特征，未重新下载或重算 [152 GB 原波形](https://zenodo.org/records/10868257)。它与 Paderborn KAt 分类数据不同，也不能冒充原题可能指定的 Mendeley 数据。
+
+XJTU 和 LDM 每个测试前缀都在全新的独立进程中预测；该进程只能读取当前前缀，不能读取同一轴承的其他时间点或先前查询输出。最终评分汇总后报告每只轴承及总体误差。逐条冷启动比一次批量预测慢，默认外评超时为 300 秒；低配置机器可使用 `run-reference --timeout 900` 等方式延长总限时。
 
 准备完成后，数据根目录下的 `READY.json` 记录来源及划分；`public/` 包含训练和开发资料，`holdout/` 与 `private/` 包含外评输入或标签。不要把整个数据根目录交给正在接受评测的 Agent。参考模型训练和独立评分命令见 [README](../README.md#运行真实训练和独立评分)。
 
@@ -80,9 +88,20 @@ phmforge-bench prepare --dataset femto-rul --source /path/to/NASA_FEMTO.zip \
   --data-root "$PHM_RUN_ROOT/data/femto"
 ```
 
+XJTU 的 `--source` 指向包含全部六个原始 `.rar` 分卷的目录；LDM 的 `--source` 指向含 `fft/`、`op/`、`temp/` 的作者特征目录：
+
+```bash
+phmforge-bench prepare --dataset xjtu-rul --source /path/to/xjtu-volumes \
+  --extractor /path/to/7zz --data-root "$PHM_RUN_ROOT/data/xjtu"
+phmforge-bench prepare --dataset ldm-rul --source /path/to/LDM \
+  --data-root "$PHM_RUN_ROOT/data/ldm"
+```
+
 已有来源文件也可直接传入其实际路径；程序仍会校验固定哈希，文件缺失或不一致时会失败，不会自动替换为合成数据。重新准备时测试身份会随机化，因此新输出文件哈希不必与以前的准备结果相同。
 
-2026-11-02 在本服务器实际自动下载并校验 CWRU、C-MAPSS FD002 与电机振动；其他新增来源在相同服务器使用逐文件哈希匹配的本地原始文件完成准备。电机的在线和离线观测一致，测试身份按设计随机化。自动下载在其他网络或机器上的可用性尚需实测。
+v0.4 于 2026-11-02 在本服务器实际自动下载并校验 CWRU、C-MAPSS FD002 与电机振动；其他 v0.4 新增来源在相同服务器使用逐文件哈希匹配的本地原始文件完成准备。电机的在线和离线观测一致，测试身份按设计随机化。自动下载在其他网络或机器上的可用性尚需实测。
+
+v0.5 的 LDM 另在本服务器完整自动下载了 42 个固定作者文件，并核对在线和本地来源的训练／开发数值一致；XJTU 的全部六分卷使用本地哈希匹配原始文件完成准备，公开镜像另实际验证了第一分卷连续两个 16 MiB 分段，尚未重新完整在线下载六卷。每次准备时测试身份和截断点会随机化。
 
 ## 重放历史实验需要什么
 

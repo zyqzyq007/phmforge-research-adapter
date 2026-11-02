@@ -7,11 +7,36 @@ import subprocess
 import tempfile
 import unittest
 
-from phmforge_bench.runner import _sandbox_command
+import numpy as np
+
+from phmforge_bench.runner import _predict_independent_prefixes, _sandbox_command
 
 
 @unittest.skipUnless(shutil.which('bwrap'), 'bubblewrap is required for the isolation test')
 class ColdSandbox(unittest.TestCase):
+    def test_each_prefix_of_one_unit_is_in_a_fresh_sandbox(self):
+        with tempfile.TemporaryDirectory(prefix='phmforge-prefix-sandbox-') as folder:
+            base = Path(folder)
+            data, submission, output = base/'data', base/'submission', base/'evaluation'
+            for path in (data/'holdout', submission, output):
+                path.mkdir(parents=True)
+            np.savez_compressed(data/'holdout/test.npz', dataset=np.asarray('FIXTURE'),
+                sample_ids=np.asarray(['early', 'late']), unit_ids=np.asarray([1, 1]),
+                features=np.asarray([[1.], [2.]]))
+            (submission/'solution.py').write_text('''import argparse, json
+from pathlib import Path
+import numpy as np
+p = argparse.ArgumentParser()
+p.add_argument('--input'); p.add_argument('--output'); a = p.parse_args()
+z = np.load(a.input, allow_pickle=False)
+assert len(z['sample_ids']) == 1
+assert len(list(Path('/input').iterdir())) == 1
+assert not Path('/output/predictions.json').exists()
+Path(a.output).write_text(json.dumps({'predictions': [{'sample_id': str(z['sample_ids'][0]), 'predicted_rul': 0.0}]}))
+''')
+            predictions = _predict_independent_prefixes(submission, data, data/'holdout/test.npz', output, 60)
+            self.assertEqual([x['sample_id'] for x in predictions], ['early', 'late'])
+
     def test_private_and_training_files_are_not_visible(self):
         # These files are software fixtures, not PHM observations or results.
         with tempfile.TemporaryDirectory(prefix='phmforge-sandbox-') as folder:

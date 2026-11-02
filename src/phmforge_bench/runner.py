@@ -21,11 +21,11 @@ def _now():
 def _ready(root):
     root = Path(root).resolve()
     meta = json.loads((root / "READY.json").read_text())
-    supported = {"MFPT", "FEMTO", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
+    supported = {"MFPT", "FEMTO", "XJTU", "LDM_RTF", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
                  *(f"CMAPSS_FD00{i}" for i in range(1, 5))}
     if meta.get("status") != "prepared" or meta.get("dataset") not in supported:
         raise ValueError("Expected a prepared, supported source dataset")
-    expected = "rul" if meta["dataset"].startswith("CMAPSS_") or meta["dataset"] == "FEMTO" else "classification"
+    expected = "rul" if meta["dataset"].startswith("CMAPSS_") or meta["dataset"] in {"FEMTO", "XJTU", "LDM_RTF"} else "classification"
     if meta.get("task_kind", expected) != expected:
         raise ValueError("Prepared dataset and task type do not agree")
     return root, meta
@@ -51,6 +51,20 @@ def workspace(data_root, destination):
                           "integer `unit_ids` and `scenario_ids`, and observed `time_sec`.")
         output_contract = ("Each row needs `sample_id`, integer `unit_id`, integer `scenario_id`, "
                            "and finite nonnegative `predicted_rul` in seconds.")
+    elif dataset == "XJTU":
+        task = ("Predict nominal remaining minutes to the terminal acquisition for measured XJTU-SY bearings. "
+                "Training, development and final bearings are disjoint; this is a laboratory endpoint, not a physical failure timestamp.")
+        input_contract = ("The input is a label-free NPZ with 34 causal `features`, string `sample_ids`, "
+                          "integer `unit_ids` and `scenario_ids`, and observed `elapsed_minutes`.")
+        output_contract = ("Each row needs `sample_id`, integer `unit_id`, integer `scenario_id`, "
+                           "and finite nonnegative `predicted_rul` in nominal minutes.")
+    elif dataset == "LDM_RTF":
+        task = ("Predict remaining feature acquisitions to the end of a measured Paderborn LDM bearing run. "
+                "Training, development and final bearings are disjoint; acquisitions are not running hours.")
+        input_contract = ("The input is a label-free NPZ with 30 causal `features`, string `sample_ids`, "
+                          "integer `unit_ids` and `scenario_ids`, and observed `elapsed_acquisitions`.")
+        output_contract = ("Each row needs `sample_id`, integer `unit_id`, integer `scenario_id`, "
+                           "and finite nonnegative `predicted_rul` in acquisitions.")
     elif is_cmapss:
         task = (f"Predict remaining cycles at each {dataset} test engine's final observed cycle. Source is NASA simulation, not field data. "
                 "Training and development engines are disjoint; use only past observations for each query.")
@@ -103,6 +117,14 @@ def train_reference(data_root, destination, epochs=10):
         import real_bearing_rul_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
         module = "real_bearing_rul_model"
+    elif meta["dataset"] == "XJTU":
+        import real_xjtu_rul_model as model
+        audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
+        module = "real_xjtu_rul_model"
+    elif meta["dataset"] == "LDM_RTF":
+        import real_gap_rul_model as model
+        audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
+        module = "real_gap_rul_model"
     elif not meta["dataset"].startswith("CMAPSS_"):
         import real_fault_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs)
@@ -247,7 +269,73 @@ def _femto_score(rows, gold):
     return score
 
 
-def evaluate(data_root, submission, destination, timeout=120):
+def _xjtu_score(rows, gold, task_name="XJTU", target_unit="nominal minutes"):
+    score = regression(rows, gold, identity="sample_id")
+    predicted = {str(row["sample_id"]): row for row in rows}
+    for item in gold:
+        candidate = predicted[str(item["sample_id"])]
+        if candidate.get("unit_id") != item["unit_id"] or candidate.get("scenario_id") != item["scenario_id"]:
+            raise ValueError(f"{task_name} prediction unit or scenario identity differs from the observation")
+    score["per_bearing"] = {}
+    for unit in sorted({item["unit_id"] for item in gold}):
+        subset = [item for item in gold if item["unit_id"] == unit]
+        ids = {str(item["sample_id"]) for item in subset}
+        score["per_bearing"][str(unit)] = regression(
+            [row for row in rows if str(row["sample_id"]) in ids], subset, identity="sample_id")
+    score["mean_bearing_mae"] = sum(x["mae"] for x in score["per_bearing"].values()) / len(score["per_bearing"])
+    score["target_unit"] = target_unit
+    return score
+
+
+def _predict_independent_prefixes(submission, root, holdout, dest, timeout):
+    """Cold-run one prefix per fresh sandbox; no later query is visible."""
+    import numpy as np
+
+    with np.load(holdout, allow_pickle=False) as archive:
+        source = {key: archive[key] for key in archive.files}
+    if "labels" in source or "sample_ids" not in source:
+        raise ValueError("Measured holdout must contain identities and no labels")
+    identities = [str(item) for item in source["sample_ids"].tolist()]
+    if not identities or len(set(identities)) != len(identities):
+        raise ValueError("Measured holdout identities must be nonempty and unique")
+    for key, values in source.items():
+        if values.ndim and values.shape[0] != len(identities):
+            raise ValueError(f"Measured holdout field cannot be separated into individual prefixes: {key}")
+    queries = dest / "independent_queries"
+    queries.mkdir()
+    deadline = time.monotonic() + timeout
+    predictions = []
+    for index, identity in enumerate(identities):
+        query = queries / f"{index:04d}"
+        query.mkdir()
+        input_path, output = query / "observation.npz", query / "output"
+        output.mkdir()
+        for folder in ("tmp", "mpl", "xdg", "home"):
+            (output / folder).mkdir()
+        one = {key: value if value.ndim == 0 else value[index:index + 1] for key, value in source.items()}
+        np.savez_compressed(input_path, **one)
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError("Measured prefix evaluation exceeded its total timeout")
+        command = _sandbox_command(submission, root, input_path, output)
+        with (output / "stdout.log").open("wb") as out, (output / "stderr.log").open("wb") as err:
+            proc = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=out, stderr=err, timeout=remaining, check=False)
+        if proc.returncode:
+            raise RuntimeError(f"Isolated prediction for prefix {index} exited with status {proc.returncode}; inspect {output / 'stderr.log'}")
+        path = output / "predictions.json"
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 50 * 1024 * 1024:
+            raise ValueError(f"Expected a regular prediction JSON for prefix {index}")
+        value = json.loads(path.read_text())
+        rows = value.get("predictions") if isinstance(value, dict) else value
+        if (not isinstance(rows, list) or len(rows) != 1 or not isinstance(rows[0], dict)
+                or str(rows[0].get("sample_id")) != identity):
+            raise ValueError(f"Exactly the current sample identity is required for prefix {index}")
+        predictions.append(rows[0])
+    write_json(dest / "predictions.json", {"predictions": predictions})
+    return predictions
+
+
+def evaluate(data_root, submission, destination, timeout=300):
     """Freeze a submission, run it without network/labels, and score by exact ID."""
     root, meta = _ready(data_root)
     submission, dest = Path(submission).resolve(), Path(destination).resolve()
@@ -266,22 +354,28 @@ def evaluate(data_root, submission, destination, timeout=120):
     write_json(dest / "submission_manifest.json", {"frozen_utc": _now(), "files": frozen})
     is_cmapss = meta["dataset"].startswith("CMAPSS_")
     is_femto = meta["dataset"] == "FEMTO"
-    is_rul = is_cmapss or is_femto
+    is_xjtu = meta["dataset"] == "XJTU"
+    is_ldm = meta["dataset"] == "LDM_RTF"
+    is_rul = is_cmapss or is_femto or is_xjtu or is_ldm
     holdout = root / "holdout" / ("test.txt" if is_cmapss else "test.npz")
-    command = _sandbox_command(submission, root, holdout, dest)
     started = time.monotonic()
     try:
-        with (dest / "stdout.log").open("wb") as out, (dest / "stderr.log").open("wb") as err:
-            proc = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=out, stderr=err, timeout=timeout, check=False)
-        if proc.returncode:
-            raise RuntimeError(f"Isolated prediction exited with status {proc.returncode}; inspect stderr.log")
+        if is_xjtu or is_ldm:
+            rows = _predict_independent_prefixes(submission, root, holdout, dest, timeout)
+        else:
+            command = _sandbox_command(submission, root, holdout, dest)
+            with (dest / "stdout.log").open("wb") as out, (dest / "stderr.log").open("wb") as err:
+                proc = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=out, stderr=err, timeout=timeout, check=False)
+            if proc.returncode:
+                raise RuntimeError(f"Isolated prediction exited with status {proc.returncode}; inspect stderr.log")
+            path = dest / "predictions.json"
+            if path.is_symlink() or not path.is_file() or path.stat().st_size > 50 * 1024 * 1024:
+                raise ValueError("Expected a regular prediction JSON file of at most 50 MiB")
+            value = json.loads(path.read_text())
+            rows = value.get("predictions") if isinstance(value, dict) else value
         if _tree_hashes(submission) != frozen:
             raise RuntimeError("Submission changed after freezing")
         predictions_path = dest / "predictions.json"
-        if predictions_path.is_symlink() or not predictions_path.is_file() or predictions_path.stat().st_size > 50 * 1024 * 1024:
-            raise ValueError("Expected a regular prediction JSON file of at most 50 MiB")
-        value = json.loads(predictions_path.read_text())
-        rows = value.get("predictions") if isinstance(value, dict) else value
         gold = json.loads((root / "private/labels.json").read_text())
         if not is_rul:
             info = json.loads((root / "public/datasets" / meta["dataset"] / "dataset.json").read_text())
@@ -289,6 +383,10 @@ def evaluate(data_root, submission, destination, timeout=120):
             score.update(_recording_metrics(rows, gold))
         elif is_femto:
             score = _femto_score(rows, gold)
+        elif is_xjtu:
+            score = _xjtu_score(rows, gold)
+        elif is_ldm:
+            score = _xjtu_score(rows, gold, task_name="LDM", target_unit="acquisitions")
         else:
             score = regression(rows, gold)
         if is_rul and any(float(row["predicted_rul"]) < 0 for row in rows):
@@ -298,6 +396,8 @@ def evaluate(data_root, submission, destination, timeout=120):
             prediction_sha256=file_sha256(dest / "predictions.json"), truth_sha256=file_sha256(root / "private/labels.json"),
             holdout_input_sha256=file_sha256(holdout), elapsed_seconds=time.monotonic() - started,
             official_benchmark_score=False)
+        if is_xjtu or is_ldm:
+            score["prefix_isolation"] = "one observation per fresh sandbox; no other final query or output mounted"
         write_json(dest / "score.json", score)
         write_json(dest / "STATUS.json", {"status": "completed", "task_id": meta["task_id"], "scored_at_utc": _now()})
         return {"status": "completed", "task_id": meta["task_id"], "score": str(dest / "score.json"),

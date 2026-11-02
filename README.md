@@ -2,11 +2,11 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.4 提供 **12 个可从公开数据开始的数值研究任务**：MFPT、C-MAPSS FD001–FD004、FEMTO 及 6 种其他故障分类来源。按需下载数据即可准备、训练和外部评分，不需要历史快照。数据范围、大小、下载验证状态与限制见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
+v0.5 提供 **14 个可从公开数据开始的数值研究任务**：MFPT、C-MAPSS FD001–FD004、FEMTO、XJTU、LDM 及 6 种其他故障分类来源。按需下载数据即可准备、训练和外部评分，不需要历史快照。数据范围、大小、下载验证状态与限制见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
 
 v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权重、程序和日志，使用 `environment` 命令恢复或重放；它不属于从数据开始运行新任务的前提。该约 149 GB 的快照目前没有公开下载地址。见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
-**给其他机器的使用者：** 克隆后安装依赖，按任务下载原始数据；数据和依赖没有放在 Git 仓库中。已在本服务器上完成 12 个任务的真实训练和隔离评分，跨机器安装、网络和内核兼容性仍需在使用者机器上验证。Agent 运行另需兼容的模型接口。
+**给其他机器的使用者：** 克隆后安装依赖，按任务下载来源数据；数据和依赖没有放在 Git 仓库中。已在本服务器上完成 14 个任务的真实训练和隔离评分，跨机器安装、网络和内核兼容性仍需在使用者机器上验证。Agent 运行另需兼容的模型接口。
 
 | 使用方式 | 内容 |
 |---|---|
@@ -25,6 +25,8 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 | `pdm_rul_001` | NASA C-MAPSS FD001 | 在测试发动机的末次观测时预测剩余循环数；计算 MAE、RMSE | 仿真，不是现场实测 |
 | `research_fd002_rul`–`research_fd004_rul` | NASA C-MAPSS FD002–FD004 | 分别预测各子集发动机的剩余循环数 | 仿真 |
 | `research_femto_bearing_rul` | NASA PRONOSTIA/FEMTO | 预测 11 条挑战轴承前缀的剩余秒数；另报已知有歧义的标注 | 台架实测 |
+| `research_xjtu_bearing_rul` | XJTU-SY | 用当前信号特征预测至末次采集的名义分钟数；按整轴承分组 | 台架实测 |
+| `research_ldm_bearing_rul` | Paderborn LDM 作者特征 | 预测到记录末端的剩余采集次数，非小时；更换来源的研究适配 | 作者公开的台架实测派生特征 |
 | `research_cwru_fault_classification` | CWRU | 原始特征表类别预测；分组由连续段推断 | 台架数据 |
 | `research_electric_motor_fault_classification`、`research_rotor_fault_classification` | ElectricMotorVibrations、RotorBrokenBar | 电机振动和转子数据源标签分类 | 台架数据 |
 | `research_hust_bearing_fault_classification`、`research_paderborn_bearing_fault_classification`、`research_mendeley_bearing_fault_classification` | HUST、Padeborn、Mendeley | 按来源标签开展轴承故障分类 | 台架数据 |
@@ -37,7 +39,7 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 
 ## 安装
 
-需要 **Linux、Python 3.12、bubblewrap (`bwrap`)**、网络访问数据源和软件包源，以及 CPU 运行所需的磁盘空间。安装系统包的方法依发行版而异，例如 Debian/Ubuntu 可以运行 `sudo apt install bubblewrap python3.12-venv`。容器或服务器需要允许普通用户创建 bubblewrap 使用的命名空间；不可用时评分会明确失败。
+需要 **Linux、Python 3.12、bubblewrap (`bwrap`)**、网络访问数据源和软件包源，以及 CPU 运行所需的磁盘空间。XJTU 另需可解压多卷 RAR 的 `7zz` 或 `7z`，本次使用 7-Zip 26.05。安装系统包的方法依发行版而异，例如 Debian/Ubuntu 可以运行 `sudo apt install bubblewrap python3.12-venv`。容器或服务器需要允许普通用户创建 bubblewrap 使用的命名空间；不可用时评分会明确失败。
 
 ```bash
 git clone https://github.com/zyqzyq007/phmforge-research-adapter.git

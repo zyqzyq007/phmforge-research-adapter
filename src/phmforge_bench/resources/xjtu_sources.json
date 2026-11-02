@@ -1,0 +1,42 @@
+{
+  "origin": "https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets",
+  "mirror_revision": "274226336036cd8deb2c40b4ba323af2d11a7290",
+  "files": [
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part01.rar",
+      "bytes": 744488960,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part01.rar",
+      "publisher_sha256": "c500657353f089a4ab50212ff4ddfc7b982729e92e2b127440c8ad881d80b968"
+    },
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part02.rar",
+      "bytes": 744488960,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part02.rar",
+      "publisher_sha256": "4dfa6286a8e9c7cec1e925b347642349f36e27ab3f703c90d1d08977b7b4f61f"
+    },
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part03.rar",
+      "bytes": 744488960,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part03.rar",
+      "publisher_sha256": "6929f531284f79e0209246b4ee23b23dd8d4faac1c0c3ff8fb131cda4a18bd3a"
+    },
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part04.rar",
+      "bytes": 744488960,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part04.rar",
+      "publisher_sha256": "2245825acd29bed3b95e7a77879a3fbadf20f4ad4f99486384c714174621597d"
+    },
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part05.rar",
+      "bytes": 744488960,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part05.rar",
+      "publisher_sha256": "e1b0a41a32b865e48ea7981c56f952a960d94335f3496b72eb4a65932f1671bd"
+    },
+    {
+      "filename": "XJTU-SY_Bearing_Datasets.part06.rar",
+      "bytes": 722155640,
+      "url": "https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/resolve/274226336036cd8deb2c40b4ba323af2d11a7290/Data/XJTU-SY_Bearing_Datasets.part06.rar",
+      "publisher_sha256": "df1854821a9d481104476379f7bc045ea1e101427c6e36145cd7677dc7c4a684"
+    }
+  ]
+}

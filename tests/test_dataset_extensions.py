@@ -11,12 +11,47 @@ import numpy as np
 import torch
 
 from phmforge_bench.pdmb_fault import prepare_pdmb_fault
-from phmforge_bench.runner import _femto_score, _recording_metrics
+from phmforge_bench.runner import _femto_score, _recording_metrics, _xjtu_score
+from phmforge_bench.ldm import _numeric_csv, prepare_ldm
 import real_rul_model as rul
 from verified_phmforge import VerifiedForge
 
 
 class AdditionalDatasetContracts(unittest.TestCase):
+    def test_bearing_rul_scoring_checks_all_identity_fields_and_balances_units(self):
+        gold = [{"sample_id": "a", "unit_id": 1, "scenario_id": 2, "actual_rul": 5},
+                {"sample_id": "b", "unit_id": 1, "scenario_id": 2, "actual_rul": 5},
+                {"sample_id": "c", "unit_id": 3, "scenario_id": 1, "actual_rul": 5}]
+        pred = [{**{k: row[k] for k in ("sample_id", "unit_id", "scenario_id")},
+                 "predicted_rul": value} for row, value in zip(gold, (7, 7, 9))]
+        score = _xjtu_score(pred, gold)
+        self.assertAlmostEqual(score["mae"], 8 / 3)
+        self.assertEqual(score["mean_bearing_mae"], 3)
+        with self.assertRaisesRegex(ValueError, "unit or scenario identity"):
+            _xjtu_score([{**pred[0], "scenario_id": 1}, *pred[1:]], gold)
+        with self.assertRaisesRegex(ValueError, "Sample coverage differs"):
+            _xjtu_score(pred[:-1], gold)
+
+    def test_ldm_rejects_incomplete_or_tampered_author_files(self):
+        with tempfile.TemporaryDirectory(prefix="phmforge-ldm-binding-") as folder:
+            root = Path(folder)
+            path = root / "source/fft/B02.npy"
+            path.parent.mkdir(parents=True)
+            path.write_bytes(b"wrong source")
+            pin = {"revision": "fixture", "files": [{"path": "fft/B02.npy", "url": "https://example.invalid",
+                   "bytes": path.stat().st_size, "sha256": "0" * 64}]}
+            with patch("phmforge_bench.ldm.resource_json", return_value=pin):
+                with self.assertRaisesRegex(ValueError, "does not match"):
+                    prepare_ldm(root / "data", root / "source")
+            self.assertFalse((root / "data/READY.json").exists())
+
+    def test_ldm_csv_rejects_invalid_row_width(self):
+        with tempfile.TemporaryDirectory(prefix="phmforge-ldm-csv-") as folder:
+            path = Path(folder) / "data.csv"
+            path.write_text("Time,a,b\nfirst,1\n")
+            with self.assertRaisesRegex(ValueError, "CSV row"):
+                _numeric_csv(path, 2)
+
     def test_mixed_source_groups_remain_disjoint_and_test_labels_are_private(self):
         with tempfile.TemporaryDirectory(prefix="phmforge-source-contract-") as folder:
             base = Path(folder)

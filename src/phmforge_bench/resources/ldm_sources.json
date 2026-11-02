@@ -1,0 +1,299 @@
+{
+  "revision": "d7167c927aad5b7f197b1d735b21339e3e17844e",
+  "files": [
+    {
+      "path": "fft/B02.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B02.npy",
+      "bytes": 1785728,
+      "git_blob_sha1": "f20b2182a186b3dac8f5362fff79324daf383c2f",
+      "sha256": "32051e3fea3ba02b689d5de4cad96df65ae12ee8f37866e59df0c408a9d6932e"
+    },
+    {
+      "path": "fft/B03.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B03.npy",
+      "bytes": 982528,
+      "git_blob_sha1": "c5de9673809b58b1946a2a5bdd2779682af28b48",
+      "sha256": "abce6b02a88363121d8647e1e3defe0ecff3ef52523b61b4d50c73f3f10155c4"
+    },
+    {
+      "path": "fft/B04.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B04.npy",
+      "bytes": 1782528,
+      "git_blob_sha1": "054845d019f277b4baed91205d5557513acca3b1",
+      "sha256": "96a67e3f54935fb6a1e8e2a40e0eb83b581c4e1793ca3e616301ce04a5f0c98a"
+    },
+    {
+      "path": "fft/B06.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B06.npy",
+      "bytes": 20744128,
+      "git_blob_sha1": "d10b109bebd50f4185248748870ce968032320a9",
+      "sha256": "1841c8356d2c58d8c5428c4e7a248c2426680a047275f1bada7a6dec44066fe4"
+    },
+    {
+      "path": "fft/B07.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B07.npy",
+      "bytes": 10228928,
+      "git_blob_sha1": "1b03a539e1464079b36ad610e0cc9ced640c5af7",
+      "sha256": "fc7bbe832551f0a2b3d47c4eb5c9c8585571dc42ff69e6f3fee427be8300c285"
+    },
+    {
+      "path": "fft/B08.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B08.npy",
+      "bytes": 2923328,
+      "git_blob_sha1": "cdea2ff55c07318fa66303e3095039c52ada763c",
+      "sha256": "b7bb56b1f5cce7b0150d620e91dd62ce19a59918da16b1a6be44732884019718"
+    },
+    {
+      "path": "fft/B09.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B09.npy",
+      "bytes": 2900928,
+      "git_blob_sha1": "e48d8beb618009d86392b10a3e1d9d4cd61be4ee",
+      "sha256": "68f5cbd0eec144610f4c14f898f212c533731144a51dcf035a276921320a4dc1"
+    },
+    {
+      "path": "fft/B10.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B10.npy",
+      "bytes": 5158528,
+      "git_blob_sha1": "a86a8552408843bc62d4ed656c5dd687a93a909b",
+      "sha256": "4fb770c27f015dd9ef43c91e76ef4c02ecb4cc58ed2c0d63fb23977a8a348c50"
+    },
+    {
+      "path": "fft/B11.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B11.npy",
+      "bytes": 3124928,
+      "git_blob_sha1": "da8a3d8ec45d3563aeb351cb8aff03d26824b3a4",
+      "sha256": "fa0c7d158e3fdfde4db9ca42df4428384ce104edbe3876d0d1a098cbe1d05af9"
+    },
+    {
+      "path": "fft/B12.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B12.npy",
+      "bytes": 1227328,
+      "git_blob_sha1": "f78419b6cb99d1e26a37fabc0ecb7e97f78012c8",
+      "sha256": "54c93cf0879114d172508b7af9c7dce1866e44e34230a667d09bfbcd75ad237e"
+    },
+    {
+      "path": "fft/B13.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B13.npy",
+      "bytes": 31067328,
+      "git_blob_sha1": "aec42c0dc90bd6df2ba59213cbc7d5d802b0e47e",
+      "sha256": "b9b7fd57278863e9b67c125b2be588854d76a9f6218b20958a79ed539bc94dc7"
+    },
+    {
+      "path": "fft/B14.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B14.npy",
+      "bytes": 19707328,
+      "git_blob_sha1": "576e603f5995d20fd563ce59588387d8b98fb9e1",
+      "sha256": "b62122c30f89aa2598505344372147cb814f6aa6170844a719aaa067570a0c78"
+    },
+    {
+      "path": "fft/B15.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B15.npy",
+      "bytes": 36107328,
+      "git_blob_sha1": "ef5e3811d5453a3fe30ee8f7d64b8011eeceba7d",
+      "sha256": "3627e10a5e70734b8ed73f2c80bfc6cf7fe2a4570cea941d28415e55fe2717a7"
+    },
+    {
+      "path": "fft/B17.npy",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/fft/B17.npy",
+      "bytes": 4372928,
+      "git_blob_sha1": "afe14f587116d24f07259acb81cc7ed7aa51ff03",
+      "sha256": "535d6b20d43c1cb659f7faec0a3d5c27a0eac29bf5844aefbce026f80a49954e"
+    },
+    {
+      "path": "op/B02.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B02.csv",
+      "bytes": 134576,
+      "git_blob_sha1": "d1ef70ba2038e1fd28e381bef06527805d712759",
+      "sha256": "0c147a4eb9beadefcf2c04609b7c30a61a563d541208d045ba0e9d087ff71d05"
+    },
+    {
+      "path": "op/B03.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B03.csv",
+      "bytes": 75215,
+      "git_blob_sha1": "378cb6c794231215a03006e5d4aa83dc4b0f226b",
+      "sha256": "af768009d5cfbfadd4e6a4bad5a6335b6157a30d7b0b223dc544ffc8a7ac26c7"
+    },
+    {
+      "path": "op/B04.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B04.csv",
+      "bytes": 134422,
+      "git_blob_sha1": "46e6ab1fd1100204783acb2a196dda3a2e25ec8d",
+      "sha256": "a15f2f86eee0bb1a9b284567b04f8c97ce9e2fc668085a21fdd545c77d3742e0"
+    },
+    {
+      "path": "op/B06.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B06.csv",
+      "bytes": 1584125,
+      "git_blob_sha1": "9f1340e2a6c611883cdd9fd9308d9d4141c1f887",
+      "sha256": "507b4c228dd0251e666ded8f05ae06c17480251377e57ac88dcd0b15aa629b1f"
+    },
+    {
+      "path": "op/B07.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B07.csv",
+      "bytes": 748067,
+      "git_blob_sha1": "8265d4f08c502a8e3601281a702fce619a817e84",
+      "sha256": "a471efc69dae85424c66e74fd43f316455aa3fde88cbdc5414c63f79f3f331f5"
+    },
+    {
+      "path": "op/B08.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B08.csv",
+      "bytes": 213197,
+      "git_blob_sha1": "1b9067b2dd60f549ac88ef63635472e612ae2c8b",
+      "sha256": "83589555318a780d44424e3afed07418cd50d9f46f4e21bc148ef0ddc0269665"
+    },
+    {
+      "path": "op/B09.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B09.csv",
+      "bytes": 212421,
+      "git_blob_sha1": "8e87ba0511d71b86f48d46c22ec1b43b7f5bf268",
+      "sha256": "9220ea6974785395f2a9bb5bb5ce7fca832109635331700ec9fe08721bbfc181"
+    },
+    {
+      "path": "op/B10.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B10.csv",
+      "bytes": 378406,
+      "git_blob_sha1": "0342931cd2199571747dc911547dd3f4cd293bd3",
+      "sha256": "cf9dccf5f1542fefd91a1b572142a89978f6a2fbce9f770e3bab142a91dcb748"
+    },
+    {
+      "path": "op/B11.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B11.csv",
+      "bytes": 183552,
+      "git_blob_sha1": "1eb7e819362c1f6e8bca9a8f6bcc0dca83902727",
+      "sha256": "5672028e1710c5f6af8cadf4ab14b1c446bf702b384277263db6a3330af497ac"
+    },
+    {
+      "path": "op/B12.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B12.csv",
+      "bytes": 72214,
+      "git_blob_sha1": "433301f32ffb91d09159d4b053a7fcdf3aa4f002",
+      "sha256": "b7d26b37a8c5c982dece9168a8bae9e5a865c7cf29f37c4aa56725eb7e722e80"
+    },
+    {
+      "path": "op/B13.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B13.csv",
+      "bytes": 1824751,
+      "git_blob_sha1": "fc89d131cace937957d19936d569a4b03ab14386",
+      "sha256": "187637efbb7c9030ae2a9f23d9f11699f5a4dcd9aaf03b7b347967a8eb20ee87"
+    },
+    {
+      "path": "op/B14.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B14.csv",
+      "bytes": 1161200,
+      "git_blob_sha1": "e580254129509c0f621f3660f5b861a4e27f9ec0",
+      "sha256": "349ef6c2afc0eb3da8aeae2d5fbe8e3b37929edd53732ee39c1bad5bc5b5ae0f"
+    },
+    {
+      "path": "op/B15.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B15.csv",
+      "bytes": 2126726,
+      "git_blob_sha1": "dae14cd1d7d4e6f1bac3c011264d91d5f32cc6ed",
+      "sha256": "5029fc69f8864a3aad6e190f9f3ccc3f0075cf131d7bfc378876e18971d252f1"
+    },
+    {
+      "path": "op/B17.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/op/B17.csv",
+      "bytes": 259243,
+      "git_blob_sha1": "d380c94d7a787d7642fd20d2d2407938cb27847a",
+      "sha256": "61721305e3200670c1f23dce51136bef1826f88a13f8fb7bb8e561adc73c52fa"
+    },
+    {
+      "path": "temp/B02.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B02.csv",
+      "bytes": 80053,
+      "git_blob_sha1": "161f9c0669641e883c3ed382ad360b54ddb11dee",
+      "sha256": "c70f041f61a385939a93461d59ec368228b991376225284f7e7081bc05aec5b0"
+    },
+    {
+      "path": "temp/B03.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B03.csv",
+      "bytes": 44073,
+      "git_blob_sha1": "2187aca3c5ffc5549ca3ff0732f50ceae889dd20",
+      "sha256": "cbb3e1b92e73265dd23ece1eb19fb72ed07e4747cc6cddaf456c52706e3d59ce"
+    },
+    {
+      "path": "temp/B04.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B04.csv",
+      "bytes": 79917,
+      "git_blob_sha1": "cdc54732cfeb724d073231880e26e663fa7c962e",
+      "sha256": "9eb09c9f87eafe7a4e487d547ce5e035dde966b298b2647dd267f9e5abd392b5"
+    },
+    {
+      "path": "temp/B06.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B06.csv",
+      "bytes": 929217,
+      "git_blob_sha1": "65a42f0cadfa63209e1cde76161ddc42d4fae31e",
+      "sha256": "fadaf797156ca80510022e46e1d984825ecb0286ca861432be86338c42e772b0"
+    },
+    {
+      "path": "temp/B07.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B07.csv",
+      "bytes": 458191,
+      "git_blob_sha1": "b5cdf8eeb065afa8c747aa366fc056e07e80b9f6",
+      "sha256": "f4dd66351c0c8e83630ec03cca392c66d819545ef933deccc435a07195486961"
+    },
+    {
+      "path": "temp/B08.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B08.csv",
+      "bytes": 131001,
+      "git_blob_sha1": "c9eb2810c2a3a827dc3435e577430be905eaa219",
+      "sha256": "da9b4407ae7e77a408c14d8982d1a39b0df034bddf0c7859d0383cbc10071148"
+    },
+    {
+      "path": "temp/B09.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B09.csv",
+      "bytes": 129991,
+      "git_blob_sha1": "adf06ec666c62ee04ebfaf775b4fcb846b1f41be",
+      "sha256": "dfcdeefbaf27839d5f563097f3684ad409011750266600f1b45d9610619ed045"
+    },
+    {
+      "path": "temp/B10.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B10.csv",
+      "bytes": 231133,
+      "git_blob_sha1": "203556aec9cd79b9586597f1ae95884e978f727e",
+      "sha256": "5a7df3c01c23ccf902d2cdce53901603139c1b87d294b2f2e4c2d6ee451c9793"
+    },
+    {
+      "path": "temp/B11.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B11.csv",
+      "bytes": 139963,
+      "git_blob_sha1": "495cc35bd4e53cbfb5f9fa1981178f2dea00f43b",
+      "sha256": "8bc72ce5b17269343023c1d7dc3fcc1290892d9dde619817ed8a2edd66f2ddbd"
+    },
+    {
+      "path": "temp/B12.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B12.csv",
+      "bytes": 55038,
+      "git_blob_sha1": "583acb946fa88685d25e32618f0f15ebddb51b3c",
+      "sha256": "ba0225e5429ab81b5ee7b8658a8fc9888b0bea6f99cb56c4d4e4fd13a0806b49"
+    },
+    {
+      "path": "temp/B13.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B13.csv",
+      "bytes": 1391534,
+      "git_blob_sha1": "30c83d0cb63223f788ad2d5cbb58cfbae1b5d5b6",
+      "sha256": "3b480d168d39e7d8117d9fb74f848b2734850edd79e9e187b32c8df03884fcfe"
+    },
+    {
+      "path": "temp/B14.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B14.csv",
+      "bytes": 882860,
+      "git_blob_sha1": "e349bcabb652e2b2d96b893922af680a492785c3",
+      "sha256": "522f097f0c0e0e40e0744b2f7ff091585888f399f768d400250c6fe2913f5582"
+    },
+    {
+      "path": "temp/B15.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B15.csv",
+      "bytes": 1617390,
+      "git_blob_sha1": "b3d27a72ffd5a938395b94f83687693da0c39a43",
+      "sha256": "8709ea8fafc3d2ea3d2f159a78e6920d96801c713894b677feb228f636286cfc"
+    },
+    {
+      "path": "temp/B17.csv",
+      "url": "https://raw.githubusercontent.com/alireza-javanmardi/bearing-RUL/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM/temp/B17.csv",
+      "bytes": 195914,
+      "git_blob_sha1": "20788d8d56eef9cb2a5ea5b9ccbd2bebaf5b282b",
+      "sha256": "998c3be16ba3ca2fb4778fea4755b4a1bb2a56b42272d8ce2e22d1f673118c32"
+    }
+  ]
+}

@@ -196,7 +196,7 @@ tool_timeout_sec = 180
             state = json.loads((run/'model_gateway/agent/status.json').read_text())
             if not state['requests'] or not state['returned_model_ids']:
                 raise RuntimeError('No completed model response was recorded; agent run is not valid')
-            scored = _context['evaluate'](ws, run/'evaluation') if _context else evaluate(root, ws/'submission', run/'evaluation', timeout=120)
+            scored = _context['evaluate'](ws, run/'evaluation') if _context else evaluate(root, ws/'submission', run/'evaluation', timeout=300)
             report = {'status':'completed','task_id':meta['task_id'], 'smoke_mode':smoke, 'starter_training':starter,
                 'score':scored,'agent_elapsed_seconds':time.monotonic()-started,
                 'returned_models_and_usage':'model_gateway/agent/status.json'}
