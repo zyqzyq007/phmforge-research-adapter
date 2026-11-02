@@ -1,0 +1,80 @@
+{
+  "cwru": {
+    "dataset": "CWRU",
+    "source_name": "CWRU",
+    "revision": "d4e26290208b7a57ce94fcfb37968c72119d2eb6",
+    "url": "https://huggingface.co/datasets/submission096/CWRU/resolve/d4e26290208b7a57ce94fcfb37968c72119d2eb6/PdM.csv?download=true",
+    "bytes": 7091378,
+    "sha256": "e05c2b23c7b0d7450f31982e9d10f395fe0a8f92d93dca9f6997655aa1026ff9",
+    "source_git_blob_sha1": "605450e6e52917b6bcee8b31a62c899a4876a139",
+    "format": "cwru_features",
+    "task_id": "research_cwru_fault_classification",
+    "group_definition": "Inferred contiguous segment blocks; original recordings and physical bearings are not identified."
+  },
+  "electric-motor-vibrations": {
+    "dataset": "ELECTRICMOTORVIBRATIONS",
+    "source_name": "ElectricMotorVibrations",
+    "revision": "a080c1e62e7e651b215f907a447d6bd4743004d4",
+    "url": "https://huggingface.co/datasets/submission096/ElectricMotorVibrations/resolve/a080c1e62e7e651b215f907a447d6bd4743004d4/PdM.csv?download=true",
+    "bytes": 67814701,
+    "sha256": "cf87f519678ab8d9673ae2b9b94044f000edea9cd1c68a7fc39730823c048ce8",
+    "format": "waveforms",
+    "channels": ["AccX", "AccY", "AccZ"],
+    "group_field": null,
+    "task_id": "research_electric_motor_fault_classification",
+    "group_definition": "Each published signal row is kept together; records can share physical equipment."
+  },
+  "rotor-broken-bar": {
+    "dataset": "ROTORBROKENBAR",
+    "source_name": "RotorBrokenBar",
+    "revision": "94fe1f7184e4bcc25062b86f2587e2541ab5b48f",
+    "url": "https://huggingface.co/datasets/submission096/RotorBrokenBar/resolve/94fe1f7184e4bcc25062b86f2587e2541ab5b48f/PdM.csv?download=true",
+    "bytes": 327411672,
+    "sha256": "a58317c3dca1caed67c491415dcf6653dbd3fe0210da6f2fd13d843dec0e3d37",
+    "format": "waveforms",
+    "channels": ["Vib_acpe", "Vib_acpi", "Vib_axial", "Vib_base", "Vib_carc"],
+    "group_field": null,
+    "task_id": "research_rotor_fault_classification",
+    "group_definition": "Each published signal row is kept together; records can share physical equipment."
+  },
+  "hust-bearing": {
+    "dataset": "HUST",
+    "source_name": "HUST",
+    "revision": "22c9be75060de37af67f8b3f963853be6946393c",
+    "url": "https://huggingface.co/datasets/submission096/HUST/resolve/22c9be75060de37af67f8b3f963853be6946393c/PdM.csv?download=true",
+    "bytes": 1028787587,
+    "sha256": "aaa26b9627dbcd99111bbd393ab28f13d388a832a40f4567e8de0662f366340a",
+    "format": "waveforms",
+    "channels": ["vibration_raw"],
+    "group_field": "filename",
+    "task_id": "research_hust_bearing_fault_classification",
+    "group_definition": "Published source filename, not independently certified physical bearings."
+  },
+  "mendeley-bearing": {
+    "dataset": "MENDELEY",
+    "source_name": "Mendeley",
+    "revision": "fd5e2313e1e3acf110829e6f95ba76944b63a6f4",
+    "url": "https://huggingface.co/datasets/submission096/Mendeley/resolve/fd5e2313e1e3acf110829e6f95ba76944b63a6f4/PdM.csv?download=true",
+    "bytes": 4244187643,
+    "sha256": "783aef49db3384d22d211b3c8071638a7e1b826c2aec5ac22b527c29d2918741",
+    "format": "waveforms",
+    "channels": ["features"],
+    "group_field": null,
+    "max_windows_per_record": 64,
+    "task_id": "research_mendeley_bearing_fault_classification",
+    "group_definition": "Each published long recording stays together; recordings can share physical bearing hardware."
+  },
+  "paderborn": {
+    "dataset": "PADERBORN",
+    "source_name": "Padeborn",
+    "revision": "03de92ea92c9ef73e063beee243c45e32092c0fe",
+    "url": "https://huggingface.co/datasets/submission096/Padeborn/resolve/03de92ea92c9ef73e063beee243c45e32092c0fe/PdM.csv?download=true",
+    "bytes": 3898620034,
+    "sha256": "0e63a02303e3464e411667c68df62d36811b7f86a487e856d1cad640c13559f4",
+    "format": "waveforms",
+    "channels": ["vibration_raw"],
+    "group_field": "bearing_num",
+    "task_id": "research_paderborn_bearing_fault_classification",
+    "group_definition": "Published numeric bearing identifier kept together across conditions and labels; aliases can conservatively merge different physical bearings."
+  }
+}

@@ -2,31 +2,36 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.3 增加了**实际实验环境快照**：历史任务输入、数据划分、拟合权重、Agent 程序、工具版本、训练／推理命令和结果按原文件 SHA-256 保存。v0.3.1 修复了从只读环境制品恢复文件时的权限问题，不改变该制品的内容或哈希。通过 `environment` 命令恢复和执行；大型环境制品与 Git 源码分开存储。具体内容、取得方式和运行记录见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
+v0.4 提供 **12 个可从公开数据开始的数值研究任务**：MFPT、C-MAPSS FD001–FD004、FEMTO 及 6 种其他故障分类来源。按需下载数据即可准备、训练和外部评分，不需要历史快照。数据范围、大小、下载验证状态与限制见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
 
-本机已配置 `environment_store` 链接；搬迁时按 `environment.lock.json` 复制配套制品，再做完整校验。GitHub 单独克隆只包含源码与清单，尚无公开的大数据下载地址。
+v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权重、程序和日志，使用 `environment` 命令恢复或重放；它不属于从数据开始运行新任务的前提。该约 149 GB 的快照目前没有公开下载地址。见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
-**给其他机器的使用者：** 仅克隆 GitHub，可以从公开数据下载并独立运行下文的 MFPT 和 C-MAPSS FD001 两个数值子任务。重放历史 51 个正常交付方向还需要单独取得约 149 GB 的环境制品；该制品目前没有公开下载地址，也不能仅靠下载原始数据自动还原。复制前请核对数据来源的许可，并避免把包含测试标签的制品交给待评测 Agent。
+**给其他机器的使用者：** 克隆后安装依赖，按任务下载原始数据；数据和依赖没有放在 Git 仓库中。已在本服务器上完成 12 个任务的真实训练和隔离评分，跨机器安装、网络和内核兼容性仍需在使用者机器上验证。Agent 运行另需兼容的模型接口。
 
 | 使用方式 | 内容 |
 |---|---|
 | `environment list / restore` | 查看实际历史任务、恢复冻结的代码、数据和运行环境 |
 | `environment replay` | 重新执行历史训练或预测命令；预测与历史输出逐项核对 |
 | `environment agent` | 在历史任务的训练／开发资料上启动新的 coding Agent 复核，提交后再外评 |
-| `prepare / run-reference` | 下列两个从公开下载开始的独立示例；其划分不等同于全部历史实验 |
+| `prepare / run-reference` | 从公开源准备数据并执行数值训练及评分；划分不等同于全部历史实验 |
 
 完整环境保留原 75 题的覆盖台账：**55 个数值方向实际尝试、51 个正常交付外评、4 个预算未交付；另 16 个原目标不具备条件、4 个明确合成题排除**。后续程序复核、改目标实验和失败记录另列。完整保存实验环境，不等于原版 75 题全部科学有效，也不抹去旧实验的权限和标签限制。
 
-从公开下载开始可独立运行的两个**数值子任务**：
+从公开下载开始可独立运行的**数值子任务**：
 
 | 任务 | 数据来源 | 任务与外部评分 | 数据性质 |
 |---|---|---|---|
 | `pdm_fault_008` | MFPT | 根据振动特征识别正常、内圈故障和外圈故障；按样本及采集记录评分 | 台架实测 |
 | `pdm_rul_001` | NASA C-MAPSS FD001 | 在测试发动机的末次观测时预测剩余循环数；计算 MAE、RMSE | 仿真，不是现场实测 |
+| `research_fd002_rul`–`research_fd004_rul` | NASA C-MAPSS FD002–FD004 | 分别预测各子集发动机的剩余循环数 | 仿真 |
+| `research_femto_bearing_rul` | NASA PRONOSTIA/FEMTO | 预测 11 条挑战轴承前缀的剩余秒数；另报已知有歧义的标注 | 台架实测 |
+| `research_cwru_fault_classification` | CWRU | 原始特征表类别预测；分组由连续段推断 | 台架数据 |
+| `research_electric_motor_fault_classification`、`research_rotor_fault_classification` | ElectricMotorVibrations、RotorBrokenBar | 电机振动和转子数据源标签分类 | 台架数据 |
+| `research_hust_bearing_fault_classification`、`research_paderborn_bearing_fault_classification`、`research_mendeley_bearing_fault_classification` | HUST、Padeborn、Mendeley | 按来源标签开展轴承故障分类 | 台架数据 |
 
-每个示例需要的数据、自动和手动下载方法、固定来源版本，以及历史实验涉及的其他数据见 [数据集与下载说明](docs/DATASETS.md)。这两个示例可以分别下载数据运行；完整历史重放仍需单独的环境制品。
+每个任务需要的数据、自动和手动下载方法、固定来源版本，以及历史实验涉及的其他数据见 [数据集与下载说明](docs/DATASETS.md)。
 
-这两个流程不涵盖相应原题中的全部自然语言分析和维修决策。`phmforge-bench list --all` 查看原题与独立示例清单；`phmforge-bench environment list --store /path/to/environment` 查看完整历史环境。不要把不同划分、阶段或重复会话相加成独立任务数。
+这些数值流程不等于 75 道原题全部自然语言分析、维修或安全决策。`phmforge-bench list --all` 分别展示原题目录和可独立运行的数值任务；不要把多种数据划分、阶段或重复会话相加成独立原题。
 
 具体安装、真实训练、MCP 和隔离检查见 [验证记录](docs/VALIDATION.md)。
 
@@ -81,7 +86,7 @@ phmforge-bench run-reference --data-root "$PHM_RUN_ROOT/data/cmapss" \
 
 输出目录必须尚不存在，防止意外覆盖。`run-reference` 实际拟合神经网络，记录优化器、非零梯度和参数变化，再调用隔离进程生成预测并独立评分；冷评分时不挂载训练或开发数据。结果位于 `evaluation/score.json`，执行状态和提交文件哈希分别位于 `RUN.json`、`evaluation/STATUS.json` 与 `evaluation/submission_manifest.json`。分数随数据划分、训练轮数和配置变化，不应当作为已验证的通用模型表现。
 
-下载外可指定已有数据：MFPT 使用 `--source /path/to/mfpt_native` 指向含固定 20 个原始 `.mat` 文件的目录；FD001 使用 `--source /path/to/CMAPSSData.zip`。准备过程会检查来源哈希，错误或不完整时失败，不会用合成数据替代。
+更多任务只需将 `--dataset` 替换为数据清单中的名称；也可使用 `--source` 指定对应的本地原始文件。准备过程会检查来源哈希，错误或不完整时失败，不会用合成数据替代。较大文件支持断点续传并在完成后校验 SHA-256。
 
 ## 运行 Agent
 
@@ -145,7 +150,7 @@ phmforge-bench serve --data-root "$PHM_RUN_ROOT/data/mfpt" \
 
 - [MathWorks MFPT 原始数据](https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data)为 **CC BY-NC-SA 4.0**：仅限非商业用途，商业用途需要另行获得许可。下载清单固定来源版本和各文件 SHA-256。划分按采集记录进行：11 条训练、3 条开发、6 条测试；同一记录的窗口不会跨集合，但不能据此声称设备独立。
 - [NASA C-MAPSS](https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data) 是仿真数据，使用 [NASA progpy 指向的数据镜像](https://github.com/nasa/progpy/blob/master/src/progpy/datasets/nasa_cmapss.py)。FD001 按 80 个训练、20 个开发和 100 个测试发动机划分。参考模型仅用训练发动机拟合和归一化、用开发发动机选择；训练 RUL 封顶 125，测试真值不封顶。公开训练文件包含完整训练及开发轨迹，开发集可用于调参，不是盲测集。
-- 每次准备数据时会为测试窗口／发动机生成随机身份，映射保留在私有目录，防止直接通过公开原始编号查标签。同一份准备好的数据可重复评分；重新准备时身份及文件哈希会变化，特征、划分和真值不变。测试资料虽在本流程中隔离，这些都是公开数据，预训练模型或使用者仍可能已经见过原数据或标签，也可能根据数据特征识别样本；这些限制需要在研究报告中说明。
+- 每次准备数据时会为测试窗口／发动机生成随机身份并打乱测试样本或整台发动机的顺序，映射保留在私有目录，以减少直接通过公开原始编号和顺序查标签。同一份准备好的数据可重复评分；重新准备时身份、顺序及文件哈希会变化，特征、划分和真值不变。测试资料虽在本流程中隔离，这些都是公开数据，预训练模型或使用者仍可能已经见过原数据或标签，也可能根据数据特征识别样本；这些限制需要在研究报告中说明。
 - 所有运行材料均为科研评估，不提供已验证的维护、合规或安全决策。
 
 ## 上游和许可证

@@ -163,7 +163,8 @@ class VerifiedForge:
                             provenance=item, evaluation_labels_available=False,
                             physical_conclusion=None,
                             reason="Actual sequences recovered; physical channel mapping and health contracts unresolved")
-            if item["task"] == "rul" and name == "CMAPSS_FD001" and split == "val":
+            if (item["task"] == "rul" and name.startswith("CMAPSS_FD00")
+                    and item.get("format") != "cmapss_npz" and split == "val"):
                 # Make development prefixes available without their targets.
                 # The untruncated development trajectories are already public;
                 # this split is for model selection, not a blind evaluation.
@@ -239,6 +240,10 @@ class VerifiedForge:
                 checkpoint = fault.torch.load(model, weights_only=True, map_location="cpu")
                 if checkpoint["dataset"] != expected_dataset:
                     raise ValueError("Model and observation dataset identities differ")
+            if task == "rul" and expected_dataset and expected_dataset.startswith("CMAPSS_"):
+                checkpoint = fault.torch.load(model, weights_only=True, map_location="cpu")
+                if checkpoint.get("dataset") and checkpoint["dataset"] != expected_dataset:
+                    raise ValueError("C-MAPSS model and observation dataset identities differ")
             output = self.output / f"predictions_{uuid.uuid4().hex[:12]}.json"
             if task=='rul' and source.suffix=='.npz':
                 with np.load(source,allow_pickle=False) as observations:

@@ -6,7 +6,7 @@
       "properties": {
         "dataset_name": {
           "type": "string",
-          "description": "Dataset name. For CMAPSS: 'CMAPSS_FD001' or 'CMAPSS FD001' (files are train_FD001.txt, test_FD001.txt). For others: 'CWRU', 'FEMTO', etc."
+          "description": "Prepared dataset name, for example CMAPSS_FD001 through CMAPSS_FD004, CWRU, FEMTO, or MFPT. Only the selected public dataset is available."
         },
         "split": {
           "type": "string",
@@ -28,7 +28,7 @@
       "properties": {
         "dataset_name": {
           "type": "string",
-          "description": "Dataset name. For CMAPSS: 'CMAPSS_FD001' (file will be RUL_FD001.txt automatically)."
+          "description": "Prepared dataset name. This returns training or development labels only; final C-MAPSS RUL files and test labels are not exposed."
         },
         "file": {
           "type": "string",

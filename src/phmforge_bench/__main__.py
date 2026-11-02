@@ -10,14 +10,17 @@ from .runner import evaluate, train_reference, workspace
 
 
 def main():
+    pdmb_sources = resource_json("pdmb_fault_sources.json")
     parser = argparse.ArgumentParser(prog="phmforge-bench", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     ls = sub.add_parser("list", help="List integrated tasks and the original scenario denominator")
     ls.add_argument("--all", action="store_true", help="Show the historical 75-scenario inventory")
     prep = sub.add_parser("prepare", help="Download/verify a source and create a reproducible split")
-    prep.add_argument("--dataset", choices=["mfpt", "cmapss-fd001"], required=True)
+    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", *(f"cmapss-fd00{i}" for i in range(1, 5)),
+                                           *pdmb_sources], required=True)
     prep.add_argument("--data-root", type=Path, required=True)
-    prep.add_argument("--source", type=Path, help="Existing verified MFPT source directory or CMAPSSData.zip")
+    prep.add_argument("--source", type=Path, help="Existing MFPT source directory, C-MAPSS ZIP, or pinned PDMBench CSV")
+    prep.add_argument("--challenge-pdf", type=Path, help="Existing pinned FEMTO challenge document (femto-rul only)")
     prep.add_argument("--workers", type=int, default=4)
     ws = sub.add_parser("workspace", help="Create a training/development-only agent workspace")
     ws.add_argument("--data-root", type=Path, required=True)
@@ -94,13 +97,29 @@ def main():
     elif args.command == "list":
         inv = resource_json("scenario_inventory.json")
         runnable = [x for x in inv["tasks"] if x["release_status"] == "integrated_research_adaptation"]
+        runnable.extend({"id": f"research_fd00{i}_rul", "dataset": f"CMAPSS_FD00{i}",
+                         "release_status": "integrated_numeric_subtask"} for i in range(2, 5))
+        runnable.append({"id": "research_femto_bearing_rul", "dataset": "FEMTO",
+                         "release_status": "integrated_numeric_subtask"})
+        runnable.extend({"id": item["task_id"], "dataset": item["dataset"],
+                         "release_status": "integrated_numeric_subtask"} for item in pdmb_sources.values())
         result = {"original_scenarios": len(inv["tasks"]), "standalone_research_adaptations": len(runnable),
                   "runnable": runnable, "historical_counts_not_release_coverage": inv["historical_counts"]}
         if args.all:
             result["all_scenarios"] = inv["tasks"]
     elif args.command == "prepare":
-        result = (prepare_mfpt(args.data_root, args.source, args.workers) if args.dataset == "mfpt"
-                  else prepare_cmapss(args.data_root, args.source))
+        if args.challenge_pdf and args.dataset != "femto-rul":
+            parser.error("--challenge-pdf applies only to --dataset femto-rul")
+        if args.dataset == "mfpt":
+            result = prepare_mfpt(args.data_root, args.source, args.workers)
+        elif args.dataset == "femto-rul":
+            from .femto import prepare_femto
+            result = prepare_femto(args.data_root, args.source, args.challenge_pdf)
+        elif args.dataset.startswith("cmapss-"):
+            result = prepare_cmapss(args.data_root, args.source, args.dataset.split("-", 1)[1])
+        else:
+            from .pdmb_fault import prepare_pdmb_fault
+            result = prepare_pdmb_fault(args.data_root, args.dataset, args.source)
     elif args.command == "workspace":
         result = workspace(args.data_root, args.out)
     elif args.command == "reference":

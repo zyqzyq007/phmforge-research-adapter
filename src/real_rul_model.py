@@ -192,6 +192,9 @@ def train(data, output, architecture, shuffle_labels=False, epochs_override=None
     checkpoint = {"state_dict": best_state, "mean": torch.from_numpy(mean),
                   "scale": torch.from_numpy(scale), "architecture": architecture,
                   "window": config["window"], "sensors": SENSORS, "rul_cap": cap}
+    dataset_name = config.get("dataset", Path(data).name)
+    if dataset_name in {f"CMAPSS_FD00{i}" for i in range(1, 5)}:
+        checkpoint["dataset"] = dataset_name
     torch.save(checkpoint, output / "model.pt")
     torch.save(dict(checkpoint, state_dict=initial_state), output / "untrained_model.pt")
     metadata = {
@@ -241,6 +244,8 @@ def infer(checkpoint_path, input_path, output_path):
         with np.load(input_path, allow_pickle=False) as data:
             if set(data.files) & {'labels', 'actual_rul', 'groups'}:
                 raise ValueError('Inference requires observation-only windows')
+            if checkpoint.get('dataset') and ('dataset' not in data or data['dataset'].item() != checkpoint['dataset']):
+                raise ValueError('C-MAPSS model and observation dataset identities differ')
             windows = data['windows'].astype(np.float32)
             units = data['unit_ids'].astype(int).tolist()
             identities = data['sample_ids'].astype(str).tolist()

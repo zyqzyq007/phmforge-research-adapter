@@ -1,0 +1,147 @@
+{
+  "date_utc": "2026-11-02",
+  "release": "0.4.0",
+  "scope": "Source-bound numerical research adaptations, not original complete tasks or official PHMForge scores",
+  "platform": "single Linux x86-64 server with Python 3.12 and bubblewrap; cross-machine installation not yet established",
+  "sources_downloaded_and_verified_online": [
+    "CWRU",
+    "CMAPSS_FD002 archive",
+    "ELECTRICMOTORVIBRATIONS"
+  ],
+  "other_sources": "complete local original files verified against pinned digests, not full online download tests in this run",
+  "femto": "11 original challenge targets; one source ambiguity retained; report all 11 and other 10 separately",
+  "tests_passed": 21,
+  "mcp_datasets_tested": 12,
+  "mcp_development_and_sealed_final_checks_passed": true,
+  "model_service_calls": 0,
+  "results": [
+    {
+      "dataset": "MFPT",
+      "task_id": "pdm_fault_008",
+      "heldout_queries_or_windows": 684,
+      "optimizer_steps": 16,
+      "nonzero_gradient_steps": 16,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "CWRU",
+      "task_id": "research_cwru_fault_classification",
+      "heldout_queries_or_windows": 4375,
+      "optimizer_steps": 210,
+      "nonzero_gradient_steps": 210,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "task_id": "research_electric_motor_fault_classification",
+      "heldout_queries_or_windows": 324,
+      "optimizer_steps": 16,
+      "nonzero_gradient_steps": 16,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "ROTORBROKENBAR",
+      "task_id": "research_rotor_fault_classification",
+      "heldout_queries_or_windows": 371,
+      "optimizer_steps": 35,
+      "nonzero_gradient_steps": 35,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "HUST",
+      "task_id": "research_hust_bearing_fault_classification",
+      "heldout_queries_or_windows": 3557,
+      "optimizer_steps": 185,
+      "nonzero_gradient_steps": 185,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "PADERBORN",
+      "task_id": "research_paderborn_bearing_fault_classification",
+      "heldout_queries_or_windows": 3354,
+      "optimizer_steps": 136,
+      "nonzero_gradient_steps": 136,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "MENDELEY",
+      "task_id": "research_mendeley_bearing_fault_classification",
+      "heldout_queries_or_windows": 960,
+      "optimizer_steps": 49,
+      "nonzero_gradient_steps": 49,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "CMAPSS_FD001",
+      "task_id": "pdm_rul_001",
+      "heldout_queries_or_windows": 100,
+      "optimizer_steps": 12,
+      "nonzero_gradient_steps": 12,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "CMAPSS_FD002",
+      "task_id": "research_fd002_rul",
+      "heldout_queries_or_windows": 259,
+      "optimizer_steps": 30,
+      "nonzero_gradient_steps": 30,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "CMAPSS_FD003",
+      "task_id": "research_fd003_rul",
+      "heldout_queries_or_windows": 100,
+      "optimizer_steps": 14,
+      "nonzero_gradient_steps": 14,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "CMAPSS_FD004",
+      "task_id": "research_fd004_rul",
+      "heldout_queries_or_windows": 248,
+      "optimizer_steps": 35,
+      "nonzero_gradient_steps": 35,
+      "changed_parameter_tensors": 6,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    },
+    {
+      "dataset": "FEMTO",
+      "task_id": "research_femto_bearing_rul",
+      "heldout_queries_or_windows": 11,
+      "optimizer_steps": 95,
+      "nonzero_gradient_steps": 95,
+      "changed_parameter_tensors": 18,
+      "model_epochs": 1,
+      "cold_external_evaluation": "passed"
+    }
+  ],
+  "final_preparation_rechecks": [
+    "MFPT",
+    "CWRU",
+    "CMAPSS_FD002",
+    "FEMTO"
+  ],
+  "test_id_and_order": "Randomized identities and held-out order; public-source memorization remains possible.",
+  "independent_recount_and_information_boundary": "passed"
+}

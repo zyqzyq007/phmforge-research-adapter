@@ -1,16 +1,26 @@
 # 数据集与下载说明
 
-先选择运行方式，所需数据不同：
+从公开数据开始执行以下数值任务，不需要 149 GB 历史环境。大小为原始下载量，解压、处理、依赖和运行还需要额外空间。
 
-| 目标 | 必需数据 | 如何取得 |
+| `--dataset` | 来源及下载量 | 任务和主要限制 |
 |---|---|---|
-| 独立轴承故障分类示例 `pdm_fault_008` | MFPT 轴承振动的 20 个原始 `.mat` 文件，合计约 42.6 MB | `prepare --dataset mfpt` 自动下载；也可手动提供指定版本 |
-| 独立发动机寿命示例 `pdm_rul_001` | NASA C-MAPSS `CMAPSSData.zip`，约 12.4 MB；只使用 FD001 的三个文件 | `prepare --dataset cmapss-fd001` 自动下载；也可手动提供压缩包 |
-| 重放或复核我们以前的实际实验 | 独立的历史环境制品，约 149 GB，含数据、划分、程序、权重、依赖和记录 | 当前仅在本服务器保存，**没有公开下载地址**；须取得整份制品 |
+| `mfpt` | [MathWorks MFPT](https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data)，20 文件约 42.6 MB | 原生台架振动分类；来源为 CC BY-NC-SA 4.0 |
+| `cmapss-fd001`、`cmapss-fd002`、`cmapss-fd003`、`cmapss-fd004` | [NASA C-MAPSS](https://zenodo.org/records/15346912)，共同 ZIP 约 12.4 MB | 四个仿真发动机子集；单位为剩余循环数，非现场测量 |
+| `femto-rul` | [NASA FEMTO](https://phm-datasets.s3.amazonaws.com/NASA/10.+FEMTO+Bearing.zip) 约 1.16 GB，另下载固定版[挑战说明](https://github.com/aref9069/IEEE-PHM-2012-Prognostic-Challenge-/blob/9c476de6405b8c31b53bba8d6b0955ea57172206/IEEEPHM2012-Challenge-Details.pdf)约 2.28 MB | 台架轴承剩余秒数；一条挑战标注有来源歧义，另报去除此条的敏感性指标 |
+| `cwru` | [PDMBench CWRU](https://huggingface.co/datasets/submission096/CWRU)，约 7.1 MB | 原特征表分类；录波组根据连续段推断，不能称物理轴承独立 |
+| `electric-motor-vibrations` | [PDMBench 电机振动](https://huggingface.co/datasets/submission096/ElectricMotorVibrations)，约 67.8 MB | 三轴振动分类；原题要求的声学输入未包含在此子任务中 |
+| `rotor-broken-bar` | [PDMBench 转子](https://huggingface.co/datasets/submission096/RotorBrokenBar)，约 327.4 MB | 按来源记录的类别分类，窗口按原记录分组 |
+| `hust-bearing` | [PDMBench HUST](https://huggingface.co/datasets/submission096/HUST)，约 1.03 GB | 按来源文件分组的轴承分类，不代表不同物理轴承独立 |
+| `paderborn` | [PDMBench Padeborn](https://huggingface.co/datasets/submission096/Padeborn)，约 3.90 GB | 数字轴承编号跨类别复用，按编号整体分组；同组可含多类，不能报告单一组投票准确率 |
+| `mendeley-bearing` | [PDMBench Mendeley](https://huggingface.co/datasets/submission096/Mendeley)，约 4.24 GB | 长录波二分类，每条均匀抽取最多 64 个不重叠窗口；录波可共用物理硬件 |
 
-MFPT 是实验台实测振动；C-MAPSS 是 NASA 发动机仿真数据。两个示例均为原题的**数值子任务研究适配**，不是完整原题评分。`prepare` 目前只支持上述两个数据集；历史来源表中的其他数据并不能直接传给它使用。
+各数据源须分别遵守其使用条款。以上均是**数值研究适配**，不是完整原题或官方成绩。FEMTO 原始 ZIP 的 SHA-256 是本研究固定的全文件哈希，不声称来自发布者；其他来源版本和哈希见 [数据清单](../src/phmforge_bench/resources/pdmb_fault_sources.json) 及相应准备代码。
 
-## 自动下载两个独立示例
+如果需要全部来源，各不重复的原始文件合计约 **10.8 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。FEMTO 读取嵌套压缩包时尤其需要额外磁盘空间。
+
+尚未接入的原题和来源包括 XJTU、UoC、PlanetaryPdM、EngineMTQA，以及需要独立维修收益、合规或物理安全真值的完整题目。下载这些数据不会自动使其成为当前版本可运行且可评分的完整任务；例如 UoC 公开预切片表缺少可核实的原始采集记录身份，部分发动机问答也缺少可认证的物理健康合同。不要把相关的分类或 RUL 子任务计为原题完成。
+
+## 从公开源准备和运行
 
 先按 [README](../README.md#安装) 安装本仓库。任选需要的示例执行；`--data-root` 须指向未完成准备的新目录：
 
@@ -20,13 +30,19 @@ mkdir -p "$PHM_RUN_ROOT/tmp" "$PHM_RUN_ROOT/mpl" "$PHM_RUN_ROOT/xdg"
 export TMPDIR="$PHM_RUN_ROOT/tmp" TMP="$PHM_RUN_ROOT/tmp" TEMP="$PHM_RUN_ROOT/tmp"
 export MPLCONFIGDIR="$PHM_RUN_ROOT/mpl" XDG_CACHE_HOME="$PHM_RUN_ROOT/xdg"
 
-phmforge-bench prepare --dataset mfpt --data-root "$PHM_RUN_ROOT/data/mfpt"
-phmforge-bench prepare --dataset cmapss-fd001 --data-root "$PHM_RUN_ROOT/data/cmapss"
+phmforge-bench list
+phmforge-bench prepare --dataset cwru --data-root "$PHM_RUN_ROOT/data/cwru"
+phmforge-bench run-reference --data-root "$PHM_RUN_ROOT/data/cwru" \
+  --run-dir "$PHM_RUN_ROOT/runs/cwru" --epochs 1
 ```
+
+将 `cwru` 换为上表的任一名称即可运行相应数值任务，输出目录必须是新的。参考训练和冷评分的结果位于各自运行目录的 `evaluation/score.json`；一轮只用于检查链路，不能证明模型性能。大于 32 MiB 的文件采用分段下载并可恢复中断，全部下载完成后仍要通过固定 SHA-256 才会被使用；若代理或源服务器不支持范围请求，可使用下方的离线来源。
 
 MFPT 从 [MathWorks 固定版本](https://github.com/mathworks/RollingElementBearingFaultDiagnosis-Data/tree/d3efefb6ce84fa1ee6c0311f80f7c89cf903ad1d) 下载 [清单](../src/phmforge_bench/resources/mfpt_manifest.json) 中的 20 个文件，逐一检查大小和 SHA-256。来源数据的许可为 CC BY-NC-SA 4.0；使用时须遵守来源条款。
 
-C-MAPSS 从 [NASA 数据的 Zenodo 镜像](https://zenodo.org/records/15346912)下载 `CMAPSSData.zip`，检查压缩包 SHA-256 为 `74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f`，并分别校验 `train_FD001.txt`、`test_FD001.txt` 和 `RUL_FD001.txt`。它使用 80 台训练、20 台开发和 100 台测试发动机。
+C-MAPSS 从 [NASA 数据的 Zenodo 镜像](https://zenodo.org/records/15346912)下载 `CMAPSSData.zip`，检查压缩包 SHA-256 为 `74bef434a34db25c7bf72e668ea4cd52afe5f2cf8e44367c55a82bfd91a5a34f`，并校验所选子集的三个原始文件。FD001 使用 80 台训练、20 台开发和 100 台测试发动机；其余子集按发动机固定划分训练／开发，使用各自原始测试发动机和标签。
+
+FEMTO 只从原始嵌套压缩包读取 6 条学习记录及 11 条挑战观测前缀，完整后续、挑战文档和测试标签不会放入公开开发目录。时间使用名义 10 秒采集间隔，因为源日志有时钟异常；各工况只有两条学习记录。挑选轮数后最终参考模型使用两条学习记录重训，不能将重训后的学习集分数称为独立验证。
 
 准备完成后，数据根目录下的 `READY.json` 记录来源及划分；`public/` 包含训练和开发资料，`holdout/` 与 `private/` 包含外评输入或标签。不要把整个数据根目录交给正在接受评测的 Agent。参考模型训练和独立评分命令见 [README](../README.md#运行真实训练和独立评分)。
 
@@ -56,9 +72,17 @@ phmforge-bench prepare --dataset cmapss-fd001 \
   --data-root "$PHM_RUN_ROOT/data/cmapss-offline"
 ```
 
+其他分类数据的 `--source` 指向对应固定版本的 `PdM.csv`。FEMTO 的 `--source` 指向完整 NASA 外层 ZIP，`--challenge-pdf` 指向固定版本挑战说明 PDF：
+
+```bash
+phmforge-bench prepare --dataset femto-rul --source /path/to/NASA_FEMTO.zip \
+  --challenge-pdf /path/to/IEEEPHM2012-Challenge-Details.pdf \
+  --data-root "$PHM_RUN_ROOT/data/femto"
+```
+
 已有来源文件也可直接传入其实际路径；程序仍会校验固定哈希，文件缺失或不一致时会失败，不会自动替换为合成数据。重新准备时测试身份会随机化，因此新输出文件哈希不必与以前的准备结果相同。
 
-2026-10-28 在本服务器分别执行两个数据集的自动下载和已有文件导入，四条准备流程均通过；两种方式得到的观测和标签一致，测试身份按设计各自随机化。这是数据准备验证，不是新的模型训练结果。
+2026-11-02 在本服务器实际自动下载并校验 CWRU、C-MAPSS FD002 与电机振动；其他新增来源在相同服务器使用逐文件哈希匹配的本地原始文件完成准备。电机的在线和离线观测一致，测试身份按设计随机化。自动下载在其他网络或机器上的可用性尚需实测。
 
 ## 重放历史实验需要什么
 
