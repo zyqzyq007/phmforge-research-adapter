@@ -143,5 +143,15 @@
     "FEMTO"
   ],
   "test_id_and_order": "Randomized identities and held-out order; public-source memorization remains possible.",
-  "independent_recount_and_information_boundary": "passed"
+  "independent_recount_and_information_boundary": "passed",
+  "clean_clone_verification": {
+    "source_commit": "daeb8ac",
+    "platform": "same Linux server, new Python 3.12 venv",
+    "requirements_install": "passed",
+    "pip_check": "passed",
+    "unit_tests": "21 passed",
+    "cwru_source_prepare_train_evaluate": "passed",
+    "femto_train_evaluate": "passed using previously source-prepared data",
+    "different_machine_tested": false
+  }
 }
