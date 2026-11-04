@@ -142,6 +142,9 @@ class VerifiedForge:
                 if not groups_supplied:
                     for field in ["groups", "mean_recording_accuracy"]:
                         metrics.pop(field)
+                else:
+                    metrics['mean_group_accuracy'] = metrics.pop('mean_recording_accuracy')
+                    metrics['group_semantics'] = 'Groups are caller-supplied; physical recordings or device independence are not established by this tool.'
             metrics["source"] = "identity-aligned computation over caller-provided records"
             return dict(status="success", identity_coverage_verified=True, metrics=metrics,
                         final_benchmark_certified=False, physical_conclusion=None,

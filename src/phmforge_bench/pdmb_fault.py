@@ -76,14 +76,15 @@ def prepare_pdmb_fault(destination, dataset, source=None):
                 windows = [(0, vector)]
             else:
                 group_field = pin.get("group_field")
-                group = row[group_field].strip() if group_field else f"published_record_{row_index:05d}"
+                group = (row[group_field].strip() if group_field else
+                         f"{'published_sample' if pin['dataset'] == 'UOC' else 'published_record'}_{row_index:05d}")
                 if not group:
                     raise ValueError(f"Missing source recording identity at row {row_index}")
                 arrays = [_numeric_array(row[column]) for column in pin["channels"]]
                 if len({len(array) for array in arrays}) != 1:
                     raise ValueError(f"Unequal channel lengths at row {row_index}")
                 signal = np.stack(arrays, axis=1)
-                width = min(WINDOW, len(signal))
+                width = min(pin.get('window_length', WINDOW), len(signal))
                 if width < 32:
                     raise ValueError(f"Insufficient source observations at row {row_index}")
                 windows = []
@@ -186,7 +187,7 @@ def prepare_pdmb_fault(destination, dataset, source=None):
             "group_definition": pin["group_definition"], "source": source_info,
             "label_definition": "Original published labels; no inferred physical fault or severity names.",
             "preprocessing": ("Original published all_features vectors." if pin["format"] == "cwru_features" else
-                              "Nonoverlapping up-to-2048-sample windows; seven time and eight FFT-band statistics per channel."
+                              f"Nonoverlapping up-to-{pin.get('window_length', WINDOW)}-sample windows; seven time and eight FFT-band statistics per channel."
                               + (f" At most {pin['max_windows_per_record']} evenly spaced windows per recording."
                                  if pin.get("max_windows_per_record") else "")),
             "feature_count": x.shape[1], "train_rows": counts["train"], "validation_rows": counts["val"],
@@ -204,5 +205,9 @@ def prepare_pdmb_fault(destination, dataset, source=None):
         "recordings": {name: len(value) for name, value in splits.items()}, "group_overlap": False,
         "labels_in_test_input": False, "holdout_ids": "random private HMAC; different for each preparation",
         "scope": "source-bound numerical research adaptation; not a complete original PHMForge task or official score"}
+    if pin['dataset'] == 'UOC':
+        report['published_sample_groups'] = report.pop('recordings')
+        report['physical_recording_independence_verified'] = False
+        report['scope'] += '; UoC split is exploratory at published-sample level only'
     write_json(dest / "READY.json", report)
     return report

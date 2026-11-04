@@ -64,6 +64,20 @@
     "task_id": "research_mendeley_bearing_fault_classification",
     "group_definition": "Each published long recording stays together; recordings can share physical bearing hardware."
   },
+  "uoc": {
+    "dataset": "UOC",
+    "source_name": "UoC",
+    "revision": "9c3f4117ab86cafb69ac82fb3c8e39790ffac290",
+    "url": "https://huggingface.co/datasets/submission096/UoC/resolve/9c3f4117ab86cafb69ac82fb3c8e39790ffac290/PdM.csv?download=true",
+    "bytes": 73574679,
+    "sha256": "32458d9259719a3328bf3e09916ff5e689b648fd400a5dd843bedbecd0088139",
+    "format": "waveforms",
+    "channels": ["features"],
+    "window_length": 3600,
+    "group_field": null,
+    "task_id": "research_uoc_pinion_state_classification",
+    "group_definition": "One published 3600-value observation; physical hardware, original acquisition identities and independence are not established. Nine labels describe input-pinion states, not different gearbox components."
+  },
   "paderborn": {
     "dataset": "PADERBORN",
     "source_name": "Padeborn",

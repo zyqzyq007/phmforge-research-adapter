@@ -16,12 +16,12 @@ def main():
     ls = sub.add_parser("list", help="List integrated tasks and the original scenario denominator")
     ls.add_argument("--all", action="store_true", help="Show the historical 75-scenario inventory")
     prep = sub.add_parser("prepare", help="Download/verify a source and create a reproducible split")
-    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "xjtu-terminal", "ldm-rul", "engine-qa", *(f"cmapss-fd00{i}" for i in range(1, 5)),
+    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "xjtu-terminal", "ldm-rul", "ims-endpoint", "engine-qa", *(f"cmapss-fd00{i}" for i in range(1, 5)),
                                            *pdmb_sources], required=True)
     prep.add_argument("--data-root", type=Path, required=True)
     prep.add_argument("--source", type=Path, help="Pinned offline source file or source directory (see dataset documentation)")
     prep.add_argument("--challenge-pdf", type=Path, help="Existing pinned FEMTO challenge document (femto-rul only)")
-    prep.add_argument("--extractor", type=Path, help="Path to a compatible 7zz/7z executable (XJTU only)")
+    prep.add_argument("--extractor", type=Path, help="Path to a compatible 7zz/7z executable (XJTU and IMS)")
     prep.add_argument("--workers", type=int, default=4)
     ws = sub.add_parser("workspace", help="Create a training/development-only agent workspace")
     ws.add_argument("--data-root", type=Path, required=True)
@@ -56,10 +56,13 @@ def main():
     serve.add_argument("--data-root", type=Path, required=True)
     serve.add_argument("--out", type=Path, required=True)
     serve.add_argument("--transport", choices=["mcp", "jsonl"], default="mcp")
-    scenarios = sub.add_parser("scenario", help="Use the 55 historical task identities with source-based numeric adaptations")
+    scenarios = sub.add_parser("scenario", help="Inspect and run explicitly scoped historical task adaptations")
     scenarios_sub = scenarios.add_subparsers(dest="scenario_command", required=True)
-    scenarios_list = scenarios_sub.add_parser("list", help="List the 55 cases or inspect one case")
+    scenarios_list = scenarios_sub.add_parser("list", help="List the default 55 cases, additional cases, or inspect one case")
     scenarios_list.add_argument("--task")
+    scenarios_list.add_argument("--include-additional", action="store_true", help="Include seven related-source partial adaptations")
+    scenarios_list.add_argument("--include-substitutions", action="store_true", help="Also include nine explicitly substituted datasets")
+    scenarios_list.add_argument("--all", action="store_true", help="Include unavailable cases and show all 75 identities")
     scenarios_workspace = scenarios_sub.add_parser("workspace", help="Create an Agent workspace for one case")
     scenarios_workspace.add_argument("--task", required=True)
     scenarios_workspace.add_argument("--data-root", required=True, type=Path)
@@ -84,16 +87,18 @@ def main():
     scenarios_agent.add_argument("--max-output-tokens", type=int, default=65536)
     scenarios_agent.add_argument("--max-output-per-request", type=int, default=8192)
     scenarios_agent.add_argument("--smoke", action="store_true")
-    scenarios_all = scenarios_sub.add_parser("run-all", help="Run 55 entries, reuse fitted models, and retain per-case failures")
+    scenarios_all = scenarios_sub.add_parser("run-all", help="Run the default 55 entries; additional sources require an explicit flag")
     scenarios_all.add_argument("--data-home", required=True, type=Path)
     scenarios_all.add_argument("--run-dir", required=True, type=Path)
     scenarios_all.add_argument("--epochs", type=int, default=10)
     scenarios_all.add_argument("--timeout", type=int, default=600)
     scenarios_all.add_argument("--prepare-missing", action="store_true", help="Download and prepare missing public sources; may require many GB")
     scenarios_all.add_argument("--source-map", type=Path, help="JSON map from dataset names to offline source paths")
-    scenarios_all.add_argument("--extractor", type=Path, help="Path to 7zz/7z for XJTU")
+    scenarios_all.add_argument("--extractor", type=Path, help="Path to 7zz/7z for XJTU and IMS")
     scenarios_all.add_argument("--workers", type=int, default=4)
     scenarios_all.add_argument("--task", action="append", help="Limit to the specified task(s); may be repeated")
+    scenarios_all.add_argument("--include-additional", action="store_true", help="Include seven related-source partial adaptations")
+    scenarios_all.add_argument("--include-substitutions", action="store_true", help="Also run nine explicitly substituted datasets")
     environment = sub.add_parser("environment", help="Restore and execute the full archived research environment")
     envsub = environment.add_subparsers(dest="environment_command", required=True)
     for name, help_text in [("verify", "Verify the complete object store"), ("list", "List actual archived task cases"),
@@ -136,7 +141,7 @@ def main():
     elif args.command == "scenario":
         from .scenario import create_workspace, inventory, run, run_all
         if args.scenario_command == 'list':
-            result = inventory(args.task)
+            result = inventory(args.task, args.include_additional, args.include_substitutions, args.all)
         elif args.scenario_command == 'workspace':
             result = create_workspace(args.task, args.data_root, args.out)
         elif args.scenario_command == 'run':
@@ -151,7 +156,8 @@ def main():
             if source_map is not None and not isinstance(source_map, dict):
                 parser.error('--source-map must be a JSON object of source names to paths')
             result = run_all(args.data_home, args.run_dir, args.epochs, args.timeout,
-                             args.prepare_missing, source_map, args.workers, args.extractor, args.task)
+                             args.prepare_missing, source_map, args.workers, args.extractor, args.task,
+                             args.include_additional, args.include_substitutions)
     elif args.command == "list":
         inv = resource_json("scenario_inventory.json")
         runnable = [x for x in inv["tasks"] if x["release_status"] == "integrated_research_adaptation"]
@@ -169,17 +175,26 @@ def main():
                                            ("research_engine_qa_ten_cycle_trend", "ENGINE_QA_TREND")])
         runnable.append({"id": "research_ldm_bearing_rul", "dataset": "LDM_RTF",
                          "release_status": "integrated_numeric_subtask"})
+        runnable.append({"id": "research_ims_recording_endpoint", "dataset": "IMS_ENDPOINT",
+                         "release_status": "integrated_numeric_subtask"})
         runnable.extend({"id": item["task_id"], "dataset": item["dataset"],
                          "release_status": "integrated_numeric_subtask"} for item in pdmb_sources.values())
         result = {"original_scenarios": len(inv["tasks"]), "standalone_research_adaptations": len(runnable),
                   "runnable": runnable, "historical_counts_not_release_coverage": inv["historical_counts"]}
         if args.all:
-            result["all_scenarios"] = inv["tasks"]
+            from .scenario import inventory as scenario_inventory
+            current = {row['task_id']: row for row in scenario_inventory(include_unavailable=True)['tasks']}
+            result['all_scenarios_note'] = 'Historical snapshot fields are not current release coverage; see current_source_status and scenario list --all.'
+            result['all_scenarios'] = [{**{key: value for key, value in row.items() if key != 'release_status'},
+                'historical_release_status': row['release_status'],
+                'current_source_status': current[row['id']]['status'],
+                'current_source_dataset': current[row['id']]['dataset'],
+                'current_source_relation': current[row['id']]['source_relation']} for row in inv['tasks']]
     elif args.command == "prepare":
         if args.challenge_pdf and args.dataset != "femto-rul":
             parser.error("--challenge-pdf applies only to --dataset femto-rul")
-        if args.extractor and args.dataset not in {"xjtu-rul", "xjtu-terminal"}:
-            parser.error("--extractor applies only to XJTU datasets")
+        if args.extractor and args.dataset not in {"xjtu-rul", "xjtu-terminal", "ims-endpoint"}:
+            parser.error("--extractor applies only to XJTU and IMS datasets")
         if args.dataset == "mfpt":
             result = prepare_mfpt(args.data_root, args.source, args.workers)
         elif args.dataset == "femto-rul":
@@ -197,6 +212,9 @@ def main():
         elif args.dataset == "ldm-rul":
             from .ldm import prepare_ldm
             result = prepare_ldm(args.data_root, args.source, args.workers)
+        elif args.dataset == "ims-endpoint":
+            from .ims import prepare_ims
+            result = prepare_ims(args.data_root, args.source, args.extractor)
         elif args.dataset.startswith("cmapss-"):
             result = prepare_cmapss(args.data_root, args.source, args.dataset.split("-", 1)[1])
         else:

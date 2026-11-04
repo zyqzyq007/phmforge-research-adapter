@@ -2,7 +2,16 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.6 将**现有 55 个研究方向**逐一连接到公开数据的数值研究适配入口，可准备数据、训练参考模型并隔离评分，不需要 149 GB 历史快照。它们共用数据和模型：这不是 55 个完全独立的数据集，也不是 55 道原题的完整复现。另有 FD002–FD004、LDM 等扩展子任务，共 17 个数值任务类型。数据范围、下载大小与验证情况见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
+v0.7 保留现有 55 个公开数据数值适配入口，并为其余 20 个题号增加明确的可用性说明和部分新入口。数据、划分和模型可以共用：**数值流程跑通不等于完整回答原题，也不是 55 次独立模型实验**。新增 IMS 和 UoC 后共有 19 个可单独准备的数值任务类型，不需要 149 GB 历史快照。数据范围、下载大小与验证情况见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
+
+| 原题号的当前数值适配 | 数量 | 含义 |
+|---|---:|---|
+| 原有入口 | 55 | 数值子任务；共享 13 类模型，原题的费用、安全等部分可能缺失 |
+| 新增相关来源 | 7 | 可做部分数值任务，其中两题使用 Paderborn LDM 而非原先的 Paderborn 分类数据 |
+| 显式替代数据 | 9 | 使用与原题不同的数据源，仅可作为替代研究；须主动选择 |
+| 暂不可运行 | 4 | 两个行星齿轮题缺少原题所需部件标签，两个发动机题是无对应观测和真值的合成模板 |
+
+上述 7 和 9 都是部分数值适配，不是另外 16 道原题的完整复现；合计 75 是原题目录，不是 75 道全部解决的题。通过 `scenario list --all` 可查看全部题号与状态，逐题对应关系见 [75 个题号的适配范围](docs/SOURCE75_SCOPE.md)。
 
 v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权重、程序和日志，使用 `environment` 命令恢复或重放；它不属于从数据开始运行新任务的前提。该约 149 GB 的快照目前没有公开下载地址。见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
@@ -29,6 +38,8 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 | `pdm_fault_002_terminal_adaptation` | XJTU-SY | 根据末次振动记录预测拆检损伤位置；没有早期／晚期故障严重度标签 | 台架实测，只有 15 只轴承 |
 | `research_engine_qa_component_health`、`research_engine_qa_ten_cycle_trend` | EngineMT-QA | 覆盖 28 条发动机方向的发布者问答标注；不等于物理健康真值 | 仿真及问答标注 |
 | `research_ldm_bearing_rul` | Paderborn LDM 作者特征 | 预测到记录末端的剩余采集次数，非小时；更换来源的研究适配 | 作者公开的台架实测派生特征 |
+| `research_ims_recording_endpoint` | NASA IMS | 预测剩余采集次数至记录结束；不是经核实的物理失效时间 | 三次台架实验，测试四个传感器通道共用一次实验终点 |
+| `research_uoc_pinion_state_classification` | UoC | 九种输入小齿轮状态分类；原始采集及硬件独立性未核实 | 台架数据，样本级探索划分 |
 | `research_cwru_fault_classification` | CWRU | 原始特征表类别预测；分组由连续段推断 | 台架数据 |
 | `research_electric_motor_fault_classification`、`research_rotor_fault_classification` | ElectricMotorVibrations、RotorBrokenBar | 电机振动和转子数据源标签分类 | 台架数据 |
 | `research_hust_bearing_fault_classification`、`research_paderborn_bearing_fault_classification`、`research_mendeley_bearing_fault_classification` | HUST、Padeborn、Mendeley | 按来源标签开展轴承故障分类 | 台架数据 |
@@ -43,6 +54,7 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 
 ```bash
 phmforge-bench scenario list
+phmforge-bench scenario list --all
 phmforge-bench scenario list --task pdm_fault_002
 ```
 
@@ -77,6 +89,23 @@ phmforge-bench scenario run --task engine_health_combined_001 \
 ```
 
 这些数据、划分和参考模型不等同于此前 4B/9B 历史实验的代码及成绩。相同数据集的多个入口可能得到同一组预测，不能据此声称完成了相互独立的 55 次实验。
+
+## 其余 20 个题号
+
+`scenario list --all` 逐题显示数据源关系和限制；`scenario list --task pdm_rul_002` 可看完整原题及为什么更换数据。运行原有 55 个加 7 个相关来源入口，显式添加 `--include-additional`；如果也接受 9 个不同来源的替代研究，再改用 `--include-substitutions`。默认批处理仍只选择原来的 55 项。新增相关来源要求约 1.08 GB IMS 压缩包、约 74 MB UoC 文件以及约 158 MB LDM 特征文件，还需额外解压空间。IMS 和 XJTU 都需要可用的 7-Zip：
+
+```bash
+phmforge-bench scenario run-all --include-additional --prepare-missing \
+  --data-home "$PHM_RUN_ROOT/data-75" --run-dir "$PHM_RUN_ROOT/runs/related-62" \
+  --epochs 2 --timeout 900
+
+# 显式同意原题所称来源被替换后，再运行可用的 71 个数值入口
+phmforge-bench scenario run-all --include-substitutions --prepare-missing \
+  --data-home "$PHM_RUN_ROOT/data-75" --run-dir "$PHM_RUN_ROOT/runs/with-substitutions-71" \
+  --epochs 2 --timeout 900
+```
+
+也可以通过 `--task <题号>` 明确单独选择一个可用的替代来源入口。结果的 `source_relation`、限制和缺失字段会明确写入 `SCENARIO.json`。IMS 的目标是距公开记录末端的采集次数，不是已核实的失效时刻；其最终实验只有四个轴承通道，不足以输出五台设备的排名。预测的低 RUL 也不能直接当成经验证的物理安全风险。
 
 具体安装、真实训练、MCP 和隔离检查见 [验证记录](docs/VALIDATION.md)。
 

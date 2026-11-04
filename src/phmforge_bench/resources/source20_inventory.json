@@ -1,0 +1,286 @@
+{
+  "description": "Twenty additional original identities: related source, explicit substitution, or unavailable; no original benchmark completeness claim.",
+  "tasks": [
+    {
+      "task_id": "pdm_fault_010",
+      "dataset": "UOC",
+      "prepare_dataset": "uoc",
+      "category": "Fault Classification",
+      "original_question": "I have gearbox data from UoC and need to classify which components have faults. Can you classify the fault types for all test gearboxes, verify the classifications, and break down accuracy by gearbox component? I need to know which parts are hardest to diagnose.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "The published nine input-pinion states are not labels identifying multiple gearbox components; the original reference also asks for incompatible bearing categories.",
+        "Splits keep whole published 3600-value observations apart, but physical recordings, overlap and device independence are unknown; exploratory only."
+      ],
+      "source_relation": "related_original_source",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_007",
+      "dataset": "CWRU",
+      "prepare_dataset": "cwru",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Identify safety risks and compliance issues for CWRU equipment.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "Only fault-label classification is evaluated; physical safety risk and regulatory compliance cannot be inferred.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
+      "source_relation": "related_original_source",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_005",
+      "dataset": "IMS_ENDPOINT",
+      "prepare_dataset": "ims-endpoint",
+      "category": "RUL Prediction",
+      "original_question": "The IMS dataset has very high-frequency vibration data, and I am worried that units showing anomalies might have different RUL prediction accuracy. Can you predict remaining life for all test bearings, detect any anomalies in the sensor data, and then compare prediction accuracy between units with anomalies versus normal units? I need to know if we should treat anomalous units differently in our maintenance planning.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "The endpoint is the last published recording, not an independently verified failure time.",
+        "There are no authenticated anomaly labels for an anomaly-versus-normal accuracy comparison.",
+        "The final run contains 6324 records although its README cites an earlier endpoint; four bearing channels share one run."
+      ],
+      "source_relation": "related_original_source",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_011",
+      "dataset": "IMS_ENDPOINT",
+      "prepare_dataset": "ims-endpoint",
+      "category": "RUL Prediction",
+      "original_question": "Predict remaining useful life for IMS equipment and identify the 5 units most at risk.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "The target is acquisitions until recording end, not verified physical failure time.",
+        "Only four bearing channels are available in the final run, so a five-unit ranking cannot be produced."
+      ],
+      "source_relation": "related_original_source",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_010",
+      "dataset": "IMS_ENDPOINT",
+      "prepare_dataset": "ims-endpoint",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Identify safety risks and compliance issues for IMS equipment.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Recording-end predictions are not validated safety-risk labels or evidence of regulatory compliance.",
+        "The end of the third IMS acquisition differs from the date and record count in its README."
+      ],
+      "source_relation": "related_original_source",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_008",
+      "dataset": "LDM_RTF",
+      "prepare_dataset": "ldm-rul",
+      "category": "RUL Prediction",
+      "original_question": "The Paderborn dataset has multiple sensor types-vibration, motor current, torque, and speed-and I want to know which ones actually help predict bearing failure. Can you predict remaining life using all sensors together, then test each sensor type individually to see which gives the best predictions? I need to know if we can simplify our sensor setup or if we need all of them.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses Paderborn LDM author features, not the original diagnostic Paderborn KAt data or the configured C-MAPSS data.",
+        "Only an endpoint-proxy prediction is available; the requested four-sensor ablation is not implemented or claimed.",
+        "Acquisitions are not measured hours or independently verified physical failure times."
+      ],
+      "source_relation": "related_dataset",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_014",
+      "dataset": "LDM_RTF",
+      "prepare_dataset": "ldm-rul",
+      "category": "RUL Prediction",
+      "original_question": "Predict remaining useful life for Paderborn equipment and identify the 5 units most at risk.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses Paderborn LDM author features, a distinct source from the configured C-MAPSS data.",
+        "Five test bearings mean the top-five list includes every test bearing; acquisitions are not physical running hours."
+      ],
+      "source_relation": "related_dataset",
+      "status": "related_source_partial_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_002",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "RUL Prediction",
+      "original_question": "We have got bearing vibration data from CWRU and I need to figure out which bearings are about to give out. Can you predict how much life each test bearing has left, check those predictions against the actual failure times we recorded, and then show me degradation curves for the 5 bearings most at risk? I need the accuracy numbers too-MAE and RMSE-so I know how much to trust these predictions when scheduling maintenance.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses FEMTO experimental bearings in place of CWRU; this is a different dataset.",
+        "The requested CWRU degradation curves and CWRU failure times are not provided."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_006",
+      "dataset": "XJTU",
+      "prepare_dataset": "xjtu-rul",
+      "category": "RUL Prediction",
+      "original_question": "The HUST dataset has bearings tested under different speeds and loads, which is great for seeing if our RUL predictions work across diverse conditions. Can you predict remaining life for all test bearings, give me overall accuracy, then break it down by speed/load combinations? I need to know if the model generalizes well or if we need condition-specific models.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses XJTU-SY experimental bearings in place of HUST; this is a different dataset.",
+        "XJTU operating-condition groups are not HUST speed/load combinations; the target is nominal time to last acquisition."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_007",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "RUL Prediction",
+      "original_question": "The MFPT dataset was captured at a very high sampling rate (97.656KHz), so there is probably useful information in the frequency domain. Can you predict remaining life for all test bearings using both time and frequency domain features, verify the predictions, and tell me if adding frequency analysis improves accuracy compared to just using time-domain data? I need concrete numbers to justify the extra processing.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses FEMTO experimental bearings in place of MFPT; this is a different dataset.",
+        "The requested matched time-only versus frequency-feature comparison is not implemented or claimed."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_009",
+      "dataset": "LDM_RTF",
+      "prepare_dataset": "ldm-rul",
+      "category": "RUL Prediction",
+      "original_question": "The Mendeley dataset has bearings running at speeds that constantly change between 600 and 1800 RPM, making the vibration signals non-stationary. Can you predict remaining life for all test bearings, accounting for these changing conditions, and show me how prediction accuracy varies across different speed ranges? I need to know if our model handles variable-speed operation reliably.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses Paderborn LDM in place of the Mendeley variable-speed dataset; this is a different dataset.",
+        "No Mendeley speed-range breakdown or constant-versus-changing-speed comparison is available."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_010",
+      "dataset": "CMAPSS_FD002",
+      "prepare_dataset": "cmapss-fd002",
+      "category": "RUL Prediction",
+      "original_question": "The Azure dataset is huge-over 876,000 samples-so I need RUL predictions that can actually run efficiently. Can you predict remaining life for all test units, verify the predictions, give me accuracy numbers, and also tell me how long it took and how much memory it used? I need to know if this is practical for production deployment.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses NASA C-MAPSS FD002 simulated engines in place of Azure machines; this is a different dataset.",
+        "The original fleet scale, Azure failure targets, peak-memory measurement and production performance are not established."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_012",
+      "dataset": "XJTU",
+      "prepare_dataset": "xjtu-rul",
+      "category": "RUL Prediction",
+      "original_question": "Predict remaining useful life for HUST equipment and identify the 5 units most at risk.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses XJTU-SY experimental bearings in place of HUST; this is a different dataset.",
+        "Only three final bearings are present, so a top-five request cannot be completed."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_013",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "RUL Prediction",
+      "original_question": "Predict remaining useful life for MFPT equipment and identify the 5 units most at risk.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses FEMTO experimental bearings in place of MFPT; this is a different dataset."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_rul_015",
+      "dataset": "LDM_RTF",
+      "prepare_dataset": "ldm-rul",
+      "category": "RUL Prediction",
+      "original_question": "Predict remaining useful life for Mendeley equipment and identify the 5 units most at risk.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses Paderborn LDM in place of Mendeley Ferrara bearings; this is a different dataset.",
+        "Five test bearings mean a top-five list includes all of them; the unit is remaining acquisitions, not hours."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_cost_benefit_005",
+      "dataset": "CMAPSS_FD001",
+      "prepare_dataset": "cmapss-fd001",
+      "category": "Cost-Benefit Analysis",
+      "original_question": "We have a huge fleet (876K+ units) and I am wondering if we can save money by doing maintenance in bulk batches instead of individually. Can you predict remaining life for all test units, calculate what it costs to maintain them individually versus in bulk batches, optimize a fleet-wide maintenance schedule that takes advantage of bulk discounts, and tell me what batch sizes give us the best cost savings? I need concrete dollar amounts and batch size recommendations.",
+      "numeric_scope": "source-bound remaining-life numerical adaptation (including documented recording-end proxies)",
+      "limitations": [
+        "Uses 100 NASA simulated engine test units in place of the Azure data and the claimed 876K+ units; this is a different dataset.",
+        "No actual bulk discounts, maintenance costs, action effects or validated cost-optimal schedule are available."
+      ],
+      "source_relation": "substitution",
+      "status": "source_substitution"
+    },
+    {
+      "task_id": "pdm_fault_005",
+      "dataset": null,
+      "prepare_dataset": null,
+      "category": "Fault Classification",
+      "original_question": "The planetary gearbox dataset has faults in different components-sun gear cracks, planet spalling, ring gear issues. Can you classify which component has the fault for each test gearbox, verify those classifications, and give me accuracy numbers overall and per component? This is for root cause analysis, so I need to know which parts are failing most often.",
+      "numeric_scope": null,
+      "limitations": [
+        "PlanetaryPdM component labels for sun/planet/ring are not verified; published crack stages do not establish those labels."
+      ],
+      "source_relation": "unavailable",
+      "status": "unavailable",
+      "blocked_reason": "PlanetaryPdM component labels for sun/planet/ring are not verified; published crack stages do not establish those labels."
+    },
+    {
+      "task_id": "pdm_safety_005",
+      "dataset": null,
+      "prepare_dataset": null,
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Planetary gearboxes have complex structures, and faults in different components have different safety implications. Can you classify the faults and identify which component (sun gear, planet, ring gear) is affected, assess safety risks for each component type, check compliance with AGMA and ISO gear standards, and generate component-specific safety policies? I need to know which components are most critical for safety.",
+      "numeric_scope": null,
+      "limitations": [
+        "Planetary component fault, physical risk and AGMA/ISO compliance truth are not available from the qualified source."
+      ],
+      "source_relation": "unavailable",
+      "status": "unavailable",
+      "blocked_reason": "Planetary component fault, physical risk and AGMA/ISO compliance truth are not available from the qualified source."
+    },
+    {
+      "task_id": "engine_health_combined_029",
+      "dataset": null,
+      "prepare_dataset": null,
+      "category": "Engine Health Analysis",
+      "original_question": "URGENT: This engine is showing critical degradation across multiple systems. Analyze the 10-cycle trend data and determine: (1) The qualitative condition of the engine, (2) The probability range of imminent failure, (3) What emergency maintenance actions are needed?\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: elevated and rising: 528K → 542K (+2.6% over 10 cycles, ANOMALY)\n  - Fan Inlet Pressure: declining: 14.62 psia → 13.89 psia (-5.0%, CRITICAL)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: sharp increase: 1398K → 1456K (+4.1%, CRITICAL)\n  - HPC Outlet Pressure: unstable: fluctuating 520-535 psia (7% variance)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 74.1% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1042K with severe oscillations (CRITICAL FAULT)\n",
+      "numeric_scope": null,
+      "limitations": [
+        "The original 10-cycle signal is an explicit synthetic template with no matching source record or truth."
+      ],
+      "source_relation": "unavailable",
+      "status": "unavailable",
+      "blocked_reason": "The original 10-cycle signal is an explicit synthetic template with no matching source record or truth."
+    },
+    {
+      "task_id": "engine_health_combined_030",
+      "dataset": null,
+      "prepare_dataset": null,
+      "category": "Engine Health Analysis",
+      "original_question": "Fleet alert: Engine performance has degraded severely over the past 10 cycles. Based on this critical sensor data, assess the overall condition, estimate failure probability, and recommend whether this engine should be immediately grounded for emergency repairs.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: elevated and rising: 528K → 542K (+2.6% over 10 cycles, ANOMALY)\n  - Fan Inlet Pressure: declining: 14.62 psia → 13.89 psia (-5.0%, CRITICAL)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: sharp increase: 1398K → 1456K (+4.1%, CRITICAL)\n  - HPC Outlet Pressure: unstable: fluctuating 520-535 psia (7% variance)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 74.1% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1042K with severe oscillations (CRITICAL FAULT)\n",
+      "numeric_scope": null,
+      "limitations": [
+        "The original 10-cycle signal is an explicit synthetic template with no matching source record or truth."
+      ],
+      "source_relation": "unavailable",
+      "status": "unavailable",
+      "blocked_reason": "The original 10-cycle signal is an explicit synthetic template with no matching source record or truth."
+    }
+  ]
+}

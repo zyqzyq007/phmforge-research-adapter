@@ -21,11 +21,11 @@ def _now():
 def _ready(root):
     root = Path(root).resolve()
     meta = json.loads((root / "READY.json").read_text())
-    supported = {"MFPT", "FEMTO", "XJTU", "XJTU_TERMINAL", "LDM_RTF", "ENGINE_QA_HEALTH", "ENGINE_QA_TREND", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
+    supported = {"MFPT", "FEMTO", "XJTU", "XJTU_TERMINAL", "LDM_RTF", "IMS_ENDPOINT", "ENGINE_QA_HEALTH", "ENGINE_QA_TREND", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
                  *(f"CMAPSS_FD00{i}" for i in range(1, 5))}
     if meta.get("status") != "prepared" or meta.get("dataset") not in supported:
         raise ValueError("Expected a prepared, supported source dataset")
-    expected = "rul" if meta["dataset"].startswith("CMAPSS_") or meta["dataset"] in {"FEMTO", "XJTU", "LDM_RTF"} else "classification"
+    expected = "rul" if meta["dataset"].startswith("CMAPSS_") or meta["dataset"] in {"FEMTO", "XJTU", "LDM_RTF", "IMS_ENDPOINT"} else "classification"
     if meta.get("task_kind", expected) != expected:
         raise ValueError("Prepared dataset and task type do not agree")
     return root, meta
@@ -58,10 +58,14 @@ def workspace(data_root, destination):
                           "integer `unit_ids` and `scenario_ids`, and observed `elapsed_minutes`.")
         output_contract = ("Each row needs `sample_id`, integer `unit_id`, integer `scenario_id`, "
                            "and finite nonnegative `predicted_rul` in nominal minutes.")
-    elif dataset == "LDM_RTF":
+    elif dataset in {"LDM_RTF", "IMS_ENDPOINT"}:
         task = ("Predict remaining feature acquisitions to the end of a measured Paderborn LDM bearing run. "
-                "Training, development and final bearings are disjoint; acquisitions are not running hours.")
-        input_contract = ("The input is a label-free NPZ with 30 causal `features`, string `sample_ids`, "
+                "Training, development and final bearings are disjoint; acquisitions are not running hours."
+                if dataset == "LDM_RTF" else
+                "Predict remaining acquisitions to the last published record of an IMS acquisition run. "
+                "Whole runs are separated; the recorded endpoint is not a verified physical failure time.")
+        width = 30 if dataset == "LDM_RTF" else 16
+        input_contract = (f"The input is a label-free NPZ with {width} causal `features`, string `sample_ids`, "
                           "integer `unit_ids` and `scenario_ids`, and observed `elapsed_acquisitions`.")
         output_contract = ("Each row needs `sample_id`, integer `unit_id`, integer `scenario_id`, "
                            "and finite nonnegative `predicted_rul` in acquisitions.")
@@ -127,7 +131,7 @@ def train_reference(data_root, destination, epochs=10):
         import real_xjtu_rul_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
         module = "real_xjtu_rul_model"
-    elif meta["dataset"] == "LDM_RTF":
+    elif meta["dataset"] in {"LDM_RTF", "IMS_ENDPOINT"}:
         import real_gap_rul_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
         module = "real_gap_rul_model"
@@ -366,11 +370,12 @@ def evaluate(data_root, submission, destination, timeout=300):
     is_femto = meta["dataset"] == "FEMTO"
     is_xjtu = meta["dataset"] == "XJTU"
     is_ldm = meta["dataset"] == "LDM_RTF"
-    is_rul = is_cmapss or is_femto or is_xjtu or is_ldm
+    is_ims = meta["dataset"] == "IMS_ENDPOINT"
+    is_rul = is_cmapss or is_femto or is_xjtu or is_ldm or is_ims
     holdout = root / "holdout" / ("test.txt" if is_cmapss else "test.npz")
     started = time.monotonic()
     try:
-        if is_xjtu or is_ldm:
+        if is_xjtu or is_ldm or is_ims:
             rows = _predict_independent_prefixes(submission, root, holdout, dest, timeout)
         else:
             command = _sandbox_command(submission, root, holdout, dest)
@@ -390,7 +395,18 @@ def evaluate(data_root, submission, destination, timeout=300):
         if not is_rul:
             info = json.loads((root / "public/datasets" / meta["dataset"] / "dataset.json").read_text())
             score = classification(rows, gold, declared_classes=info["class_names"])
-            score.update(_recording_metrics(rows, gold))
+            grouping = _recording_metrics(rows, gold)
+            if meta['dataset'] == 'UOC':
+                score['mean_published_group_accuracy'] = score.pop('mean_recording_accuracy')
+                groups = grouping.pop('recordings')
+                for group in groups:
+                    group['published_sample_group'] = group.pop('recording')
+                    group['observations'] = group.pop('windows')
+                score['published_sample_groups'] = groups
+                score['published_group_majority_accuracy'] = grouping.pop('recording_accuracy')
+                score['physical_recording_independence_verified'] = False
+                score['split_interpretation'] = 'Exploratory published samples; physical recordings and overlap are not established.'
+            score.update(grouping)
             if meta["dataset"] == "ENGINE_QA_HEALTH":
                 prediction = {str(row['sample_id']): row for row in rows}
                 heads = ('fan', 'lpc', 'hpc', 'hpt', 'lpt')
@@ -414,6 +430,8 @@ def evaluate(data_root, submission, destination, timeout=300):
             score = _xjtu_score(rows, gold)
         elif is_ldm:
             score = _xjtu_score(rows, gold, task_name="LDM", target_unit="acquisitions")
+        elif is_ims:
+            score = _xjtu_score(rows, gold, task_name="IMS", target_unit="acquisitions to recording endpoint")
         else:
             score = regression(rows, gold)
         if is_rul and any(float(row["predicted_rul"]) < 0 for row in rows):
@@ -423,7 +441,7 @@ def evaluate(data_root, submission, destination, timeout=300):
             prediction_sha256=file_sha256(dest / "predictions.json"), truth_sha256=file_sha256(root / "private/labels.json"),
             holdout_input_sha256=file_sha256(holdout), elapsed_seconds=time.monotonic() - started,
             official_benchmark_score=False)
-        if is_xjtu or is_ldm:
+        if is_xjtu or is_ldm or is_ims:
             score["prefix_isolation"] = "one observation per fresh sandbox; no other final query or output mounted"
         write_json(dest / "score.json", score)
         write_json(dest / "STATUS.json", {"status": "completed", "task_id": meta["task_id"], "scored_at_utc": _now()})

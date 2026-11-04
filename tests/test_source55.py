@@ -9,11 +9,51 @@ import numpy as np
 
 from phmforge_bench.data import resource_json
 from phmforge_bench.engine import _annotation, _native_records
-from phmforge_bench.scenario import case_data, create_workspace, inventory
+from phmforge_bench.scenario import _rank_latest_prefixes, case_data, create_workspace, inventory, run_all
 from verified_phmforge import VerifiedForge
 
 
 class Source55Contracts(unittest.TestCase):
+    def test_20_additional_cases_are_explicit_and_default_is_unchanged(self):
+        base = inventory()['tasks']
+        related = inventory(include_additional=True)['tasks']
+        substituted = inventory(include_substitutions=True)['tasks']
+        all_tasks = inventory(include_unavailable=True)['tasks']
+        self.assertEqual([len(x) for x in (base, related, substituted, all_tasks)], [55, 62, 71, 75])
+        original = {item['id'] for item in resource_json('scenario_inventory.json')['tasks']}
+        self.assertEqual({item['task_id'] for item in all_tasks}, original)
+        self.assertEqual(sum(item['status'] == 'unavailable' for item in all_tasks), 4)
+        self.assertEqual(sum(item['status'] == 'source_substitution' for item in all_tasks), 9)
+        self.assertEqual(inventory('pdm_rul_002')['source_relation'], 'substitution')
+        with tempfile.TemporaryDirectory(prefix='phmforge-blocked-') as directory:
+            base_path = Path(directory)
+            with self.assertRaisesRegex(ValueError, 'unavailable'):
+                case_data('pdm_fault_005', base_path)
+            with self.assertRaisesRegex(ValueError, 'unavailable'):
+                run_all(base_path / 'data', base_path / 'out', selected_tasks=['pdm_fault_005'])
+            self.assertFalse((base_path / 'out').exists())
+
+    def test_rank_selects_one_observed_prefix_per_unit_and_never_fabricates_five(self):
+        observations = {'sample_ids': ['a', 'b', 'c', 'd', 'e'],
+                        'unit_ids': [1, 1, 2, 3, 4], 'elapsed_acquisitions': [1, 3, 1, 1, 1]}
+        predictions = [{'sample_id': sid, 'unit_id': unit, 'predicted_rul': value}
+                       for sid, unit, value in zip(observations['sample_ids'], observations['unit_ids'], [0, 9, 6, 8, 7])]
+        ranking = _rank_latest_prefixes(predictions, observations)
+        self.assertEqual(ranking['available_units'], 4)
+        self.assertIsNone(ranking['top_five'])
+        self.assertEqual([r['unit_id'] for r in ranking['ranked_available_units']], [2, 4, 3, 1])
+        self.assertEqual(ranking['ranked_available_units'][-1]['predicted_rul'], 9)
+
+    def test_ims_workspace_contract_matches_sixteen_features(self):
+        with tempfile.TemporaryDirectory(prefix='phmforge-ims-workspace-') as directory:
+            base = Path(directory)
+            root = base / 'data'
+            (root / 'public').mkdir(parents=True)
+            (root / 'READY.json').write_text(json.dumps({'status': 'prepared', 'dataset': 'IMS_ENDPOINT',
+                'task_id': 'research_ims_recording_endpoint'}))
+            create_workspace('pdm_rul_005', root, base / 'workspace')
+            self.assertIn('16 causal `features`', (base / 'workspace/TASK.md').read_text())
+
     def test_cases_are_unique_and_do_not_imply_complete_original_answers(self):
         cases = inventory()['tasks']
         self.assertEqual(len(cases), 55)

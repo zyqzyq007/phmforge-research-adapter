@@ -367,7 +367,8 @@
       "original_question": "We have bearings with different fault types-inner race, outer race, and ball race defects-and each costs different amounts to fix. Can you classify the fault type for each test bearing, calculate maintenance and failure costs for each fault type, prioritize which bearings to fix first based on cost-benefit, and tell me which fault type gives us the best return on preventive maintenance investment? I need dollar amounts and a prioritized action list.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown."
+        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -404,7 +405,9 @@
       "category": "Fault Classification",
       "original_question": "I have got CWRU bearing data with different fault types-inner race defects, outer race defects, and ball race defects. Can you classify which fault type each test bearing has, check those classifications against the actual fault labels, and give me accuracy numbers plus a breakdown of how well you classified each fault type? I need precision, recall, and F1-scores for each fault category so I know where the model struggles.",
       "numeric_scope": "source-bound fault-label classification",
-      "limitations": [],
+      "limitations": [
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
       "status": "partial_numerical_research_adaptation"
     },
     {
@@ -427,7 +430,8 @@
       "original_question": "We have both acoustic and vibration data for electric motors, and I want to know if using both helps classify faults better than using just one. Can you classify all test motor faults using the combined acoustic and vibration data, then test each modality separately to see which gives better accuracy? I need concrete numbers to decide if we need both sensor types.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "Acoustic recordings and a paired acoustic-vibration ablation are not provided by this source."
+        "Acoustic recordings and a paired acoustic-vibration ablation are not provided by this source.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -439,7 +443,8 @@
       "original_question": "We have induction motor data with broken rotor bars, and the severity ranges from 1 to 4 broken bars. Can you classify the severity level for each test motor, verify against the actual labels, and give me accuracy broken down by severity level? I also need a confusion matrix to see if the model confuses certain severity levels-like if it mixes up 2 bars with 3 bars.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "The published label classes are evaluated as supplied; a verified mapping to the exact number of broken bars is not established."
+        "The published label classes are evaluated as supplied; a verified mapping to the exact number of broken bars is not established.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -451,7 +456,8 @@
       "original_question": "The Paderborn dataset has both artificially induced and naturally occurring bearing faults. Can you classify the fault types for all test bearings, distinguish whether each fault was artificial or natural, and compare classification accuracy between the two? I need to know if our model works equally well on both types or if we need separate models.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "The available evaluation does not establish a breakdown by artificial versus natural fault origin."
+        "The available evaluation does not establish a breakdown by artificial versus natural fault origin.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -463,7 +469,8 @@
       "original_question": "The HUST dataset has 5 different bearing types with 6 fault categories, all tested under varying speeds and loads. Can you classify the fault category for each test bearing, give me overall accuracy plus breakdowns by fault category and bearing type, and check if accuracy changes with operating conditions? I need a comprehensive view of where the model works best.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "The available evaluation does not establish per-bearing-type, speed and load breakdowns."
+        "The available evaluation does not establish per-bearing-type, speed and load breakdowns.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -485,7 +492,8 @@
       "original_question": "The Mendeley dataset has bearings with changing speeds (600-1800 RPM), making the signals non-stationary. Can you classify the fault types for all test bearings, accounting for these changing conditions, and show me how accuracy varies across speed ranges? I need to know if non-stationary conditions hurt classification performance.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "A speed-range breakdown is not available in the prepared evaluation labels."
+        "A speed-range breakdown is not available in the prepared evaluation labels.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -496,7 +504,9 @@
       "category": "Fault Classification",
       "original_question": "Classify fault types for all test units in Paderborn dataset.",
       "numeric_scope": "source-bound fault-label classification",
-      "limitations": [],
+      "limitations": [
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
       "status": "partial_numerical_research_adaptation"
     },
     {
@@ -506,7 +516,9 @@
       "category": "Fault Classification",
       "original_question": "Classify fault types for all test units in HUST dataset.",
       "numeric_scope": "source-bound fault-label classification",
-      "limitations": [],
+      "limitations": [
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
       "status": "partial_numerical_research_adaptation"
     },
     {
@@ -526,7 +538,9 @@
       "category": "Fault Classification",
       "original_question": "Classify fault types for all test units in Mendeley dataset.",
       "numeric_scope": "source-bound fault-label classification",
-      "limitations": [],
+      "limitations": [
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
       "status": "partial_numerical_research_adaptation"
     },
     {
@@ -536,7 +550,9 @@
       "category": "Fault Classification",
       "original_question": "Classify fault types for all test units in ElectricMotorVibrations dataset.",
       "numeric_scope": "source-bound fault-label classification",
-      "limitations": [],
+      "limitations": [
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
+      ],
       "status": "partial_numerical_research_adaptation"
     },
     {
@@ -592,7 +608,8 @@
       "original_question": "Different bearing fault types have different safety implications. Can you classify the fault types for all test bearings, assess the safety impact of each fault type (vibration severity, failure probability, downtime risk), check compliance with ISO and ANSI vibration standards, and generate safety protocols for each fault type? I need to know which faults are most critical from a safety perspective.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -604,7 +621,8 @@
       "original_question": "Electric motor failures can be dangerous, especially with electrical hazards and fire risks. Can you classify the motor faults, assess safety risks (electrical hazards, fire risk, mechanical failure), check compliance with IEC and NEMA standards, and generate emergency shutdown protocols for high-risk motors? I need clear risk classifications and actionable shutdown procedures.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },
@@ -616,7 +634,8 @@
       "original_question": "Broken rotor bars in induction motors get more dangerous as severity increases. Can you classify the severity level (1-4 broken bars) for each test motor, assess safety risks for each severity level, check compliance with IEEE and IEC motor standards, and generate maintenance policies that specify when to shut down immediately versus reduce load versus schedule repair? I need clear thresholds for each severity level.",
       "numeric_scope": "source-bound fault-label classification",
       "limitations": [
-        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown.",
+        "Evaluation uses published source labels and grouping; a mapping to each requested physical fault or independent physical device is not assumed unless explicitly documented in the source metadata."
       ],
       "status": "partial_numerical_research_adaptation"
     },

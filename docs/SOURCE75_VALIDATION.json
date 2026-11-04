@@ -1,0 +1,192 @@
+{
+  "validation_date_beijing": "2026-11-05",
+  "scope": "Numeric execution and source relations only; not complete original tasks, independent task experiments or official scores.",
+  "prior_55": {
+    "independent_recomputed_metrics": 55,
+    "genuinely_fitted_models": 13,
+    "archived_files_hash_verified": 2867,
+    "fresh_complete_download": false
+  },
+  "additional_20": {
+    "related_source_partial": 7,
+    "explicit_source_substitution": 9,
+    "unavailable": 4,
+    "numeric_entries_executed_and_independently_scored": 16
+  },
+  "new_source_checks": {
+    "ims": {
+      "test_queries": 20,
+      "test_channels": 4,
+      "independent_test_runs": 1,
+      "mae_acquisitions": 2312.197998046875,
+      "rmse_acquisitions": 2402.5827038402526,
+      "training_gradient_steps": 16,
+      "target": "acquisitions to published recording endpoint"
+    },
+    "uoc": {
+      "online_sha256": "32458d9259719a3328bf3e09916ff5e689b648fd400a5dd843bedbecd0088139",
+      "online_train_dev_equal_to_offline": true,
+      "test_observations": 180,
+      "accuracy": 0.49444444444444446,
+      "training_gradient_steps": 18,
+      "physical_recording_independence_verified": false
+    },
+    "model_calls": 0
+  },
+  "additional_case_results": [
+    {
+      "task_id": "pdm_fault_010",
+      "dataset": "UOC",
+      "source_relation": "related_original_source",
+      "n": 180,
+      "accuracy": 0.49444444444444446,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_safety_007",
+      "dataset": "CWRU",
+      "source_relation": "related_original_source",
+      "n": 4375,
+      "accuracy": 0.7787428571428572,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_005",
+      "dataset": "IMS_ENDPOINT",
+      "source_relation": "related_original_source",
+      "n": 20,
+      "mae": 2312.197998046875,
+      "rmse": 2402.5827038402526,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_011",
+      "dataset": "IMS_ENDPOINT",
+      "source_relation": "related_original_source",
+      "n": 20,
+      "mae": 2312.197998046875,
+      "rmse": 2402.5827038402526,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_safety_010",
+      "dataset": "IMS_ENDPOINT",
+      "source_relation": "related_original_source",
+      "n": 20,
+      "mae": 2312.197998046875,
+      "rmse": 2402.5827038402526,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_008",
+      "dataset": "LDM_RTF",
+      "source_relation": "related_dataset",
+      "n": 25,
+      "mae": 2295.3537451171874,
+      "rmse": 3618.751948837162,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_014",
+      "dataset": "LDM_RTF",
+      "source_relation": "related_dataset",
+      "n": 25,
+      "mae": 2295.3537451171874,
+      "rmse": 3618.751948837162,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_002",
+      "dataset": "FEMTO",
+      "source_relation": "substitution",
+      "n": 11,
+      "mae": 4751.943248401989,
+      "rmse": 5849.699779087194,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_006",
+      "dataset": "XJTU",
+      "source_relation": "substitution",
+      "n": 15,
+      "mae": 429.16441879272463,
+      "rmse": 689.8285193569797,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_007",
+      "dataset": "FEMTO",
+      "source_relation": "substitution",
+      "n": 11,
+      "mae": 4751.943248401989,
+      "rmse": 5849.699779087194,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_009",
+      "dataset": "LDM_RTF",
+      "source_relation": "substitution",
+      "n": 25,
+      "mae": 2295.3537451171874,
+      "rmse": 3618.751948837162,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_010",
+      "dataset": "CMAPSS_FD002",
+      "source_relation": "substitution",
+      "n": 259,
+      "mae": 39.97149206036306,
+      "rmse": 47.68570079080177,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_012",
+      "dataset": "XJTU",
+      "source_relation": "substitution",
+      "n": 15,
+      "mae": 429.16441879272463,
+      "rmse": 689.8285193569797,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_013",
+      "dataset": "FEMTO",
+      "source_relation": "substitution",
+      "n": 11,
+      "mae": 4751.943248401989,
+      "rmse": 5849.699779087194,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_rul_015",
+      "dataset": "LDM_RTF",
+      "source_relation": "substitution",
+      "n": 25,
+      "mae": 2295.3537451171874,
+      "rmse": 3618.751948837162,
+      "complete_original_task": false
+    },
+    {
+      "task_id": "pdm_cost_benefit_005",
+      "dataset": "CMAPSS_FD001",
+      "source_relation": "substitution",
+      "n": 100,
+      "mae": 19.110271253585815,
+      "rmse": 26.257624307101747,
+      "complete_original_task": false
+    }
+  ],
+  "failures_retained": [
+    "First batch Mendeley old-task path alias failed and was rerun successfully.",
+    "First UoC group-score naming failed; corrected and rerun.",
+    "First staging copy followed a historical environment-store symlink and was interrupted; corrected with the store excluded."
+  ],
+  "limitations": [
+    "Test identities and all datasets are public; no private blind benchmark claimed.",
+    "Shared source models and predictions are reused across historical task IDs.",
+    "Two Paderborn LDM cases use a different source from Paderborn KAt.",
+    "All substitutions are separately marked and must be explicitly selected.",
+    "Wheel used already installed dependencies; no cross-machine installation demonstrated."
+  ]
+}
