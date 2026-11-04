@@ -189,7 +189,7 @@ class VerifiedForge:
                 # as testing. Its labels remain explicitly available through
                 # load_ground_truth(file='val').
                 data = dict(np.load(path, allow_pickle=False))
-                observations = {k:v for k,v in data.items() if k not in ["labels","groups"]}
+                observations = {k:v for k,v in data.items() if k not in ["labels", "groups", "states", "timing"]}
                 observations["dataset"] = np.asarray(name)
                 path = self.output / f"development_observations_{uuid.uuid4().hex[:12]}.npz"
                 np.savez_compressed(path, **observations)
@@ -203,7 +203,10 @@ class VerifiedForge:
             if arch not in info["architectures"] or not isinstance(epochs, int) or epochs < 1:
                 raise ValueError("Invalid architecture or epoch count for this dataset")
             dest = self.output / f"{name}_{arch}_{uuid.uuid4().hex[:12]}"
-            if info.get('format')=='measured_endpoint_npz':
+            if name == 'ENGINE_QA_HEALTH':
+                import real_engine_health_model
+                audit = real_engine_health_model.train(directory, dest, epochs)
+            elif info.get('format')=='measured_endpoint_npz':
                 import real_gap_rul_model
                 audit=real_gap_rul_model.train(directory,dest,arch,epochs_override=epochs)
             elif info.get('format')=='xjtu_npz':
@@ -259,6 +262,9 @@ class VerifiedForge:
                 else:
                     import real_bearing_rul_model
                     real_bearing_rul_model.infer(model,source,output)
+            elif task == 'classification' and (model.parent / 'qa_heads.joblib').is_file():
+                import real_engine_health_model
+                real_engine_health_model.infer(model, source, output)
             else:
                 (rul.infer if task == "rul" else fault.infer)(model, source, output)
             value = json.loads(output.read_text())

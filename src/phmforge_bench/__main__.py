@@ -16,12 +16,12 @@ def main():
     ls = sub.add_parser("list", help="List integrated tasks and the original scenario denominator")
     ls.add_argument("--all", action="store_true", help="Show the historical 75-scenario inventory")
     prep = sub.add_parser("prepare", help="Download/verify a source and create a reproducible split")
-    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "ldm-rul", *(f"cmapss-fd00{i}" for i in range(1, 5)),
+    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "xjtu-terminal", "ldm-rul", "engine-qa", *(f"cmapss-fd00{i}" for i in range(1, 5)),
                                            *pdmb_sources], required=True)
     prep.add_argument("--data-root", type=Path, required=True)
     prep.add_argument("--source", type=Path, help="Pinned offline source file or source directory (see dataset documentation)")
     prep.add_argument("--challenge-pdf", type=Path, help="Existing pinned FEMTO challenge document (femto-rul only)")
-    prep.add_argument("--extractor", type=Path, help="Path to a compatible 7zz/7z executable (xjtu-rul only)")
+    prep.add_argument("--extractor", type=Path, help="Path to a compatible 7zz/7z executable (XJTU only)")
     prep.add_argument("--workers", type=int, default=4)
     ws = sub.add_parser("workspace", help="Create a training/development-only agent workspace")
     ws.add_argument("--data-root", type=Path, required=True)
@@ -56,6 +56,44 @@ def main():
     serve.add_argument("--data-root", type=Path, required=True)
     serve.add_argument("--out", type=Path, required=True)
     serve.add_argument("--transport", choices=["mcp", "jsonl"], default="mcp")
+    scenarios = sub.add_parser("scenario", help="Use the 55 historical task identities with source-based numeric adaptations")
+    scenarios_sub = scenarios.add_subparsers(dest="scenario_command", required=True)
+    scenarios_list = scenarios_sub.add_parser("list", help="List the 55 cases or inspect one case")
+    scenarios_list.add_argument("--task")
+    scenarios_workspace = scenarios_sub.add_parser("workspace", help="Create an Agent workspace for one case")
+    scenarios_workspace.add_argument("--task", required=True)
+    scenarios_workspace.add_argument("--data-root", required=True, type=Path)
+    scenarios_workspace.add_argument("--out", required=True, type=Path)
+    scenarios_run = scenarios_sub.add_parser("run", help="Fit and evaluate the numeric part of one case")
+    scenarios_run.add_argument("--task", required=True)
+    scenarios_run.add_argument("--data-root", required=True, type=Path)
+    scenarios_run.add_argument("--run-dir", required=True, type=Path)
+    scenarios_run.add_argument("--epochs", type=int, default=10)
+    scenarios_run.add_argument("--timeout", type=int, default=300)
+    scenarios_run.add_argument("--submission", type=Path, help="Reuse a separately fitted submission for the same source dataset")
+    scenarios_agent = scenarios_sub.add_parser("agent", help="Run a coding agent on one original question's numeric adaptation")
+    scenarios_agent.add_argument("--task", required=True)
+    scenarios_agent.add_argument("--data-root", required=True, type=Path)
+    scenarios_agent.add_argument("--run-dir", required=True, type=Path)
+    scenarios_agent.add_argument("--cli", required=True, type=Path)
+    scenarios_agent.add_argument("--model-base-url", default="https://api.deepseek.com/")
+    scenarios_agent.add_argument("--epochs", type=int, default=1)
+    scenarios_agent.add_argument("--timeout", type=int, default=1200)
+    scenarios_agent.add_argument("--max-requests", type=int, default=40)
+    scenarios_agent.add_argument("--max-input-tokens", type=int, default=4000000)
+    scenarios_agent.add_argument("--max-output-tokens", type=int, default=65536)
+    scenarios_agent.add_argument("--max-output-per-request", type=int, default=8192)
+    scenarios_agent.add_argument("--smoke", action="store_true")
+    scenarios_all = scenarios_sub.add_parser("run-all", help="Run 55 entries, reuse fitted models, and retain per-case failures")
+    scenarios_all.add_argument("--data-home", required=True, type=Path)
+    scenarios_all.add_argument("--run-dir", required=True, type=Path)
+    scenarios_all.add_argument("--epochs", type=int, default=10)
+    scenarios_all.add_argument("--timeout", type=int, default=600)
+    scenarios_all.add_argument("--prepare-missing", action="store_true", help="Download and prepare missing public sources; may require many GB")
+    scenarios_all.add_argument("--source-map", type=Path, help="JSON map from dataset names to offline source paths")
+    scenarios_all.add_argument("--extractor", type=Path, help="Path to 7zz/7z for XJTU")
+    scenarios_all.add_argument("--workers", type=int, default=4)
+    scenarios_all.add_argument("--task", action="append", help="Limit to the specified task(s); may be repeated")
     environment = sub.add_parser("environment", help="Restore and execute the full archived research environment")
     envsub = environment.add_subparsers(dest="environment_command", required=True)
     for name, help_text in [("verify", "Verify the complete object store"), ("list", "List actual archived task cases"),
@@ -95,6 +133,25 @@ def main():
     if args.command == "environment":
         from .environment import main as environment_main
         result = environment_main(args)
+    elif args.command == "scenario":
+        from .scenario import create_workspace, inventory, run, run_all
+        if args.scenario_command == 'list':
+            result = inventory(args.task)
+        elif args.scenario_command == 'workspace':
+            result = create_workspace(args.task, args.data_root, args.out)
+        elif args.scenario_command == 'run':
+            result = run(args.task, args.data_root, args.run_dir, args.epochs, args.timeout, args.submission)
+        elif args.scenario_command == 'agent':
+            from .agent import run_agent
+            result = run_agent(args.data_root, args.run_dir, args.cli, args.model_base_url,
+                args.epochs, args.timeout, args.max_requests, args.max_input_tokens,
+                args.max_output_tokens, args.max_output_per_request, args.smoke, scenario_task_id=args.task)
+        else:
+            source_map = json.loads(args.source_map.read_text()) if args.source_map else None
+            if source_map is not None and not isinstance(source_map, dict):
+                parser.error('--source-map must be a JSON object of source names to paths')
+            result = run_all(args.data_home, args.run_dir, args.epochs, args.timeout,
+                             args.prepare_missing, source_map, args.workers, args.extractor, args.task)
     elif args.command == "list":
         inv = resource_json("scenario_inventory.json")
         runnable = [x for x in inv["tasks"] if x["release_status"] == "integrated_research_adaptation"]
@@ -104,6 +161,12 @@ def main():
                          "release_status": "integrated_numeric_subtask"})
         runnable.append({"id": "research_xjtu_bearing_rul", "dataset": "XJTU",
                          "release_status": "integrated_numeric_subtask"})
+        runnable.append({"id": "pdm_fault_002_terminal_adaptation", "dataset": "XJTU_TERMINAL",
+                         "release_status": "integrated_numeric_subtask"})
+        runnable.extend({"id": task, "dataset": name,
+                         "release_status": "integrated_numeric_subtask"}
+                        for task, name in [("research_engine_qa_component_health", "ENGINE_QA_HEALTH"),
+                                           ("research_engine_qa_ten_cycle_trend", "ENGINE_QA_TREND")])
         runnable.append({"id": "research_ldm_bearing_rul", "dataset": "LDM_RTF",
                          "release_status": "integrated_numeric_subtask"})
         runnable.extend({"id": item["task_id"], "dataset": item["dataset"],
@@ -115,8 +178,8 @@ def main():
     elif args.command == "prepare":
         if args.challenge_pdf and args.dataset != "femto-rul":
             parser.error("--challenge-pdf applies only to --dataset femto-rul")
-        if args.extractor and args.dataset != "xjtu-rul":
-            parser.error("--extractor applies only to --dataset xjtu-rul")
+        if args.extractor and args.dataset not in {"xjtu-rul", "xjtu-terminal"}:
+            parser.error("--extractor applies only to XJTU datasets")
         if args.dataset == "mfpt":
             result = prepare_mfpt(args.data_root, args.source, args.workers)
         elif args.dataset == "femto-rul":
@@ -125,6 +188,12 @@ def main():
         elif args.dataset == "xjtu-rul":
             from .xjtu import prepare_xjtu
             result = prepare_xjtu(args.data_root, args.source, args.workers, args.extractor)
+        elif args.dataset == "xjtu-terminal":
+            from .xjtu import prepare_xjtu_terminal
+            result = prepare_xjtu_terminal(args.data_root, args.source, args.workers, args.extractor)
+        elif args.dataset == "engine-qa":
+            from .engine import prepare_engine
+            result = prepare_engine(args.data_root, args.source, args.workers)
         elif args.dataset == "ldm-rul":
             from .ldm import prepare_ldm
             result = prepare_ldm(args.data_root, args.source, args.workers)
@@ -163,7 +232,7 @@ def main():
                    "--output", str(args.out.resolve()), "--transport", args.transport]
         return subprocess.call(command)
     print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
-    return 0
+    return 1 if args.command == 'scenario' and args.scenario_command == 'run-all' and result['status'] == 'completed_with_failures' else 0
 
 
 if __name__ == "__main__":

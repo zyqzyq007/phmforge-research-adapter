@@ -8,6 +8,8 @@
 | `cmapss-fd001`、`cmapss-fd002`、`cmapss-fd003`、`cmapss-fd004` | [NASA C-MAPSS](https://zenodo.org/records/15346912)，共同 ZIP 约 12.4 MB | 四个仿真发动机子集；单位为剩余循环数，非现场测量 |
 | `femto-rul` | [NASA FEMTO](https://phm-datasets.s3.amazonaws.com/NASA/10.+FEMTO+Bearing.zip) 约 1.16 GB，另下载固定版[挑战说明](https://github.com/aref9069/IEEE-PHM-2012-Prognostic-Challenge-/blob/9c476de6405b8c31b53bba8d6b0955ea57172206/IEEEPHM2012-Challenge-Details.pdf)约 2.28 MB | 台架轴承剩余秒数；一条挑战标注有来源歧义，另报去除此条的敏感性指标 |
 | `xjtu-rul` | [XJTU-SY 作者数据](https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets)，六个与作者来源哈希一致的[固定镜像分卷](https://huggingface.co/datasets/DavidNguyen/XJTU-SY_Bearing_Datasets/tree/274226336036cd8deb2c40b4ba323af2d11a7290/Data)，共约 4.45 GB | 15 只台架轴承全寿命；目标为距末次采集的名义分钟，非精确物理失效时刻 |
+| `xjtu-terminal` | 与 `xjtu-rul` 相同的六分卷 | 只读取每只轴承末次记录，预测拆检损伤位置；仅 15 只轴承，无早晚期严重度标签 |
+| `engine-qa` | [EngineMT-QA 固定版本](https://huggingface.co/datasets/pandalin98/EngineMT-QA/tree/ea2051a15512212976c22c1a075ec549c7d48eef)，QA 约 57.5 MB，选定 HDF5 数组约 28 MB | 28 个历史发动机方向的数值问答标注；仿真、不代表物理风险或因果真值 |
 | `ldm-rul` | [Paderborn LDM 作者特征](https://github.com/alireza-javanmardi/bearing-RUL/tree/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM)，约 158 MB | 14 次有明确试验终点的轴承运行；预测距作者特征末行的采集次数，不是小时；使用派生特征而非重算原波形 |
 | `cwru` | [PDMBench CWRU](https://huggingface.co/datasets/submission096/CWRU)，约 7.1 MB | 原特征表分类；录波组根据连续段推断，不能称物理轴承独立 |
 | `electric-motor-vibrations` | [PDMBench 电机振动](https://huggingface.co/datasets/submission096/ElectricMotorVibrations)，约 67.8 MB | 三轴振动分类；原题要求的声学输入未包含在此子任务中 |
@@ -20,7 +22,7 @@
 
 如果需要全部来源，按上述入口下载的文件合计约 **15.4 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。XJTU 的原始压缩包约 4.45 GB，解压过程还需要约 12.3 GB，计算完毕后程序删除自己的解压副本；FEMTO 读取嵌套压缩包时也需要额外磁盘空间。
 
-尚未接入的原题和来源包括 UoC、PlanetaryPdM、EngineMTQA，以及需要独立维修收益、合规或物理安全真值的完整题目。下载这些数据不会自动使其成为当前版本可运行且可评分的完整任务；例如 UoC 公开预切片表缺少可核实的原始采集记录身份，部分发动机问答也缺少可认证的物理健康合同。不要把相关的分类或 RUL 子任务计为原题完成。
+尚未完整接入的原题和来源包括 UoC、PlanetaryPdM，以及需要独立维修收益、合规或物理安全真值的完整题目。EngineMT-QA 已支持发布者问答标注的数值适配，但它缺少可认证的完整物理健康合同。下载数据不会自动使原题全部要求可评分；不要把分类或 RUL 子任务计为完整原题完成。
 
 ## 从公开源准备和运行
 
@@ -47,6 +49,10 @@ C-MAPSS 从 [NASA 数据的 Zenodo 镜像](https://zenodo.org/records/15346912)�
 FEMTO 只从原始嵌套压缩包读取 6 条学习记录及 11 条挑战观测前缀，完整后续、挑战文档和测试标签不会放入公开开发目录。时间使用名义 10 秒采集间隔，因为源日志有时钟异常；各工况只有两条学习记录。挑选轮数后最终参考模型使用两条学习记录重训，不能将重训后的学习集分数称为独立验证。
 
 XJTU 使用 7-Zip 26.05 成功解压六分卷；系统需提供兼容的 `7zz` 或 `7z`，若不在 PATH 则传 `--extractor /path/to/7zz`。逐一校验发布者分卷 SHA-256 后，程序核对 15 只轴承的 9,216 条 32,768×2 原始振动记录并重算特征。每个工况各用 3/1/1 只轴承训练、开发及测试；每只测试轴承随机取 5 个前缀，结果按查询及轴承计分。名义时间按一次采集一分钟计算；终态损伤位置不是逐时故障标签。预处理较耗时，公开来源可能被记忆，匿名化不能杜绝该风险。
+
+`xjtu-terminal` 只从相同分卷提取 15 个末次采集文件，损伤位置来自数据作者的拆检信息。同样按 9/3/3 只轴承分组；由于类别极少，某些类别可能没有训练样本，不可将其作为可靠现场诊断模型。批量运行会复用另一 XJTU 入口已下载的分卷。
+
+`engine-qa` 固定数据集版本，下载并校验两份 QA 文件；通过 HTTPS 范围请求按需读取 146 条完整记录与 280 条前 60 行记录（另有一条前缀与完整记录重叠），逐条验证冻结的数组 SHA-256。该方式不下载或验证完整约 18.8 GB HDF5 的全文件哈希，远程服务器必须支持精确范围请求；如果提供完整 HDF5，则额外检查完整文件大小和发布者 SHA-256。训练／开发与原题记录不重合，但不能证明不同物理发动机独立，不同原题也可能共用记录。十周期子任务仅有 40 条训练和 48 条开发问答组合，其中一个开发联合类别没有训练样本。QA 文件和原题源身份公开，不能当成完全保密的盲测。命名传感器与匿名通道的对应关系、物理因果、故障概率校准均未得到证实。
 
 LDM 从固定作者仓库取 14 次运行的 FFT、运行工况及温度文件，逐文件校验 SHA-256，按 7/2/5 个完整试验轴承划分。保留实际特征与采集索引，分别预测 5 个测试轴承、每只 5 个前缀，单位为剩余采集次数。B01 无预设终点、B05 主动中断、B16 的终点栏缺失，因此排除；采集间隔不规则，不能换算成未经核实的运行小时。这是作者公开的实测派生特征，未重新下载或重算 [152 GB 原波形](https://zenodo.org/records/10868257)。它与 Paderborn KAt 分类数据不同，也不能冒充原题可能指定的 Mendeley 数据。
 
@@ -93,9 +99,13 @@ XJTU 的 `--source` 指向包含全部六个原始 `.rar` 分卷的目录；LDM 
 ```bash
 phmforge-bench prepare --dataset xjtu-rul --source /path/to/xjtu-volumes \
   --extractor /path/to/7zz --data-root "$PHM_RUN_ROOT/data/xjtu"
+phmforge-bench prepare --dataset xjtu-terminal --source /path/to/xjtu-volumes \
+  --extractor /path/to/7zz --data-root "$PHM_RUN_ROOT/data/xjtu-terminal"
 phmforge-bench prepare --dataset ldm-rul --source /path/to/LDM \
   --data-root "$PHM_RUN_ROOT/data/ldm"
 ```
+
+EngineMT-QA 的 `--source` 指向包含固定版 `train_qa.jsonl`、`test_qa.jsonl` 的目录；如该目录还含 `time_series_data.h5`，将校验完整文件后离线读取，否则继续在线获取并校验所需数组。批量运行可以用 `--source-map` 指定本地来源：JSON 键为 `scenario list` 中的 `prepare_dataset`，值为对应文件或目录路径；FEMTO 挑战说明另用键 `femto-challenge-pdf`。来源仍须通过固定哈希检查。
 
 已有来源文件也可直接传入其实际路径；程序仍会校验固定哈希，文件缺失或不一致时会失败，不会自动替换为合成数据。重新准备时测试身份会随机化，因此新输出文件哈希不必与以前的准备结果相同。
 

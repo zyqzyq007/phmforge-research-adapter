@@ -1,0 +1,661 @@
+{
+  "description": "55 historical directions with source-based numeric entries; repeated source pipelines are not independent original benchmark replications.",
+  "tasks": [
+    {
+      "task_id": "engine_health_combined_001",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I need a complete health assessment for this aircraft engine based on the following sensor data from a single operational cycle. Analyze all major components and give me: (1) Health status for each component (Fan, LPC, HPC, HPT, LPT) - Healthy or Fault, (2) If there are timing issues, identify whether they're caused by efficiency or flow problems and in which component, (3) The overall health state of the engine.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_002",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our maintenance team needs an urgent diagnostic report for this engine. Review the sensor readings below and determine: which components are functioning normally, which have faults, what's causing any timing anomalies, and the engine's overall operational status.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_003",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Before this aircraft's next flight, I need you to analyze the engine telemetry and provide a full component-by-component health assessment. Check Fan, LPC, HPC, HPT, and LPT systems, identify any efficiency or flow issues, and classify the overall engine condition.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_004",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine flagged an alert during the last flight. Analyze the sensor data and tell me: (1) Which specific components show signs of malfunction? (2) Are the timing problems related to efficiency degradation or flow restrictions? (3) Should we ground this aircraft for maintenance?\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: elevated and rising: 528K → 542K (+2.6% over 10 cycles, ANOMALY)\n  - Fan Inlet Pressure: declining: 14.62 psia → 13.89 psia (-5.0%, CRITICAL)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: sharp increase: 1398K → 1456K (+4.1%, CRITICAL)\n  - HPC Outlet Pressure: unstable: fluctuating 520-535 psia (7% variance)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1089K with oscillations (FAULT)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_005",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I need a complete health assessment for this aircraft engine based on the following sensor data from a single operational cycle. Analyze all major components and give me: (1) Health status for each component (Fan, LPC, HPC, HPT, LPT) - Healthy or Fault, (2) If there are timing issues, identify whether they're caused by efficiency or flow problems and in which component, (3) The overall health state of the engine.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_006",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our maintenance team needs an urgent diagnostic report for this engine. Review the sensor readings below and determine: which components are functioning normally, which have faults, what's causing any timing anomalies, and the engine's overall operational status.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: sharp increase: 1398K → 1456K (+4.1%, CRITICAL)\n  - HPC Outlet Pressure: unstable: fluctuating 520-535 psia (7% variance)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: gradual decline: 1588K → 1571K (-1.1%)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_007",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Before this aircraft's next flight, I need you to analyze the engine telemetry and provide a full component-by-component health assessment. Check Fan, LPC, HPC, HPT, and LPT systems, identify any efficiency or flow issues, and classify the overall engine condition.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1089K with oscillations (FAULT)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_008",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine flagged an alert during the last flight. Analyze the sensor data and tell me: (1) Which specific components show signs of malfunction? (2) Are the timing problems related to efficiency degradation or flow restrictions? (3) Should we ground this aircraft for maintenance?\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1089K with oscillations (FAULT)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_009",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I need a complete health assessment for this aircraft engine based on the following sensor data from a single operational cycle. Analyze all major components and give me: (1) Health status for each component (Fan, LPC, HPC, HPT, LPT) - Healthy or Fault, (2) If there are timing issues, identify whether they're caused by efficiency or flow problems and in which component, (3) The overall health state of the engine.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_010",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our maintenance team needs an urgent diagnostic report for this engine. Review the sensor readings below and determine: which components are functioning normally, which have faults, what's causing any timing anomalies, and the engine's overall operational status.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: declining rapidly: 1582K → 1534K (-3.0%)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_011",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Before this aircraft's next flight, I need you to analyze the engine telemetry and provide a full component-by-component health assessment. Check Fan, LPC, HPC, HPT, and LPT systems, identify any efficiency or flow issues, and classify the overall engine condition.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_012",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine flagged an alert during the last flight. Analyze the sensor data and tell me: (1) Which specific components show signs of malfunction? (2) Are the timing problems related to efficiency degradation or flow restrictions? (3) Should we ground this aircraft for maintenance?\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1089K with oscillations (FAULT)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_013",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I've collected engine telemetry across 10 operational cycles and need a trend analysis. Based on this data: (1) What is the qualitative condition of the engine (Good/Moderate/Poor/Bad/Extremely Poor)? (2) What's the estimated probability range of engine failure? (3) What maintenance actions should we take?\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_014",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our predictive maintenance system flagged this engine for review. Analyze the 10-cycle trend data and provide: overall condition assessment, failure probability estimate, and your recommended maintenance strategy.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_015",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine is due for its scheduled inspection. Based on the multi-cycle signal data, assess whether the condition has degraded, estimate failure risk, and recommend whether to proceed with routine maintenance or escalate to urgent repairs.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_016",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Fleet management needs a health trend report for this engine unit. Analyze the 10-cycle data and provide: (1) Current condition classification, (2) Failure probability range for the next 50 cycles, (3) Specific maintenance recommendations.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_017",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I've collected engine telemetry across 10 operational cycles and need a trend analysis. Based on this data: (1) What is the qualitative condition of the engine (Good/Moderate/Poor/Bad/Extremely Poor)? (2) What's the estimated probability range of engine failure? (3) What maintenance actions should we take?\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft throughout all cycles\n  - Throttle Resolver Angle: steady decrease from 84.2° to 78.6° (normal throttle adjustment)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: stable at 552-555K\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: stable at 1398-1405K\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: stable at 1585-1592K\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: stable at 1125-1130K\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_018",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our predictive maintenance system flagged this engine for review. Analyze the 10-cycle trend data and provide: overall condition assessment, failure probability estimate, and your recommended maintenance strategy.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: gradual decline: 1588K → 1571K (-1.1%)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_019",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine is due for its scheduled inspection. Based on the multi-cycle signal data, assess whether the condition has degraded, estimate failure risk, and recommend whether to proceed with routine maintenance or escalate to urgent repairs.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: gradual decline: 1588K → 1571K (-1.1%)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_020",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Fleet management needs a health trend report for this engine unit. Analyze the 10-cycle data and provide: (1) Current condition classification, (2) Failure probability range for the next 50 cycles, (3) Specific maintenance recommendations.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: gradual decline: 1588K → 1571K (-1.1%)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_021",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "I've collected engine telemetry across 10 operational cycles and need a trend analysis. Based on this data: (1) What is the qualitative condition of the engine (Good/Moderate/Poor/Bad/Extremely Poor)? (2) What's the estimated probability range of engine failure? (3) What maintenance actions should we take?\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_022",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Our predictive maintenance system flagged this engine for review. Analyze the 10-cycle trend data and provide: overall condition assessment, failure probability estimate, and your recommended maintenance strategy.\n\nENGINE SIGNAL DATA SUMMARY (10 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality.",
+        "The QA failure-probability category is not a calibrated real-world probability."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_023",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Emergency diagnostic request: An engine fault indicator lit up during cruise. Review the telemetry and determine which components have failed, the nature of the timing issue, and the severity of the situation.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_024",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Post-flight inspection revealed abnormal sensor readings. Diagnose which components are compromised, identify the root cause of any efficiency or flow anomalies, and assess whether immediate repair is needed.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_025",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine experienced a performance anomaly mid-flight. Analyze the sensor data to identify: (1) Which components (Fan, LPC, HPC, HPT, LPT) are faulty? (2) What's the root cause - efficiency modifier issues or flow modifier problems? (3) Which specific subsystem is affected?\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_026",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Emergency diagnostic request: An engine fault indicator lit up during cruise. Review the telemetry and determine which components have failed, the nature of the timing issue, and the severity of the situation.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: stable at 518-520K (within normal range)\n  - Fan Inlet Pressure: constant at 14.62 psia (nominal)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n  - HPT Efficiency Indicator: DEGRADED: 87.2% → 81.4% efficiency drop detected\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_027",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "Post-flight inspection revealed abnormal sensor readings. Diagnose which components are compromised, identify the root cause of any efficiency or flow anomalies, and assess whether immediate repair is needed.\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: stable at 35,000 ft with minor fluctuations (±200 ft)\n  - Throttle Resolver Angle: irregular pattern with unexpected spikes (76.3° to 89.1°)\n\n[Fan Section]\n  - Fan Inlet Temp: elevated and rising: 528K → 542K (+2.6% over 10 cycles, ANOMALY)\n  - Fan Inlet Pressure: declining: 14.62 psia → 13.89 psia (-5.0%, CRITICAL)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: abnormally high: 565K → 589K (+4.2%, WARNING)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: sharp increase: 1398K → 1456K (+4.1%, CRITICAL)\n  - HPC Outlet Pressure: unstable: fluctuating 520-535 psia (7% variance)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: ANOMALY DETECTED: sharp decline 1589K → 1498K (-5.7%/cycle)\n  - HPT Coolant Bleed: elevated: 8.45 → 8.89 (+5.2%, compensating for degradation)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: abnormal pattern: 1124K → 1089K with oscillations (FAULT)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "engine_health_combined_028",
+      "dataset": "ENGINE_QA_HEALTH",
+      "prepare_dataset": "engine-qa",
+      "category": "Engine Health Analysis",
+      "original_question": "This engine experienced a performance anomaly mid-flight. Analyze the sensor data to identify: (1) Which components (Fan, LPC, HPC, HPT, LPT) are faulty? (2) What's the root cause - efficiency modifier issues or flow modifier problems? (3) Which specific subsystem is affected?\n\nENGINE SIGNAL DATA SUMMARY (1 operational cycles):\n\n[Operational Parameters]\n  - Altitude: fluctuating between 34,200-35,800 ft (abnormal variance)\n  - Throttle Resolver Angle: erratic behavior with sharp oscillations (68.4° to 94.2°)\n\n[Fan Section]\n  - Fan Inlet Temp: elevated and rising: 528K → 542K (+2.6% over 10 cycles, ANOMALY)\n  - Fan Inlet Pressure: declining: 14.62 psia → 13.89 psia (-5.0%, CRITICAL)\n\n[Low-Pressure Compressor (LPC)]\n  - LPC Outlet Temp: gradual decline: 554K → 548K (-1.1%)\n\n[High-Pressure Compressor (HPC)]\n  - HPC Outlet Temp: gradual decline: 1402K → 1388K (-1.0%)\n\n[High-Pressure Turbine (HPT)]\n  - HPT Outlet Temp: declining rapidly: 1582K → 1534K (-3.0%)\n\n[Low-Pressure Turbine (LPT)]\n  - LPT Outlet Temp: slow decline: 1128K → 1119K (-0.8%)\n",
+      "numeric_scope": "source-bound annotation classification",
+      "limitations": [
+        "Scores publisher QA annotations on simulated data; anonymous channels do not establish the named sensor interpretations or physical causality."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_cost_benefit_001",
+      "dataset": "CMAPSS_FD001",
+      "prepare_dataset": "cmapss-fd001",
+      "category": "Cost-Benefit Analysis",
+      "original_question": "I am managing a fleet of aircraft engines and need to decide whether to do preventive maintenance or wait until failure. Can you predict remaining life for all test engines, calculate what it would cost to maintain them preventively versus letting them fail, and find the optimal maintenance threshold that minimizes total cost? I need concrete dollar amounts and a recommended RUL threshold for scheduling maintenance.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_cost_benefit_002",
+      "dataset": "CWRU",
+      "prepare_dataset": "cwru",
+      "category": "Cost-Benefit Analysis",
+      "original_question": "We have bearings with different fault types-inner race, outer race, and ball race defects-and each costs different amounts to fix. Can you classify the fault type for each test bearing, calculate maintenance and failure costs for each fault type, prioritize which bearings to fix first based on cost-benefit, and tell me which fault type gives us the best return on preventive maintenance investment? I need dollar amounts and a prioritized action list.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_cost_benefit_003",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "Cost-Benefit Analysis",
+      "original_question": "The FEMTO dataset has bearings running under three different operational scenarios, and maintenance costs vary by scenario. Can you predict remaining life for all test bearings in each scenario, calculate maintenance and failure costs per scenario, optimize the maintenance strategy for each scenario separately, and tell me which scenario needs the most preventive maintenance? I need cost numbers and recommendations for each operational condition.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_cost_benefit_004",
+      "dataset": "XJTU",
+      "prepare_dataset": "xjtu-rul",
+      "category": "Cost-Benefit Analysis",
+      "original_question": "For the XJTU bearings, I need a comprehensive maintenance plan that considers both how much life is left and what type of fault is present, since different faults cost different amounts to fix. Can you predict remaining life and classify fault types for all test bearings, calculate combined maintenance and failure costs, optimize a maintenance schedule that minimizes both cost and downtime, and give me a prioritized list of which bearings to fix first? I need dollar amounts and a clear action plan.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "This entry evaluates RUL only; terminal-damage classification is available separately and is not automatically joined to RUL predictions.",
+        "Failure costs, preventive-maintenance costs and an action-dependent decision model are not supplied; cost, optimal threshold and schedule remain unknown.",
+        "RUL is nominal time to the last recorded acquisition, not a verified physical failure time."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_001",
+      "dataset": "CWRU",
+      "prepare_dataset": "cwru",
+      "category": "Fault Classification",
+      "original_question": "I have got CWRU bearing data with different fault types-inner race defects, outer race defects, and ball race defects. Can you classify which fault type each test bearing has, check those classifications against the actual fault labels, and give me accuracy numbers plus a breakdown of how well you classified each fault type? I need precision, recall, and F1-scores for each fault category so I know where the model struggles.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_002",
+      "dataset": "XJTU_TERMINAL",
+      "prepare_dataset": "xjtu-terminal",
+      "category": "Fault Classification",
+      "original_question": "The XJTU dataset has five different fault types, and I suspect we might classify early-stage faults differently than late-stage ones. Can you classify all test bearings by fault type, give me overall and per-fault-type accuracy, and then break down accuracy by fault severity? I need to know if we catch faults better when they're more advanced.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "The terminal damage location is not an early/late fault severity label."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_003",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "prepare_dataset": "electric-motor-vibrations",
+      "category": "Fault Classification",
+      "original_question": "We have both acoustic and vibration data for electric motors, and I want to know if using both helps classify faults better than using just one. Can you classify all test motor faults using the combined acoustic and vibration data, then test each modality separately to see which gives better accuracy? I need concrete numbers to decide if we need both sensor types.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "Acoustic recordings and a paired acoustic-vibration ablation are not provided by this source."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_004",
+      "dataset": "ROTORBROKENBAR",
+      "prepare_dataset": "rotor-broken-bar",
+      "category": "Fault Classification",
+      "original_question": "We have induction motor data with broken rotor bars, and the severity ranges from 1 to 4 broken bars. Can you classify the severity level for each test motor, verify against the actual labels, and give me accuracy broken down by severity level? I also need a confusion matrix to see if the model confuses certain severity levels-like if it mixes up 2 bars with 3 bars.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "The published label classes are evaluated as supplied; a verified mapping to the exact number of broken bars is not established."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_006",
+      "dataset": "PADERBORN",
+      "prepare_dataset": "paderborn",
+      "category": "Fault Classification",
+      "original_question": "The Paderborn dataset has both artificially induced and naturally occurring bearing faults. Can you classify the fault types for all test bearings, distinguish whether each fault was artificial or natural, and compare classification accuracy between the two? I need to know if our model works equally well on both types or if we need separate models.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "The available evaluation does not establish a breakdown by artificial versus natural fault origin."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_007",
+      "dataset": "HUST",
+      "prepare_dataset": "hust-bearing",
+      "category": "Fault Classification",
+      "original_question": "The HUST dataset has 5 different bearing types with 6 fault categories, all tested under varying speeds and loads. Can you classify the fault category for each test bearing, give me overall accuracy plus breakdowns by fault category and bearing type, and check if accuracy changes with operating conditions? I need a comprehensive view of where the model works best.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "The available evaluation does not establish per-bearing-type, speed and load breakdowns."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_008",
+      "dataset": "MFPT",
+      "prepare_dataset": "mfpt",
+      "category": "Fault Classification",
+      "original_question": "The MFPT dataset has bearings with inner and outer race defects tested under different load conditions. Can you classify which type of defect each test bearing has, verify the classifications, and show me if accuracy changes with load? I need to know if we should account for load when classifying faults.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_009",
+      "dataset": "MENDELEY",
+      "prepare_dataset": "mendeley-bearing",
+      "category": "Fault Classification",
+      "original_question": "The Mendeley dataset has bearings with changing speeds (600-1800 RPM), making the signals non-stationary. Can you classify the fault types for all test bearings, accounting for these changing conditions, and show me how accuracy varies across speed ranges? I need to know if non-stationary conditions hurt classification performance.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "A speed-range breakdown is not available in the prepared evaluation labels."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_011",
+      "dataset": "PADERBORN",
+      "prepare_dataset": "paderborn",
+      "category": "Fault Classification",
+      "original_question": "Classify fault types for all test units in Paderborn dataset.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_012",
+      "dataset": "HUST",
+      "prepare_dataset": "hust-bearing",
+      "category": "Fault Classification",
+      "original_question": "Classify fault types for all test units in HUST dataset.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_013",
+      "dataset": "MFPT",
+      "prepare_dataset": "mfpt",
+      "category": "Fault Classification",
+      "original_question": "Classify fault types for all test units in MFPT dataset.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_014",
+      "dataset": "MENDELEY",
+      "prepare_dataset": "mendeley-bearing",
+      "category": "Fault Classification",
+      "original_question": "Classify fault types for all test units in Mendeley dataset.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_fault_015",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "prepare_dataset": "electric-motor-vibrations",
+      "category": "Fault Classification",
+      "original_question": "Classify fault types for all test units in ElectricMotorVibrations dataset.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_001",
+      "dataset": "CMAPSS_FD001",
+      "prepare_dataset": "cmapss-fd001",
+      "category": "RUL Prediction",
+      "original_question": "I am managing a fleet of aircraft engines and need to know which ones are running on fumes. Can you predict the remaining useful life for all test engines in the CMAPSS FD001 dataset? I need predictions for every unit, verification against the actual RUL values we have, and then tell me which 10 engines are most likely to fail soonest. Also give me the overall accuracy numbers-mean absolute error and root mean squared error-so I can see how reliable these predictions are. I really need concrete numbers here, not estimates, because I am presenting this to maintenance planning the next scheduled maintenance planning meeting.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_003",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "RUL Prediction",
+      "original_question": "The FEMTO dataset has bearings running under three different operational scenarios, and I suspect the RUL predictions might vary by scenario. Can you predict remaining life for all test bearings, break down the accuracy (MAE, RMSE) for each of the three operational scenarios separately, and tell me which scenario gives us the most reliable predictions? I need to know if we should adjust our maintenance strategy based on operating conditions.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_rul_004",
+      "dataset": "XJTU",
+      "prepare_dataset": "xjtu-rul",
+      "category": "RUL Prediction",
+      "original_question": "The XJTU dataset has bearings with five different fault types, and I want to see if our RUL predictions are more accurate for certain fault types. Can you predict remaining life for all test bearings, give me overall accuracy numbers, then break it down by fault type so I can see which fault types we predict best? This will help us prioritize which failure modes to focus our maintenance efforts on.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "Per-fault-type RUL accuracy is not available in the prepared RUL labels; the endpoint is nominal acquisition time.",
+        "RUL is nominal time to the last recorded acquisition, not a verified physical failure time."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_001",
+      "dataset": "CMAPSS_FD001",
+      "prepare_dataset": "cmapss-fd001",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "I am responsible for aircraft engine safety and need to identify which engines pose safety risks. Can you predict remaining life for all test engines, flag any with less than 20 cycles left as high risk, assess the safety risks (catastrophic failure, safety hazards, environmental impact), check if they comply with FAA and EASA regulations, and give me safety recommendations? I need risk classifications and actionable safety measures.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_002",
+      "dataset": "CWRU",
+      "prepare_dataset": "cwru",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Different bearing fault types have different safety implications. Can you classify the fault types for all test bearings, assess the safety impact of each fault type (vibration severity, failure probability, downtime risk), check compliance with ISO and ANSI vibration standards, and generate safety protocols for each fault type? I need to know which faults are most critical from a safety perspective.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_003",
+      "dataset": "ELECTRICMOTORVIBRATIONS",
+      "prepare_dataset": "electric-motor-vibrations",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Electric motor failures can be dangerous, especially with electrical hazards and fire risks. Can you classify the motor faults, assess safety risks (electrical hazards, fire risk, mechanical failure), check compliance with IEC and NEMA standards, and generate emergency shutdown protocols for high-risk motors? I need clear risk classifications and actionable shutdown procedures.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_004",
+      "dataset": "ROTORBROKENBAR",
+      "prepare_dataset": "rotor-broken-bar",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Broken rotor bars in induction motors get more dangerous as severity increases. Can you classify the severity level (1-4 broken bars) for each test motor, assess safety risks for each severity level, check compliance with IEEE and IEC motor standards, and generate maintenance policies that specify when to shut down immediately versus reduce load versus schedule repair? I need clear thresholds for each severity level.",
+      "numeric_scope": "source-bound fault-label classification",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_006",
+      "dataset": "CMAPSS_FD001",
+      "prepare_dataset": "cmapss-fd001",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Identify safety risks and compliance issues for CMAPSS_FD001 equipment.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_008",
+      "dataset": "FEMTO",
+      "prepare_dataset": "femto-rul",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Identify safety risks and compliance issues for FEMTO equipment.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    },
+    {
+      "task_id": "pdm_safety_009",
+      "dataset": "XJTU",
+      "prepare_dataset": "xjtu-rul",
+      "category": "Safety/Policy Evaluation",
+      "original_question": "Identify safety risks and compliance issues for XJTU equipment.",
+      "numeric_scope": "source-bound RUL estimation",
+      "limitations": [
+        "No validated physical-risk, applicable regulatory clauses or policy evidence is supplied; compliance and safety decisions remain unknown.",
+        "RUL is nominal time to the last recorded acquisition, not a verified physical failure time."
+      ],
+      "status": "partial_numerical_research_adaptation"
+    }
+  ]
+}

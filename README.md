@@ -2,11 +2,11 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.5 提供 **14 个可从公开数据开始的数值研究任务**：MFPT、C-MAPSS FD001–FD004、FEMTO、XJTU、LDM 及 6 种其他故障分类来源。按需下载数据即可准备、训练和外部评分，不需要历史快照。数据范围、大小、下载验证状态与限制见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
+v0.6 将**现有 55 个研究方向**逐一连接到公开数据的数值研究适配入口，可准备数据、训练参考模型并隔离评分，不需要 149 GB 历史快照。它们共用数据和模型：这不是 55 个完全独立的数据集，也不是 55 道原题的完整复现。另有 FD002–FD004、LDM 等扩展子任务，共 17 个数值任务类型。数据范围、下载大小与验证情况见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
 
 v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权重、程序和日志，使用 `environment` 命令恢复或重放；它不属于从数据开始运行新任务的前提。该约 149 GB 的快照目前没有公开下载地址。见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
-**给其他机器的使用者：** 克隆后安装依赖，按任务下载来源数据；数据和依赖没有放在 Git 仓库中。已在本服务器上完成 14 个任务的真实训练和隔离评分，跨机器安装、网络和内核兼容性仍需在使用者机器上验证。Agent 运行另需兼容的模型接口。
+**给其他机器的使用者：** 克隆后安装依赖，按需下载来源数据；数据和依赖没有放在 Git 仓库中。模型只保证实际训练与执行，不保证准确。跨机器安装、网络和内核兼容性仍需在使用者机器上验证；Agent 运行另需兼容的模型接口。
 
 | 使用方式 | 内容 |
 |---|---|
@@ -26,6 +26,8 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 | `research_fd002_rul`–`research_fd004_rul` | NASA C-MAPSS FD002–FD004 | 分别预测各子集发动机的剩余循环数 | 仿真 |
 | `research_femto_bearing_rul` | NASA PRONOSTIA/FEMTO | 预测 11 条挑战轴承前缀的剩余秒数；另报已知有歧义的标注 | 台架实测 |
 | `research_xjtu_bearing_rul` | XJTU-SY | 用当前信号特征预测至末次采集的名义分钟数；按整轴承分组 | 台架实测 |
+| `pdm_fault_002_terminal_adaptation` | XJTU-SY | 根据末次振动记录预测拆检损伤位置；没有早期／晚期故障严重度标签 | 台架实测，只有 15 只轴承 |
+| `research_engine_qa_component_health`、`research_engine_qa_ten_cycle_trend` | EngineMT-QA | 覆盖 28 条发动机方向的发布者问答标注；不等于物理健康真值 | 仿真及问答标注 |
 | `research_ldm_bearing_rul` | Paderborn LDM 作者特征 | 预测到记录末端的剩余采集次数，非小时；更换来源的研究适配 | 作者公开的台架实测派生特征 |
 | `research_cwru_fault_classification` | CWRU | 原始特征表类别预测；分组由连续段推断 | 台架数据 |
 | `research_electric_motor_fault_classification`、`research_rotor_fault_classification` | ElectricMotorVibrations、RotorBrokenBar | 电机振动和转子数据源标签分类 | 台架数据 |
@@ -34,6 +36,47 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 每个任务需要的数据、自动和手动下载方法、固定来源版本，以及历史实验涉及的其他数据见 [数据集与下载说明](docs/DATASETS.md)。
 
 这些数值流程不等于 75 道原题全部自然语言分析、维修或安全决策。`phmforge-bench list --all` 分别展示原题目录和可独立运行的数值任务；不要把多种数据划分、阶段或重复会话相加成独立原题。
+
+## 运行现有 55 个方向
+
+原题包括费用、设备安全、法规合规和多模态比较等要求；公开数据没有相应可靠真值的部分会标为未知。发动机方向的“失效概率区间”只是数据集的问答类别，不是已校准的实际失效概率。每个方向的原题、数据集、可计算部分和限制可直接查询：
+
+```bash
+phmforge-bench scenario list
+phmforge-bench scenario list --task pdm_fault_002
+```
+
+以下命令会按需下载并准备全部 55 个入口依赖的数据，并逐项执行；它们实际共享 13 类数值数据及相应模型。默认只使用 CPU。全部原始下载约 15 GB，解压及运行需要更多空间，网络请求和 XJTU 解压可能耗时较长。XJTU 需要 `7zz`/`7z`：
+
+```bash
+export PHM_RUN_ROOT="$HOME/phmforge-runs"
+mkdir -p "$PHM_RUN_ROOT/tmp" "$PHM_RUN_ROOT/mpl" "$PHM_RUN_ROOT/xdg"
+export TMPDIR="$PHM_RUN_ROOT/tmp" TMP="$PHM_RUN_ROOT/tmp" TEMP="$PHM_RUN_ROOT/tmp"
+export MPLCONFIGDIR="$PHM_RUN_ROOT/mpl" XDG_CACHE_HOME="$PHM_RUN_ROOT/xdg"
+
+phmforge-bench scenario run-all --prepare-missing \
+  --data-home "$PHM_RUN_ROOT/data-55" --run-dir "$PHM_RUN_ROOT/runs/all-55" \
+  --epochs 10 --timeout 900
+```
+
+进度及失败原因写入 `runs/all-55/BATCH.json`，各题的 `SCENARIO.json` 和 `evaluation/score.json` 保存在其子目录；有失败时命令返回非零状态。输出目录必须不存在，避免覆盖。网络失败不会用虚构数据替换；修复数据源后可指定新运行目录重试，已准备好的数据会复用。只运行指定方向时，可重复添加 `--task`：
+
+```bash
+phmforge-bench scenario run-all --prepare-missing \
+  --data-home "$PHM_RUN_ROOT/data-55" --run-dir "$PHM_RUN_ROOT/runs/two-cases" \
+  --task engine_health_combined_001 --task pdm_fault_008 --epochs 2
+```
+
+也可先单独准备、再运行一个方向；发动机 `engine-qa` 一次准备 28 个原题记录，其他方向的数据准备名称见 `scenario list`：
+
+```bash
+phmforge-bench prepare --dataset engine-qa --data-root "$PHM_RUN_ROOT/data-55/engine-qa"
+phmforge-bench scenario run --task engine_health_combined_001 \
+  --data-root "$PHM_RUN_ROOT/data-55/engine-qa" \
+  --run-dir "$PHM_RUN_ROOT/runs/engine-case" --epochs 10
+```
+
+这些数据、划分和参考模型不等同于此前 4B/9B 历史实验的代码及成绩。相同数据集的多个入口可能得到同一组预测，不能据此声称完成了相互独立的 55 次实验。
 
 具体安装、真实训练、MCP 和隔离检查见 [验证记录](docs/VALIDATION.md)。
 
@@ -120,6 +163,17 @@ phmforge-bench agent --data-root "$PHM_RUN_ROOT/data/mfpt" \
   --cli "$PHM_CODEX_DIR/codex-x86_64-unknown-linux-musl" \
   --model-base-url https://api.deepseek.com/
 ```
+
+针对 55 个方向中的具体原题，可在准备好对应数据后使用 `scenario agent`。该命令将原题与适配限制放入 Agent 工作区，仍然只对数值子任务做外部评分，使用接口会产生费用：
+
+```bash
+phmforge-bench scenario agent --task engine_health_combined_001 \
+  --data-root "$PHM_RUN_ROOT/data-55/engine-qa" \
+  --run-dir "$PHM_RUN_ROOT/runs/engine-agent" \
+  --cli "$PHM_CODEX_DIR/codex-x86_64-unknown-linux-musl"
+```
+
+也可以用 `phmforge-bench scenario workspace --task <任务编号> --data-root <对应数据目录> --out <新工作区>` 为其他 Agent 生成题目及训练／开发数据。调用方须自行隔离该 Agent。
 
 Agent 可访问训练/开发资料、22 个 PHMForge 风格的 MCP 工具及一份实际训练的初始程序，可以保留或替换该程序。它在隔离环境中开发；指定接口的凭据只在外部网关，测试观测和标签在提交前不挂载。Agent 正常结束并确认收到真实模型响应后，系统冻结 `/submission`，在独立无网络进程中对测试样本推理评分。`PROTOCOL.json` 固定 CLI 版本、模型和预算；`model_gateway/agent/` 记录实际返回模型及用量。可通过 `--max-requests`、`--max-input-tokens`、`--max-output-tokens`、`--max-output-per-request` 和 `--timeout` 设置预算；输入 token 阈值是已完成请求的准入门槛，最后一个已在途请求可能跨过阈值。调用模型会产生接口费用。
 

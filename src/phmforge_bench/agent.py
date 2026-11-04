@@ -16,13 +16,21 @@ from .runner import _ready, evaluate, train_reference, workspace
 
 def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
               max_requests=40, max_input_tokens=4000000, max_output_tokens=65536,
-              max_output_per_request=8192, smoke=False, _context=None):
+              max_output_per_request=8192, smoke=False, _context=None, scenario_task_id=None):
     """Develop a submission without mounting holdout data; then cold-score it.
 
     The Responses-compatible provider and credentials remain in the outer
     process. The agent can use only the task-scoped relay in its network namespace.
     """
-    root, meta = (_context['root'], _context['meta']) if _context else _ready(data_root)
+    if _context and scenario_task_id:
+        raise ValueError('Historical replay context and source scenario cannot be combined')
+    if scenario_task_id:
+        from .scenario import case_data
+        _, root = case_data(scenario_task_id, data_root)
+        _, meta = _ready(root)
+        meta = {**meta, 'task_id': scenario_task_id}
+    else:
+        root, meta = (_context['root'], _context['meta']) if _context else _ready(data_root)
     run, cli = Path(run_dir).resolve(), Path(cli).resolve()
     if run.exists():
         raise FileExistsError(run)
@@ -67,7 +75,11 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
     if _context:
         starter = _context['prepare'](ws)
     else:
-        workspace(root, ws)
+        if scenario_task_id:
+            from .scenario import create_workspace
+            create_workspace(scenario_task_id, root, ws)
+        else:
+            workspace(root, ws)
         starter = train_reference(root, ws/'submission', epochs)
     for name in ['tmp', 'mpl', 'xdg']:
         (ws/'.runtime'/name).mkdir(parents=True)

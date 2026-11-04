@@ -25,6 +25,14 @@ COUNTS = {
 }
 CONDITIONS = {"35Hz12kN": 1, "37.5Hz11kN": 2, "40Hz10kN": 3}
 HEADER = b"Horizontal_vibration_signals,Vertical_vibration_signals"
+# Post-test teardown observations. They apply to terminal recordings only.
+TERMINAL_DAMAGE = {
+    "Bearing1_1": "outer", "Bearing1_2": "outer", "Bearing1_3": "outer",
+    "Bearing1_4": "cage", "Bearing1_5": "inner+outer", "Bearing2_1": "inner",
+    "Bearing2_2": "outer", "Bearing2_3": "cage", "Bearing2_4": "outer",
+    "Bearing2_5": "outer", "Bearing3_1": "outer", "Bearing3_2": "cage+inner+outer+rolling_element",
+    "Bearing3_3": "inner", "Bearing3_4": "inner", "Bearing3_5": "outer",
+}
 
 
 def _record(item):
@@ -184,6 +192,100 @@ def prepare_xjtu(destination, source=None, workers=4, extractor=None):
               "test_bearings": 3, "test_queries": len(gold), "native_records": sum(COUNTS.values()),
               "labels_in_test_input": False, "measured_or_simulated": "laboratory measurements",
               "scope": "measured XJTU-SY RUL numerical research adaptation; not an official PHMForge score"}
+    write_json(dest / "READY.json", report)
+    shutil.rmtree(scratch)
+    return report
+
+
+def prepare_xjtu_terminal(destination, source=None, workers=4, extractor=None):
+    """Build terminal-only diagnosis from source records and teardown labels."""
+    dest = Path(destination).resolve()
+    if dest.exists() and (dest / "READY.json").exists():
+        raise FileExistsError(f"Prepared dataset already exists: {dest}")
+    executable = str(Path(extractor).resolve()) if extractor else (shutil.which("7zz") or shutil.which("7z"))
+    if not executable or not Path(executable).is_file():
+        raise FileNotFoundError("XJTU multi-volume RAR extraction requires a compatible 7zz/7z; install 7-Zip or pass --extractor")
+    dest.mkdir(parents=True, exist_ok=True)
+    source_dir = Path(source).resolve() if source else dest / "raw"
+    pin = resource_json("xjtu_sources.json")
+    volumes = []
+    for item in pin["files"]:
+        path = source_dir / item["filename"]
+        if not source:
+            download(item["url"], path, item["publisher_sha256"], item["bytes"])
+        if not path.is_file() or path.stat().st_size != item["bytes"] or file_sha256(path) != item["publisher_sha256"]:
+            raise ValueError(f"XJTU source volume is missing or fails the published SHA-256 pin: {path}")
+        volumes.append(path)
+    private = dest / "private"
+    private.mkdir()
+    scratch = private / "native_extraction"
+    scratch.mkdir()
+    folders = {value: key for key, value in CONDITIONS.items()}
+    member_paths = {name: f"XJTU-SY_Bearing_Datasets/{folders[int(name[7])]}/{name}/{count}.csv"
+                    for name, count in COUNTS.items()}
+    command = [executable, "x", "-y", "-bb0", "-bsp0", "-mmt=2", f"-o{scratch}", str(volumes[0]),
+               *member_paths.values()]
+    with (private / "extraction.log").open("wb") as log:
+        status = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT, check=False)
+    if status.returncode:
+        raise RuntimeError(f"XJTU extraction failed (exit {status.returncode}); inspect {private / 'extraction.log'}")
+    found = {p.relative_to(scratch).as_posix() for p in scratch.rglob("*") if p.is_file()}
+    if found != set(member_paths.values()):
+        raise ValueError(f"Terminal XJTU extraction is incomplete or unexpected: {len(found)}/15")
+    args = [(scratch / member, name, COUNTS[name]) for name, member in member_paths.items()]
+    with ThreadPoolExecutor(max_workers=max(1, min(workers, 4))) as pool:
+        vectors = {name: values for name, _, values in pool.map(_record, args)}
+
+    rng = np.random.default_rng(278)
+    splits = {"train": [], "val": [], "test": []}
+    for scenario in (1, 2, 3):
+        names = rng.permutation([f"Bearing{scenario}_{i}" for i in range(1, 6)]).tolist()
+        splits["train"].extend(names[:3]); splits["val"].append(names[3]); splits["test"].append(names[4])
+    if len(set(sum(splits.values(), []))) != 15:
+        raise ValueError("XJTU terminal bearing groups overlap")
+    public = dest / "public"
+    data = public / "datasets/XJTU_TERMINAL"
+    data.mkdir(parents=True)
+    holdout = dest / "holdout"
+    holdout.mkdir()
+    key = secrets.token_bytes(32)
+    (private / "holdout_identity_key.hex").write_text(key.hex() + "\n")
+    gold = []
+    for part, names in splits.items():
+        names = names.copy()
+        if part == "test":
+            secrets.SystemRandom().shuffle(names)
+        ids = [hmac.new(key, (part + ':' + name).encode(), hashlib.sha256).hexdigest()[:24] for name in names]
+        groups = [hmac.new(key, ('group:' + name).encode(), hashlib.sha256).hexdigest()[:24] for name in names]
+        payload = {"dataset": np.asarray("XJTU_TERMINAL"), "features": np.asarray([vectors[name] for name in names]),
+                   "sample_ids": np.asarray(ids)}
+        if part != "test":
+            payload.update(labels=np.asarray([TERMINAL_DAMAGE[name] for name in names]), groups=np.asarray(groups))
+            np.savez_compressed(data / f"{part}.npz", **payload)
+        else:
+            np.savez_compressed(holdout / "test.npz", **payload)
+            gold = [{"sample_id": sid, "label": TERMINAL_DAMAGE[name], "group": group}
+                    for name, sid, group in zip(names, ids, groups)]
+    write_json(private / "labels.json", gold)
+    write_json(private / "source_audit.json", {"split": splits, "terminal_members": member_paths})
+    classes = sorted(set(TERMINAL_DAMAGE.values()))
+    write_json(data / "dataset.json", {"dataset": "XJTU_TERMINAL", "seed": 2026102318, "feature_count": 30,
+        "class_names": classes, "architectures": ["mlp"],
+        "group_definition": "One distinct source bearing terminal recording per group; 9/3/3 bearing split.",
+        "data_origin": "Measured XJTU-SY terminal acceleration and publisher post-test damage observations.",
+        "target_scope": "Terminal teardown locations, not early/late fault severity or per-time fault state.",
+        "limitations": ["Only 15 bearings; some classes occur once and not in every split.",
+                        "Damage-location labels are not contemporaneous labels for earlier records.",
+                        "Do not infer unseen fault classes, calibration or field maintenance impacts."]})
+    write_json(public / "dataset_registry.json", {"XJTU_TERMINAL": {"task": "classification",
+        "path": "datasets/XJTU_TERMINAL", "architectures": ["mlp"], "available_splits": ["train", "val"],
+        "test_inputs_visible": False}})
+    _catalog(public)
+    write_json(dest / "SOURCE_BINDINGS.json", pin)
+    report = {"task_id": "pdm_fault_002_terminal_adaptation", "dataset": "XJTU_TERMINAL", "task_kind": "classification",
+        "status": "prepared", "training_bearings": 9, "development_bearings": 3, "test_bearings": 3,
+        "labels_in_test_input": False, "measured_or_simulated": "laboratory measurements",
+        "scope": "XJTU terminal damage-location numeric adaptation; severity and early-state labels unavailable"}
     write_json(dest / "READY.json", report)
     shutil.rmtree(scratch)
     return report

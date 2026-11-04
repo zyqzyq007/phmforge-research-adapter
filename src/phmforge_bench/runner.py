@@ -21,7 +21,7 @@ def _now():
 def _ready(root):
     root = Path(root).resolve()
     meta = json.loads((root / "READY.json").read_text())
-    supported = {"MFPT", "FEMTO", "XJTU", "LDM_RTF", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
+    supported = {"MFPT", "FEMTO", "XJTU", "XJTU_TERMINAL", "LDM_RTF", "ENGINE_QA_HEALTH", "ENGINE_QA_TREND", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
                  *(f"CMAPSS_FD00{i}" for i in range(1, 5))}
     if meta.get("status") != "prepared" or meta.get("dataset") not in supported:
         raise ValueError("Expected a prepared, supported source dataset")
@@ -78,11 +78,17 @@ def workspace(data_root, destination):
         input_contract = (f"The input is an NPZ with `features` (N x {info.get('feature_count', 15)}) and "
                           "string `sample_ids` (plus a dataset identifier).")
         output_contract = "Each row needs `sample_id` and `predicted_label` using the original source label type and class list."
+    identities = ("The original cases and source QA are public; sample identities cannot create a private blind benchmark."
+                  if dataset.startswith("ENGINE_QA_") else
+                  "Test identities are random, not original file names or original NASA unit numbers; never assume IDs are consecutive.")
+    boundary = ("Final observations and labels are not mounted during development; original case source IDs are public in the release manifest."
+                if dataset.startswith("ENGINE_QA_") else
+                "The test input, labels, original filename mappings and final scores are unavailable until external scoring.")
     text = f"""# PHMForge research-adapted task: {meta['task_id']}
 
 {task}
 
-{input_contract} Test identities are random, not original file names or original NASA unit numbers; never assume IDs are consecutive.
+{input_contract} {identities}
 
 `data/` contains permitted training and development material. Final test observations and labels are not supplied during development.
 Produce a self-contained directory containing `solution.py` and any needed fitted model files. It will run as:
@@ -91,7 +97,7 @@ Produce a self-contained directory containing `solution.py` and any needed fitte
 
 Write JSON with a `predictions` list. {output_contract}
 Return exactly one prediction for each input identity. Use only the given training/development material to fit and select models.
-The test input, labels, original filename mappings and final scores are unavailable until external scoring.
+{boundary}
 Use the supplied source metadata and report assumptions; do not invent physical risk, maintenance, or compliance labels.
 """
     (dest / "TASK.md").write_text(text, encoding="utf-8")
@@ -125,6 +131,10 @@ def train_reference(data_root, destination, epochs=10):
         import real_gap_rul_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs_override=epochs)
         module = "real_gap_rul_model"
+    elif meta["dataset"] == "ENGINE_QA_HEALTH":
+        import real_engine_health_model as model
+        audit = model.train(dataset, dest / "model", epochs)
+        module = "real_engine_health_model"
     elif not meta["dataset"].startswith("CMAPSS_"):
         import real_fault_model as model
         audit = model.train(dataset, dest / "model", "mlp", epochs)
@@ -381,6 +391,23 @@ def evaluate(data_root, submission, destination, timeout=300):
             info = json.loads((root / "public/datasets" / meta["dataset"] / "dataset.json").read_text())
             score = classification(rows, gold, declared_classes=info["class_names"])
             score.update(_recording_metrics(rows, gold))
+            if meta["dataset"] == "ENGINE_QA_HEALTH":
+                prediction = {str(row['sample_id']): row for row in rows}
+                heads = ('fan', 'lpc', 'hpc', 'hpt', 'lpt')
+                score['component_annotation_accuracy'] = {
+                    name: sum(prediction[str(g['sample_id'])]['predicted_label'][i] == g['label'][i] for g in gold) / len(gold)
+                    for i, name in enumerate(heads)}
+                for key in ('state', 'timing'):
+                    available = [g for g in gold if g.get(key)]
+                    scored = [g for g in available if prediction[str(g['sample_id'])].get(key) is not None]
+                    score[key + '_publisher_qa'] = {'available': len(available), 'predicted': len(scored),
+                        'accuracy_on_predicted': (sum(prediction[str(g['sample_id'])][key] == g[key] for g in scored) / len(scored)
+                                                  if scored else None)}
+            elif meta["dataset"] == "ENGINE_QA_TREND":
+                prediction = {str(row['sample_id']): row['predicted_label'] for row in rows}
+                for index, key in enumerate(('condition_annotation_accuracy', 'probability_bin_annotation_accuracy')):
+                    score[key] = sum(prediction[str(g['sample_id'])].split('|')[index] == g['label'].split('|')[index] for g in gold) / len(gold)
+                score['physical_failure_probability_calibrated'] = False
         elif is_femto:
             score = _femto_score(rows, gold)
         elif is_xjtu:
