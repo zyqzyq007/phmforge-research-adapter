@@ -16,7 +16,7 @@ def main():
     ls = sub.add_parser("list", help="List integrated tasks and the original scenario denominator")
     ls.add_argument("--all", action="store_true", help="Show the historical 75-scenario inventory")
     prep = sub.add_parser("prepare", help="Download/verify a source and create a reproducible split")
-    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "xjtu-terminal", "ldm-rul", "ims-endpoint", "engine-qa", *(f"cmapss-fd00{i}" for i in range(1, 5)),
+    prep.add_argument("--dataset", choices=["mfpt", "femto-rul", "xjtu-rul", "xjtu-terminal", "ldm-rul", "ims-endpoint", "snu-planetary", "engine-qa", "engine-qa-alternatives", *(f"cmapss-fd00{i}" for i in range(1, 5)),
                                            *pdmb_sources], required=True)
     prep.add_argument("--data-root", type=Path, required=True)
     prep.add_argument("--source", type=Path, help="Pinned offline source file or source directory (see dataset documentation)")
@@ -62,11 +62,13 @@ def main():
     scenarios_list.add_argument("--task")
     scenarios_list.add_argument("--include-additional", action="store_true", help="Include seven related-source partial adaptations")
     scenarios_list.add_argument("--include-substitutions", action="store_true", help="Also include nine explicitly substituted datasets")
+    scenarios_list.add_argument("--include-alternatives", action="store_true", help="Also show four explicit related experiments; original targets remain unavailable")
     scenarios_list.add_argument("--all", action="store_true", help="Include unavailable cases and show all 75 identities")
     scenarios_workspace = scenarios_sub.add_parser("workspace", help="Create an Agent workspace for one case")
     scenarios_workspace.add_argument("--task", required=True)
     scenarios_workspace.add_argument("--data-root", required=True, type=Path)
     scenarios_workspace.add_argument("--out", required=True, type=Path)
+    scenarios_workspace.add_argument("--research-alternative", action="store_true", help="Explicitly select a related experiment for an unavailable original target")
     scenarios_run = scenarios_sub.add_parser("run", help="Fit and evaluate the numeric part of one case")
     scenarios_run.add_argument("--task", required=True)
     scenarios_run.add_argument("--data-root", required=True, type=Path)
@@ -74,6 +76,7 @@ def main():
     scenarios_run.add_argument("--epochs", type=int, default=10)
     scenarios_run.add_argument("--timeout", type=int, default=300)
     scenarios_run.add_argument("--submission", type=Path, help="Reuse a separately fitted submission for the same source dataset")
+    scenarios_run.add_argument("--research-alternative", action="store_true", help="Explicitly select a related experiment for an unavailable original target")
     scenarios_agent = scenarios_sub.add_parser("agent", help="Run a coding agent on one original question's numeric adaptation")
     scenarios_agent.add_argument("--task", required=True)
     scenarios_agent.add_argument("--data-root", required=True, type=Path)
@@ -87,6 +90,7 @@ def main():
     scenarios_agent.add_argument("--max-output-tokens", type=int, default=65536)
     scenarios_agent.add_argument("--max-output-per-request", type=int, default=8192)
     scenarios_agent.add_argument("--smoke", action="store_true")
+    scenarios_agent.add_argument("--research-alternative", action="store_true", help="Explicitly select a related experiment for an unavailable original target")
     scenarios_all = scenarios_sub.add_parser("run-all", help="Run the default 55 entries; additional sources require an explicit flag")
     scenarios_all.add_argument("--data-home", required=True, type=Path)
     scenarios_all.add_argument("--run-dir", required=True, type=Path)
@@ -99,6 +103,7 @@ def main():
     scenarios_all.add_argument("--task", action="append", help="Limit to the specified task(s); may be repeated")
     scenarios_all.add_argument("--include-additional", action="store_true", help="Include seven related-source partial adaptations")
     scenarios_all.add_argument("--include-substitutions", action="store_true", help="Also run nine explicitly substituted datasets")
+    scenarios_all.add_argument("--include-alternatives", action="store_true", help="Also run four explicit related experiments; does not certify their original targets")
     environment = sub.add_parser("environment", help="Restore and execute the full archived research environment")
     envsub = environment.add_subparsers(dest="environment_command", required=True)
     for name, help_text in [("verify", "Verify the complete object store"), ("list", "List actual archived task cases"),
@@ -141,23 +146,24 @@ def main():
     elif args.command == "scenario":
         from .scenario import create_workspace, inventory, run, run_all
         if args.scenario_command == 'list':
-            result = inventory(args.task, args.include_additional, args.include_substitutions, args.all)
+            result = inventory(args.task, args.include_additional, args.include_substitutions, args.all, args.include_alternatives)
         elif args.scenario_command == 'workspace':
-            result = create_workspace(args.task, args.data_root, args.out)
+            result = create_workspace(args.task, args.data_root, args.out, args.research_alternative)
         elif args.scenario_command == 'run':
-            result = run(args.task, args.data_root, args.run_dir, args.epochs, args.timeout, args.submission)
+            result = run(args.task, args.data_root, args.run_dir, args.epochs, args.timeout, args.submission, args.research_alternative)
         elif args.scenario_command == 'agent':
             from .agent import run_agent
             result = run_agent(args.data_root, args.run_dir, args.cli, args.model_base_url,
                 args.epochs, args.timeout, args.max_requests, args.max_input_tokens,
-                args.max_output_tokens, args.max_output_per_request, args.smoke, scenario_task_id=args.task)
+                args.max_output_tokens, args.max_output_per_request, args.smoke, scenario_task_id=args.task,
+                research_alternative=args.research_alternative)
         else:
             source_map = json.loads(args.source_map.read_text()) if args.source_map else None
             if source_map is not None and not isinstance(source_map, dict):
                 parser.error('--source-map must be a JSON object of source names to paths')
             result = run_all(args.data_home, args.run_dir, args.epochs, args.timeout,
                              args.prepare_missing, source_map, args.workers, args.extractor, args.task,
-                             args.include_additional, args.include_substitutions)
+                             args.include_additional, args.include_substitutions, args.include_alternatives)
     elif args.command == "list":
         inv = resource_json("scenario_inventory.json")
         runnable = [x for x in inv["tasks"] if x["release_status"] == "integrated_research_adaptation"]
@@ -176,6 +182,8 @@ def main():
         runnable.append({"id": "research_ldm_bearing_rul", "dataset": "LDM_RTF",
                          "release_status": "integrated_numeric_subtask"})
         runnable.append({"id": "research_ims_recording_endpoint", "dataset": "IMS_ENDPOINT",
+                         "release_status": "integrated_numeric_subtask"})
+        runnable.append({"id": "research_snu_planetary_component_classification", "dataset": "SNU_PLANETARY",
                          "release_status": "integrated_numeric_subtask"})
         runnable.extend({"id": item["task_id"], "dataset": item["dataset"],
                          "release_status": "integrated_numeric_subtask"} for item in pdmb_sources.values())
@@ -206,9 +214,13 @@ def main():
         elif args.dataset == "xjtu-terminal":
             from .xjtu import prepare_xjtu_terminal
             result = prepare_xjtu_terminal(args.data_root, args.source, args.workers, args.extractor)
-        elif args.dataset == "engine-qa":
+        elif args.dataset in ("engine-qa", "engine-qa-alternatives"):
             from .engine import prepare_engine
-            result = prepare_engine(args.data_root, args.source, args.workers)
+            result = prepare_engine(args.data_root, args.source, args.workers,
+                                    include_alternatives=args.dataset == 'engine-qa-alternatives')
+        elif args.dataset == 'snu-planetary':
+            from .snu import prepare_snu
+            result = prepare_snu(args.data_root, args.source)
         elif args.dataset == "ldm-rul":
             from .ldm import prepare_ldm
             result = prepare_ldm(args.data_root, args.source, args.workers)

@@ -97,7 +97,7 @@ class VerifiedForge:
                             reason="Final test labels are external. Explicit file='train' or 'val' is required.")
             if item["task"] == "classification":
                 data = np.load(directory / (split + ".npz"), allow_pickle=False)
-                rows = [dict(sample_id=str(i), label=y, group=str(g))
+                rows = [dict(sample_id=str(i), label=y, group=str(g), dataset=name)
                         for i, y, g in zip(data["sample_ids"], data["labels"].tolist(), data["groups"])]
             elif item.get('format') == 'cmapss_npz':
                 data = np.load(directory / (split + '.npz'), allow_pickle=False)
@@ -138,7 +138,15 @@ class VerifiedForge:
                 # Group statistics require genuine source groups. Caller arrays
                 # without these can support sample metrics only.
                 groups_supplied = all("group" in row for row in actual)
-                metrics = classification(predicted, [{"group": "unspecified", **row} for row in actual])
+                declared_classes = None
+                if any('dataset' in row for row in actual):
+                    datasets = {row.get('dataset') for row in actual}
+                    if len(datasets) != 1 or None in datasets:
+                        raise ValueError('Classification truth records disagree about dataset identity')
+                    _, _, directory = self.dataset(next(iter(datasets)), 'classification')
+                    declared_classes = json.loads((directory / 'dataset.json').read_text())['class_names']
+                metrics = classification(predicted, [{"group": "unspecified", **row} for row in actual],
+                                         declared_classes=declared_classes)
                 if not groups_supplied:
                     for field in ["groups", "mean_recording_accuracy"]:
                         metrics.pop(field)

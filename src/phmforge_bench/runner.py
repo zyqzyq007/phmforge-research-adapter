@@ -21,7 +21,7 @@ def _now():
 def _ready(root):
     root = Path(root).resolve()
     meta = json.loads((root / "READY.json").read_text())
-    supported = {"MFPT", "FEMTO", "XJTU", "XJTU_TERMINAL", "LDM_RTF", "IMS_ENDPOINT", "ENGINE_QA_HEALTH", "ENGINE_QA_TREND", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
+    supported = {"MFPT", "FEMTO", "XJTU", "XJTU_TERMINAL", "LDM_RTF", "IMS_ENDPOINT", "SNU_PLANETARY", "ENGINE_QA_HEALTH", "ENGINE_QA_TREND", *(x["dataset"] for x in resource_json("pdmb_fault_sources.json").values()),
                  *(f"CMAPSS_FD00{i}" for i in range(1, 5))}
     if meta.get("status") != "prepared" or meta.get("dataset") not in supported:
         raise ValueError("Expected a prepared, supported source dataset")
@@ -111,6 +111,34 @@ Use the supplied source metadata and report assumptions; do not invent physical 
     return {"status": "prepared", "task_id": meta["task_id"], "workspace": str(dest)}
 
 
+def training_fingerprint(data_root):
+    """Bind reference reuse to the actual training/development values and config."""
+    import numpy as np
+    root, meta = _ready(data_root)
+    data = root / 'public/datasets' / meta['dataset']
+    digest = hashlib.sha256()
+    present = []
+    for name in ('train.npz', 'val.npz', 'train.txt', 'training_config.json', 'dataset.json'):
+        path = data / name
+        if not path.is_file():
+            continue
+        present.append(name)
+        digest.update(name.encode() + b'\0')
+        if path.suffix == '.npz':
+            with np.load(path, allow_pickle=False) as values:
+                for key in sorted(values.files):
+                    array = values[key]
+                    digest.update(json.dumps([key, array.dtype.str, array.shape]).encode() + b'\0')
+                    digest.update(array.tobytes(order='C'))
+        elif path.suffix == '.json':
+            digest.update(json.dumps(json.loads(path.read_text()), sort_keys=True).encode())
+        else:
+            digest.update(path.read_bytes())
+    if not present:
+        raise ValueError('No training/development data for binding a reused reference')
+    return digest.hexdigest()
+
+
 def train_reference(data_root, destination, epochs=10):
     """Fit a genuine CPU MLP; the resulting submission is evaluated separately."""
     root, meta = _ready(data_root)
@@ -160,6 +188,7 @@ a = p.parse_args()
 infer(Path(__file__).resolve().parent / 'model/model.pt', a.input, a.output)
 ''', encoding="utf-8")
     write_json(dest / "SUBMISSION.json", {"task_id": meta["task_id"], "dataset": meta["dataset"],
+        "training_fingerprint": training_fingerprint(root),
         "kind": "genuine fitted MLP reference", "epochs": epochs, "optimizer_steps": audit["optimizer_steps"],
         "nonzero_gradient_steps": audit["nonzero_gradient_steps"],
         "changed_parameter_tensors": audit["changed_parameter_tensors"], "final_labels_read_during_fit": False})

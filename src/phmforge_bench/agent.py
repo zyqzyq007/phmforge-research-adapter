@@ -16,7 +16,8 @@ from .runner import _ready, evaluate, train_reference, workspace
 
 def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
               max_requests=40, max_input_tokens=4000000, max_output_tokens=65536,
-              max_output_per_request=8192, smoke=False, _context=None, scenario_task_id=None):
+              max_output_per_request=8192, smoke=False, _context=None, scenario_task_id=None,
+              research_alternative=False):
     """Develop a submission without mounting holdout data; then cold-score it.
 
     The Responses-compatible provider and credentials remain in the outer
@@ -26,7 +27,7 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
         raise ValueError('Historical replay context and source scenario cannot be combined')
     if scenario_task_id:
         from .scenario import case_data
-        _, root = case_data(scenario_task_id, data_root)
+        _, root = case_data(scenario_task_id, data_root, research_alternative)
         _, meta = _ready(root)
         meta = {**meta, 'task_id': scenario_task_id}
     else:
@@ -77,7 +78,7 @@ def run_agent(data_root, run_dir, cli, base_url, epochs=1, timeout=1200,
     else:
         if scenario_task_id:
             from .scenario import create_workspace
-            create_workspace(scenario_task_id, root, ws)
+            create_workspace(scenario_task_id, root, ws, research_alternative)
         else:
             workspace(root, ws)
         starter = train_reference(root, ws/'submission', epochs)

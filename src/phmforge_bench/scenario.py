@@ -4,53 +4,72 @@ from pathlib import Path
 import sys
 
 from .data import resource_json, write_json
-from .runner import _ready, evaluate, train_reference, workspace
+from .runner import _ready, evaluate, train_reference, training_fingerprint, workspace
 
 
-def inventory(task=None, include_additional=False, include_substitutions=False, include_unavailable=False):
+def inventory(task=None, include_additional=False, include_substitutions=False, include_unavailable=False,
+              include_alternatives=False):
     base = resource_json('source55_inventory.json')['tasks']
     additional = resource_json('source20_inventory.json')['tasks']
+    alternatives = {row['task_id']: row for row in resource_json('research_alternatives.json')['tasks']}
+
+    def selected(row):
+        if not include_alternatives or row['task_id'] not in alternatives:
+            return row
+        alternative = alternatives[row['task_id']]
+        return {**row, **alternative, 'original_status': row['status'],
+                'original_unavailable_reason': row['blocked_reason'],
+                'limitations': row['limitations'] + alternative['limitations']}
+
     if task:
         found = [row for row in base + additional if row['task_id'] == task]
         if len(found) != 1:
             raise ValueError(f'Unknown historical task ID: {task}')
-        return found[0]
+        return selected(found[0])
     tasks = list(base)
-    if include_additional or include_substitutions or include_unavailable:
+    if include_additional or include_substitutions or include_unavailable or include_alternatives:
         tasks.extend(row for row in additional if row['status'] == 'related_source_partial_adaptation')
-    if include_substitutions or include_unavailable:
+    if include_substitutions or include_unavailable or include_alternatives:
         tasks.extend(row for row in additional if row['status'] == 'source_substitution')
-    if include_unavailable:
-        tasks.extend(row for row in additional if row['status'] == 'unavailable')
+    if include_unavailable or include_alternatives:
+        tasks.extend(selected(row) for row in additional if row['status'] == 'unavailable')
     return {'historical_task_entries': len(tasks), 'original_task_entries': 75,
             'base_entries': 55, 'additional_related_partial': 7,
             'additional_explicit_substitutions': 9, 'additional_unavailable': 4,
+            'explicit_research_alternatives_selected': 4 if include_alternatives else 0,
             'interpretation': 'Numeric adaptations are partial; related or substituted sources and shared fits do not create complete or independent original-task results.',
-            'tasks': [{key: row.get(key) for key in ('task_id', 'dataset', 'prepare_dataset', 'numeric_scope', 'status', 'source_relation')}
+            'tasks': [{key: row.get(key) for key in ('task_id', 'dataset', 'prepare_dataset', 'numeric_scope', 'status', 'source_relation', 'adapter_id', 'original_target_status')}
                       for row in tasks]}
 
 
-def case_data(task, data_root):
-    item = inventory(task)
+def case_data(task, data_root, research_alternative=False):
+    item = inventory(task, include_alternatives=research_alternative)
     if item['status'] == 'unavailable':
         raise ValueError(f"Task {task} is unavailable: {item['blocked_reason']}")
     root = Path(data_root).resolve()
-    if item['prepare_dataset'] == 'engine-qa' and (root / 'cases' / task / 'READY.json').is_file():
-        root = root / 'cases' / task
+    is_engine = item['prepare_dataset'] in ('engine-qa', 'engine-qa-alternatives')
+    case_id = item.get('case_id', task)
+    if is_engine and (root / 'cases' / case_id / 'READY.json').is_file():
+        root = root / 'cases' / case_id
     root, ready = _ready(root)
     if ready['dataset'] != item['dataset']:
         raise ValueError(f"{task} requires {item['dataset']}; the supplied root contains {ready['dataset']}")
-    if item['prepare_dataset'] == 'engine-qa' and ready['task_id'] != task:
+    if is_engine and ready['task_id'] != case_id:
         raise ValueError('The engine case root must match the requested task identity')
     return item, root
 
 
-def create_workspace(task, data_root, out):
-    item, root = case_data(task, data_root)
+def create_workspace(task, data_root, out, research_alternative=False):
+    item, root = case_data(task, data_root, research_alternative)
     result = workspace(root, out)
     dest = Path(out).resolve()
     with (dest / 'TASK.md').open('a', encoding='utf-8') as f:
         f.write('\n## Original question and adaptation boundary\n\n')
+        if item.get('adapted_question'):
+            f.write('This explicitly selected experiment replaces or restricts the original source/target. '
+                    'The original target remains unavailable.\n\n')
+            f.write('Current experiment question: ' + item['adapted_question'] + '\n\n')
+            f.write('Historical question for provenance only; its template values are not the experiment observations:\n\n')
         f.write(item['original_question'] + '\n\n')
         f.write('The runnable numeric part is: ' + item['numeric_scope'] + '.\n')
         if item.get('source_relation') in ('substitution', 'related_dataset'):
@@ -62,6 +81,7 @@ def create_workspace(task, data_root, out):
     meta = json.loads((dest / 'WORKSPACE.json').read_text())
     meta.update(original_task_id=task, source_numeric_scope=item['numeric_scope'],
                 source_relation=item.get('source_relation', 'existing_partial_adaptation'),
+                adapter_id=item.get('adapter_id'), original_target_status=item.get('original_target_status'),
                 limitations=item['limitations'], complete_original_task_claimed=False)
     write_json(dest / 'WORKSPACE.json', meta)
     return {**result, 'original_task_id': task, 'complete_original_task_claimed': False}
@@ -90,8 +110,8 @@ def _rank_latest_prefixes(predictions, observations):
             'interpretation': 'One latest available prefix per unit, which may represent different stages; lower predicted RUL is not validated physical risk.'}
 
 
-def run(task, data_root, out, epochs=10, timeout=300, submission=None):
-    item, root = case_data(task, data_root)
+def run(task, data_root, out, epochs=10, timeout=300, submission=None, research_alternative=False):
+    item, root = case_data(task, data_root, research_alternative)
     dest = Path(out).resolve()
     if dest.exists():
         raise FileExistsError(dest)
@@ -104,6 +124,8 @@ def run(task, data_root, out, epochs=10, timeout=300, submission=None):
             manifest = json.loads((model / 'SUBMISSION.json').read_text())
             if manifest['dataset'] != item['dataset']:
                 raise ValueError('Reused submission was trained for a different dataset')
+            if manifest.get('training_fingerprint') != training_fingerprint(root):
+                raise ValueError('Reused reference does not match the current training/development data and configuration; train a new reference.')
             fit = {'status': 'reused', 'submission': str(model), 'trained_again': False}
         else:
             model = dest / 'submission'
@@ -112,6 +134,8 @@ def run(task, data_root, out, epochs=10, timeout=300, submission=None):
         summary = {'status': 'completed', 'historical_task_id': task, 'dataset': item['dataset'],
                    'numeric_scope': item['numeric_scope'], 'complete_original_task_claimed': False,
                    'source_relation': item.get('source_relation', 'existing_partial_adaptation'),
+                   'adapter_id': item.get('adapter_id'), 'original_target_status': item.get('original_target_status'),
+                   'adapted_question': item.get('adapted_question'),
                    'original_question': item['original_question'], 'limitations': item['limitations'],
                    'training': fit, 'evaluation': scored,
                    'interpretation': 'Source-based numerical research adaptation; a completed execution is not a correct or complete original-task answer.'}
@@ -153,9 +177,15 @@ def _prepare_source(name, dest, source_map, workers, extractor):
             source = Path(source_map[other]).expanduser()
         elif (dest.parent / other / 'raw').is_dir():
             source = dest.parent / other / 'raw'
-    if name == 'engine-qa':
+    if name in ('engine-qa', 'engine-qa-alternatives'):
         from .engine import prepare_engine
-        return prepare_engine(dest, source, workers)
+        cached = dest.parent / 'engine-qa/raw'
+        if name == 'engine-qa-alternatives' and source is None and all((cached / file).is_file() for file in ('train_qa.jsonl', 'test_qa.jsonl')):
+            source = cached
+        return prepare_engine(dest, source, workers, include_alternatives=name == 'engine-qa-alternatives')
+    if name == 'snu-planetary':
+        from .snu import prepare_snu
+        return prepare_snu(dest, source)
     if name == 'mfpt':
         from .data import prepare_mfpt
         return prepare_mfpt(dest, source, workers)
@@ -181,7 +211,7 @@ def _prepare_source(name, dest, source_map, workers, extractor):
 
 def run_all(data_home, out, epochs=10, timeout=600, prepare_missing=False,
             source_map=None, workers=4, extractor=None, selected_tasks=None,
-            include_additional=False, include_substitutions=False):
+            include_additional=False, include_substitutions=False, include_alternatives=False):
     """Run selected entries, reusing a fit for the same source and preserving failures."""
     home, dest = Path(data_home).resolve(), Path(out).resolve()
     if dest.exists():
@@ -189,10 +219,11 @@ def run_all(data_home, out, epochs=10, timeout=600, prepare_missing=False,
     if dest.is_relative_to(home) or home.is_relative_to(dest):
         raise ValueError('Batch run directory must be separate from the data home')
     source_map = source_map or {}
-    tasks = inventory(include_additional=include_additional, include_substitutions=include_substitutions)['tasks']
+    tasks = inventory(include_additional=include_additional, include_substitutions=include_substitutions,
+                      include_alternatives=include_alternatives)['tasks']
     if selected_tasks:
         selected = set(selected_tasks)
-        all_tasks = inventory(include_unavailable=True)['tasks']
+        all_tasks = inventory(include_unavailable=True, include_alternatives=include_alternatives)['tasks']
         known = {item['task_id'] for item in all_tasks}
         if selected - known:
             raise ValueError(f'Unknown task IDs: {sorted(selected - known)}')
@@ -217,10 +248,12 @@ def run_all(data_home, out, epochs=10, timeout=600, prepare_missing=False,
                 except Exception as error:
                     source_errors[source_name] = f'{type(error).__name__}: {error}'
                     raise
-            value = run(ident, source_root, dest / 'tasks' / ident, epochs, timeout, models.get(dataset))
+            value = run(ident, source_root, dest / 'tasks' / ident, epochs, timeout, models.get(dataset),
+                        research_alternative=include_alternatives)
             if dataset not in models:
                 models[dataset] = dest / 'tasks' / ident / 'submission'
             results.append({'task_id': ident, 'dataset': dataset, 'source_relation': item['source_relation'], 'status': 'completed',
+                            'adapter_id': item.get('adapter_id'), 'original_target_status': item.get('original_target_status'),
                             'score': value['evaluation']['score']})
         except Exception as error:
             results.append({'task_id': ident, 'dataset': dataset, 'status': 'failed',
@@ -229,6 +262,8 @@ def run_all(data_home, out, epochs=10, timeout=600, prepare_missing=False,
                  'completed': sum(x['status'] == 'completed' for x in results),
                  'failed': sum(x['status'] == 'failed' for x in results), 'results': results,
                  'source_preparation_errors': source_errors, 'fitted_datasets': sorted(models),
+                 'research_alternatives_selected': sum(row['status'] == 'explicit_research_alternative' for row in tasks),
+                 'original_tasks_completed_claimed': False,
                  'interpretation': 'Shared-data numeric adaptations; complete original tasks and independent fits are not claimed.'}
         write_json(dest / 'BATCH.json', state)
         print(f"Scenario {len(results)}/{len(tasks)}: {ident}: {results[-1]['status']}", file=sys.stderr, flush=True)

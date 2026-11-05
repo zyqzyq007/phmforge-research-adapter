@@ -1,0 +1,2996 @@
+{
+  "version": "0.8.0",
+  "validation_date_beijing": "2026-11-05",
+  "run_id": "20261105T042945Z_source75_complete",
+  "environment": {
+    "os": "Linux x86-64",
+    "python": "3.12.11",
+    "compute": "CPU only",
+    "paid_model_calls": 0,
+    "dependency_install": "new virtual environment; declared dependencies downloaded from public PyPI and official PyTorch CPU indexes",
+    "pip_check": "passed",
+    "installed_wheel_tests_passed": 42,
+    "cross_machine_execution_verified": false
+  },
+  "source_preparation": {
+    "prepared_arrays_reused": false,
+    "description": "Rebuilt all selected datasets from pinned publisher source bytes. Existing hash-verified original files and raw engine ranges were reused as transport caches; no previous prepared train/test arrays or fitted weights were used.",
+    "all_sources_fully_redownloaded_this_run": false,
+    "xjtu_native_recordings_recomputed": 9216,
+    "new_engine_alternative_prefixes_downloaded_and_verified": 20,
+    "snu_online_transfer": {
+      "status": "passed",
+      "url": "https://ndownloader.figshare.com/files/68833543",
+      "bytes": 1259965685,
+      "sha256": "9725b05b076ffe229a841c086b146aa76783d1c975cfdfeda1281c564f536750",
+      "full_publisher_archive_downloaded": true,
+      "transfer_mode": "standard prefix followed by eight bounded range workers",
+      "standard_transfer_prefix_bytes": 189792256,
+      "remaining_verified_ranges": 64,
+      "tls_verification_enabled": true,
+      "elapsed_parallel_seconds": 2611.618751760572
+    },
+    "alternative_source_independent_checks": {
+      "snu_whole_member_hashes": 14,
+      "snu_selected_feature_windows": 70,
+      "engine_source_prefixes": 20
+    }
+  },
+  "numeric_execution": {
+    "requested": 75,
+    "completed": 75,
+    "failed": 0,
+    "epochs_per_shared_reference": 2,
+    "shared_reference_programs": 18,
+    "scopes": {
+      "partial_numerical_research_adaptation": 55,
+      "related_source_partial_adaptation": 7,
+      "source_substitution": 9,
+      "explicit_research_alternative": 4
+    },
+    "independent_audit": "passed",
+    "audited_checks": [
+      "identity coverage and input/label/prediction hashes",
+      "frozen submission hashes",
+      "actual initial-versus-selected parameter tensors",
+      "training/development fingerprint",
+      "independent sklearn classification metrics",
+      "independent regression and subgroup metrics",
+      "test IDs absent from public train/development arrays",
+      "explicit alternatives and unknown fields"
+    ],
+    "models": [
+      {
+        "dataset": "ENGINE_QA_HEALTH",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 4
+      },
+      {
+        "dataset": "ENGINE_QA_TREND",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 2
+      },
+      {
+        "dataset": "CMAPSS_FD001",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 24
+      },
+      {
+        "dataset": "CWRU",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 420
+      },
+      {
+        "dataset": "FEMTO",
+        "changed_parameter_tensors_independent": 18,
+        "nonzero_gradient_steps": 176
+      },
+      {
+        "dataset": "XJTU",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 90
+      },
+      {
+        "dataset": "XJTU_TERMINAL",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 2
+      },
+      {
+        "dataset": "ELECTRICMOTORVIBRATIONS",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 32
+      },
+      {
+        "dataset": "ROTORBROKENBAR",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 70
+      },
+      {
+        "dataset": "PADERBORN",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 272
+      },
+      {
+        "dataset": "HUST",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 370
+      },
+      {
+        "dataset": "MFPT",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 32
+      },
+      {
+        "dataset": "MENDELEY",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 98
+      },
+      {
+        "dataset": "UOC",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 18
+      },
+      {
+        "dataset": "IMS_ENDPOINT",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 16
+      },
+      {
+        "dataset": "LDM_RTF",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 28
+      },
+      {
+        "dataset": "CMAPSS_FD002",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 60
+      },
+      {
+        "dataset": "SNU_PLANETARY",
+        "changed_parameter_tensors_independent": 6,
+        "nonzero_gradient_steps": 8
+      }
+    ],
+    "results": [
+      {
+        "task_id": "engine_health_combined_001",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_002",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_003",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_004",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_005",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_006",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_007",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_008",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_009",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_010",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_011",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_012",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_013",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_014",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_015",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_016",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_017",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_018",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_019",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_020",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_021",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_022",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_023",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_024",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_025",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_026",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_027",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_028",
+        "dataset": "ENGINE_QA_HEALTH",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_cost_benefit_001",
+        "dataset": "CMAPSS_FD001",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 100,
+        "mae": 19.110271253585815,
+        "rmse": 26.257624307101747,
+        "bias": -3.0391932201385496,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_cost_benefit_002",
+        "dataset": "CWRU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 4375,
+        "accuracy": 0.7787428571428572,
+        "macro_f1": 0.6521099340774481,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_cost_benefit_003",
+        "dataset": "FEMTO",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_cost_benefit_004",
+        "dataset": "XJTU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 15,
+        "mae": 491.9589839935303,
+        "rmse": 705.3202506296951,
+        "bias": -239.5962459564209,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_001",
+        "dataset": "CWRU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 4375,
+        "accuracy": 0.7787428571428572,
+        "macro_f1": 0.6521099340774481,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_002",
+        "dataset": "XJTU_TERMINAL",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 3,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_003",
+        "dataset": "ELECTRICMOTORVIBRATIONS",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 324,
+        "accuracy": 0.8425925925925926,
+        "macro_f1": 0.6978806051519695,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_004",
+        "dataset": "ROTORBROKENBAR",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 371,
+        "accuracy": 0.6091644204851752,
+        "macro_f1": 0.5845806895347733,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_006",
+        "dataset": "PADERBORN",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 3354,
+        "accuracy": 0.24716756112104948,
+        "macro_f1": 0.16268088824198262,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_007",
+        "dataset": "HUST",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 3557,
+        "accuracy": 0.7585043576047231,
+        "macro_f1": 0.7335436778610226,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_008",
+        "dataset": "MFPT",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 684,
+        "accuracy": 0.5730994152046783,
+        "macro_f1": 0.4788274317222366,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_009",
+        "dataset": "MENDELEY",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 960,
+        "accuracy": 0.7927083333333333,
+        "macro_f1": 0.7918117413208576,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_011",
+        "dataset": "PADERBORN",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 3354,
+        "accuracy": 0.24716756112104948,
+        "macro_f1": 0.16268088824198262,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_012",
+        "dataset": "HUST",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 3557,
+        "accuracy": 0.7585043576047231,
+        "macro_f1": 0.7335436778610226,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_013",
+        "dataset": "MFPT",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 684,
+        "accuracy": 0.5730994152046783,
+        "macro_f1": 0.4788274317222366,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_014",
+        "dataset": "MENDELEY",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 960,
+        "accuracy": 0.7927083333333333,
+        "macro_f1": 0.7918117413208576,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_015",
+        "dataset": "ELECTRICMOTORVIBRATIONS",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 324,
+        "accuracy": 0.8425925925925926,
+        "macro_f1": 0.6978806051519695,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_001",
+        "dataset": "CMAPSS_FD001",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 100,
+        "mae": 19.110271253585815,
+        "rmse": 26.257624307101747,
+        "bias": -3.0391932201385496,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_003",
+        "dataset": "FEMTO",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_004",
+        "dataset": "XJTU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 15,
+        "mae": 491.9589839935303,
+        "rmse": 705.3202506296951,
+        "bias": -239.5962459564209,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_001",
+        "dataset": "CMAPSS_FD001",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 100,
+        "mae": 19.110271253585815,
+        "rmse": 26.257624307101747,
+        "bias": -3.0391932201385496,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_002",
+        "dataset": "CWRU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 4375,
+        "accuracy": 0.7787428571428572,
+        "macro_f1": 0.6521099340774481,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_003",
+        "dataset": "ELECTRICMOTORVIBRATIONS",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 324,
+        "accuracy": 0.8425925925925926,
+        "macro_f1": 0.6978806051519695,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_004",
+        "dataset": "ROTORBROKENBAR",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 371,
+        "accuracy": 0.6091644204851752,
+        "macro_f1": 0.5845806895347733,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_006",
+        "dataset": "CMAPSS_FD001",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 100,
+        "mae": 19.110271253585815,
+        "rmse": 26.257624307101747,
+        "bias": -3.0391932201385496,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_008",
+        "dataset": "FEMTO",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_009",
+        "dataset": "XJTU",
+        "source_relation": "existing_partial_adaptation",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 15,
+        "mae": 491.9589839935303,
+        "rmse": 705.3202506296951,
+        "bias": -239.5962459564209,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_010",
+        "dataset": "UOC",
+        "source_relation": "related_original_source",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 180,
+        "accuracy": 0.49444444444444446,
+        "macro_f1": 0.3800257150421027,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_007",
+        "dataset": "CWRU",
+        "source_relation": "related_original_source",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 4375,
+        "accuracy": 0.7787428571428572,
+        "macro_f1": 0.6521099340774481,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_005",
+        "dataset": "IMS_ENDPOINT",
+        "source_relation": "related_original_source",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 20,
+        "mae": 1884.693115234375,
+        "rmse": 2078.221600690841,
+        "bias": 1884.693115234375,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_011",
+        "dataset": "IMS_ENDPOINT",
+        "source_relation": "related_original_source",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 20,
+        "mae": 1884.693115234375,
+        "rmse": 2078.221600690841,
+        "bias": 1884.693115234375,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_010",
+        "dataset": "IMS_ENDPOINT",
+        "source_relation": "related_original_source",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 20,
+        "mae": 1884.693115234375,
+        "rmse": 2078.221600690841,
+        "bias": 1884.693115234375,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_008",
+        "dataset": "LDM_RTF",
+        "source_relation": "related_dataset",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 25,
+        "mae": 1961.3370220947265,
+        "rmse": 2656.4841318761983,
+        "bias": 843.2916375732422,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_014",
+        "dataset": "LDM_RTF",
+        "source_relation": "related_dataset",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 25,
+        "mae": 1961.3370220947265,
+        "rmse": 2656.4841318761983,
+        "bias": 843.2916375732422,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_002",
+        "dataset": "FEMTO",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_006",
+        "dataset": "XJTU",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 15,
+        "mae": 491.9589839935303,
+        "rmse": 705.3202506296951,
+        "bias": -239.5962459564209,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_007",
+        "dataset": "FEMTO",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_009",
+        "dataset": "LDM_RTF",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 25,
+        "mae": 1961.3370220947265,
+        "rmse": 2656.4841318761983,
+        "bias": 843.2916375732422,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_010",
+        "dataset": "CMAPSS_FD002",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 259,
+        "mae": 39.971491971991696,
+        "rmse": 47.68570076436351,
+        "bias": -0.513726738889245,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_012",
+        "dataset": "XJTU",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 15,
+        "mae": 491.9589839935303,
+        "rmse": 705.3202506296951,
+        "bias": -239.5962459564209,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_013",
+        "dataset": "FEMTO",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 11,
+        "mae": 4751.943248401989,
+        "rmse": 5849.699779087194,
+        "bias": 4690.306884765625,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_rul_015",
+        "dataset": "LDM_RTF",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 25,
+        "mae": 1961.3370220947265,
+        "rmse": 2656.4841318761983,
+        "bias": 843.2916375732422,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_cost_benefit_005",
+        "dataset": "CMAPSS_FD001",
+        "source_relation": "substitution",
+        "adapter_id": null,
+        "original_target_status": null,
+        "n": 100,
+        "mae": 19.110271253585815,
+        "rmse": 26.257624307101747,
+        "bias": -3.0391932201385496,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_fault_005",
+        "dataset": "SNU_PLANETARY",
+        "source_relation": "different_source_and_restricted_target",
+        "adapter_id": "research_snu_pdm_fault_005_component_core",
+        "original_target_status": "unavailable",
+        "n": 420,
+        "accuracy": 0.5023809523809524,
+        "macro_f1": 0.2770245084335104,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "pdm_safety_005",
+        "dataset": "SNU_PLANETARY",
+        "source_relation": "different_source_and_restricted_target",
+        "adapter_id": "research_snu_pdm_safety_005_component_core",
+        "original_target_status": "unavailable",
+        "n": 420,
+        "accuracy": 0.5023809523809524,
+        "macro_f1": 0.2770245084335104,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_029",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "replaced_untraceable_template_input",
+        "adapter_id": "research_engine_template_029_alternative",
+        "original_target_status": "unavailable",
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      },
+      {
+        "task_id": "engine_health_combined_030",
+        "dataset": "ENGINE_QA_TREND",
+        "source_relation": "replaced_untraceable_template_input",
+        "adapter_id": "research_engine_template_030_alternative",
+        "original_target_status": "unavailable",
+        "n": 1,
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "complete_original_task_claimed": false
+      }
+    ]
+  },
+  "extra_standalone_reference_models": [
+    {
+      "dataset": "CMAPSS_FD003",
+      "parameter_tensors_changed": 6,
+      "nonzero_gradient_steps": 28,
+      "n": 100,
+      "mae": 22.147850074768066,
+      "rmse": 28.00831807935363,
+      "bias": 0.4970603179931641
+    },
+    {
+      "dataset": "CMAPSS_FD004",
+      "parameter_tensors_changed": 6,
+      "nonzero_gradient_steps": 70,
+      "n": 248,
+      "mae": 40.5851871736588,
+      "rmse": 48.7940873934183,
+      "bias": -1.58405642355642
+    }
+  ],
+  "mcp": {
+    "task_types_passed": 20,
+    "tool_calls_per_type": 7,
+    "actual_tool_calls_passed": 140,
+    "tool_names_discovered_per_service": 22,
+    "all_named_tools_scientifically_supported_claimed": false,
+    "scope": "Each type actually fitted a one-epoch model, loaded label-free development observations, predicted, verified development metrics and rejected final observations and truth.",
+    "results": [
+      {
+        "dataset": "CMAPSS_FD001",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 100,
+        "nonzero_gradient_steps": 12,
+        "metric": {
+          "n": 100,
+          "mae": 24.248318085670473,
+          "rmse": 30.832897997980822,
+          "bias": -5.820776925086975,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "CMAPSS_FD002",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 260,
+        "nonzero_gradient_steps": 30,
+        "metric": {
+          "n": 260,
+          "mae": 39.44013387239897,
+          "rmse": 48.24870154891737,
+          "bias": -10.233664527306189,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "CMAPSS_FD003",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 100,
+        "nonzero_gradient_steps": 14,
+        "metric": {
+          "n": 100,
+          "mae": 44.15705150604248,
+          "rmse": 62.05796279134557,
+          "bias": -21.948426780700682,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "CMAPSS_FD004",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 250,
+        "nonzero_gradient_steps": 35,
+        "metric": {
+          "n": 250,
+          "mae": 46.40282286071778,
+          "rmse": 58.53618979882773,
+          "bias": -5.699946640014648,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "CWRU",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 4014,
+        "nonzero_gradient_steps": 210,
+        "metric": {
+          "n": 4014,
+          "accuracy": 0.6155954160438465,
+          "macro_f1": 0.5504768204632674,
+          "balanced_accuracy": 0.571524253132027,
+          "class_order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "confusion_matrix": [
+            [
+              473,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1251,
+              399,
+              0
+            ],
+            [
+              0,
+              668,
+              747,
+              0
+            ],
+            [
+              0,
+              476,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 473,
+              "true_positive": 473,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            {
+              "label": 1,
+              "support": 1650,
+              "true_positive": 1251,
+              "false_positive": 1144,
+              "false_negative": 399,
+              "precision": 0.5223382045929019,
+              "recall": 0.7581818181818182,
+              "f1": 0.6185414091470952
+            },
+            {
+              "label": 2,
+              "support": 1415,
+              "true_positive": 747,
+              "false_positive": 399,
+              "false_negative": 668,
+              "precision": 0.6518324607329843,
+              "recall": 0.5279151943462898,
+              "f1": 0.5833658727059742
+            },
+            {
+              "label": 3,
+              "support": 476,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 476,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          ],
+          "groups": 18,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.655509975426671,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "ELECTRICMOTORVIBRATIONS",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 364,
+        "nonzero_gradient_steps": 16,
+        "metric": {
+          "n": 364,
+          "accuracy": 0.47802197802197804,
+          "macro_f1": 0.29610829103214886,
+          "balanced_accuracy": 0.375,
+          "class_order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              49,
+              0
+            ],
+            [
+              0,
+              0,
+              69,
+              0
+            ],
+            [
+              0,
+              0,
+              102,
+              0
+            ],
+            [
+              0,
+              0,
+              72,
+              72
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 49,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 49,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": 1,
+              "support": 69,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 69,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": 2,
+              "support": 102,
+              "true_positive": 102,
+              "false_positive": 190,
+              "false_negative": 0,
+              "precision": 0.3493150684931507,
+              "recall": 1.0,
+              "f1": 0.5177664974619289
+            },
+            {
+              "label": 3,
+              "support": 144,
+              "true_positive": 72,
+              "false_positive": 0,
+              "false_negative": 72,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            }
+          ],
+          "groups": 6,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.5000964692263167,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "ENGINE_QA_HEALTH",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 32,
+        "nonzero_gradient_steps": 2,
+        "metric": {
+          "n": 32,
+          "accuracy": 0.09375,
+          "macro_f1": 0.06783625730994153,
+          "balanced_accuracy": 0.09375,
+          "class_order": [
+            "00000",
+            "00010",
+            "00011",
+            "00100",
+            "01000",
+            "01100",
+            "10000",
+            "11000",
+            "11111"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": "00000",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "00010",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "00011",
+              "support": 4,
+              "true_positive": 2,
+              "false_positive": 13,
+              "false_negative": 2,
+              "precision": 0.13333333333333333,
+              "recall": 0.5,
+              "f1": 0.21052631578947367
+            },
+            {
+              "label": "00100",
+              "support": 4,
+              "true_positive": 1,
+              "false_positive": 0,
+              "false_negative": 3,
+              "precision": 1.0,
+              "recall": 0.25,
+              "f1": 0.4
+            },
+            {
+              "label": "01000",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "01100",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "10000",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 2,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "11000",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 14,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "11111",
+              "support": 4,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          ],
+          "groups": 32,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.09375,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "ENGINE_QA_TREND",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 48,
+        "nonzero_gradient_steps": 1,
+        "metric": {
+          "n": 48,
+          "accuracy": 0.0,
+          "macro_f1": 0.0,
+          "balanced_accuracy": 0.0,
+          "class_order": [
+            "Bad Condition|50%-70%",
+            "Extremely Poor Condition|1%-10%",
+            "Extremely Poor Condition|10%-30%",
+            "Extremely Poor Condition|50%-70%",
+            "Good Condition|1%-10%",
+            "Good Condition|10%-30%",
+            "Moderate Condition|10%-30%",
+            "Moderate Condition|70%-100%",
+            "Poor Condition|30%-50%",
+            "Poor Condition|50%-70%",
+            "Poor Condition|70%-100%"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              5,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              6,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": "Bad Condition|50%-70%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 10,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Extremely Poor Condition|1%-10%",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 12,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Extremely Poor Condition|10%-30%",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 14,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Extremely Poor Condition|50%-70%",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 1,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Good Condition|1%-10%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Good Condition|10%-30%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Moderate Condition|10%-30%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 1,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Moderate Condition|70%-100%",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 2,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Poor Condition|30%-50%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 2,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Poor Condition|50%-70%",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 6,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "Poor Condition|70%-100%",
+              "support": 8,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 8,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          ],
+          "groups": 6,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.0,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "FEMTO",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 9,
+        "nonzero_gradient_steps": 95,
+        "metric": {
+          "n": 9,
+          "mae": 2164.251420074039,
+          "rmse": 2574.1808179930244,
+          "bias": -1003.832935916053,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "HUST",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 3749,
+        "nonzero_gradient_steps": 185,
+        "metric": {
+          "n": 3749,
+          "accuracy": 0.8031475060016005,
+          "macro_f1": 0.7513413128427643,
+          "balanced_accuracy": 0.7715022513303316,
+          "class_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "confusion_matrix": [
+            [
+              600,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              388,
+              120,
+              0,
+              19,
+              59,
+              14
+            ],
+            [
+              2,
+              7,
+              589,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              23,
+              11,
+              63,
+              19,
+              184,
+              48
+            ],
+            [
+              0,
+              4,
+              3,
+              2,
+              447,
+              68,
+              76
+            ],
+            [
+              0,
+              15,
+              15,
+              0,
+              0,
+              368,
+              2
+            ],
+            [
+              34,
+              1,
+              0,
+              0,
+              2,
+              7,
+              556
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 600,
+              "true_positive": 600,
+              "false_positive": 37,
+              "false_negative": 0,
+              "precision": 0.9419152276295133,
+              "recall": 1.0,
+              "f1": 0.9700889248181084
+            },
+            {
+              "label": 1,
+              "support": 600,
+              "true_positive": 388,
+              "false_positive": 50,
+              "false_negative": 212,
+              "precision": 0.8858447488584474,
+              "recall": 0.6466666666666666,
+              "f1": 0.7475915221579962
+            },
+            {
+              "label": 2,
+              "support": 600,
+              "true_positive": 589,
+              "false_positive": 149,
+              "false_negative": 11,
+              "precision": 0.7981029810298103,
+              "recall": 0.9816666666666667,
+              "f1": 0.8804185351270553
+            },
+            {
+              "label": 3,
+              "support": 349,
+              "true_positive": 63,
+              "false_positive": 2,
+              "false_negative": 286,
+              "precision": 0.9692307692307692,
+              "recall": 0.18051575931232092,
+              "f1": 0.30434782608695654
+            },
+            {
+              "label": 4,
+              "support": 600,
+              "true_positive": 447,
+              "false_positive": 40,
+              "false_negative": 153,
+              "precision": 0.917864476386037,
+              "recall": 0.745,
+              "f1": 0.8224471021159153
+            },
+            {
+              "label": 5,
+              "support": 400,
+              "true_positive": 368,
+              "false_positive": 320,
+              "false_negative": 32,
+              "precision": 0.5348837209302325,
+              "recall": 0.92,
+              "f1": 0.6764705882352942
+            },
+            {
+              "label": 6,
+              "support": 600,
+              "true_positive": 556,
+              "false_positive": 140,
+              "false_negative": 44,
+              "precision": 0.7988505747126436,
+              "recall": 0.9266666666666666,
+              "f1": 0.8580246913580247
+            }
+          ],
+          "groups": 19,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.7929989403037796,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "IMS_ENDPOINT",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 12,
+        "nonzero_gradient_steps": 8,
+        "metric": {
+          "n": 12,
+          "mae": 1585.2085774739583,
+          "rmse": 1603.4218082666146,
+          "bias": 1585.2085774739583,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "LDM_RTF",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 6,
+        "nonzero_gradient_steps": 14,
+        "metric": {
+          "n": 6,
+          "mae": 732.5487407048544,
+          "rmse": 853.8120819313432,
+          "bias": 319.42735385894775,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "MENDELEY",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 960,
+        "nonzero_gradient_steps": 49,
+        "metric": {
+          "n": 960,
+          "accuracy": 0.6697916666666667,
+          "macro_f1": 0.6589713332862671,
+          "balanced_accuracy": 0.6847098214285714,
+          "class_order": [
+            0,
+            1
+          ],
+          "confusion_matrix": [
+            [
+              407,
+              41
+            ],
+            [
+              276,
+              236
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 448,
+              "true_positive": 407,
+              "false_positive": 276,
+              "false_negative": 41,
+              "precision": 0.595900439238653,
+              "recall": 0.9084821428571429,
+              "f1": 0.7197170645446508
+            },
+            {
+              "label": 1,
+              "support": 512,
+              "true_positive": 236,
+              "false_positive": 41,
+              "false_negative": 276,
+              "precision": 0.851985559566787,
+              "recall": 0.4609375,
+              "f1": 0.5982256020278834
+            }
+          ],
+          "groups": 15,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.6697916666666667,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "MFPT",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 513,
+        "nonzero_gradient_steps": 16,
+        "metric": {
+          "n": 513,
+          "accuracy": 0.5555555555555556,
+          "macro_f1": 0.5555555555555555,
+          "balanced_accuracy": 0.6666666666666666,
+          "class_order": [
+            0,
+            1,
+            2
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              228
+            ],
+            [
+              0,
+              57,
+              0
+            ],
+            [
+              0,
+              0,
+              228
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 228,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 228,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": 1,
+              "support": 57,
+              "true_positive": 57,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            {
+              "label": 2,
+              "support": 228,
+              "true_positive": 228,
+              "false_positive": 228,
+              "false_negative": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          ],
+          "groups": 3,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.6666666666666666,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "PADERBORN",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 3360,
+        "nonzero_gradient_steps": 136,
+        "metric": {
+          "n": 3360,
+          "accuracy": 0.3880952380952381,
+          "macro_f1": 0.27471859342430327,
+          "balanced_accuracy": 0.33958333333333335,
+          "class_order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "confusion_matrix": [
+            [
+              542,
+              3,
+              415,
+              0
+            ],
+            [
+              213,
+              52,
+              695,
+              0
+            ],
+            [
+              222,
+              28,
+              710,
+              0
+            ],
+            [
+              17,
+              120,
+              343,
+              0
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 960,
+              "true_positive": 542,
+              "false_positive": 452,
+              "false_negative": 418,
+              "precision": 0.545271629778672,
+              "recall": 0.5645833333333333,
+              "f1": 0.5547594677584442
+            },
+            {
+              "label": 1,
+              "support": 960,
+              "true_positive": 52,
+              "false_positive": 151,
+              "false_negative": 908,
+              "precision": 0.2561576354679803,
+              "recall": 0.05416666666666667,
+              "f1": 0.08942390369733448
+            },
+            {
+              "label": 2,
+              "support": 960,
+              "true_positive": 710,
+              "false_positive": 1453,
+              "false_negative": 250,
+              "precision": 0.3282478039759593,
+              "recall": 0.7395833333333334,
+              "f1": 0.4546910022414345
+            },
+            {
+              "label": 3,
+              "support": 480,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 480,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          ],
+          "groups": 4,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.30321180555555555,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "ROTORBROKENBAR",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 369,
+        "nonzero_gradient_steps": 35,
+        "metric": {
+          "n": 369,
+          "accuracy": 0.5365853658536586,
+          "macro_f1": 0.42433840757249275,
+          "balanced_accuracy": 0.539837097371344,
+          "class_order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "confusion_matrix": [
+            [
+              62,
+              0,
+              1,
+              8,
+              2
+            ],
+            [
+              0,
+              0,
+              1,
+              24,
+              50
+            ],
+            [
+              4,
+              0,
+              0,
+              58,
+              12
+            ],
+            [
+              0,
+              0,
+              2,
+              71,
+              1
+            ],
+            [
+              0,
+              0,
+              2,
+              6,
+              65
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": 0,
+              "support": 73,
+              "true_positive": 62,
+              "false_positive": 4,
+              "false_negative": 11,
+              "precision": 0.9393939393939394,
+              "recall": 0.8493150684931506,
+              "f1": 0.8920863309352518
+            },
+            {
+              "label": 1,
+              "support": 75,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 75,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": 2,
+              "support": 74,
+              "true_positive": 0,
+              "false_positive": 6,
+              "false_negative": 74,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": 3,
+              "support": 74,
+              "true_positive": 71,
+              "false_positive": 96,
+              "false_negative": 3,
+              "precision": 0.4251497005988024,
+              "recall": 0.9594594594594594,
+              "f1": 0.5892116182572614
+            },
+            {
+              "label": 4,
+              "support": 73,
+              "true_positive": 65,
+              "false_positive": 65,
+              "false_negative": 8,
+              "precision": 0.5,
+              "recall": 0.8904109589041096,
+              "f1": 0.6403940886699507
+            }
+          ],
+          "groups": 5,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.539837097371344,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "SNU_PLANETARY",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 180,
+        "nonzero_gradient_steps": 4,
+        "metric": {
+          "n": 180,
+          "accuracy": 0.6666666666666666,
+          "macro_f1": 0.6666666666666666,
+          "balanced_accuracy": 0.75,
+          "class_order": [
+            "planet_gear",
+            "sun_gear"
+          ],
+          "confusion_matrix": [
+            [
+              60,
+              60
+            ],
+            [
+              0,
+              60
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": "planet_gear",
+              "support": 120,
+              "true_positive": 60,
+              "false_positive": 0,
+              "false_negative": 60,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            },
+            {
+              "label": "sun_gear",
+              "support": 60,
+              "true_positive": 60,
+              "false_positive": 60,
+              "false_negative": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            }
+          ],
+          "groups": 3,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.6666666666666666,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "UOC",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 180,
+        "nonzero_gradient_steps": 9,
+        "metric": {
+          "n": 180,
+          "accuracy": 0.3111111111111111,
+          "macro_f1": 0.20535920535920538,
+          "balanced_accuracy": 0.3111111111111111,
+          "class_order": [
+            "chip1a",
+            "chip2a",
+            "chip3a",
+            "chip4a",
+            "chip5a",
+            "crack",
+            "healthy",
+            "missing",
+            "spall"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              8,
+              0,
+              12,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              13,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              19,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              20,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              15,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              20,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              14,
+              0,
+              5,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              20
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": "chip1a",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "chip2a",
+              "support": 20,
+              "true_positive": 16,
+              "false_positive": 68,
+              "false_negative": 4,
+              "precision": 0.19047619047619047,
+              "recall": 0.8,
+              "f1": 0.3076923076923077
+            },
+            {
+              "label": "chip3a",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "chip4a",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 22,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "chip5a",
+              "support": 20,
+              "true_positive": 20,
+              "false_positive": 34,
+              "false_negative": 0,
+              "precision": 0.37037037037037035,
+              "recall": 1.0,
+              "f1": 0.5405405405405406
+            },
+            {
+              "label": "crack",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "healthy",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "missing",
+              "support": 20,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 20,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "spall",
+              "support": 20,
+              "true_positive": 20,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          ],
+          "groups": 180,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.3111111111111111,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "XJTU",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 9,
+        "nonzero_gradient_steps": 45,
+        "metric": {
+          "n": 9,
+          "mae": 109.18799845377605,
+          "rmse": 158.5998528516499,
+          "bias": 43.33021714952257,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "positive_error_lower_bound": null
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      },
+      {
+        "dataset": "XJTU_TERMINAL",
+        "returncode": 0,
+        "status": "passed",
+        "tool_count": 22,
+        "prediction_count": 3,
+        "nonzero_gradient_steps": 1,
+        "metric": {
+          "n": 3,
+          "accuracy": 0.0,
+          "macro_f1": 0.0,
+          "balanced_accuracy": 0.0,
+          "class_order": [
+            "cage",
+            "inner",
+            "inner+outer",
+            "outer"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ]
+          ],
+          "confusion_matrix_axes": "rows=actual, columns=predicted",
+          "per_class": [
+            {
+              "label": "cage",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 2,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "inner",
+              "support": 1,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "inner+outer",
+              "support": 0,
+              "true_positive": 0,
+              "false_positive": 1,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            {
+              "label": "outer",
+              "support": 2,
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          ],
+          "groups": 3,
+          "source": "identity-aligned computation over caller-provided records",
+          "pass_threshold": null,
+          "mean_group_accuracy": 0.0,
+          "group_semantics": "Groups are caller-supplied; physical recordings or device independence are not established by this tool."
+        },
+        "test_input": "unavailable",
+        "test_truth": "unavailable",
+        "new_paid_calls": 0
+      }
+    ]
+  },
+  "fixed_failure": {
+    "component": "MCP classification verification",
+    "symptom": "Engine health/trend development truth omits legal source classes; a prediction in one of those classes was rejected as unknown.",
+    "fix": "Resolve the declared class universe from identity-bound public dataset metadata; keep truly outside classes rejected.",
+    "actual_failures_retained": true,
+    "independent_real_artifact_reproduction": true,
+    "meaningful_regression_test": "passed"
+  },
+  "training_reuse": "Reference reuse requires a canonical training/development values-and-configuration fingerprint.",
+  "interpretation": {
+    "original_75_complete_task_success_claimed": false,
+    "original_missing_targets_still_unavailable": 4,
+    "explicit_alternatives_require_opt_in": true,
+    "low_scores_and_all_observed_failures_retained": true,
+    "shared_models_and_repeated_predictions_are_not_independent_experiments": true
+  },
+  "checked_release_source_files": [
+    {
+      "path": "src/phmforge_bench/__init__.py",
+      "sha256": "6573ea0a73883479bed8868c8cd6603b23e8375ca80b163f2661214ff6deeedf"
+    },
+    {
+      "path": "src/phmforge_bench/__main__.py",
+      "sha256": "02fbaffc71f232e726cfb6c07f9aa6f803bda36248c2c47f446f6c2b3eee0fc1"
+    },
+    {
+      "path": "src/phmforge_bench/agent.py",
+      "sha256": "7f54d75401cb4725d3abd0a83d57118f4cf6b97e8a0bd7f9e59edabbd36cc648"
+    },
+    {
+      "path": "src/phmforge_bench/data.py",
+      "sha256": "c84c3fe14c7209739f0980796778a5f8b010886fab55d397da0ad173df88ad4d"
+    },
+    {
+      "path": "src/phmforge_bench/engine.py",
+      "sha256": "f178c3b6f130c48fcf07561aa02d0f90a24d3fc276fc1902286e1a3ad1369b1d"
+    },
+    {
+      "path": "src/phmforge_bench/environment.py",
+      "sha256": "3451dc94922f44d28ce606d0fd6bea48ea19018b81ebfe3591e8b4325cd97fbe"
+    },
+    {
+      "path": "src/phmforge_bench/femto.py",
+      "sha256": "0ed000393b3a03c1d65ca835718ad449d0313d9d3246b774b725b4d8e419e075"
+    },
+    {
+      "path": "src/phmforge_bench/gateway.py",
+      "sha256": "9133968f395f28268ed310371c750d1afd6784c8382a2d5a25715f1c1927e66e"
+    },
+    {
+      "path": "src/phmforge_bench/ims.py",
+      "sha256": "f9aa443e3a31019141833ad6444ba1e17f0537f19f8974a596b2e2316ad00868"
+    },
+    {
+      "path": "src/phmforge_bench/io.py",
+      "sha256": "c31ef624936c0eb30e5e65947b989e150b0ebc959e3f5e02abe1bdbbb2a4f283"
+    },
+    {
+      "path": "src/phmforge_bench/ldm.py",
+      "sha256": "79145627bca6c3ed9275c855975e197b9a52ee3504a0f772267c4f8706f76a12"
+    },
+    {
+      "path": "src/phmforge_bench/pdmb_fault.py",
+      "sha256": "f83d91f071abd217dd13324dad33291052bea28d36116150961aaef97efe4de4"
+    },
+    {
+      "path": "src/phmforge_bench/resources/__init__.py",
+      "sha256": "d93e2a4e21347bc904a32c8409734e967850b995771a1493bd2bd53868b20209"
+    },
+    {
+      "path": "src/phmforge_bench/resources/cmapss_fd001_config.json",
+      "sha256": "dd776a4ee47634562fd97a878dfded1e0cf9832d1733eda6529c461c9e8becb5"
+    },
+    {
+      "path": "src/phmforge_bench/resources/deepseek_model_catalog.json",
+      "sha256": "d68a73c1fa37d65c44855b2b6e57a5a90c6a37160447e4586f168fb0423ec8ab"
+    },
+    {
+      "path": "src/phmforge_bench/resources/engine_alternatives.json",
+      "sha256": "ddc58d2c7a80a9a5bfc7905525c0ee449c90edfaf3dc6546b26f6c7d8e74a2dc"
+    },
+    {
+      "path": "src/phmforge_bench/resources/engine_source_manifest.json",
+      "sha256": "2017fcc6baed2c70bfdb0ce0f671abcba432deed5a483fd6d02704c390435bb5"
+    },
+    {
+      "path": "src/phmforge_bench/resources/ldm_sources.json",
+      "sha256": "edfb78da7ec0d509c5608026bca5c890385047a57b636284185c7d60f835af7f"
+    },
+    {
+      "path": "src/phmforge_bench/resources/mfpt_manifest.json",
+      "sha256": "a39c9ec30a1c74a367ad1c999da51fa1feaf1bdd8f9616383343b3e8df45c2d6"
+    },
+    {
+      "path": "src/phmforge_bench/resources/pdmb_fault_sources.json",
+      "sha256": "27ed2bd17b542738900762831f36d01e44927f599c7aa3f08ff6f592b9e53774"
+    },
+    {
+      "path": "src/phmforge_bench/resources/research_alternatives.json",
+      "sha256": "91295f5f1496bdc6bebee93cd0d4339206481a919fa2e1638e5b2fdecc725f8a"
+    },
+    {
+      "path": "src/phmforge_bench/resources/scenario_inventory.json",
+      "sha256": "96f586148db20e8dd6d26fb6c1fa04ce2e8d9932f541dfeff4c6e9f22574f41c"
+    },
+    {
+      "path": "src/phmforge_bench/resources/snu_sources.json",
+      "sha256": "01480196bda9780e9235b81eee91afea10288cf8dc85b950f3a233f3a055245e"
+    },
+    {
+      "path": "src/phmforge_bench/resources/source20_inventory.json",
+      "sha256": "d17c199cef4f4747ebc05ed1b4f9886add28822323499e9e809c2bee62cfbee7"
+    },
+    {
+      "path": "src/phmforge_bench/resources/source55_inventory.json",
+      "sha256": "6a52255733c8f9b75dda801c62aa5776972be802a58f018d3817f991ab682919"
+    },
+    {
+      "path": "src/phmforge_bench/resources/tool_catalog.json",
+      "sha256": "575bdfc3ca0ca113f76df9873d714924f0ee84d01fb8a3b655993a2ee553531d"
+    },
+    {
+      "path": "src/phmforge_bench/resources/xjtu_sources.json",
+      "sha256": "4c2c42a051028cbc3ef62035dbd5dec49d59732565d45993d23a115e84d5ec82"
+    },
+    {
+      "path": "src/phmforge_bench/runner.py",
+      "sha256": "3345eaa179dc306ec7eca81175171094f7ca1c7f75545fd406ee342ec9cf0a34"
+    },
+    {
+      "path": "src/phmforge_bench/scenario.py",
+      "sha256": "5a907da0a6e9d9a54c43600362b48c303e913b79be18c47311e9607cb842e6a6"
+    },
+    {
+      "path": "src/phmforge_bench/snu.py",
+      "sha256": "6369c5898a6a53bbb69ded641d39b6e358a29ab748ac7b2ca95f42923c4755a7"
+    },
+    {
+      "path": "src/phmforge_bench/workbench.py",
+      "sha256": "288a0df4681f4905e0194878dd030a52c369ef09bc9fd5d564f5f642432e68cb"
+    },
+    {
+      "path": "src/phmforge_bench/xjtu.py",
+      "sha256": "b0791d316c5b293ad4922b1edcb330b977a0ab742c6a50cc896a821c262869b2"
+    },
+    {
+      "path": "src/real_bearing_rul_model.py",
+      "sha256": "2b3a6c8bed5ba73d94a2beae70e11d1aa2e56418595c99d5330604a0fe7d5efa"
+    },
+    {
+      "path": "src/real_engine_health_model.py",
+      "sha256": "cdb6f430e6d66cd8852b32fba69cf7f45a3010ffcb3fa696bf2a455a21acd072"
+    },
+    {
+      "path": "src/real_fault_model.py",
+      "sha256": "9df8d81e4f92f1b2763015201d8264cca81487bd2e48e635954a9a57c79a93ab"
+    },
+    {
+      "path": "src/real_gap_rul_model.py",
+      "sha256": "e2da5bec27428fac51e1f68a7df0325d7b345c2372afb95be5e9e61425f80752"
+    },
+    {
+      "path": "src/real_rul_model.py",
+      "sha256": "bcb5b16258f4e79374f27554b3e7c4ac814b61e82a26a6655c95e2a270a60c3f"
+    },
+    {
+      "path": "src/real_xjtu_rul_model.py",
+      "sha256": "90caabe7c375cd9b256e80b5d42c45468dc0e0bb6a877f9669b453c3d1ed0a38"
+    },
+    {
+      "path": "src/verified_benchmark_scoring.py",
+      "sha256": "58bd767b6098e8961c08ad63bb8b5076864de04b53df32e25edd89de5d6ca0a5"
+    },
+    {
+      "path": "src/verified_benchmark_worker.py",
+      "sha256": "12a737057032048db85555f6b744862019d74bd1d4bf6abe7939b359ba53ea97"
+    },
+    {
+      "path": "src/verified_phmforge.py",
+      "sha256": "4ea171fcfba0620c58ed4698024226667c8e0c64898f18536ea97615c2038b95"
+    }
+  ]
+}

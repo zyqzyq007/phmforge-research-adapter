@@ -1,0 +1,54 @@
+{
+  "source_revision": "ea2051a15512212976c22c1a075ec549c7d48eef",
+  "selection": "First two lexicographically sorted ten-record tuples from publisher test QA whose IDs are disjoint from all original selected records and from each other; annotations were not considered.",
+  "cases": {
+    "research_engine_template_029_alternative": [
+      "101444",
+      "101451",
+      "101457",
+      "101464",
+      "101473",
+      "101480",
+      "101486",
+      "101496",
+      "101503",
+      "101509"
+    ],
+    "research_engine_template_030_alternative": [
+      "102339",
+      "102365",
+      "102397",
+      "102418",
+      "102444",
+      "102457",
+      "102481",
+      "102519",
+      "102538",
+      "102570"
+    ]
+  },
+  "original_template_replaced": true,
+  "original_task_complete": false,
+  "prefix_record_array_sha256": {
+    "101444": "7c4367358cdf6f8a562978e40cf45d46e7c6856768ee7cc18eb2d678e7b1182f",
+    "101451": "3a7e175604f3460f1a3ceeb599bc949d8616d92d44430ee92d7e41ff2b760e9c",
+    "101457": "6e1760df6a1340f22ead26b545ed8f14594ceacb90d3a292fcc20b3ea268ff32",
+    "101464": "28718d46aebc3872f46b03ca74f4f96a64b0348a0ce8a1db60702897052c8ac7",
+    "101473": "2d3a934c7ac7119537d19df8aa983d8bc9d6d7ca292cf0fcb09dc0d1ded9acf0",
+    "101480": "a1e32f5bdb42c6180bdd8892c83fe5080e4f06a38f3690e8f107d3eedc18b093",
+    "101486": "06eee402f0dd8f28cd19762cee451c1288abe49151db52458c91a3f4a2516b92",
+    "101496": "a53ecde7b947e270fade2a5c030d93e4db33e54dc666e6328e0901ec70810b45",
+    "101503": "cee959a305be0ee1af5d0b1f6847904e2077bf2a18653dbcd56e5bcc71ad1e51",
+    "101509": "985914e4221f16eee1da6db6f4423654037a5b04e9f8fac753096340886c6a7a",
+    "102339": "6deb1ea16126e64ed6fde699607a35d476b4eff245072c439ea154607f1024da",
+    "102365": "4ee2cb2f0d58b40d51b8d40b100e77dc756e5495f6450c0b7c8c1390ceeb4ca5",
+    "102397": "307da7fff696b4d718a468d8a3ab0d36159f291ba0df669c0943c19367dc01a9",
+    "102418": "683382c2c007297baf2800557aa6b0423491d6cbb7783de43e6c38b074f2f652",
+    "102444": "569d9e8d731fef3a4dfa2f0fd79692ca24ab7b998a7b8c7d8db7b96f4eb176ae",
+    "102457": "dfd1dfce588bb18218fdc021ab5c59183189b9bb1fee2f5642663300c8bf0688",
+    "102481": "233f605311cb5991d1159a199b0816b3b4a60d2b94cd08fbc529e49e659228dc",
+    "102519": "961d6f284f9a887cae5a9f37fbb1f9f5edbab398b35c5c45c0d25b086d229c58",
+    "102538": "86cd9d485545535827ca3b75fe1c36b2b6c3881fc4374b57aaf93cc91fc6e013",
+    "102570": "d786dfe80282306ce4b60813667c03185f484db05492519ddba38373e893cd3e"
+  }
+}

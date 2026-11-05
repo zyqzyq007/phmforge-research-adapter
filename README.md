@@ -2,16 +2,16 @@
 
 本仓库把 PHMForge 风格的工具服务、公开数据准备、真实模型训练、Agent 工作区和独立评分整合为一个可运行的科研基准。它是研究适配版，**不是 PHMForge 官方完整实现，也不是官方成绩**。
 
-v0.7 保留现有 55 个公开数据数值适配入口，并为其余 20 个题号增加明确的可用性说明和部分新入口。数据、划分和模型可以共用：**数值流程跑通不等于完整回答原题，也不是 55 次独立模型实验**。新增 IMS 和 UoC 后共有 19 个可单独准备的数值任务类型，不需要 149 GB 历史快照。数据范围、下载大小与验证情况见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
+v0.8 保留现有 55 个公开数据数值适配入口，以及另外 16 个相关或替代来源入口，并为最后 4 个缺失原目标的题号提供**须显式选择的研究替代入口**。默认目录仍保留这 4 个原目标的不可用状态。新增 SNU 实测齿轮数据后共有 20 个可单独准备的数值任务类型，不需要 149 GB 历史快照。数据、划分和模型可以共用：**数值流程跑通不等于完整回答原题，也不是 75 次独立模型实验**。数据范围、下载大小与验证情况见 [数据集说明](docs/DATASETS.md) 和 [验证记录](docs/VALIDATION.md)。
 
 | 原题号的当前数值适配 | 数量 | 含义 |
 |---|---:|---|
 | 原有入口 | 55 | 数值子任务；共享 13 类模型，原题的费用、安全等部分可能缺失 |
 | 新增相关来源 | 7 | 可做部分数值任务，其中两题使用 Paderborn LDM 而非原先的 Paderborn 分类数据 |
 | 显式替代数据 | 9 | 使用与原题不同的数据源，仅可作为替代研究；须主动选择 |
-| 暂不可运行 | 4 | 两个行星齿轮题缺少原题所需部件标签，两个发动机题是无对应观测和真值的合成模板 |
+| 原目标仍不可用，另提供研究替代 | 4 | SNU 的健康／行星轮／太阳轮分类，以及为两个发动机模板另选的 EngineMT-QA 输入；须显式选择，不计原题完成 |
 
-上述 7 和 9 都是部分数值适配，不是另外 16 道原题的完整复现；合计 75 是原题目录，不是 75 道全部解决的题。通过 `scenario list --all` 可查看全部题号与状态，逐题对应关系见 [75 个题号的适配范围](docs/SOURCE75_SCOPE.md)。
+上述 7 和 9 都是部分数值适配，不是另外 16 道原题的完整复现。最后 4 个研究替代使用不同数据或缩小目标，保留各自的 `adapter_id` 与 `original_target_status: unavailable`。通过 `scenario list --all` 查看原目标状态，通过 `scenario list --include-alternatives` 查看全部可选数值入口。逐题对应关系见 [75 个题号的适配范围](docs/SOURCE75_SCOPE.md)。
 
 v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权重、程序和日志，使用 `environment` 命令恢复或重放；它不属于从数据开始运行新任务的前提。该约 149 GB 的快照目前没有公开下载地址。见 [完整实验环境](docs/COMPLETE_ENVIRONMENT.md)。
 
@@ -40,6 +40,7 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 | `research_ldm_bearing_rul` | Paderborn LDM 作者特征 | 预测到记录末端的剩余采集次数，非小时；更换来源的研究适配 | 作者公开的台架实测派生特征 |
 | `research_ims_recording_endpoint` | NASA IMS | 预测剩余采集次数至记录结束；不是经核实的物理失效时间 | 三次台架实验，测试四个传感器通道共用一次实验终点 |
 | `research_uoc_pinion_state_classification` | UoC | 九种输入小齿轮状态分类；原始采集及硬件独立性未核实 | 台架数据，样本级探索划分 |
+| `research_snu_planetary_component_classification` | SNU v5 作者实测切片 | 健康／行星轮／太阳轮分类；没有齿圈损伤或安全标签 | 原始录波分组，硬件独立性未验证 |
 | `research_cwru_fault_classification` | CWRU | 原始特征表类别预测；分组由连续段推断 | 台架数据 |
 | `research_electric_motor_fault_classification`、`research_rotor_fault_classification` | ElectricMotorVibrations、RotorBrokenBar | 电机振动和转子数据源标签分类 | 台架数据 |
 | `research_hust_bearing_fault_classification`、`research_paderborn_bearing_fault_classification`、`research_mendeley_bearing_fault_classification` | HUST、Padeborn、Mendeley | 按来源标签开展轴承故障分类 | 台架数据 |
@@ -55,6 +56,7 @@ v0.3 的**历史实验环境快照**另外保存原输入、划分、拟合权�
 ```bash
 phmforge-bench scenario list
 phmforge-bench scenario list --all
+phmforge-bench scenario list --include-alternatives
 phmforge-bench scenario list --task pdm_fault_002
 ```
 
@@ -106,6 +108,18 @@ phmforge-bench scenario run-all --include-substitutions --prepare-missing \
 ```
 
 也可以通过 `--task <题号>` 明确单独选择一个可用的替代来源入口。结果的 `source_relation`、限制和缺失字段会明确写入 `SCENARIO.json`。IMS 的目标是距公开记录末端的采集次数，不是已核实的失效时刻；其最终实验只有四个轴承通道，不足以输出五台设备的排名。预测的低 RUL 也不能直接当成经验证的物理安全风险。
+
+如果接受最后 4 个缺失原目标的**相关研究替代**，用下面的命令运行 75 个数值适配入口。它额外使用 SNU 五分钟实测切片，对太阳轮和行星轮分类；发动机两题替换了无来源的原模板输入，使用预先固定的其他 N-CMAPSS 派生记录。原题要求和不可用原因保持可查，结果也不会标为完整原题通过：
+
+```bash
+phmforge-bench scenario run-all --include-alternatives --prepare-missing \
+  --data-home "$PHM_RUN_ROOT/data-75" --run-dir "$PHM_RUN_ROOT/runs/research-75" \
+  --epochs 2 --timeout 900
+```
+
+全部来源下载约 18 GB，还需依赖、解压及输出空间，建议至少保留 40 GB 可用空间。单题选择这类实验时，为 `scenario run / workspace / agent` 加 `--research-alternative`；例如 `pdm_fault_005` 使用 `prepare --dataset snu-planetary` 的数据，发动机 029／030 使用 `prepare --dataset engine-qa-alternatives` 的数据。省略选择标志会继续拒绝不可用原目标。
+
+v0.8 的参考模型复用会核对训练／开发数据和配置指纹。原版本没有该指纹的程序仍可用 `evaluate` 单独评分；如果要在 `scenario run --submission` 中复用，请先重新训练参考模型，避免同名数据集的不同划分混用。
 
 具体安装、真实训练、MCP 和隔离检查见 [验证记录](docs/VALIDATION.md)。
 

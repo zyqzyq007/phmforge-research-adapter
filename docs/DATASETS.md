@@ -13,6 +13,8 @@
 | `ldm-rul` | [Paderborn LDM 作者特征](https://github.com/alireza-javanmardi/bearing-RUL/tree/d7167c927aad5b7f197b1d735b21339e3e17844e/data/LDM)，约 158 MB | 14 次有明确试验终点的轴承运行；预测距作者特征末行的采集次数，不是小时；使用派生特征而非重算原波形 |
 | `ims-endpoint` | [NASA IMS 轴承 ZIP](https://phm-datasets.s3.amazonaws.com/NASA/4.+Bearings.zip)，约 1.08 GB | 按三次采集实验分训练、开发、测试；预测到公开录波末端的采集次数，并非经核实的物理失效时刻 |
 | `uoc` | [PDMBench UoC 固定版本](https://huggingface.co/datasets/submission096/UoC/tree/9c3f4117ab86cafb69ac82fb3c8e39790ffac290)，约 73.6 MB | 九类输入小齿轮状态；样本级分组的探索性分类，不代表不同设备或原始录波独立 |
+| `snu-planetary` | [SNU 作者 v5](https://figshare.com/articles/dataset/SNU_Planetary_Gearbox_Dataset/32025606/5) 的代码及实测切片包，约 1.26 GB，CC BY 4.0 | 健康／行星轮／太阳轮分类；没有齿圈本体损伤、安全或合规标签 |
+| `engine-qa-alternatives` | 与 `engine-qa` 相同固定源，另读 20 个前缀 | 为无来源模板明确替换输入；不评价原模板，不增加新的数值任务类型 |
 | `cwru` | [PDMBench CWRU](https://huggingface.co/datasets/submission096/CWRU)，约 7.1 MB | 原特征表分类；录波组根据连续段推断，不能称物理轴承独立 |
 | `electric-motor-vibrations` | [PDMBench 电机振动](https://huggingface.co/datasets/submission096/ElectricMotorVibrations)，约 67.8 MB | 三轴振动分类；原题要求的声学输入未包含在此子任务中 |
 | `rotor-broken-bar` | [PDMBench 转子](https://huggingface.co/datasets/submission096/RotorBrokenBar)，约 327.4 MB | 按来源记录的类别分类，窗口按原记录分组 |
@@ -22,7 +24,7 @@
 
 各数据源须分别遵守其使用条款。以上均是**数值研究适配**，不是完整原题或官方成绩。FEMTO 原始 ZIP 的 SHA-256 是本研究固定的全文件哈希，不声称来自发布者；其他来源版本和哈希见 [数据清单](../src/phmforge_bench/resources/pdmb_fault_sources.json) 及相应准备代码。
 
-如果需要全部来源，按上述入口下载的文件合计约 **16.7 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。XJTU 的原始压缩包约 4.45 GB，解压过程还需要约 12.3 GB，计算完毕后程序删除自己的解压副本；FEMTO 和 IMS 读取嵌套压缩包时也需要额外磁盘空间。
+如果需要全部来源，按上述入口下载的文件合计约 **18 GB**；只运行部分任务时按需下载即可。这个估计不含软件依赖、准备过程中的解压副本或训练输出。XJTU 的原始压缩包约 4.45 GB，解压过程还需要约 12.3 GB，计算完毕后程序删除自己的解压副本；FEMTO 和 IMS 读取嵌套压缩包时也需要额外磁盘空间。建议为全部入口保留至少 40 GB 可用空间。
 
 UoC 已接入输入小齿轮状态分类，但原题中的不同齿轮部件标签未验证。尚未完整接入的原题和来源包括 PlanetaryPdM，以及需要独立维修收益、合规或物理安全真值的完整题目。EngineMT-QA 已支持发布者问答标注的数值适配，但它缺少可认证的完整物理健康合同。下载数据不会自动使原题全部要求可评分；不要把分类或 RUL 子任务计为完整原题完成。
 
@@ -61,6 +63,10 @@ LDM 从固定作者仓库取 14 次运行的 FFT、运行工况及温度文件�
 IMS 需要 `7zz` 或 `7z` 解压 NASA ZIP 中嵌套的 7z/RAR；下载的 ZIP 大小、研究固定的 SHA-256 和内部各 RAR 哈希均会检查。按整次采集实验分组，第一、第二、第三次分别用于训练、开发和测试；只抽取训练 240 条、开发 3 条、测试 5 条采集记录，每条按四个轴承通道产生特征。第一组每个轴承的两个方向特征取平均，另两组每轴承一个通道。测试共有 20 个前缀，四个轴承通道共用一次实验的结束时间，不能把 20 个查询当成 20 只独立轴承或独立失效；第三次实际压缩包有 6324 条记录，与随包说明中的较早截止数不一致，标签明确采用实际文件终点。全源公开、终点可被记忆，匿名化不能阻止查表。
 
 UoC 使用 936 条发布样本，每条 3600 个测量值，按来源标签分训练／开发／测试为 576/180/180。每条样本完整分组，但发布表没有可核实的原始物理采集或硬件身份，样本间可能有关联，不能把结果解释为跨设备泛化或不同齿轮部件识别。
+
+SNU 使用作者包中 14 条第 60–65 分钟的实测切片，每条含 7,680,001×3 个数值，采样率 25,600 Hz；只使用第一列振动，按 5 秒切成 60 个完整不重叠窗口，末尾一个点排除。4 条恒工况录波用于训练、3 条另外的恒工况录波用于开发、7 条变工况录波用于外评，240/180/420 窗口；录波身份不交叉，但同一台架和齿轮硬件可能复用，不能声称设备独立。开发缺少健康类，外评同时改变转速和载荷。`Planet-ring` 是行星轮啮合齿圈一侧的损伤，不能标为齿圈本体故障。完整 ZIP、各 MAT 的固定哈希、来源语义和划分见 [SNU 来源清单](../src/phmforge_bench/resources/snu_sources.json)。解码 MATLAB v7.3 需要声明依赖中的 `h5py`；没有下载或声称重算全部约 16.5 GB 长录波包。
+
+`engine-qa-alternatives` 额外准备两个独立命名的研究案例，替换没有来源的 029／030 原模板输入。新的 20 条源记录与全部既有训练、开发及原题记录 ID 不重合，按不读取标注的固定身份规则选取，前缀哈希见 [输入清单](../src/phmforge_bench/resources/engine_alternatives.json)。ID 不重合不证明物理发动机独立；所评的仍是发布者问答类别。离线 `--source` 可以提供包含 QA JSONL、`records/<ID>-600.bin` 或 `<ID>-60.bin`、以及 `data_ID.bin` 的固定源缓存，每个源数组仍须通过哈希校验；也可提供完整原 HDF5。
 
 XJTU、LDM 和 IMS 每个测试前缀都在全新的独立进程中预测；该进程只能读取当前前缀，不能读取同一轴承的其他时间点或先前查询输出。最终评分汇总后报告每只轴承及总体误差。逐条冷启动比一次批量预测慢，默认外评超时为 300 秒；低配置机器可使用 `run-reference --timeout 900` 等方式延长总限时。
 

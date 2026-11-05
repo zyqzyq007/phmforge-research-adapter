@@ -1,0 +1,148 @@
+{
+  "source_url": "https://figshare.com/articles/dataset/SNU_Planetary_Gearbox_Dataset/32025606/5",
+  "url": "https://ndownloader.figshare.com/files/68833543",
+  "bytes": 1259965685,
+  "sha256": "9725b05b076ffe229a841c086b146aa76783d1c975cfdfeda1281c564f536750",
+  "publisher_md5": "d755e1d3855b7daecac8a80d89093fde",
+  "license": "CC BY 4.0",
+  "source_summary_url": "https://ndownloader.figshare.com/files/68843998",
+  "source_summary_sha256": "e4e0dcbb38b850bce883334a4e472a4d397cb17f69e5493d526f8e7a1a96d72d",
+  "label_basis": "Publisher faulty_component metadata: Planet-ring and Planet-sun both damage the planet gear. No damaged ring gear class exists.",
+  "signal_basis": "Author Figure9.mlx: column 1 vibration in g, column 2 angular position, column 3 rotation speed. Only vibration is used.",
+  "sampling_hz": 25600,
+  "samples_per_member": 7680001,
+  "window_samples": 128000,
+  "classes": [
+    "healthy",
+    "planet_gear",
+    "sun_gear"
+  ],
+  "members": [
+    {
+      "path": "5m/xc_n.mat",
+      "variable": "xc_n",
+      "sha256": "ace31936e8c536f851f4922d6f74b236d8b8a8618610d4456bd890d66ef820bb",
+      "bytes": 81776905,
+      "label": "healthy",
+      "split": "train",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_pr_075.mat",
+      "variable": "xc_pr_075",
+      "sha256": "918f80750156430d67ff2a89311db15ecc8df17649beaf711f30bf23d5c51bab",
+      "bytes": 83567132,
+      "label": "planet_gear",
+      "split": "train",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_pr_100.mat",
+      "variable": "xc_pr_100",
+      "sha256": "0abedeedae849f8a800cbd2c2534417e78dfaa426eca2ef805868df95b5d36aa",
+      "bytes": 83583365,
+      "label": "planet_gear",
+      "split": "val",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_pr_125.mat",
+      "variable": "xc_pr_125",
+      "sha256": "e561ed03f8566d4f7e9f08d51a9b1889b8e9bb4ca56ff14a1c64140109824891",
+      "bytes": 83550439,
+      "label": "planet_gear",
+      "split": "val",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_ps_075.mat",
+      "variable": "xc_ps_075",
+      "sha256": "6c2d2ed1cd21af551fa2c504fb7f5928d4ed478e2d7e1ae3e7fd8e73b30d6230",
+      "bytes": 83586448,
+      "label": "planet_gear",
+      "split": "train",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_s_05.mat",
+      "variable": "xc_s_05",
+      "sha256": "1d7eaf9fc62dfe805d685bd20216b40cab47fbf8086dbf678e7d1e85b5984ebf",
+      "bytes": 83537722,
+      "label": "sun_gear",
+      "split": "train",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xc_s_075.mat",
+      "variable": "xc_s_075",
+      "sha256": "10025941a4355ff31bf86603fd5c243f9c76c6c39b5e64d26e52899b7d3e7b46",
+      "bytes": 83480518,
+      "label": "sun_gear",
+      "split": "val",
+      "condition": "stationary"
+    },
+    {
+      "path": "5m/xn_n.mat",
+      "variable": "xn_n",
+      "sha256": "60f2c94854b1894bcf626c22a368b50ecf851f73f493ee6e5b5e184e365e3cea",
+      "bytes": 95171521,
+      "label": "healthy",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_pr_075.mat",
+      "variable": "xn_pr_075",
+      "sha256": "94bb5c844308288ba19a73bd4d471951a2251d2eff77a596fe6fbcc3052e7f32",
+      "bytes": 98341737,
+      "label": "planet_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_pr_100.mat",
+      "variable": "xn_pr_100",
+      "sha256": "c3f335a33c0f578382e3a7594906c99dc96f7ce9ffd972cbc76803bd49401275",
+      "bytes": 98302748,
+      "label": "planet_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_pr_125.mat",
+      "variable": "xn_pr_125",
+      "sha256": "bf829e6c73edcbde88be5fe2c36fb782d0961790beede7984b36bbdf70c3228c",
+      "bytes": 98370918,
+      "label": "planet_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_ps_075.mat",
+      "variable": "xn_ps_075",
+      "sha256": "8443f23a37b071545f3b1a7e9d061a26e4426390c942eda598de915751ef5599",
+      "bytes": 98334081,
+      "label": "planet_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_s_05.mat",
+      "variable": "xn_s_05",
+      "sha256": "ba72ac84f56a2910516997fbe85321fb28d2ca07699407ca85ed64c74d1e4c0f",
+      "bytes": 98337771,
+      "label": "sun_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    },
+    {
+      "path": "5m/xn_s_075.mat",
+      "variable": "xn_s_075",
+      "sha256": "8a050c44b8e13783208db2946746515e9c6c556cacfd430e1593ebef89e434b9",
+      "bytes": 98311342,
+      "label": "sun_gear",
+      "split": "test",
+      "condition": "nonstationary"
+    }
+  ]
+}

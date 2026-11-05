@@ -16,9 +16,11 @@
 | `pdm_rul_009`、`pdm_rul_015` | Paderborn LDM | 替代 Mendeley | 记录终点代理，不代表 Mendeley 变转速实验或其轴承小时数；Mendeley Ferrara 原始寿命数据有公开来源，但本入口未接入 |
 | `pdm_rul_010` | NASA C-MAPSS FD002 仿真 | 替代 Azure | 发动机剩余循环预测；不是 Azure 机器、大规模部署测试或峰值内存评估 |
 | `pdm_cost_benefit_005` | NASA C-MAPSS FD001 仿真 | 替代 Azure | 发动机剩余循环预测；成本、批量折扣和最优排程未知 |
-| `pdm_fault_005`、`pdm_safety_005` | 尚无合格入口 | 不可用 | PlanetaryPdM 已公开的裂纹阶段不能自动当成太阳轮、行星轮、齿圈部件标签；安全和合规真值未具备 |
-| `engine_health_combined_029`、`engine_health_combined_030` | 无对应真实来源 | 不可用 | 两道题是合成的 10 周期信号模板，没有匹配的真实记录和真值；不能虚构数据称为真实实验 |
+| `pdm_fault_005`、`pdm_safety_005` | 原目标仍缺失；另有 SNU 实测研究替代 | 显式选择不同来源及缩小目标 | SNU 可做健康／行星轮／太阳轮分类；没有原题的齿圈损伤、安全和合规真值 |
+| `engine_health_combined_029`、`engine_health_combined_030` | 原模板无来源；另选其他 EngineMT-QA 记录 | 显式替换输入 | 原模板不可验证；可用不同的 N-CMAPSS 派生记录和发布者问答标注做另一个数值实验，不能声称原模板预测已验证 |
 
-7 个相关来源部分适配包含 2 个明确使用不同 Paderborn 数据集的题号；9 个完全替代来源的入口须显式选择 `--include-substitutions` 或逐题 `--task`。4 个不可用题号不会出现在批量运行中，显式选择会报错。每个运行结果记录 `source_relation` 与 `complete_original_task_claimed: false`，共享模型不构成独立实验。
+7 个相关来源部分适配包含 2 个明确使用不同 Paderborn 数据集的题号；9 个完全替代来源的入口须显式选择 `--include-substitutions` 或逐题 `--task`。默认仍拒绝最后 4 个缺失原目标的题号。用户须加 `run-all --include-alternatives` 或单题的 `--research-alternative` 才会运行单独命名的研究替代；每份结果保留 `adapter_id`、`original_target_status: unavailable` 及原缺口原因。
+
+因此，显式选择后的 75 个数值入口包括不同来源或不同目标的研究适配，不代表 75 道原题全部解决。每个运行结果记录 `source_relation` 与 `complete_original_task_claimed: false`，共享模型不构成独立实验。原始题目和模板文本仅作为历史来源保留；研究替代工作区会同时给出当前实验问题，明确哪些输入已被替换。
 
 具体数据来源、大小、安装、实验限制与验证结果分别见 [数据说明](DATASETS.md) 和 [验证记录](VALIDATION.md)。

@@ -1,0 +1,77 @@
+{
+  "scope": "Explicitly selected related experiments for four original targets that remain unavailable. Not original-task success.",
+  "tasks": [
+    {
+      "task_id": "pdm_fault_005",
+      "adapter_id": "research_snu_pdm_fault_005_component_core",
+      "dataset": "SNU_PLANETARY",
+      "prepare_dataset": "snu-planetary",
+      "status": "explicit_research_alternative",
+      "source_relation": "different_source_and_restricted_target",
+      "original_target_status": "unavailable",
+      "complete_original_task_claimed": false,
+      "numeric_scope": "Measured healthy/planet-gear/sun-gear classification on SNU cutouts; no ring-gear or safety target.",
+      "adapted_question": "Classify each measured SNU vibration observation as healthy, planet_gear or sun_gear using only the supplied training/development records. Report classification metrics and limitations. Ring-gear damage, physical safety, load margins and compliance are unmeasured and remain unknown.",
+      "limitations": [
+        "Uses SNU rather than the original PlanetaryPdM source.",
+        "No ring-gear damage class or authenticated safety/AGMA/ISO compliance labels.",
+        "Whole source recordings are separated, but physical rig and gear reuse remains possible.",
+        "Development lacks a healthy record; final speed and load changes are confounded."
+      ]
+    },
+    {
+      "task_id": "pdm_safety_005",
+      "adapter_id": "research_snu_pdm_safety_005_component_core",
+      "dataset": "SNU_PLANETARY",
+      "prepare_dataset": "snu-planetary",
+      "status": "explicit_research_alternative",
+      "source_relation": "different_source_and_restricted_target",
+      "original_target_status": "unavailable",
+      "complete_original_task_claimed": false,
+      "numeric_scope": "Measured healthy/planet-gear/sun-gear classification on SNU cutouts; no ring-gear or safety target.",
+      "adapted_question": "Classify each measured SNU vibration observation as healthy, planet_gear or sun_gear using only the supplied training/development records. Report classification metrics and limitations. Ring-gear damage, physical safety, load margins and compliance are unmeasured and remain unknown.",
+      "limitations": [
+        "Uses SNU rather than the original PlanetaryPdM source.",
+        "No ring-gear damage class or authenticated safety/AGMA/ISO compliance labels.",
+        "Whole source recordings are separated, but physical rig and gear reuse remains possible.",
+        "Development lacks a healthy record; final speed and load changes are confounded."
+      ]
+    },
+    {
+      "task_id": "engine_health_combined_029",
+      "adapter_id": "research_engine_template_029_alternative",
+      "case_id": "research_engine_template_029_alternative",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa-alternatives",
+      "status": "explicit_research_alternative",
+      "source_relation": "replaced_untraceable_template_input",
+      "original_target_status": "unavailable",
+      "complete_original_task_claimed": false,
+      "numeric_scope": "Publisher-annotated trend classification on a separately frozen EngineMT-QA ten-record input; original synthetic template is not evaluated.",
+      "adapted_question": "Using the supplied ten-record numerical EngineMT-QA observations, predict the publisher qualitative condition category and failure-probability bin annotation. The bin is an annotation category, not a calibrated physical failure probability. Do not use the unrelated historical template values as the experiment input.",
+      "limitations": [
+        "The original template is replaced by different publisher N-CMAPSS-derived source observations.",
+        "Selected source IDs are disjoint from all existing training/development/case records; physical engine independence remains unverified.",
+        "Scores publisher categorical annotations only; actual failure risk, causal diagnosis and maintenance advice are not validated."
+      ]
+    },
+    {
+      "task_id": "engine_health_combined_030",
+      "adapter_id": "research_engine_template_030_alternative",
+      "case_id": "research_engine_template_030_alternative",
+      "dataset": "ENGINE_QA_TREND",
+      "prepare_dataset": "engine-qa-alternatives",
+      "status": "explicit_research_alternative",
+      "source_relation": "replaced_untraceable_template_input",
+      "original_target_status": "unavailable",
+      "complete_original_task_claimed": false,
+      "numeric_scope": "Publisher-annotated trend classification on a separately frozen EngineMT-QA ten-record input; original synthetic template is not evaluated.",
+      "adapted_question": "Using the supplied ten-record numerical EngineMT-QA observations, predict the publisher qualitative condition category and failure-probability bin annotation. The bin is an annotation category, not a calibrated physical failure probability. Do not use the unrelated historical template values as the experiment input.",
+      "limitations": [
+        "The original template is replaced by different publisher N-CMAPSS-derived source observations.",
+        "Selected source IDs are disjoint from all existing training/development/case records; physical engine independence remains unverified.",
+        "Scores publisher categorical annotations only; actual failure risk, causal diagnosis and maintenance advice are not validated."
+      ]
+    }
+  ]
+}

@@ -133,12 +133,19 @@ def _native_records(dest, source, manifest, workers):
     for ident, rows, digest in specs:
         path = cache / f'{ident}-{rows}.bin'
         if not checked(path, digest, rows * 33 * 8):
-            pending.append((ident, rows, digest, path))
+            native_cache = source / 'records' / path.name if source else None
+            if native_cache and checked(native_cache, digest, rows * 33 * 8):
+                shutil.copyfile(native_cache, path)
+            else:
+                pending.append((ident, rows, digest, path))
     if pending:
         length = manifest['ids_count'] * 8
         ids_path = dest / 'raw/data_ID.bin'
         if not checked(ids_path, manifest['ids_array_sha256'], length):
-            if h5:
+            native_ids = source / 'data_ID.bin' if source else None
+            if native_ids and checked(native_ids, manifest['ids_array_sha256'], length):
+                body = native_ids.read_bytes()
+            elif h5:
                 with h5.open('rb') as f:
                     f.seek(manifest['ids_offset'])
                     body = f.read(length)
@@ -192,14 +199,27 @@ def _features(a):
     return np.concatenate((a.mean(0), a.std(0), a.min(0), a.max(0), a[0], a[-1])).astype(np.float32)
 
 
-def prepare_engine(destination, source=None, workers=4):
-    """Create separate data-root directories for the 28 source-bound cases."""
+def prepare_engine(destination, source=None, workers=4, include_alternatives=False):
+    """Prepare original source cases and, optionally, two explicit alternatives."""
     dest = Path(destination).resolve()
     if (dest / 'READY.json').exists():
         raise FileExistsError(dest)
     dest.mkdir(parents=True, exist_ok=True)
     source = Path(source).resolve() if source else None
     manifest = resource_json('engine_source_manifest.json')
+    alternative_cases = {}
+    if include_alternatives:
+        alternative = resource_json('engine_alternatives.json')
+        original_ids = set(manifest['full_record_array_sha256']) | set(manifest['prefix_record_array_sha256'])
+        extra_ids = [ident for ids in alternative['cases'].values() for ident in ids]
+        if (alternative['source_revision'] != manifest['source_revision']
+                or original_ids.intersection(extra_ids) or len(extra_ids) != len(set(extra_ids))
+                or set(extra_ids) != set(alternative['prefix_record_array_sha256'])):
+            raise ValueError('Alternative engine inputs must be disjoint from all original source records')
+        alternative_cases = alternative['cases']
+        manifest = {**manifest, 'cases': {**manifest['cases'], **alternative_cases},
+                    'prefix_record_array_sha256': {**manifest['prefix_record_array_sha256'],
+                                                  **alternative['prefix_record_array_sha256']}}
     qa_paths = []
     for name, (size, digest) in QA.items():
         path = source / name if source else dest / 'raw' / name
@@ -281,10 +301,15 @@ def prepare_engine(destination, source=None, workers=4):
                    'label': annotation['joint'], 'state': annotation.get('state', ''),
                    'timing': annotation.get('timing', '')}])
         write_json(root / 'READY.json', {'status': 'prepared', 'task_id': task, 'dataset': dataset,
-            'task_kind': 'classification', 'scope': 'EngineMT-QA publisher annotation adaptation, not official full-task or physical-risk evaluation.'})
+            'task_kind': 'classification', 'research_alternative': task in alternative_cases,
+            'original_template_evaluated': False if task in alternative_cases else None,
+            'scope': ('Explicit replacement of an untraceable template by a different publisher input; original task unavailable. '
+                      if task in alternative_cases else '') +
+                     'EngineMT-QA publisher annotation adaptation, not official full-task or physical-risk evaluation.'})
     write_json(dest / 'READY.json', {'status': 'prepared', 'dataset': 'ENGINE_MT_QA_CASES', 'case_count': len(cases),
         'source': BASE, 'source_audit': source_audit, 'whole_file_verified_only_if_local_source': True,
         'limitations': ['Public QA and case identities are public and do not provide a private benchmark.',
                         'Physical-engine independence and calibration of failure-probability annotations are unverified.',
                         'This release evaluates a numeric portion of each question, not the complete original answer.']})
-    return {'status': 'prepared', 'case_count': len(cases), 'case_root': str(dest / 'cases'), 'source_audit': source_audit}
+    return {'status': 'prepared', 'case_count': len(cases), 'research_alternative_cases': len(alternative_cases),
+            'case_root': str(dest / 'cases'), 'source_audit': source_audit}
