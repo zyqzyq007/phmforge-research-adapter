@@ -2992,5 +2992,24 @@
       "path": "src/verified_phmforge.py",
       "sha256": "4ea171fcfba0620c58ed4698024226667c8e0c64898f18536ea97615c2038b95"
     }
-  ]
+  ],
+  "independent_clone": {
+    "status": "passed",
+    "cloned_commit": "d96c9c9937d17ddf72ccb7530b32d5d507449554",
+    "independent_git_checkout": true,
+    "package_install": "wheel built and reinstalled from independent clone",
+    "requirements": "same independently downloaded clean virtual environment",
+    "pip_check": "passed",
+    "software_checks_passed": 42,
+    "all_installed_python_and_resource_files_match_clone": true,
+    "public_source_download": "complete CWRU, pinned hash verified by prepare",
+    "actual_reference_epochs": 2,
+    "nonzero_gradient_steps": 420,
+    "parameter_tensors_changed": 6,
+    "samples_scored": 4375,
+    "accuracy": 0.7787428571428572,
+    "macro_f1": 0.6521099340774481,
+    "independent_metric_recalculation": "passed",
+    "same_server_not_cross_machine": true
+  }
 }
